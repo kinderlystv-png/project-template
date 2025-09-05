@@ -1,8 +1,27 @@
 {
   "name": "universal-sveltekit-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
-  "description": "Universal SvelteKit TypeScript template with complete infrastructure for rapid project creation",
+  "description": "Production-ready SvelteKit template with complete infrastructure and zero configuration",
+  "keywords": [
+    "sveltekit",
+    "typescript",
+    "template",
+    "starter",
+    "boilerplate",
+    "infrastructure",
+    "production-ready"
+  ],
+  "license": "MIT",
+  "author": "kinderlystv-png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinderlystv-png/project-template.git"
+  },
+  "homepage": "https://github.com/kinderlystv-png/project-template#readme",
+  "bugs": {
+    "url": "https://github.com/kinderlystv-png/project-template/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

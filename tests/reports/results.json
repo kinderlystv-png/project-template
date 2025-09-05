@@ -8,7 +8,7 @@
   "numFailedTests": 0,
   "numPendingTests": 0,
   "numTodoTests": 0,
-  "startTime": 1757098348663,
+  "startTime": 1757099752433,
   "success": true,
   "testResults": [
     {
@@ -22,7 +22,7 @@
           "fullName": " Sample Test Suite Basic functionality should return true for true",
           "status": "passed",
           "title": "should return true for true",
-          "duration": 1,
+          "duration": 2,
           "failureMessages": []
         },
         {
@@ -70,7 +70,7 @@
           "fullName": " Sample Test Suite Calculator functionality should handle division by zero",
           "status": "passed",
           "title": "should handle division by zero",
-          "duration": 1,
+          "duration": 3,
           "failureMessages": []
         },
         {
@@ -82,7 +82,7 @@
           "fullName": " Sample Test Suite Calculator functionality should work with negative numbers",
           "status": "passed",
           "title": "should work with negative numbers",
-          "duration": 0,
+          "duration": 1,
           "failureMessages": []
         },
         {
@@ -94,7 +94,7 @@
           "fullName": " Sample Test Suite Async operations should handle async functions",
           "status": "passed",
           "title": "should handle async functions",
-          "duration": 102,
+          "duration": 103,
           "failureMessages": []
         },
         {
@@ -118,12 +118,12 @@
           "fullName": " Sample Test Suite Mock functions should work with mocked functions",
           "status": "passed",
           "title": "should work with mocked functions",
-          "duration": 4,
+          "duration": 2,
           "failureMessages": []
         }
       ],
-      "startTime": 1757098350033,
-      "endTime": 1757098350143,
+      "startTime": 1757099754316,
+      "endTime": 1757099754429,
       "status": "passed",
       "message": "",
       "name": "C:/alphacore/SHINOMONTAGKA/tests/hello.test.ts"
@@ -139,7 +139,7 @@
           "fullName": " Infrastructure Integration Tests Core Infrastructure should have access to basic infrastructure",
           "status": "passed",
           "title": "should have access to basic infrastructure",
-          "duration": 1,
+          "duration": 2,
           "failureMessages": []
         },
         {
@@ -163,7 +163,7 @@
           "fullName": " Infrastructure Integration Tests Core Infrastructure should manage basic state",
           "status": "passed",
           "title": "should manage basic state",
-          "duration": 0,
+          "duration": 1,
           "failureMessages": []
         },
         {
@@ -175,12 +175,12 @@
           "fullName": " Infrastructure Integration Tests Error Handling should handle errors gracefully",
           "status": "passed",
           "title": "should handle errors gracefully",
-          "duration": 7,
+          "duration": 13,
           "failureMessages": []
         }
       ],
-      "startTime": 1757098350033,
-      "endTime": 1757098350042,
+      "startTime": 1757099754316,
+      "endTime": 1757099754334,
       "status": "passed",
       "message": "",
       "name": "C:/alphacore/SHINOMONTAGKA/tests/integration/app-flow.test.ts"
