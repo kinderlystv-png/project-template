@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites name="vitest tests" tests="13" failures="0" errors="0" time="2.111">
-    <testsuite name="tests/hello.test.ts" timestamp="2025-09-05T19:16:27.901Z" hostname="DESKTOP-6GDCGH8" tests="9" failures="0" errors="0" skipped="0" time="0.116">
-        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Basic functionality &gt; should return true for true" time="0.002">
+<testsuites name="vitest tests" tests="13" failures="0" errors="0" time="3.281">
+    <testsuite name="tests/hello.test.ts" timestamp="2025-09-05T19:34:09.019Z" hostname="DESKTOP-6GDCGH8" tests="9" failures="0" errors="0" skipped="0" time="0.127">
+        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Basic functionality &gt; should return true for true" time="0.001">
         </testcase>
         <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Basic functionality &gt; should add numbers correctly" time="0">
         </testcase>
         <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Basic functionality &gt; should handle floating point operations" time="0">
         </testcase>
-        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Calculator functionality &gt; should perform basic arithmetic operations" time="0.001">
+        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Calculator functionality &gt; should perform basic arithmetic operations" time="0">
         </testcase>
         <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Calculator functionality &gt; should handle division by zero" time="0.001">
         </testcase>
-        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Calculator functionality &gt; should work with negative numbers" time="0">
+        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Calculator functionality &gt; should work with negative numbers" time="0.001">
         </testcase>
-        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Async operations &gt; should handle async functions" time="0.108">
+        <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Async operations &gt; should handle async functions" time="0.11">
         </testcase>
         <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Async operations &gt; should handle promises" time="0.001">
         </testcase>
         <testcase classname="tests/hello.test.ts" name="Sample Test Suite &gt; Mock functions &gt; should work with mocked functions" time="0.002">
         </testcase>
     </testsuite>
-    <testsuite name="tests/integration/app-flow.test.ts" timestamp="2025-09-05T19:16:27.915Z" hostname="DESKTOP-6GDCGH8" tests="4" failures="0" errors="0" skipped="0" time="0.011">
-        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Core Infrastructure &gt; should have access to basic infrastructure" time="0.001">
+    <testsuite name="tests/integration/app-flow.test.ts" timestamp="2025-09-05T19:34:09.066Z" hostname="DESKTOP-6GDCGH8" tests="4" failures="0" errors="0" skipped="0" time="0.026">
+        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Core Infrastructure &gt; should have access to basic infrastructure" time="0.002">
         </testcase>
-        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Core Infrastructure &gt; should handle basic operations" time="0.001">
+        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Core Infrastructure &gt; should handle basic operations" time="0.002">
         </testcase>
         <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Core Infrastructure &gt; should manage basic state" time="0">
         </testcase>
-        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Error Handling &gt; should handle errors gracefully" time="0.006">
+        <testcase classname="tests/integration/app-flow.test.ts" name="Infrastructure Integration Tests &gt; Error Handling &gt; should handle errors gracefully" time="0.015">
             <system-err>
 Error handled: Error: Test error
     at [90mC:\alphacore\SHINOMONTAGKA\[39mtests\integration\app-flow.test.ts:41:17

@@ -1,0 +1,5 @@
+{
+  "quality": "https://img.shields.io/badge/quality-14%25-red",
+  "tests": "https://img.shields.io/badge/tests-failing-red",
+  "typescript": "https://img.shields.io/badge/TypeScript-failing-red"
+}

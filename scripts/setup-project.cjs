@@ -1,137 +1,109 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
 const readline = require('readline');
+const path = require('path');
+const {
+  readJsonFile,
+  writeJsonFile,
+  updateFile,
+  deleteFile,
+  fileExists,
+  executeTasks,
+} = require('./utils/file-operations.cjs');
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 async function question(prompt) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     rl.question(prompt, resolve);
   });
 }
 
-async function setupProject() {
+async function promptConfiguration() {
   console.log('🚀 Universal SvelteKit Template Setup\n');
   console.log('This wizard will configure your new project with:');
   console.log('✅ Complete infrastructure (8 core systems)');
   console.log('✅ Full test suite');
   console.log('✅ TypeScript configuration');
   console.log('✅ Production-ready setup\n');
-  
-  // Запрашиваем данные проекта
-  const projectName = await question('📝 Project name: ');
-  const projectDescription = await question('📖 Project description: ');
-  const authorName = await question('👤 Author name: ');
-  const authorEmail = await question('📧 Author email (optional): ');
-  const gitRepo = await question('🔗 Git repository URL (optional): ');
-  
-  console.log('\n🔧 Configuring project...\n');
-  
-  try {
-    // Обновляем package.json
-    updatePackageJson(projectName, projectDescription, authorName, authorEmail, gitRepo);
-    
-    // Обновляем HTML title
-    updateHtmlTitle(projectName);
-    
-    // Обновляем стартовую страницу
-    updateStartPage(projectName);
-    
-    // Создаем проектный README
-    createProjectReadme(projectName, projectDescription, authorName);
-    
-    // Создаем .env файл
-    createEnvFile(projectName);
-    
-    // Обновляем конфигурацию
-    updateProjectConfig(projectName);
-    
-    // Очищаем шаблонные файлы
-    cleanupTemplateFiles();
-    
-    console.log('✅ Project configuration completed!\n');
-    console.log(`🎉 ${projectName} is ready for development!\n`);
-    console.log('Next steps:');
-    console.log('1. git add .');
-    console.log('2. git commit -m "Initial commit"');
-    if (gitRepo) {
-      console.log(`3. git remote add origin ${gitRepo}`);
-      console.log('4. git push -u origin main');
-    }
-    console.log('5. npm run dev\n');
-    console.log('Happy coding! 🚀');
-    
-  } catch (error) {
-    console.error('❌ Setup failed:', error.message);
-    process.exit(1);
-  }
-  
-  rl.close();
+
+  const config = {
+    projectName: await question('📝 Project name: '),
+    projectDescription: await question('📖 Project description: '),
+    authorName: await question('👤 Author name: '),
+    authorEmail: await question('📧 Author email (optional): '),
+    gitRepo: await question('🔗 Git repository URL (optional): '),
+  };
+
+  return config;
 }
 
-function updatePackageJson(name, description, author, email, repo) {
+async function updatePackageJson(config) {
   const packagePath = path.join(process.cwd(), 'package.json');
-  const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
-  
-  packageJson.name = name.toLowerCase().replace(/\s+/g, '-');
-  packageJson.description = description;
-  packageJson.author = email ? `${author} <${email}>` : author;
+  const packageJson = readJsonFile(packagePath);
+
+  if (!packageJson) return false;
+
+  packageJson.name = config.projectName.toLowerCase().replace(/\s+/g, '-');
+  packageJson.description = config.projectDescription;
+  packageJson.author = config.authorEmail
+    ? `${config.authorName} <${config.authorEmail}>`
+    : config.authorName;
   packageJson.version = '0.1.0';
-  
-  if (repo) {
+
+  if (config.gitRepo) {
     packageJson.repository = {
       type: 'git',
-      url: repo
+      url: config.gitRepo,
     };
-    packageJson.homepage = `${repo}#readme`;
+    packageJson.homepage = `${config.gitRepo}#readme`;
     packageJson.bugs = {
-      url: `${repo}/issues`
+      url: `${config.gitRepo}/issues`,
     };
   }
-  
+
   // Удаляем скрипт setup после использования
   delete packageJson.scripts['setup:project'];
-  
-  fs.writeFileSync(packagePath, JSON.stringify(packageJson, null, 2));
+
+  return writeJsonFile(packagePath, packageJson);
 }
 
-function updateHtmlTitle(projectName) {
+async function updateHtmlTitle(projectName) {
   const indexPath = path.join(process.cwd(), 'index.html');
-  if (fs.existsSync(indexPath)) {
-    let indexHtml = fs.readFileSync(indexPath, 'utf8');
-    indexHtml = indexHtml.replace(/<title>.*<\/title>/, `<title>${projectName}</title>`);
-    fs.writeFileSync(indexPath, indexHtml);
-  }
+  if (!fileExists(indexPath)) return true;
+
+  return updateFile(indexPath, [['<title>.*<\/title>', `<title>${projectName}</title>`]]);
 }
 
-function updateStartPage(projectName) {
+async function updateStartPage(projectName) {
   const startPagePath = path.join(process.cwd(), 'src/StartPage.svelte');
-  if (fs.existsSync(startPagePath)) {
-    let startPage = fs.readFileSync(startPagePath, 'utf8');
-    startPage = startPage.replace(/начнем проект/g, projectName);
-    startPage = startPage.replace(/SHINOMONTAGKA готов к разработке/g, `${projectName} ready for development`);
-    fs.writeFileSync(startPagePath, startPage);
-  }
-  
-  // Также обновляем основной роут если он существует
   const mainRoutePath = path.join(process.cwd(), 'src/routes/+page.svelte');
-  if (fs.existsSync(mainRoutePath)) {
-    let mainRoute = fs.readFileSync(mainRoutePath, 'utf8');
-    mainRoute = mainRoute.replace(/начнем проект/g, projectName);
-    mainRoute = mainRoute.replace(/SHINOMONTAGKA готов к разработке/g, `${projectName} ready for development`);
-    fs.writeFileSync(mainRoutePath, mainRoute);
+
+  const replacements = [
+    ['начнем проект', projectName],
+    ['SHINOMONTAGKA готов к разработке', `${projectName} ready for development`],
+  ];
+
+  let success = true;
+
+  if (fileExists(startPagePath)) {
+    success = success && updateFile(startPagePath, replacements);
   }
+
+  if (fileExists(mainRoutePath)) {
+    success = success && updateFile(mainRoutePath, replacements);
+  }
+
+  return success;
 }
 
-function createProjectReadme(projectName, description, author) {
-  const readmeContent = `# ${projectName}
+async function createProjectReadme(config) {
+  const readmeContent = `# ${config.projectName}
 
-${description}
+${config.projectDescription}
 
 ## 🚀 Built with Universal SvelteKit Template
 
@@ -178,18 +150,18 @@ tests/
 
 ## Author
 
-${author}
+${config.authorName}
 
 ## License
 
 MIT
 `;
-  
-  fs.writeFileSync(path.join(process.cwd(), 'README.md'), readmeContent);
+
+  return writeJsonFile(path.join(process.cwd(), 'README.md'), readmeContent);
 }
 
-function createEnvFile(projectName) {
-  const envContent = `# ${projectName} Environment Variables
+async function createEnvFile(config) {
+  const envContent = `# ${config.projectName} Environment Variables
 
 # API Configuration
 VITE_API_URL=/api
@@ -209,45 +181,87 @@ VITE_ENABLE_DEBUG=true
 # VITE_LOG_LEVEL=error
 # VITE_ENABLE_DEBUG=false
 `;
-  
-  fs.writeFileSync(path.join(process.cwd(), '.env'), envContent);
+
+  return writeJsonFile(path.join(process.cwd(), '.env'), envContent);
 }
 
-function updateProjectConfig(projectName) {
+async function updateProjectConfig(config) {
   const configPath = path.join(process.cwd(), 'template.config.json');
-  if (fs.existsSync(configPath)) {
-    const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
-    config.projectName = projectName;
-    config.createdAt = new Date().toISOString();
-    config.status = 'configured';
-    fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
-  }
+  if (!fileExists(configPath)) return true;
+
+  const templateConfig = readJsonFile(configPath);
+  if (!templateConfig) return false;
+
+  templateConfig.projectName = config.projectName;
+  templateConfig.createdAt = new Date().toISOString();
+  templateConfig.status = 'configured';
+
+  return writeJsonFile(configPath, templateConfig);
 }
 
-function cleanupTemplateFiles() {
+async function cleanupTemplateFiles() {
   const filesToRemove = [
     'TEMPLATE_README.md',
     'PUBLICATION_GUIDE.md',
     'TEMPLATE_READY.md',
     'INFRASTRUCTURE_COMPLETE.md',
     'FINAL_STATUS_REPORT.md',
-    'TESTING-STATUS.md'
+    'TESTING-STATUS.md',
+    'README_NEW.md',
   ];
-  
+
+  let success = true;
   filesToRemove.forEach(file => {
     const filePath = path.join(process.cwd(), file);
-    if (fs.existsSync(filePath)) {
-      fs.unlinkSync(filePath);
-      console.log(`📁 Removed template file: ${file}`);
-    }
+    success = success && deleteFile(filePath);
   });
-  
+
   // Удаляем сам скрипт настройки после выполнения
-  const setupScriptPath = path.join(process.cwd(), 'scripts/setup-project.js');
-  if (fs.existsSync(setupScriptPath)) {
-    fs.unlinkSync(setupScriptPath);
-    console.log('🗑️ Removed setup script');
+  const setupScriptPath = path.join(process.cwd(), 'scripts/setup-project.cjs');
+  success = success && deleteFile(setupScriptPath);
+
+  return success;
+}
+
+async function setupProject() {
+  try {
+    const config = await promptConfiguration();
+
+    console.log('\n🔧 Configuring project...\n');
+
+    const tasks = [
+      { name: 'Updating package.json', fn: () => updatePackageJson(config) },
+      { name: 'Updating HTML title', fn: () => updateHtmlTitle(config.projectName) },
+      { name: 'Updating start page', fn: () => updateStartPage(config.projectName) },
+      { name: 'Creating project README', fn: () => createProjectReadme(config) },
+      { name: 'Setting up environment file', fn: () => createEnvFile(config) },
+      { name: 'Updating project configuration', fn: () => updateProjectConfig(config) },
+      { name: 'Cleaning up template files', fn: () => cleanupTemplateFiles() },
+    ];
+
+    const success = await executeTasks(tasks);
+
+    if (success) {
+      console.log(`\n🎉 ${config.projectName} is ready for development!\n`);
+      console.log('Next steps:');
+      console.log('1. git add .');
+      console.log('2. git commit -m "Initial commit"');
+      if (config.gitRepo) {
+        console.log(`3. git remote add origin ${config.gitRepo}`);
+        console.log('4. git push -u origin main');
+      }
+      console.log('5. npm run dev\n');
+      console.log('Happy coding! 🚀');
+    } else {
+      console.error('\n❌ Setup failed. Please check errors above.');
+      process.exit(1);
+    }
+  } catch (error) {
+    console.error('❌ Setup failed:', error.message);
+    process.exit(1);
   }
+
+  rl.close();
 }
 
 // Запускаем только если скрипт вызван напрямую
