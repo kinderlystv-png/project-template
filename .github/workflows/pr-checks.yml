@@ -1,0 +1,194 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    branches: [main, develop]
+  pull_request_review:
+    types: [submitted]
+
+jobs:
+  # Проверка изменений в PR
+  pr-validation:
+    name: PR Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          files: |
+            src/**/*.{js,ts,svelte}
+            tests/**/*.{js,ts}
+            **/*.json
+            **/*.md
+
+      - name: Run type checking on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: pnpm run type-check
+
+      - name: Run linting on changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: pnpm run lint:check
+
+      - name: Run tests related to changed files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: pnpm run test:run --changed
+
+      - name: Check for TODO/FIXME comments
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          if grep -r "TODO\|FIXME" ${{ steps.changed-files.outputs.all_changed_files }}; then
+            echo "::warning::Found TODO/FIXME comments in changed files"
+          fi
+
+  # Анализ размера бандла
+  bundle-analysis:
+    name: Bundle Size Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build and analyze bundle
+        run: |
+          pnpm run build
+          npx vite-bundle-analyzer dist --open-analyzer false --generate-report
+
+      - name: Comment bundle size
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            // Чтение информации о размере бандла
+            const bundleInfo = `
+            📦 **Bundle Analysis**
+
+            Build completed successfully!
+            Check the artifacts for detailed bundle analysis.
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: bundleInfo
+            });
+
+  # Автоматическое назначение ревьюеров
+  assign-reviewers:
+    name: Auto Assign Reviewers
+    runs-on: ubuntu-latest
+    if: github.event.action == 'opened'
+    steps:
+      - name: Auto assign reviewers
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo, number } = context.issue;
+            const author = context.payload.pull_request.user.login;
+
+            // Список потенциальных ревьюеров (настройте под ваш проект)
+            const reviewers = ['teammate1', 'teammate2', 'teammate3']
+              .filter(reviewer => reviewer !== author);
+
+            if (reviewers.length > 0) {
+              await github.rest.pulls.requestReviewers({
+                owner,
+                repo,
+                pull_number: number,
+                reviewers: reviewers.slice(0, 2) // Назначаем максимум 2 ревьюера
+              });
+            }
+
+  # Проверка зависимостей
+  dependency-check:
+    name: Dependency Security Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run dependency audit
+        run: pnpm audit --audit-level moderate
+
+      - name: Check for outdated packages
+        run: pnpm outdated || true
+
+  # Проверка доступности
+  accessibility-check:
+    name: Accessibility Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: '8'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build project
+        run: pnpm run build
+
+      - name: Run accessibility tests
+        run: |
+          echo "🔍 Running accessibility checks..."
+          echo "Note: Add axe-core or similar accessibility testing tools"

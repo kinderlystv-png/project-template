@@ -1,0 +1,273 @@
+/* Основные стили приложения */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Глобальные стили */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Стили для скроллбара */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Компонентные стили */
+@layer components {
+  /* Кнопки */
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-200 text-secondary-900 hover:bg-secondary-300 focus:ring-secondary-500;
+  }
+
+  .btn-accent {
+    @apply btn bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+
+  .btn-success {
+    @apply btn bg-success-600 text-white hover:bg-success-700 focus:ring-success-500;
+  }
+
+  .btn-error {
+    @apply btn bg-error-600 text-white hover:bg-error-700 focus:ring-error-500;
+  }
+
+  .btn-outline {
+    @apply btn border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white focus:ring-primary-500;
+  }
+
+  .btn-ghost {
+    @apply btn text-primary-600 hover:bg-primary-50 focus:ring-primary-500;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base;
+  }
+
+  /* Карточки */
+  .card {
+    @apply bg-white rounded-xl shadow-soft border border-gray-200 overflow-hidden;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-300 hover:shadow-medium hover:-translate-y-1;
+  }
+
+  .card-interactive {
+    @apply card-hover cursor-pointer hover:border-primary-200;
+  }
+
+  /* Инпуты */
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+
+  .input-error {
+    @apply input border-error-500 focus:ring-error-500 focus:border-error-500;
+  }
+
+  /* Калькулятор */
+  .calculator-button {
+    @apply w-full h-16 text-lg font-semibold rounded-lg transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .calculator-button-number {
+    @apply calculator-button bg-white text-gray-900 border border-gray-300 hover:bg-gray-50 focus:ring-primary-500;
+  }
+
+  .calculator-button-operator {
+    @apply calculator-button bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+
+  .calculator-button-equals {
+    @apply calculator-button bg-accent-500 text-white hover:bg-accent-600 focus:ring-accent-500;
+  }
+
+  .calculator-button-clear {
+    @apply calculator-button bg-error-500 text-white hover:bg-error-600 focus:ring-error-500;
+  }
+
+  /* Продуктовые карточки */
+  .product-card {
+    @apply card-interactive p-0 max-w-sm;
+  }
+
+  .product-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .product-content {
+    @apply p-4;
+  }
+
+  .product-title {
+    @apply text-lg font-semibold text-gray-900 mb-2;
+  }
+
+  .product-description {
+    @apply text-sm text-gray-600 mb-3;
+  }
+
+  .product-price {
+    @apply text-xl font-bold text-primary-600;
+  }
+
+  /* 3D контейнер */
+  .three-container {
+    @apply relative w-full h-full overflow-hidden rounded-lg border border-gray-200;
+  }
+
+  .three-controls {
+    @apply absolute top-4 right-4 z-10 flex flex-col gap-2;
+  }
+
+  .three-toolbar {
+    @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10 flex gap-2 bg-white/90 backdrop-blur-xs p-2 rounded-lg shadow-medium;
+  }
+
+  /* Модальные окна */
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm;
+  }
+
+  .modal-content {
+    @apply bg-white rounded-xl shadow-strong max-w-md w-full mx-4 p-6;
+  }
+
+  /* Уведомления */
+  .toast {
+    @apply fixed top-4 right-4 z-50 max-w-sm w-full bg-white border border-gray-200 rounded-lg shadow-medium p-4;
+  }
+
+  .toast-success {
+    @apply toast border-success-200 bg-success-50;
+  }
+
+  .toast-error {
+    @apply toast border-error-200 bg-error-50;
+  }
+
+  .toast-warning {
+    @apply toast border-accent-200 bg-accent-50;
+  }
+
+  .toast-info {
+    @apply toast border-primary-200 bg-primary-50;
+  }
+}
+
+/* Утилитарные стили */
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-700;
+  }
+
+  .bg-gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600;
+  }
+
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  /* Анимации */
+  .animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+
+  .animate-fade-in-down {
+    animation: fadeInDown 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  .animate-bounce-soft {
+    animation: bounceSoft 1s ease-out;
+  }
+}
+
+/* Keyframes для дополнительных анимаций */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Отзывчивые сетки */
+.grid-responsive {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-products {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.grid-calculators {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Тёмная тема (для будущего использования) */
+@media (prefers-color-scheme: dark) {
+  .dark-mode {
+    @apply bg-gray-900 text-gray-100;
+  }
+}
