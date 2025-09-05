@@ -11,43 +11,81 @@
     "core": {
       "logging": {
         "enabled": true,
-        "transports": ["console", "remote", "localStorage", "sentry", "file"],
+        "transports": [
+          "console",
+          "remote",
+          "localStorage",
+          "sentry",
+          "file"
+        ],
         "description": "Многоуровневая система логирования"
       },
       "api": {
         "enabled": true,
-        "features": ["retry", "cache", "csrf", "timeout"],
+        "features": [
+          "retry",
+          "cache",
+          "csrf",
+          "timeout"
+        ],
         "description": "HTTP клиент с расширенными возможностями"
       },
       "cache": {
         "enabled": true,
         "type": "LRU",
-        "features": ["ttl", "tags", "size-limit"],
+        "features": [
+          "ttl",
+          "tags",
+          "size-limit"
+        ],
         "description": "Система кэширования с TTL и тегами"
       },
       "security": {
         "enabled": true,
-        "features": ["xss", "csrf", "encryption", "sanitization"],
+        "features": [
+          "xss",
+          "csrf",
+          "encryption",
+          "sanitization"
+        ],
         "description": "Комплексная система безопасности"
       },
       "monitoring": {
         "enabled": true,
-        "metrics": ["web-vitals", "performance", "errors", "user-timing"],
+        "metrics": [
+          "web-vitals",
+          "performance",
+          "errors",
+          "user-timing"
+        ],
         "description": "Мониторинг производительности и метрики"
       },
       "errors": {
         "enabled": true,
-        "features": ["centralized", "typed", "context", "reporting"],
+        "features": [
+          "centralized",
+          "typed",
+          "context",
+          "reporting"
+        ],
         "description": "Централизованная обработка ошибок"
       },
       "config": {
         "enabled": true,
-        "features": ["typed", "validation", "environment"],
+        "features": [
+          "typed",
+          "validation",
+          "environment"
+        ],
         "description": "Типизированная система конфигурации"
       },
       "migrations": {
         "enabled": true,
-        "features": ["versioning", "rollback", "validation"],
+        "features": [
+          "versioning",
+          "rollback",
+          "validation"
+        ],
         "description": "Система миграций данных"
       }
     },
@@ -65,7 +103,11 @@
       },
       "e2e": {
         "framework": "Playwright",
-        "browsers": ["chromium", "firefox", "webkit"],
+        "browsers": [
+          "chromium",
+          "firefox",
+          "webkit"
+        ],
         "enabled": true
       },
       "visual": {
@@ -74,7 +116,10 @@
       },
       "performance": {
         "enabled": true,
-        "tools": ["lighthouse", "web-vitals"]
+        "tools": [
+          "lighthouse",
+          "web-vitals"
+        ]
       }
     },
     "build": {
@@ -85,9 +130,23 @@
     }
   },
   "dependencies": {
-    "required": ["svelte", "@sveltejs/kit", "vite", "typescript"],
-    "testing": ["vitest", "@playwright/test", "@testing-library/svelte"],
-    "optional": ["three", "chart.js", "gsap", "@sentry/svelte"]
+    "required": [
+      "svelte",
+      "@sveltejs/kit",
+      "vite",
+      "typescript"
+    ],
+    "testing": [
+      "vitest",
+      "@playwright/test",
+      "@testing-library/svelte"
+    ],
+    "optional": [
+      "three",
+      "chart.js",
+      "gsap",
+      "@sentry/svelte"
+    ]
   },
   "structure": {
     "src/lib": "Основная инфраструктура (8 модулей)",
@@ -108,7 +167,12 @@
   "compatibility": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0",
-    "browsers": ["Chrome >=90", "Firefox >=88", "Safari >=14", "Edge >=90"]
+    "browsers": [
+      "Chrome >=90",
+      "Firefox >=88",
+      "Safari >=14",
+      "Edge >=90"
+    ]
   },
   "repository": {
     "type": "git",
@@ -119,5 +183,8 @@
     "infrastructure": "docs/INFRASTRUCTURE.md",
     "testing": "docs/TESTING.md",
     "deployment": "docs/DEPLOYMENT.md"
-  }
+  },
+  "projectName": "123",
+  "createdAt": "2025-09-05T19:33:34.329Z",
+  "status": "configured"
 }

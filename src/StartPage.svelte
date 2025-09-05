@@ -9,8 +9,8 @@
 
 <main class="container">
   <div class="start-project">
-    <h1>начнем проект</h1>
-    <p class="subtitle">SHINOMONTAGKA готов к разработке</p>
+    <h1>123</h1>
+    <p class="subtitle">123 ready for development</p>
   </div>
 </main>
 

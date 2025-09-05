@@ -1,8 +1,8 @@
 {
-  "name": "universal-sveltekit-template",
-  "version": "1.1.0",
+  "name": "123",
+  "version": "0.1.0",
   "type": "module",
-  "description": "Production-ready SvelteKit template with complete infrastructure and zero configuration",
+  "description": "321",
   "keywords": [
     "sveltekit",
     "typescript",
@@ -13,7 +13,7 @@
     "production-ready"
   ],
   "license": "MIT",
-  "author": "kinderlystv-png",
+  "author": "йцу",
   "repository": {
     "type": "git",
     "url": "https://github.com/kinderlystv-png/project-template.git"
@@ -46,7 +46,6 @@
     "test:all": "pwsh ./scripts/run-all-tests.ps1",
     "test:quick": "pwsh ./scripts/test-runner.ps1",
     "test:help": "pwsh ./scripts/test-runner.ps1 --help",
-    "setup:project": "node scripts/setup-project.js",
     "template:update": "node scripts/update-template.js",
     "template:test": "npm install && npm run test && npm run build"
   },
