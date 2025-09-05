@@ -29,25 +29,29 @@
       <!-- Навигация для десктопа -->
       <nav class="hidden md:flex items-center space-x-8">
         <button
-          class="nav-link" class:active={currentSection === 'home'}
+          class="nav-link"
+          class:active={currentSection === 'home'}
           on:click={() => setSection('home')}
         >
           Главная
         </button>
         <button
-          class="nav-link" class:active={currentSection === 'calculator'}
+          class="nav-link"
+          class:active={currentSection === 'calculator'}
           on:click={() => setSection('calculator')}
         >
           Калькуляторы
         </button>
         <button
-          class="nav-link" class:active={currentSection === 'products'}
+          class="nav-link"
+          class:active={currentSection === 'products'}
           on:click={() => setSection('products')}
         >
           Товары
         </button>
         <button
-          class="nav-link" class:active={currentSection === '3d'}
+          class="nav-link"
+          class:active={currentSection === '3d'}
           on:click={() => setSection('3d')}
         >
           3D Конструктор
@@ -85,25 +89,29 @@
       <div class="md:hidden py-4 border-t border-gray-200 animate-fade-in">
         <nav class="flex flex-col space-y-2">
           <button
-            class="mobile-nav-link" class:active={currentSection === 'home'}
+            class="mobile-nav-link"
+            class:active={currentSection === 'home'}
             on:click={() => setSection('home')}
           >
             Главная
           </button>
           <button
-            class="mobile-nav-link" class:active={currentSection === 'calculator'}
+            class="mobile-nav-link"
+            class:active={currentSection === 'calculator'}
             on:click={() => setSection('calculator')}
           >
             Калькуляторы
           </button>
           <button
-            class="mobile-nav-link" class:active={currentSection === 'products'}
+            class="mobile-nav-link"
+            class:active={currentSection === 'products'}
             on:click={() => setSection('products')}
           >
             Товары
           </button>
           <button
-            class="mobile-nav-link" class:active={currentSection === '3d'}
+            class="mobile-nav-link"
+            class:active={currentSection === '3d'}
             on:click={() => setSection('3d')}
           >
             3D Конструктор
@@ -116,7 +124,11 @@
 
 <style>
   .nav-link {
-    @apply text-gray-600 hover:text-primary-600 font-medium transition-colors;
+    @apply text-gray-600 font-medium transition-colors;
+  }
+
+  .nav-link:hover {
+    @apply text-primary-600;
   }
 
   .nav-link.active {
@@ -124,7 +136,11 @@
   }
 
   .mobile-nav-link {
-    @apply block px-4 py-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded-lg font-medium transition-colors text-left;
+    @apply block px-4 py-2 text-gray-600 rounded-lg font-medium transition-colors text-left;
+  }
+
+  .mobile-nav-link:hover {
+    @apply text-primary-600 bg-gray-50;
   }
 
   .mobile-nav-link.active {

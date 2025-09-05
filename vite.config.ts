@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -52,26 +52,6 @@ export default defineConfig({
       scss: {
         additionalData: '@import "@/styles/variables.scss";',
       },
-    },
-  },
-
-  // Настройки тестирования
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: ['./src/tests/setup.ts'],
-    includeSource: ['src/**/*.{js,ts,svelte}'],
-    coverage: {
-      provider: 'v8',
-      reporter: ['text', 'json', 'html'],
-      exclude: [
-        'node_modules/',
-        'src/tests/',
-        '**/*.d.ts',
-        '**/*.test.{js,ts,svelte}',
-        '**/*.spec.{js,ts,svelte}',
-        '**/dist/**',
-      ],
     },
   },
 

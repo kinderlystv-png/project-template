@@ -1,0 +1,123 @@
+{
+  "name": "Universal SvelteKit TypeScript Template",
+  "version": "1.0.0",
+  "type": "svelte-typescript",
+  "description": "Универсальный шаблон для быстрого создания SvelteKit проектов с полной инфраструктурой",
+  "author": "AlphaCore",
+  "license": "MIT",
+  "created": "2025-09-05",
+  "lastUpdated": "2025-09-05",
+  "features": {
+    "core": {
+      "logging": {
+        "enabled": true,
+        "transports": ["console", "remote", "localStorage", "sentry", "file"],
+        "description": "Многоуровневая система логирования"
+      },
+      "api": {
+        "enabled": true,
+        "features": ["retry", "cache", "csrf", "timeout"],
+        "description": "HTTP клиент с расширенными возможностями"
+      },
+      "cache": {
+        "enabled": true,
+        "type": "LRU",
+        "features": ["ttl", "tags", "size-limit"],
+        "description": "Система кэширования с TTL и тегами"
+      },
+      "security": {
+        "enabled": true,
+        "features": ["xss", "csrf", "encryption", "sanitization"],
+        "description": "Комплексная система безопасности"
+      },
+      "monitoring": {
+        "enabled": true,
+        "metrics": ["web-vitals", "performance", "errors", "user-timing"],
+        "description": "Мониторинг производительности и метрики"
+      },
+      "errors": {
+        "enabled": true,
+        "features": ["centralized", "typed", "context", "reporting"],
+        "description": "Централизованная обработка ошибок"
+      },
+      "config": {
+        "enabled": true,
+        "features": ["typed", "validation", "environment"],
+        "description": "Типизированная система конфигурации"
+      },
+      "migrations": {
+        "enabled": true,
+        "features": ["versioning", "rollback", "validation"],
+        "description": "Система миграций данных"
+      }
+    },
+    "ui": {
+      "framework": "SvelteKit",
+      "styling": "PostCSS",
+      "icons": "Configurable",
+      "components": "Clean starter"
+    },
+    "testing": {
+      "unit": {
+        "framework": "Vitest",
+        "coverage": "c8",
+        "enabled": true
+      },
+      "e2e": {
+        "framework": "Playwright",
+        "browsers": ["chromium", "firefox", "webkit"],
+        "enabled": true
+      },
+      "visual": {
+        "enabled": true,
+        "framework": "Playwright"
+      },
+      "performance": {
+        "enabled": true,
+        "tools": ["lighthouse", "web-vitals"]
+      }
+    },
+    "build": {
+      "bundler": "Vite",
+      "typescript": true,
+      "optimization": true,
+      "treeshaking": true
+    }
+  },
+  "dependencies": {
+    "required": ["svelte", "@sveltejs/kit", "vite", "typescript"],
+    "testing": ["vitest", "@playwright/test", "@testing-library/svelte"],
+    "optional": ["three", "chart.js", "gsap", "@sentry/svelte"]
+  },
+  "structure": {
+    "src/lib": "Основная инфраструктура (8 модулей)",
+    "src/components": "UI компоненты",
+    "src/routes": "Страницы приложения",
+    "src/stores": "Управление состоянием",
+    "tests/unit": "Юнит тесты",
+    "tests/integration": "Интеграционные тесты",
+    "tests/e2e": "End-to-End тесты",
+    "tests/performance": "Тесты производительности",
+    "tests/visual": "Визуальные тесты"
+  },
+  "scripts": {
+    "setup:project": "Настройка нового проекта на основе шаблона",
+    "template:update": "Обновление версии шаблона",
+    "template:test": "Проверка работоспособности шаблона"
+  },
+  "compatibility": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0",
+    "browsers": ["Chrome >=90", "Firefox >=88", "Safari >=14", "Edge >=90"]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alphacore/project-template"
+  },
+  "documentation": {
+    "readme": "README.md",
+    "infrastructure": "docs/INFRASTRUCTURE.md",
+    "testing": "docs/TESTING.md",
+    "deployment": "docs/DEPLOYMENT.md"
+  }
+}
