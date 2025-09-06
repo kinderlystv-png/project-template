@@ -1,5 +1,5 @@
 // Dimension Calculator Tests
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 describe('Dimension Calculator Tests', () => {
   describe('Basic Calculations', () => {
@@ -7,11 +7,11 @@ describe('Dimension Calculator Tests', () => {
       const calculator = {
         width: 0,
         height: 0,
-        calculateArea: function() {
+        calculateArea: function () {
           return this.width * this.height;
-        }
+        },
       };
-      
+
       calculator.width = 10;
       calculator.height = 5;
       expect(calculator.calculateArea()).toBe(50);
@@ -22,11 +22,11 @@ describe('Dimension Calculator Tests', () => {
         width: 0,
         height: 0,
         depth: 0,
-        calculateVolume: function() {
+        calculateVolume: function () {
           return this.width * this.height * this.depth;
-        }
+        },
       };
-      
+
       calculator.width = 10;
       calculator.height = 5;
       calculator.depth = 2;
@@ -37,11 +37,11 @@ describe('Dimension Calculator Tests', () => {
       const calculator = {
         width: 0,
         height: 0,
-        calculatePerimeter: function() {
+        calculatePerimeter: function () {
           return 2 * (this.width + this.height);
-        }
+        },
       };
-      
+
       calculator.width = 10;
       calculator.height = 5;
       expect(calculator.calculatePerimeter()).toBe(30);
@@ -54,9 +54,9 @@ describe('Dimension Calculator Tests', () => {
         mmToM: (mm: number) => mm / 1000,
         mToMm: (m: number) => m * 1000,
         cmToM: (cm: number) => cm / 100,
-        mToCm: (m: number) => m * 100
+        mToCm: (m: number) => m * 100,
       };
-      
+
       expect(converter.mmToM(1000)).toBe(1);
       expect(converter.mToMm(1)).toBe(1000);
       expect(converter.cmToM(100)).toBe(1);
@@ -67,9 +67,9 @@ describe('Dimension Calculator Tests', () => {
       const calculator = {
         round: (value: number, decimals: number = 2) => {
           return Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
-        }
+        },
       };
-      
+
       expect(calculator.round(3.14159, 2)).toBe(3.14);
       expect(calculator.round(3.14159, 3)).toBe(3.142);
     });

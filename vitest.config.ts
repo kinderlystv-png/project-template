@@ -16,9 +16,9 @@ export default defineConfig({
       },
     },
 
-    // Покрытие кода
+    // Покрытие кода (включаем в CI или явно через переменную окружения COVERAGE=true)
     coverage: {
-      enabled: true,
+      enabled: process.env.CI === 'true' || process.env.COVERAGE === 'true',
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov', 'text-summary'],
       reportsDirectory: './coverage',
@@ -44,7 +44,7 @@ export default defineConfig({
       ],
 
       // Пороги для неуспешного завершения
-      thresholds: {
+  thresholds: {
         lines: 75,
         functions: 75,
         branches: 65,

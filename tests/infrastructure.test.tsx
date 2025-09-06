@@ -1,5 +1,5 @@
 // Infrastructure Component Tests
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 describe('Infrastructure Component Tests', () => {
   describe('Component Infrastructure', () => {
@@ -11,9 +11,9 @@ describe('Infrastructure Component Tests', () => {
       const mockComponent = {
         name: 'TestComponent',
         props: {},
-        render: () => 'mock render'
+        render: () => 'mock render',
       };
-      
+
       expect(mockComponent.name).toBe('TestComponent');
       expect(mockComponent.render()).toBe('mock render');
     });
@@ -22,9 +22,9 @@ describe('Infrastructure Component Tests', () => {
       const componentStructure = {
         template: '<div>test</div>',
         script: 'export default {}',
-        style: '.test { color: red; }'
+        style: '.test { color: red; }',
       };
-      
+
       expect(componentStructure.template).toContain('<div>');
       expect(componentStructure.script).toContain('export');
     });
@@ -35,9 +35,9 @@ describe('Infrastructure Component Tests', () => {
       const element = {
         type: 'div',
         props: { className: 'test' },
-        children: ['Hello World']
+        children: ['Hello World'],
       };
-      
+
       expect(element.type).toBe('div');
       expect(element.props.className).toBe('test');
     });
@@ -46,9 +46,9 @@ describe('Infrastructure Component Tests', () => {
       const lifecycle = {
         mounted: false,
         updated: false,
-        destroyed: false
+        destroyed: false,
       };
-      
+
       lifecycle.mounted = true;
       expect(lifecycle.mounted).toBe(true);
     });

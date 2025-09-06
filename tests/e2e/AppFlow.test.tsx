@@ -1,5 +1,5 @@
 // E2E App Flow Tests
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 describe('E2E App Flow Tests', () => {
   describe('Application Flow', () => {
@@ -7,9 +7,9 @@ describe('E2E App Flow Tests', () => {
       const app = {
         initialized: false,
         currentPage: 'home',
-        user: null
+        user: null,
       };
-      
+
       app.initialized = true;
       expect(app.initialized).toBe(true);
       expect(app.currentPage).toBe('home');
@@ -22,9 +22,9 @@ describe('E2E App Flow Tests', () => {
         navigate: (route: string) => {
           navigation.history.push(route);
           navigation.currentRoute = route;
-        }
+        },
       };
-      
+
       navigation.navigate('/products');
       expect(navigation.currentRoute).toBe('/products');
       expect(navigation.history).toContain('/products');
@@ -37,9 +37,9 @@ describe('E2E App Flow Tests', () => {
         click: (element: string) => {
           userActions.clicks++;
           userActions.lastAction = `clicked ${element}`;
-        }
+        },
       };
-      
+
       userActions.click('button');
       expect(userActions.clicks).toBe(1);
       expect(userActions.lastAction).toBe('clicked button');
@@ -51,22 +51,22 @@ describe('E2E App Flow Tests', () => {
       const state = {
         loading: false,
         data: null as any,
-        error: null as string | null
+        error: null as string | null,
       };
-      
+
       state.loading = true;
       state.data = { test: 'data' };
       state.loading = false;
-      
+
       expect(state.loading).toBe(false);
       expect(state.data.test).toBe('data');
     });
 
     it('should handle async operations', async () => {
       const mockApi = {
-        fetchData: () => Promise.resolve({ id: 1, name: 'test' })
+        fetchData: () => Promise.resolve({ id: 1, name: 'test' }),
       };
-      
+
       const result = await mockApi.fetchData();
       expect(result.id).toBe(1);
       expect(result.name).toBe('test');

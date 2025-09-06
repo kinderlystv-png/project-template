@@ -125,15 +125,15 @@ class MockPageImplementation implements MockPage {
       const first = parseInt(this.elements.get('[data-testid="calculator-first"]') || '0');
       const operator = this.elements.get('[data-testid="calculator-operator"]');
       const second = parseInt(this.elements.get('[data-testid="calculator-display"]') || '0');
-      
+
       let result = 0;
       if (operator === '+') result = first + second;
       else if (operator === '-') result = first - second;
       else if (operator === '*' || operator === '×') result = first * second;
       else if (operator === '/') result = first / second;
-      
+
       this.elements.set('[data-testid="calculator-display"]', String(result));
-      
+
       // Добавляем в историю калькуляций
       const calculation = `${first} ${operator} ${second} = ${result}`;
       this.calculationHistory.push(calculation);
@@ -153,7 +153,10 @@ class MockPageImplementation implements MockPage {
       const result = this.elements.get('[data-testid="calculator-display"]') || '0';
       const first = this.elements.get('[data-testid="calculator-first"]') || '0';
       const operator = this.elements.get('[data-testid="calculator-operator"]') || '+';
-      this.elements.set('[data-testid="calculation-history"]', `${first} ${operator} ${this.elements.get('[data-testid="calculator-display"]') || '0'} = ${result}`);
+      this.elements.set(
+        '[data-testid="calculation-history"]',
+        `${first} ${operator} ${this.elements.get('[data-testid="calculator-display"]') || '0'} = ${result}`
+      );
     }
 
     if (selector.includes('3d-constructor')) {
@@ -178,7 +181,7 @@ class MockPageImplementation implements MockPage {
     if (selector === '[data-testid="calculation-history"]') {
       return this.calculationHistory.join(', ') || null;
     }
-    
+
     return this.elements.get(selector) || null;
   }
 
