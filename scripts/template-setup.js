@@ -3,15 +3,15 @@
 /**
  * SHINOMONTAGKA Universal Template v2.0.0
  * Post-clone setup script for template initialization
- * 
+ *
  * This script runs automatically after cloning the template
  * to help users set up their new project quickly.
  */
 
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -51,7 +51,7 @@ class TemplateSetup {
    */
   async welcome() {
     console.log('📋 Checking prerequisites...');
-    
+
     // Check Node.js version
     const nodeVersion = process.version;
     const major = parseInt(nodeVersion.slice(1).split('.')[0]);
@@ -80,11 +80,17 @@ class TemplateSetup {
 
     this.projectInfo = {
       name: await this.prompt('Project name', 'my-awesome-app'),
-      description: await this.prompt('Project description', 'Enterprise web application built with SHINOMONTAGKA template'),
+      description: await this.prompt(
+        'Project description',
+        'Enterprise web application built with SHINOMONTAGKA template'
+      ),
       author: await this.prompt('Author name', 'Your Name'),
       email: await this.prompt('Author email', 'you@example.com'),
-      repository: await this.prompt('Repository URL', 'https://github.com/yourusername/my-awesome-app'),
-      homepage: await this.prompt('Homepage URL', 'https://my-awesome-app.com')
+      repository: await this.prompt(
+        'Repository URL',
+        'https://github.com/yourusername/my-awesome-app'
+      ),
+      homepage: await this.prompt('Homepage URL', 'https://my-awesome-app.com'),
     };
 
     console.log('\n📦 Project Configuration:');
@@ -101,17 +107,17 @@ class TemplateSetup {
     console.log('📝 Updating package.json...');
 
     const packageJson = JSON.parse(readFileSync(this.packageJsonPath, 'utf8'));
-    
+
     // Update project metadata
     packageJson.name = this.projectInfo.name;
     packageJson.description = this.projectInfo.description;
     packageJson.author = {
       name: this.projectInfo.author,
-      email: this.projectInfo.email
+      email: this.projectInfo.email,
     };
     packageJson.repository = {
       type: 'git',
-      url: this.projectInfo.repository
+      url: this.projectInfo.repository,
     };
     packageJson.homepage = this.projectInfo.homepage;
     packageJson.version = '0.1.0'; // Reset version for new project
@@ -186,9 +192,9 @@ VITE_SECURITY_SANITIZATION=true
     console.log('   This may take a few minutes...\n');
 
     try {
-      execSync('npm install', { 
-        cwd: this.projectRoot, 
-        stdio: 'inherit' 
+      execSync('npm install', {
+        cwd: this.projectRoot,
+        stdio: 'inherit',
       });
       console.log('\n✅ Dependencies installed successfully');
     } catch (error) {
@@ -205,25 +211,25 @@ VITE_SECURITY_SANITIZATION=true
     try {
       // Run type check
       console.log('   TypeScript validation...');
-      execSync('npm run type-check', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
+      execSync('npm run type-check', {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
       });
       console.log('   ✅ TypeScript validation passed');
 
       // Run linting
       console.log('   Code quality check...');
-      execSync('npm run lint', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
+      execSync('npm run lint', {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
       });
       console.log('   ✅ Linting passed');
 
       // Run tests
       console.log('   Running tests...');
-      execSync('npm run test:run', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
+      execSync('npm run test:run', {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
       });
       console.log('   ✅ Tests passed');
 
@@ -257,18 +263,16 @@ VITE_SECURITY_SANITIZATION=true
    * Simple prompt implementation
    */
   async prompt(question, defaultValue = '') {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       const readline = require('readline');
       const rl = readline.createInterface({
         input: process.stdin,
-        output: process.stdout
+        output: process.stdout,
       });
 
-      const promptText = defaultValue 
-        ? `${question} (${defaultValue}): `
-        : `${question}: `;
+      const promptText = defaultValue ? `${question} (${defaultValue}): ` : `${question}: `;
 
-      rl.question(promptText, (answer) => {
+      rl.question(promptText, answer => {
         rl.close();
         resolve(answer.trim() || defaultValue);
       });

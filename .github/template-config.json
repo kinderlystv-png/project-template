@@ -97,26 +97,17 @@
     {
       "title": "2. Environment Setup",
       "description": "Configure environment variables",
-      "commands": [
-        "cp .env.example .env.local",
-        "# Edit .env.local with your configuration"
-      ]
+      "commands": ["cp .env.example .env.local", "# Edit .env.local with your configuration"]
     },
     {
       "title": "3. Quality Check",
       "description": "Run quality assurance checks",
-      "commands": [
-        "npm run qa",
-        "npm run test"
-      ]
+      "commands": ["npm run qa", "npm run test"]
     },
     {
       "title": "4. Start Development",
       "description": "Launch development server",
-      "commands": [
-        "npm run dev",
-        "# Open http://localhost:5173"
-      ]
+      "commands": ["npm run dev", "# Open http://localhost:5173"]
     }
   ],
   "postSetupTodos": [
@@ -194,12 +185,7 @@
     }
   ],
   "techStack": {
-    "frontend": [
-      "SvelteKit 2.37+",
-      "TypeScript 5.6+",
-      "Vite 7.1+",
-      "TailwindCSS 3.4+"
-    ],
+    "frontend": ["SvelteKit 2.37+", "TypeScript 5.6+", "Vite 7.1+", "TailwindCSS 3.4+"],
     "build": [
       "Vite with advanced optimization",
       "TypeScript strict mode",
@@ -251,12 +237,7 @@
   "compatibility": {
     "node": ">=18.0.0",
     "npm": ">=9.0.0",
-    "browsers": [
-      "Chrome >= 90",
-      "Firefox >= 88",
-      "Safari >= 14",
-      "Edge >= 90"
-    ]
+    "browsers": ["Chrome >= 90", "Firefox >= 88", "Safari >= 14", "Edge >= 90"]
   },
   "license": "MIT",
   "version": "2.0.0",

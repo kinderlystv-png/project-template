@@ -1,8 +1,8 @@
 # SHINOMONTAGKA Universal Template
 # GitHub Template Repository Configuration
 
-name: "SHINOMONTAGKA Universal Template"
-description: "🚀 Enterprise-grade SvelteKit template with 12+ infrastructure systems, TypeScript, and comprehensive documentation. Production-ready with 95% Lighthouse score."
+name: 'SHINOMONTAGKA Universal Template'
+description: '🚀 Enterprise-grade SvelteKit template with 12+ infrastructure systems, TypeScript, and comprehensive documentation. Production-ready with 95% Lighthouse score.'
 
 # Template Configuration
 template: true
@@ -37,10 +37,10 @@ branch_protection_rules:
     required_status_checks:
       strict: true
       contexts:
-        - "Quality Assurance"
-        - "Type Check"
-        - "Test Suite"
-        - "Lint Check"
+        - 'Quality Assurance'
+        - 'Type Check'
+        - 'Test Suite'
+        - 'Lint Check'
     enforce_admins: false
     required_pull_request_reviews:
       required_approving_review_count: 1
@@ -85,8 +85,8 @@ pages:
 
 # Social Preview
 social_preview:
-  image: "docs/assets/social-preview.png"
-  description: "Enterprise-grade SvelteKit template with comprehensive infrastructure"
+  image: 'docs/assets/social-preview.png'
+  description: 'Enterprise-grade SvelteKit template with comprehensive infrastructure'
 
 # License
 license_template: mit
@@ -95,4 +95,4 @@ license_template: mit
 gitignore_template: node
 
 # Repository Metadata
-homepage: "https://kinderlystv-png.github.io/project-template"
+homepage: 'https://kinderlystv-png.github.io/project-template'

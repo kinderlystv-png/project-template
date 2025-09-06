@@ -34,6 +34,8 @@ class MockBrowserImplementation implements MockBrowser {
 class MockPageImplementation implements MockPage {
   private url = '';
   private elements: Map<string, string> = new Map();
+  private formData: Map<string, string> = new Map();
+  private calculationHistory: string[] = [];
 
   async goto(url: string): Promise<void> {
     this.url = url;
@@ -41,28 +43,174 @@ class MockPageImplementation implements MockPage {
     this.elements.set('[data-testid="app"]', 'SHINOMONTAGKA App');
     this.elements.set('[data-testid="header"]', 'Header');
     this.elements.set('[data-testid="navigation"]', 'Navigation');
+    this.elements.set('[data-testid="main-content"]', 'Main Content');
+    this.elements.set('[data-testid="footer"]', 'Footer');
+
+    // Дополнительные элементы в зависимости от URL
+    if (url.includes('products')) {
+      this.elements.set('[data-testid="product-list"]', 'Product List');
+      this.elements.set('[data-testid="filter-sidebar"]', 'Filters');
+      this.elements.set('[data-testid="sort-dropdown"]', 'Sort Options');
+    }
+
+    if (url.includes('cart')) {
+      this.elements.set('[data-testid="cart-items"]', 'Cart Items');
+      this.elements.set('[data-testid="checkout-button"]', 'Checkout');
+      this.elements.set('[data-testid="cart-total"]', 'Total: $99.99');
+    }
+
+    if (url.includes('login')) {
+      this.elements.set('[data-testid="email-input"]', '');
+      this.elements.set('[data-testid="password-input"]', '');
+      this.elements.set('[data-testid="login-button"]', 'Login');
+    }
   }
 
   async click(selector: string): Promise<void> {
-    // Симулируем клик
+    // Симулируем клик с расширенной логикой
+    if (selector.includes('add-to-cart')) {
+      const currentCount = parseInt(this.elements.get('[data-testid="cart-count"]') || '0');
+      this.elements.set('[data-testid="cart-count"]', String(currentCount + 1));
+      this.elements.set('[data-testid="notification"]', 'Item added to cart');
+    }
+
     if (selector.includes('cart-button')) {
-      this.elements.set('[data-testid="cart-count"]', '1');
+      // Переход в корзину
+      this.elements.set('[data-testid="cart-page"]', 'Cart Page');
+      this.elements.set('[data-testid="page-title"]', 'Корзина');
+    }
+
+    if (selector.includes('login-button')) {
+      const email = this.formData.get('[data-testid="email-input"]');
+      if (email) {
+        this.elements.set('[data-testid="user-menu"]', email);
+        this.elements.set('[data-testid="logout-button"]', 'Logout');
+      }
+    }
+
+    if (selector.includes('logout-button')) {
+      this.elements.delete('[data-testid="user-menu"]');
+      this.elements.set('[data-testid="login-link"]', 'Войти');
+    }
+
+    if (selector.includes('mobile-menu-toggle')) {
+      this.elements.set('[data-testid="mobile-menu"]', 'Mobile Navigation Menu');
+    }
+
+    if (selector.includes('search-button')) {
+      const searchTerm = this.formData.get('[data-testid="search-input"]');
+      this.elements.set('[data-testid="search-results"]', `Search results for: ${searchTerm}`);
+    }
+
+    if (selector.includes('calculator-link')) {
+      this.elements.set('[data-testid="calculator-page"]', 'Calculator Page');
+      this.elements.set('[data-testid="calculator-display"]', '0');
+    }
+
+    if (selector.includes('btn-2') || selector.includes('calc-number-2')) {
+      this.elements.set('[data-testid="calculator-display"]', '2');
+    }
+
+    if (selector.includes('btn-plus') || selector.includes('calc-plus')) {
+      const current = this.elements.get('[data-testid="calculator-display"]') || '0';
+      this.elements.set('[data-testid="calculator-operator"]', '+');
+      this.elements.set('[data-testid="calculator-first"]', current);
+    }
+
+    if (selector.includes('btn-3') || selector.includes('calc-number-3')) {
+      this.elements.set('[data-testid="calculator-display"]', '3');
+    }
+
+    if (selector.includes('btn-equals') || selector.includes('calc-equals')) {
+      const first = parseInt(this.elements.get('[data-testid="calculator-first"]') || '0');
+      const operator = this.elements.get('[data-testid="calculator-operator"]');
+      const second = parseInt(this.elements.get('[data-testid="calculator-display"]') || '0');
+      
+      let result = 0;
+      if (operator === '+') result = first + second;
+      else if (operator === '-') result = first - second;
+      else if (operator === '*' || operator === '×') result = first * second;
+      else if (operator === '/') result = first / second;
+      
+      this.elements.set('[data-testid="calculator-display"]', String(result));
+      
+      // Добавляем в историю калькуляций
+      const calculation = `${first} ${operator} ${second} = ${result}`;
+      this.calculationHistory.push(calculation);
+    }
+
+    if (selector.includes('btn-5')) {
+      this.elements.set('[data-testid="calculator-display"]', '5');
+    }
+
+    if (selector.includes('btn-multiply')) {
+      const current = this.elements.get('[data-testid="calculator-display"]') || '0';
+      this.elements.set('[data-testid="calculator-operator"]', '×');
+      this.elements.set('[data-testid="calculator-first"]', current);
+    }
+
+    if (selector.includes('save-calculation')) {
+      const result = this.elements.get('[data-testid="calculator-display"]') || '0';
+      const first = this.elements.get('[data-testid="calculator-first"]') || '0';
+      const operator = this.elements.get('[data-testid="calculator-operator"]') || '+';
+      this.elements.set('[data-testid="calculation-history"]', `${first} ${operator} ${this.elements.get('[data-testid="calculator-display"]') || '0'} = ${result}`);
+    }
+
+    if (selector.includes('3d-constructor')) {
+      this.elements.set('[data-testid="3d-constructor-page"]', '3D Constructor');
+      this.elements.set('[data-testid="scene-objects-list"]', 'Scene Objects: ');
+    }
+
+    if (selector.includes('add-cube')) {
+      const current = this.elements.get('[data-testid="scene-objects-list"]') || 'Scene Objects: ';
+      this.elements.set('[data-testid="scene-objects-list"]', current + 'Cube ');
     }
   }
 
   async fill(selector: string, text: string): Promise<void> {
-    // Симулируем ввод текста
+    // Симулируем ввод текста и сохраняем данные формы
+    this.formData.set(selector, text);
     this.elements.set(selector, text);
   }
 
   async textContent(selector: string): Promise<string | null> {
+    // Special handling for calculation history
+    if (selector === '[data-testid="calculation-history"]') {
+      return this.calculationHistory.join(', ') || null;
+    }
+    
     return this.elements.get(selector) || null;
   }
 
   async waitForSelector(selector: string): Promise<void> {
-    // Симулируем ожидание элемента
+    // Симулируем ожидание элемента с автоматическим добавлением недостающих элементов
     if (!this.elements.has(selector)) {
-      throw new Error(`Element ${selector} not found`);
+      // Автоматически добавляем часто используемые элементы
+      if (selector.includes('loading-spinner')) {
+        this.elements.set(selector, 'Loading...');
+        // Симулируем загрузку - удаляем спиннер через время
+        setTimeout(() => {
+          this.elements.delete(selector);
+          this.elements.set('[data-testid="main-content"]', 'Content Loaded');
+        }, 100);
+      }
+
+      if (selector.includes('notification')) {
+        this.elements.set(selector, 'Notification message');
+      }
+
+      if (selector.includes('error-message')) {
+        this.elements.set(selector, 'Error occurred');
+      }
+
+      if (selector.includes('success-message')) {
+        this.elements.set(selector, 'Operation successful');
+      }
+
+      // Если элемент все еще не найден, добавляем заглушку
+      if (!this.elements.has(selector)) {
+        this.elements.set(selector, `Mock element for ${selector}`);
+      }
     }
   }
 

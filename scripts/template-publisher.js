@@ -3,16 +3,16 @@
 /**
  * SHINOMONTAGKA Universal Template v2.0.0
  * Template Publication Script
- * 
+ *
  * This script prepares the template for publication on GitHub
  * and performs final validation checks.
  */
 
-import { readFileSync, writeFileSync, existsSync, statSync } from 'fs';
-import { join, dirname } from 'path';
-import { fileURLToPath } from 'url';
 import { execSync } from 'child_process';
+import { existsSync, readFileSync, statSync, writeFileSync } from 'fs';
 import { glob } from 'glob';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -58,11 +58,11 @@ class TemplatePublisher {
 
     // Check if we're on main branch
     try {
-      const branch = execSync('git branch --show-current', { 
-        cwd: this.projectRoot, 
-        encoding: 'utf8' 
+      const branch = execSync('git branch --show-current', {
+        cwd: this.projectRoot,
+        encoding: 'utf8',
       }).trim();
-      
+
       if (branch !== 'main' && branch !== 'master') {
         console.log(`⚠️  Current branch: ${branch} (recommended: main)`);
       }
@@ -72,13 +72,13 @@ class TemplatePublisher {
 
     // Check for uncommitted changes
     try {
-      execSync('git diff --exit-code', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
+      execSync('git diff --exit-code', {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
       });
-      execSync('git diff --cached --exit-code', { 
-        cwd: this.projectRoot, 
-        stdio: 'pipe' 
+      execSync('git diff --cached --exit-code', {
+        cwd: this.projectRoot,
+        stdio: 'pipe',
       });
     } catch {
       throw new Error('Uncommitted changes detected. Please commit all changes before publishing.');
@@ -87,7 +87,9 @@ class TemplatePublisher {
     // Check package.json version
     const packageJson = JSON.parse(readFileSync(join(this.projectRoot, 'package.json'), 'utf8'));
     if (packageJson.version !== this.version) {
-      throw new Error(`Package version ${packageJson.version} doesn't match expected ${this.version}`);
+      throw new Error(
+        `Package version ${packageJson.version} doesn't match expected ${this.version}`
+      );
     }
 
     console.log('✅ Prerequisites satisfied');
@@ -104,15 +106,15 @@ class TemplatePublisher {
       { name: 'Code quality (ESLint)', command: 'npm run lint' },
       { name: 'Code formatting (Prettier)', command: 'npm run format:check' },
       { name: 'Test suite', command: 'npm run test:run' },
-      { name: 'Build verification', command: 'npm run build' }
+      { name: 'Build verification', command: 'npm run build' },
     ];
 
     for (const check of checks) {
       console.log(`   Running ${check.name}...`);
       try {
-        execSync(check.command, { 
-          cwd: this.projectRoot, 
-          stdio: 'pipe' 
+        execSync(check.command, {
+          cwd: this.projectRoot,
+          stdio: 'pipe',
         });
         console.log(`   ✅ ${check.name} passed`);
       } catch (error) {
@@ -138,7 +140,7 @@ class TemplatePublisher {
       'docs/architecture.md',
       'docs/api/README.md',
       'docs/testing.md',
-      'docs/deployment.md'
+      'docs/deployment.md',
     ];
 
     for (const doc of requiredDocs) {
@@ -171,7 +173,7 @@ class TemplatePublisher {
       'tests',
       'docs',
       'scripts',
-      '.github'
+      '.github',
     ];
 
     for (const dir of requiredDirs) {
@@ -188,7 +190,7 @@ class TemplatePublisher {
       'tsconfig.json',
       '.eslintrc.cjs',
       '.prettierrc',
-      'vitest.config.ts'
+      'vitest.config.ts',
     ];
 
     for (const file of requiredFiles) {
@@ -206,7 +208,7 @@ class TemplatePublisher {
       'src/lib/security',
       'src/lib/config',
       'src/lib/error',
-      'src/lib/utils'
+      'src/lib/utils',
     ];
 
     for (const module of libModules) {
@@ -227,7 +229,7 @@ class TemplatePublisher {
 
     // Generate template stats
     const stats = await this.generateStats();
-    
+
     // Create template manifest
     const manifest = {
       name: 'SHINOMONTAGKA Universal Template',
@@ -236,7 +238,7 @@ class TemplatePublisher {
       generated: new Date().toISOString(),
       stats,
       features: await this.getFeatureList(),
-      structure: await this.getDirectoryStructure()
+      structure: await this.getDirectoryStructure(),
     };
 
     writeFileSync(
@@ -251,9 +253,9 @@ class TemplatePublisher {
    * Generate project statistics
    */
   async generateStats() {
-    const files = await glob('**/*', { 
+    const files = await glob('**/*', {
       cwd: this.projectRoot,
-      ignore: ['node_modules/**', '.git/**', 'dist/**', 'build/**']
+      ignore: ['node_modules/**', '.git/**', 'dist/**', 'build/**'],
     });
 
     const stats = {
@@ -262,7 +264,7 @@ class TemplatePublisher {
       svelte: files.filter(f => f.endsWith('.svelte')).length,
       tests: files.filter(f => f.includes('.test.') || f.includes('.spec.')).length,
       documentation: files.filter(f => f.endsWith('.md')).length,
-      configuration: files.filter(f => f.includes('config') || f.startsWith('.')).length
+      configuration: files.filter(f => f.includes('config') || f.startsWith('.')).length,
     };
 
     return stats;
@@ -284,7 +286,7 @@ class TemplatePublisher {
       'Comprehensive Testing (85% coverage)',
       'Quality Assurance Pipeline',
       'CI/CD Ready',
-      'Complete Documentation'
+      'Complete Documentation',
     ];
   }
 
@@ -293,9 +295,9 @@ class TemplatePublisher {
    */
   async getDirectoryStructure() {
     const structure = {};
-    const files = await glob('**/index.{ts,js,svelte}', { 
+    const files = await glob('**/index.{ts,js,svelte}', {
       cwd: this.projectRoot,
-      ignore: ['node_modules/**', '.git/**']
+      ignore: ['node_modules/**', '.git/**'],
     });
 
     files.forEach(file => {
@@ -360,7 +362,7 @@ scripts/template-publisher.js export-ignore
     console.log('   ✅ Template structure validated');
     console.log('   ✅ Metadata generated');
     console.log('   ✅ Release assets created');
-    
+
     console.log('\n🚀 Next Steps:');
     console.log('   1. Push to GitHub: git push origin main');
     console.log('   2. Create GitHub release: v2.0.0');

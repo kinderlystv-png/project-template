@@ -39,17 +39,20 @@ This project adheres to a [Code of Conduct](./CODE_OF_CONDUCT.md). By participat
 
 1. **Fork** the repository on GitHub
 2. **Clone** your fork locally:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/project-template.git
    cd project-template
    ```
 
 3. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 4. **Start development server:**
+
    ```bash
    npm run dev
    ```
@@ -69,7 +72,7 @@ Install these extensions for the best development experience:
 {
   "recommendations": [
     "svelte.svelte-vscode",
-    "bradlc.vscode-tailwindcss", 
+    "bradlc.vscode-tailwindcss",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "ms-vscode.vscode-typescript-next",
@@ -105,13 +108,16 @@ The project includes several quality tools that run automatically:
 ### 1. Choose What to Contribute
 
 #### Good First Issues
+
 Look for issues labeled with:
+
 - `good first issue` - Perfect for new contributors
 - `documentation` - Documentation improvements
 - `enhancement` - New features or improvements
 - `bug` - Bug fixes
 
 #### Areas We Need Help With
+
 - 📚 **Documentation** - Improving guides and examples
 - 🧪 **Testing** - Adding test coverage
 - 🎨 **UI/UX** - Component improvements
@@ -122,6 +128,7 @@ Look for issues labeled with:
 ### 2. Discuss Before Building
 
 For significant changes:
+
 1. **Open an issue** to discuss the approach
 2. **Get feedback** from maintainers
 3. **Plan the implementation** together
@@ -160,11 +167,11 @@ interface CacheOptions {
 
 class CacheManager implements CacheInterface {
   private options: CacheOptions;
-  
+
   constructor(options: CacheOptions) {
     this.options = options;
   }
-  
+
   public set<T>(key: string, value: T): void {
     // Implementation
   }
@@ -173,11 +180,11 @@ class CacheManager implements CacheInterface {
 // ❌ Bad - No types, unclear naming
 class Cache {
   private opts;
-  
+
   constructor(opts) {
     this.opts = opts;
   }
-  
+
   set(k, v) {
     // Implementation
   }
@@ -238,21 +245,21 @@ Every contribution should include appropriate tests:
 // Example test structure
 describe('CacheManager', () => {
   let cache: CacheManager;
-  
+
   beforeEach(() => {
     cache = new CacheManager({ ttl: 1000, maxSize: 100 });
   });
-  
+
   afterEach(() => {
     cache.clear();
   });
-  
+
   describe('set()', () => {
     it('should store value with key', () => {
       cache.set('key', 'value');
       expect(cache.get('key')).toBe('value');
     });
-    
+
     it('should handle TTL expiration', async () => {
       cache.set('key', 'value', { ttl: 10 });
       await new Promise(resolve => setTimeout(resolve, 20));
@@ -265,7 +272,7 @@ describe('CacheManager', () => {
 ### Testing Requirements
 
 - **Unit tests** for all new functions/classes
-- **Integration tests** for module interactions  
+- **Integration tests** for module interactions
 - **Component tests** for UI components
 - **E2E tests** for critical user flows (when applicable)
 - **Performance tests** for optimization features
@@ -296,10 +303,11 @@ npm run test -- cache.test.ts
 All contributions should include appropriate documentation:
 
 #### Code Documentation
-```typescript
+
+````typescript
 /**
  * Advanced cache manager with multi-level support
- * 
+ *
  * @example
  * ```typescript
  * const cache = new CacheManager({
@@ -307,7 +315,7 @@ All contributions should include appropriate documentation:
  *   maxSize: 1000,
  *   compression: true
  * });
- * 
+ *
  * cache.set('user:123', userData);
  * const user = cache.get('user:123');
  * ```
@@ -323,9 +331,10 @@ export class CacheManager {
     // Implementation
   }
 }
-```
+````
 
 #### README Updates
+
 When adding new features, update relevant documentation:
 
 - **Main README.md** - If it affects the main API
@@ -334,6 +343,7 @@ When adding new features, update relevant documentation:
 - **docs/testing.md** - For testing utilities
 
 #### Examples and Guides
+
 Provide practical examples:
 
 ```typescript
@@ -345,14 +355,14 @@ const cache = new CacheManager({
   ttl: 3600, // 1 hour
   maxSize: 1000, // Maximum items
   compression: true, // Enable compression
-  stats: true // Track statistics
+  stats: true, // Track statistics
 });
 
 // Store user data
 cache.set('user:123', {
   id: 123,
   name: 'John Doe',
-  email: 'john@example.com'
+  email: 'john@example.com',
 });
 
 // Retrieve user data
@@ -410,23 +420,28 @@ Use this template for your PR description:
 
 ```markdown
 ## Description
+
 Brief description of changes
 
 ## Type of Change
+
 - [ ] Bug fix (non-breaking change which fixes an issue)
 - [ ] New feature (non-breaking change which adds functionality)
 - [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 - [ ] Documentation update
 
 ## Testing
+
 - [ ] Tests added/updated
 - [ ] All tests passing
 - [ ] Quality checks passing
 
 ## Screenshots (if applicable)
+
 Add screenshots to help explain your changes
 
 ## Checklist
+
 - [ ] My code follows the style guidelines
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
@@ -469,6 +484,7 @@ If you need help:
 ### Recognition
 
 Contributors are recognized in:
+
 - **Contributors section** in README
 - **Release notes** for significant contributions
 - **GitHub contributors graph**

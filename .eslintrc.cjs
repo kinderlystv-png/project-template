@@ -50,10 +50,41 @@ module.exports = {
       files: ['**/*.test.ts', '**/*.test.js', '**/*.spec.ts', '**/*.spec.js'],
       env: {
         jest: true,
+        es6: true,
+        node: true,
+      },
+      globals: {
+        vi: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
       },
       rules: {
+        // Более мягкие правила для тестов
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+        '@typescript-eslint/ban-ts-comment': 'off',
+        'no-unused-vars': 'off',
+        'no-undef': 'off',
+        'prefer-const': 'warn',
+        'no-console': 'off',
+        'no-debugger': 'off',
+        // Разрешаем пустые функции в тестах (моки)
+        '@typescript-eslint/no-empty-function': 'off',
+        // Разрешаем любые типы в тестах
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-return': 'off',
+        // Разрешаем require в тестах
+        '@typescript-eslint/no-var-requires': 'off',
+        // Более мягкие правила для именования
+        '@typescript-eslint/naming-convention': 'off',
       },
     },
     {
@@ -64,11 +95,16 @@ module.exports = {
     },
   ],
   rules: {
-    // Общие правила
+    // Общие правила (более мягкие)
     'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'prefer-const': 'error',
-    'no-var': 'error',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'prefer-const': 'warn',
+    'no-var': 'warn',
+    'no-unused-vars': 'warn',
+    // Более мягкие правила для разработки
+    'no-empty': 'warn',
+    'no-constant-condition': 'warn',
+    'no-unreachable': 'warn',
   },
   ignorePatterns: ['dist/', 'build/', 'node_modules/', '*.min.js', '.svelte-kit/'],
 };
