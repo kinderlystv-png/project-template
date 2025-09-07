@@ -70,6 +70,7 @@ export default defineConfig({
       '**/.svelte-kit/**',
       '**/coverage/**',
       '**/*.config.{js,ts}',
+      '**/tests/e2e/**', // Исключаем Playwright E2E тесты
     ],
 
     // Репортеры

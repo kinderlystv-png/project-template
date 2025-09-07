@@ -2,7 +2,7 @@ name: Pull Request Checks
 
 on:
   pull_request:
-    branches: [main, develop]
+    branches: [master]
   pull_request_review:
     types: [submitted]
 

@@ -31,7 +31,13 @@
   "bugs": {
     "url": "https://github.com/kinderlystv-png/project-template/issues"
   },
+  "packageManager": "pnpm@8.15.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite --host",
     "dev:debug": "vite --debug --host",
     "dev:https": "vite --https --host",
@@ -59,6 +65,10 @@
     "test:performance": "vitest run tests/performance",
     "test:visual": "vitest run tests/visual",
     "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report tests/reports/e2e-html",
     "test:all": "pwsh ./scripts/run-all-tests.ps1",
     "test:quick": "pwsh ./scripts/test-runner.ps1",
     "test:parallel": "vitest run --reporter=verbose --pool=threads",
@@ -96,6 +106,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
+    "@playwright/test": "^1.55.0",
     "@sveltejs/adapter-auto": "^6.1.0",
     "@sveltejs/kit": "^2.37.0",
     "@sveltejs/vite-plugin-svelte": "^6.1.4",
