@@ -1,0 +1,97 @@
+{
+  "name": "@shinomontagka/eap-analyzer",
+  "version": "1.0.0",
+  "description": "Эталонный Анализатор Проектов (ЭАП) - инструмент для анализа проектов на соответствие золотому стандарту разработки SHINOMONTAGKA",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "eap": "./bin/eap.js",
+    "eap-analyze": "./bin/eap.js",
+    "golden-analyze": "./bin/eap.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "dev": "tsx src/index.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts",
+    "analyze": "node bin/eap.js",
+    "analyze:current": "node bin/eap.js .",
+    "analyze:demo": "node bin/eap.js ../",
+    "prepublishOnly": "npm run build",
+    "clean": "rimraf dist"
+  },
+  "keywords": [
+    "code-quality",
+    "project-analysis",
+    "golden-standard",
+    "shinomontagka",
+    "static-analysis",
+    "project-auditing",
+    "development-standards",
+    "typescript",
+    "eslint",
+    "testing",
+    "docker",
+    "ci-cd"
+  ],
+  "author": {
+    "name": "SHINOMONTAGKA Team",
+    "url": "https://github.com/kinderlystv-png"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinderlystv-png/project-template.git",
+    "directory": "eap-analyzer"
+  },
+  "bugs": {
+    "url": "https://github.com/kinderlystv-png/project-template/issues"
+  },
+  "homepage": "https://github.com/kinderlystv-png/project-template#readme",
+  "files": [
+    "dist/**/*",
+    "bin/**/*",
+    "templates/**/*",
+    "docs/**/*",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^11.1.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "semver": "^7.5.4",
+    "yaml": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.0",
+    "@types/semver": "^7.5.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "@vitest/coverage-v8": "^1.2.0",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "prettier": "^3.2.4",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
