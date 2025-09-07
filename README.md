@@ -91,7 +91,48 @@ npm run test:ui      # UI для тестов
 npm run lint         # Проверка линтером
 npm run format       # Форматирование
 npm run type-check   # Проверка типов
+
+# Docker (рекомендуется)
+npm run docker:dev   # Разработка в контейнере
+npm run docker:test  # Тесты в контейнере
+npm run docker:prod  # Продакшн в контейнере
 ```
+
+## 🐳 Docker Support
+
+Проект полностью контейнеризован с использованием Docker для обеспечения консистентной среды разработки.
+
+### Быстрый старт с Docker
+
+```bash
+# Установка Docker (если не установлен)
+# См. docs/DOCKER-INSTALL.md
+
+# Запуск в разработке
+npm run docker:dev
+
+# Запуск тестов
+npm run docker:test
+
+# Продакшн
+npm run docker:prod
+```
+
+### Docker команды
+
+```bash
+# Windows (PowerShell)
+.\docker\run.ps1 dev                    # Разработка
+.\docker\run.ps1 test                   # Тестирование
+.\docker\run.ps1 prod -Detached         # Продакшн в фоне
+
+# Linux/macOS
+./docker/run.sh development             # Разработка
+./docker/run.sh test                    # Тестирование
+./docker/run.sh production              # Продакшн
+```
+
+**📚 Подробная документация**: [docs/DOCKER.md](docs/DOCKER.md)
 
 # Start development server
 

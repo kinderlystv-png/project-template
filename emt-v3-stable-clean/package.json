@@ -1,0 +1,45 @@
+{
+  "name": "emt-stable",
+  "version": "3.0.0-stable",
+  "type": "module",
+  "description": "🎯 Эталонный Модуль Тестирования v3.0-stable - Production Ready",
+  "main": "utils/project-detector-v3.0-stable.js",
+  "bin": {
+    "emt": "utils/project-detector-v3.0-stable.js",
+    "emt-stable": "utils/project-detector-v3.0-stable.js"
+  },
+  "scripts": {
+    "start": "node utils/project-detector-v3.0-stable.js",
+    "diagnose": "node utils/project-detector-v3.0-stable.js --diagnose",
+    "help": "node utils/project-detector-v3.0-stable.js --help",
+    "version": "node utils/project-detector-v3.0-stable.js --version"
+  },
+  "keywords": [
+    "testing",
+    "vitest",
+    "integration",
+    "stable",
+    "production-ready",
+    "nextjs",
+    "react",
+    "vue",
+    "svelte",
+    "angular"
+  ],
+  "author": "ЭМТ Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/emt"
+  },
+  "homepage": "https://github.com/your-org/emt#readme",
+  "files": [
+    "utils/project-detector-v3.0-stable.js",
+    "README.md",
+    "DEPLOYMENT.md",
+    "CHANGELOG.md"
+  ]
+}

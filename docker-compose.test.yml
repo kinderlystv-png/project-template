@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  test:
+    build:
+      context: .
+      target: test
+      dockerfile: Dockerfile
+    container_name: shinomontagka-test
+    environment:
+      - NODE_ENV=test
+      - CI=true
+    env_file:
+      - .env.test
+    volumes:
+      - ./coverage:/app/coverage:delegated
+      - ./test-results:/app/test-results:delegated
+    command: pnpm test:coverage
+    networks:
+      - shinomontagka-test-network
+
+  test-e2e:
+    build:
+      context: .
+      target: builder
+      dockerfile: Dockerfile
+    container_name: shinomontagka-test-e2e
+    environment:
+      - NODE_ENV=test
+      - CI=true
+    env_file:
+      - .env.test
+    volumes:
+      - ./test-results:/app/test-results:delegated
+    command: pnpm test:e2e
+    depends_on:
+      - test
+    networks:
+      - shinomontagka-test-network
+
+networks:
+  shinomontagka-test-network:
+    driver: bridge
