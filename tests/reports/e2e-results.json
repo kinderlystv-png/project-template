@@ -10,7 +10,9 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 4
+    },
     "preserveOutput": "always",
     "reporter": [
       [
@@ -43,7 +45,9 @@
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "setup",
         "name": "setup",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
@@ -55,60 +59,70 @@
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
         "testIgnore": [],
-        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "testMatch": ["**/*.spec.ts"],
         "timeout": 30000
       },
       {
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "firefox",
         "name": "firefox",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
         "testIgnore": [],
-        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "testMatch": ["**/*.spec.ts"],
         "timeout": 30000
       },
       {
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "webkit",
         "name": "webkit",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
         "testIgnore": [],
-        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "testMatch": ["**/*.spec.ts"],
         "timeout": 30000
       },
       {
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
         "testIgnore": [],
-        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "testMatch": ["**/*.spec.ts"],
         "timeout": 30000
       },
       {
         "outputDir": "C:/alphacore/SHINOMONTAGKA/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 4
+        },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
         "testDir": "C:/alphacore/SHINOMONTAGKA/tests/e2e",
         "testIgnore": [],
-        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
+        "testMatch": ["**/*.spec.ts"],
         "timeout": 30000
       }
     ],
@@ -124,23 +138,1237 @@
       "timeout": 60000
     }
   },
-  "suites": [],
-  "errors": [
+  "suites": [
     {
-      "message": "TypeError: Cannot redefine property: Symbol($$jest-matchers-object)",
-      "stack": "TypeError: Cannot redefine property: Symbol($$jest-matchers-object)\n    at C:\\alphacore\\SHINOMONTAGKA\\node_modules\\@vitest\\expect\\dist\\index.js:667:9"
-    },
-    {
-      "message": "TypeError: Cannot redefine property: Symbol($$jest-matchers-object)",
-      "stack": "TypeError: Cannot redefine property: Symbol($$jest-matchers-object)\n    at C:\\alphacore\\SHINOMONTAGKA\\node_modules\\@vitest\\expect\\dist\\index.js:667:9"
+      "title": "real-e2e.spec.ts",
+      "file": "real-e2e.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Real E2E Tests",
+          "file": "real-e2e.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load homepage successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1458,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:15.644Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-517ae72e1dc5b3a67523",
+              "file": "real-e2e.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should have working navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:15.595Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-f3299b1076804a1d8c76",
+              "file": "real-e2e.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should be responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2647,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:15.628Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-98dbb64425ff2b859f3f",
+              "file": "real-e2e.spec.ts",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should have accessible content",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1527,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 31,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 31,
+                            "line": 45
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n\n\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:15.713Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 31,
+                        "line": 45
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-12d46153c8c659c9f415",
+              "file": "real-e2e.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should handle JavaScript interactions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1077,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:17.682Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-fa8a1ffbf0bb2ab35043",
+              "file": "real-e2e.spec.ts",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "should load homepage successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 3660,
+                      "error": {
+                        "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 16,
+                          "line": 5
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:19.557Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-load-homepage-successfully-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-load-homepage-successfully-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-load-homepage-successfully-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 16,
+                        "line": 5
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-148a8cdf72999c5e98fd",
+              "file": "real-e2e.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should have working navigation",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 4705,
+                      "error": {
+                        "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 16,
+                          "line": 5
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:19.541Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-working-navigation-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-working-navigation-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-working-navigation-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 16,
+                        "line": 5
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-e08acdef6dff822a532d",
+              "file": "real-e2e.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should be responsive",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 4264,
+                      "error": {
+                        "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 16,
+                          "line": 5
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:20.335Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-be-responsive-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-be-responsive-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-be-responsive-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 16,
+                        "line": 5
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-b7bfa4cddeb6b6ced235",
+              "file": "real-e2e.spec.ts",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should have accessible content",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 4084,
+                      "error": {
+                        "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 16,
+                          "line": 5
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:20.386Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-firefox\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 16,
+                        "line": 5
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-3cacc883baabfe64ce21",
+              "file": "real-e2e.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should handle JavaScript interactions",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 4018,
+                      "error": {
+                        "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 16,
+                          "line": 5
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 16,
+                            "line": 5
+                          },
+                          "message": "Error: page.goto: NS_ERROR_NET_ERROR_RESPONSE\nCall log:\n\u001b[2m  - navigating to \"http://localhost:4173/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 3 |\u001b[39m test\u001b[33m.\u001b[39mdescribe(\u001b[32m'Real E2E Tests'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\n \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 6 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 7 |\u001b[39m\n \u001b[90m 8 |\u001b[39m   test(\u001b[32m'should load homepage successfully'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:5:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:28.613Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-sh-3274b-dle-JavaScript-interactions-firefox\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-sh-3274b-dle-JavaScript-interactions-firefox\\video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 16,
+                        "line": 5
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-24907259cb51dfb00c04",
+              "file": "real-e2e.spec.ts",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "should load homepage successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4531,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:29.261Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-bda4aea70543291c7a7f",
+              "file": "real-e2e.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should have working navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3952,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:30.986Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-5c7100bd8691cab69d20",
+              "file": "real-e2e.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should be responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5341,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:31.320Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-11131cb6b2f16aca2b6c",
+              "file": "real-e2e.spec.ts",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should have accessible content",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1617,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 31,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 31,
+                            "line": 45
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n\n\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:35.152Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-webkit\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-webkit\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 31,
+                        "line": 45
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-119d3e9d194d37d416a5",
+              "file": "real-e2e.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should handle JavaScript interactions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2046,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:35.484Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-3270c5b74c6bedf18f74",
+              "file": "real-e2e.spec.ts",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "should load homepage successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1321,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:39.349Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-8234542e02d835bea24c",
+              "file": "real-e2e.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should have working navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 961,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:39.436Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-e19e51d0015754d22369",
+              "file": "real-e2e.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should be responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 5145,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:39.663Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-7d9538fd122a21e8b532",
+              "file": "real-e2e.spec.ts",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should have accessible content",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1016,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 31,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 31,
+                            "line": 45
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n\n\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:40.541Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Chrome\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Chrome\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Chrome\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 31,
+                        "line": 45
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-7cf100eff06f0174287b",
+              "file": "real-e2e.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should handle JavaScript interactions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1840,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:40.767Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-d7c365aa74140136a270",
+              "file": "real-e2e.spec.ts",
+              "line": 53,
+              "column": 3
+            },
+            {
+              "title": "should load homepage successfully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 1466,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:44.275Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-e5a2bb593d93ba41f187",
+              "file": "real-e2e.spec.ts",
+              "line": 8,
+              "column": 3
+            },
+            {
+              "title": "should have working navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1378,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:46.395Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-24a391e402446927717d",
+              "file": "real-e2e.spec.ts",
+              "line": 16,
+              "column": 3
+            },
+            {
+              "title": "should be responsive",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3751,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:46.261Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-1cb77464eb8e59a77b04",
+              "file": "real-e2e.spec.ts",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should have accessible content",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 692,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31",
+                        "location": {
+                          "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                          "column": 31,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                            "column": 31,
+                            "line": 45
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: locator('main, [role=\"main\"], body') resolved to 2 elements:\n    1) <body data-sveltekit-preload-data=\"hover\">…</body> aka locator('body')\n    2) <main class=\"container svelte-18kc5xu\">…</main> aka getByRole('main')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('main, [role=\"main\"], body')\u001b[22m\n\n\n\u001b[0m \u001b[90m 43 |\u001b[39m     \u001b[90m// Базовые проверки доступности\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m mainContent \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'main, [role=\"main\"], body'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     \u001b[36mawait\u001b[39m expect(mainContent)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[90m// Проверяем, что есть заголовки\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mconst\u001b[39m headings \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1, h2, h3, h4, h5, h6'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts:45:31\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:49.659Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Safari\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Safari\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\alphacore\\SHINOMONTAGKA\\test-results\\real-e2e-Real-E2E-Tests-should-have-accessible-content-Mobile-Safari\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\alphacore\\SHINOMONTAGKA\\tests\\e2e\\real-e2e.spec.ts",
+                        "column": 31,
+                        "line": 45
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-8043b21d2348608c0f32",
+              "file": "real-e2e.spec.ts",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should handle JavaScript interactions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 2040,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-07T18:22:45.990Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a38bbe54c97e9e897c5e-69995b9f9e7c717a87bd",
+              "file": "real-e2e.spec.ts",
+              "line": 53,
+              "column": 3
+            }
+          ]
+        }
+      ]
     }
   ],
+  "errors": [],
   "stats": {
-    "startTime": "2025-09-07T18:00:13.632Z",
-    "duration": 3911.015,
-    "expected": 0,
+    "startTime": "2025-09-07T18:22:09.412Z",
+    "duration": 41341.899000000005,
+    "expected": 16,
     "skipped": 0,
-    "unexpected": 0,
+    "unexpected": 9,
     "flaky": 0
   }
 }
