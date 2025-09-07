@@ -37,7 +37,7 @@
     },
 
     // Для тестов
-    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom", "@types/three", "node"]
+    "types": ["vite/client", "vitest/globals", "@testing-library/jest-dom", "node"]
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.js", "src/**/*.svelte"],
   "exclude": ["node_modules", "dist", "build", "vite.config.ts", "*.config.ts", "*.config.js"],

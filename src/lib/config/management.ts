@@ -603,11 +603,11 @@ export class AdvancedConfigManager {
   }
 
   private getByPath(obj: Record<string, unknown>, path: string): unknown {
-    return path.split('.').reduce((current, key) => {
+    return path.split('.').reduce((current: unknown, key) => {
       return current && typeof current === 'object' && key in current
         ? (current as Record<string, unknown>)[key]
         : undefined;
-    }, obj);
+    }, obj as unknown);
   }
 
   private setByPath(obj: Record<string, unknown>, path: string, value: unknown): void {

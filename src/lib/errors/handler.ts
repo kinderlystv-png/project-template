@@ -198,7 +198,7 @@ export class ErrorHandler {
     return messages[code] || 'Произошла непредвиденная ошибка.';
   }
 
-  private async reportError(error: AppError): void {
+  private async reportError(error: AppError): Promise<void> {
     if (!this.config.reportEndpoint) return;
 
     try {

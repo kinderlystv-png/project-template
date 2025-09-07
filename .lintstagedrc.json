@@ -1,7 +1,5 @@
 {
-  "staged": {
-    "*.{js,ts,svelte}": ["eslint --fix", "prettier --write"],
-    "*.{css,scss,sass}": ["prettier --write"],
-    "*.{json,md,yml,yaml}": ["prettier --write"]
-  }
+  "*.{js,ts,svelte}": ["eslint --fix", "prettier --write"],
+  "*.{css,scss,sass}": ["prettier --write"],
+  "*.{json,md,yml,yaml}": ["prettier --write"]
 }

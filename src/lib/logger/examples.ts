@@ -159,14 +159,7 @@ export class ComponentLogger {
         component: 'Calculator',
         operation,
         inputs: { a, b },
-        error:
-          error instanceof Error
-            ? {
-                name: error.name,
-                message: error.message,
-                stack: error.stack,
-              }
-            : 'Unknown error',
+        error: error instanceof Error ? error : new Error(String(error)),
       });
       throw error;
     }
@@ -224,8 +217,8 @@ measureLoadTime();
 window.addEventListener('error', event => {
   log.fatal('Необработанная ошибка JavaScript', {
     category: 'error',
-    error: {
-      message: event.message,
+    error: new Error(`${event.message} at ${event.filename}:${event.lineno}:${event.colno}`),
+    details: {
       filename: event.filename,
       line: event.lineno,
       column: event.colno,

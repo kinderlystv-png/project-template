@@ -257,7 +257,7 @@ global.IntersectionObserver = vi.fn().mockImplementation(() => ({
 }));
 
 // Мок для requestAnimationFrame
-global.requestAnimationFrame = vi.fn(cb => setTimeout(cb, 16));
+global.requestAnimationFrame = vi.fn(cb => setTimeout(cb, 16) as unknown as number);
 global.cancelAnimationFrame = vi.fn();
 
 // Мок для localStorage

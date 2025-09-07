@@ -191,9 +191,10 @@ export class OptimizedAPIClient {
     }
 
     // Базовая конфигурация запроса
+    const { cache: _, ...standardFetchConfig } = fetchConfig;
     let requestConfig: RequestInit & { url: string } = {
       method: 'GET',
-      ...fetchConfig,
+      ...standardFetchConfig,
       url,
       headers: {
         ...this.config.defaultHeaders,
@@ -515,7 +516,9 @@ export class OptimizedAPIClientFactory {
       });
 
       if (response.errors?.length) {
-        throw new AppError('GraphQL Error', 'GRAPHQL_ERROR', 400, true, response.errors);
+        throw new AppError('GraphQL Error', 'GRAPHQL_ERROR', 400, true, {
+          errors: response.errors,
+        });
       }
 
       return response.data;

@@ -141,13 +141,15 @@ export class MigrationManager {
         if (!result.success) {
           logger.error('Rollback failed, stopping', {
             version: migration.version,
-            error: result.error?.message,
+            error: result.error ? new Error(result.error.message || 'Unknown error') : undefined,
           });
           break;
         }
       }
     } catch (error) {
-      logger.error('Rollback execution failed', { error: error.message });
+      logger.error('Rollback execution failed', {
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
       throw error;
     } finally {
       this.isRunning.set(false);
@@ -195,13 +197,13 @@ export class MigrationManager {
   // Store accessors
   get stores() {
     return {
-      executed: readable([], set => {
+      executed: readable([] as MigrationStatus[], set => {
         return this.executedMigrations.subscribe(set);
       }),
       isRunning: readable(false, set => {
         return this.isRunning.subscribe(set);
       }),
-      current: readable(null, set => {
+      current: readable(null as Migration | null, set => {
         return this.currentMigration.subscribe(set);
       }),
       pending: derived([this.executedMigrations], ([$executed]) => {
@@ -257,7 +259,7 @@ export class MigrationManager {
 
       logger.error('Migration failed', {
         version: migration.version,
-        error: error.message,
+        error: error instanceof Error ? error : new Error(String(error)),
         executionTime: result.executionTime,
       });
 
@@ -303,7 +305,7 @@ export class MigrationManager {
 
       logger.error('Migration rollback failed', {
         version: migration.version,
-        error: error.message,
+        error: error instanceof Error ? error : new Error(String(error)),
         executionTime: result.executionTime,
       });
 
@@ -334,14 +336,16 @@ export class MigrationManager {
       const executed = stored ? JSON.parse(stored) : [];
 
       // Преобразуем даты обратно из строк
-      const processedExecuted = executed.map((item: any) => ({
+      const processedExecuted = executed.map((item: MigrationStatus) => ({
         ...item,
         executedAt: item.executedAt ? new Date(item.executedAt) : undefined,
       }));
 
       this.executedMigrations.set(processedExecuted);
     } catch (error) {
-      logger.error('Failed to load executed migrations', { error: error.message });
+      logger.error('Failed to load executed migrations', {
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
       this.executedMigrations.set([]);
     }
   }
@@ -351,7 +355,9 @@ export class MigrationManager {
     try {
       localStorage.setItem(this.config.storageKey, JSON.stringify(executed));
     } catch (error) {
-      logger.error('Failed to save executed migrations', { error: error.message });
+      logger.error('Failed to save executed migrations', {
+        error: error instanceof Error ? error : new Error(String(error)),
+      });
     }
   }
 

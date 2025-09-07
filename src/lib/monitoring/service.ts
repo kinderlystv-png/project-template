@@ -92,9 +92,12 @@ export class MonitoringService {
     try {
       const clsObserver = new PerformanceObserver(list => {
         for (const entry of list.getEntries()) {
-          const layoutShiftEntry = entry as LayoutShift;
+          const layoutShiftEntry = entry as PerformanceEntry & {
+            hadRecentInput?: boolean;
+            value?: number;
+          };
           if (!layoutShiftEntry.hadRecentInput) {
-            clsValue += layoutShiftEntry.value;
+            clsValue += layoutShiftEntry.value || 0;
             this.recordWebVital('CLS', clsValue);
           }
         }
