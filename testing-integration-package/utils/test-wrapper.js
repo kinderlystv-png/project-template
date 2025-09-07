@@ -3,7 +3,7 @@
  * Единый интерфейс для всех фреймворков
  */
 
-import { vi, afterEach, beforeAll } from 'vitest';
+import { afterEach, beforeAll, vi } from 'vitest';
 
 /**
  * Автоматически определяет и загружает нужную testing library

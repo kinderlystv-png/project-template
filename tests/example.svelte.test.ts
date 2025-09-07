@@ -1,5 +1,5 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent } from '@testing-library/svelte/svelte5';
+import { fireEvent, render, screen } from '@testing-library/svelte/svelte5';
+import { describe, expect, it, vi } from 'vitest';
 import TestButton from './components/TestButton.svelte';
 
 describe('Example Svelte Test', () => {
