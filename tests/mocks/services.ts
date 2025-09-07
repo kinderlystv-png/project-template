@@ -88,58 +88,6 @@ export const mockRouter = {
   currentRoute: { path: '/', name: 'home' },
 };
 
-// Mock 3D движка (для Constructor3D)
-export const mock3DEngine = {
-  scene: {
-    add: vi.fn(),
-    remove: vi.fn(),
-    clear: vi.fn(),
-    children: [],
-  },
-  camera: {
-    position: { x: 0, y: 0, z: 5 },
-    rotation: { x: 0, y: 0, z: 0 },
-    lookAt: vi.fn(),
-    updateProjectionMatrix: vi.fn(),
-  },
-  renderer: {
-    render: vi.fn(),
-    setSize: vi.fn(),
-    domElement: document.createElement('canvas'),
-  },
-  controls: {
-    update: vi.fn(),
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-  },
-};
-
-// Mock геометрии и материалов
-export const mockGeometry = {
-  BoxGeometry: vi.fn(),
-  SphereGeometry: vi.fn(),
-  PlaneGeometry: vi.fn(),
-  CylinderGeometry: vi.fn(),
-};
-
-export const mockMaterial = {
-  MeshBasicMaterial: vi.fn(),
-  MeshStandardMaterial: vi.fn(),
-  MeshPhongMaterial: vi.fn(),
-};
-
-// Mock калькулятора
-export const mockCalculator = {
-  result: 0,
-  operation: '',
-  display: '0',
-  history: [],
-  calculate: vi.fn(),
-  clear: vi.fn(),
-  addToHistory: vi.fn(),
-  clearHistory: vi.fn(),
-};
-
 // Mock WebGL контекста
 export const mockWebGLContext = {
   canvas: document.createElement('canvas'),
@@ -245,8 +193,4 @@ export const resetAllMocks = () => {
   mockCart.total = 0;
   mockCart.itemCount = 0;
   mockUser.isAuthenticated = false;
-  mockCalculator.result = 0;
-  mockCalculator.operation = '';
-  mockCalculator.display = '0';
-  mockCalculator.history = [];
 };

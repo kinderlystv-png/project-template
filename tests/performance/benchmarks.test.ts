@@ -101,37 +101,7 @@ class PerformanceTester {
 }
 
 // Моки функций для тестирования производительности
-class CalculatorPerformance {
-  static calculate(operation: string, a: number, b: number): number {
-    switch (operation) {
-      case '+':
-        return a + b;
-      case '-':
-        return a - b;
-      case '*':
-        return a * b;
-      case '/':
-        return a / b;
-      default:
-        throw new Error('Unknown operation');
-    }
-  }
-
-  static calculateComplex(numbers: number[]): number {
-    return numbers.reduce((acc, num, index) => {
-      if (index % 2 === 0) {
-        return acc + num * Math.sin(num);
-      } else {
-        return acc - num * Math.cos(num);
-      }
-    }, 0);
-  }
-
-  static factorial(n: number): number {
-    if (n <= 1) return 1;
-    return n * this.factorial(n - 1);
-  }
-}
+// Удален CalculatorPerformance - компоненты калькуляторов удалены
 
 class DataProcessing {
   static sortLargeArray(size: number): number[] {
@@ -200,54 +170,6 @@ describe('Performance Tests', () => {
   beforeEach(() => {
     // Очистка DOM после каждого теста
     DOM_Operations.removeFromDocument();
-  });
-
-  describe('Calculator Performance', () => {
-    it('should perform basic calculations quickly', async () => {
-      const metrics = await PerformanceTester.runBenchmark(
-        'basic calculation',
-        () => CalculatorPerformance.calculate('+', 123.456, 789.123),
-        { maxExecutionTime: 1, iterations: 1000 }
-      );
-
-      expect(metrics.executionTime).toBeLessThan(1);
-    });
-
-    it('should handle complex calculations efficiently', async () => {
-      const largeNumberArray = Array.from({ length: 1000 }, (_, i) => i + 1);
-
-      const metrics = await PerformanceTester.runBenchmark(
-        'complex calculation',
-        () => CalculatorPerformance.calculateComplex(largeNumberArray),
-        { maxExecutionTime: 50, iterations: 100 }
-      );
-
-      expect(metrics.executionTime).toBeLessThan(50);
-    });
-
-    it('should compute factorial with reasonable performance', async () => {
-      const metrics = await PerformanceTester.runBenchmark(
-        'factorial calculation',
-        () => CalculatorPerformance.factorial(10),
-        { maxExecutionTime: 5, iterations: 1000 }
-      );
-
-      expect(metrics.executionTime).toBeLessThan(5);
-    });
-
-    it('should not cause memory leaks in repeated calculations', () => {
-      const iterations = 1000;
-      const results: number[] = [];
-
-      const { memoryDelta } = PerformanceTester.measureMemoryUsage(() => {
-        for (let i = 0; i < iterations; i++) {
-          results.push(CalculatorPerformance.calculate('*', i, i + 1));
-        }
-      });
-
-      // Память не должна расти значительно для простых вычислений
-      expect(memoryDelta).toBeLessThan(1024 * 100); // 100KB лимит
-    });
   });
 
   describe('Data Processing Performance', () => {

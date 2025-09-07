@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>123</title>
+    <title>SHINOMONTAGKA Template</title>
     <meta
       name="description"
-      content="Современная веб-платформа с калькуляторами, карточками товаров и интерактивным 3D конструктором"
+      content="Universal enterprise-grade SvelteKit template with advanced infrastructure"
     />
 
     <!-- Preconnect для улучшения производительности -->
@@ -21,10 +21,10 @@
     />
 
     <!-- Мета-теги для социальных сетей -->
-    <meta property="og:title" content="SHINOMONTAGKA - Веб-платформа" />
+    <meta property="og:title" content="SHINOMONTAGKA Template" />
     <meta
       property="og:description"
-      content="Современная веб-платформа с калькуляторами, карточками товаров и интерактивным 3D конструктором"
+      content="Universal enterprise-grade SvelteKit template with advanced infrastructure"
     />
     <meta property="og:type" content="website" />
   </head>

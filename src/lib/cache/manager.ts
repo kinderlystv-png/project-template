@@ -40,12 +40,12 @@ export class CacheManager {
     // Проверяем кэш
     const cached = this.getFromCache<T>(key, storage);
     if (cached && !this.isExpired(cached)) {
-      this.updateStats('hit');
+      this.updateStats('hits');
       this.incrementHits(cached);
       return cached.data;
     }
 
-    this.updateStats('miss');
+    this.updateStats('misses');
 
     // Если нет fetcher, возвращаем null
     if (!fetcher) return null;
@@ -79,7 +79,7 @@ export class CacheManager {
     };
 
     this.setToCache(key, entry, storage);
-    this.updateStats('set');
+    this.updateStats('sets');
     this.enforceMaxSize();
   }
 
@@ -101,7 +101,7 @@ export class CacheManager {
     this.memory.delete(key);
     localStorage.removeItem(key);
     sessionStorage.removeItem(key);
-    this.updateStats('delete');
+    this.updateStats('deletes');
   }
 
   /**
@@ -112,7 +112,7 @@ export class CacheManager {
     this.memory.forEach((entry, key) => {
       if (entry.tags?.some(tag => tags.includes(tag))) {
         this.memory.delete(key);
-        this.updateStats('delete');
+        this.updateStats('deletes');
       }
     });
 
@@ -178,13 +178,11 @@ export class CacheManager {
    * Принудительная очистка устаревших записей
    */
   cleanup(): void {
-    const now = Date.now();
-
     // Очистка памяти
     this.memory.forEach((entry, key) => {
       if (this.isExpired(entry)) {
         this.memory.delete(key);
-        this.updateStats('eviction');
+        this.updateStats('evictions');
       }
     });
 
@@ -282,7 +280,7 @@ export class CacheManager {
 
     keysToDelete.forEach(key => {
       storage.removeItem(key);
-      this.updateStats('delete');
+      this.updateStats('deletes');
     });
   }
 
@@ -319,7 +317,7 @@ export class CacheManager {
 
     keysToDelete.forEach(key => {
       storage.removeItem(key);
-      this.updateStats('eviction');
+      this.updateStats('evictions');
     });
   }
 
@@ -342,7 +340,7 @@ export class CacheManager {
     const toRemove = this.memory.size - this.config.maxSize;
     for (let i = 0; i < toRemove; i++) {
       this.memory.delete(entries[i].key);
-      this.updateStats('eviction');
+      this.updateStats('evictions');
     }
   }
 
