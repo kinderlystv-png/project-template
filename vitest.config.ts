@@ -44,7 +44,7 @@ export default defineConfig({
       ],
 
       // Пороги для неуспешного завершения
-  thresholds: {
+      thresholds: {
         lines: 75,
         functions: 75,
         branches: 65,
