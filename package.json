@@ -125,7 +125,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-svelte": "^2.46.1",
     "husky": "^8.0.3",
-    "jsdom": "^22.1.0",
+    "jsdom": "^26.1.0",
     "lint-staged": "^15.5.2",
     "postcss-import": "^16.1.1",
     "prettier": "^3.1.0",
