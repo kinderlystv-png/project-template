@@ -1,0 +1,36 @@
+[
+  {
+    "key": "ctrl+shift+l",
+    "command": "eslint.executeAutofix",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.action.quickOpen",
+    "args": "> ESLint: Fix all auto-fixable Problems"
+  },
+  {
+    "key": "ctrl+k ctrl+d",
+    "command": "editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "ctrl+shift+i",
+    "command": "editor.action.organizeImports",
+    "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": ".\\scripts\\terminal-status-monitor-enhanced.ps1 -Once -Verbose\r"
+    }
+  },
+  {
+    "key": "ctrl+shift+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": {
+      "text": ".\\scripts\\terminal-status-monitor-enhanced.ps1\r"
+    }
+  }
+]
