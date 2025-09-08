@@ -1,4 +1,4 @@
-import { initErrorHandling, captureException } from '$lib/utils/error-handler';
+import { captureException, initErrorHandling } from '$lib/utils/error-handler';
 import type { HandleClientError } from '@sveltejs/kit';
 
 // Инициализация обработки ошибок на клиенте

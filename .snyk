@@ -26,6 +26,6 @@ exclude:
 language-settings:
   javascript:
     includeDevDeps: true
-    
+
 # Настройки уровня серьезности
 severity-threshold: high
