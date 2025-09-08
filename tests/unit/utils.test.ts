@@ -24,7 +24,7 @@ const utils = {
   deepClone: <T>(obj: T): T => {
     if (obj === null || typeof obj !== 'object') return obj;
     return JSON.parse(JSON.stringify(obj));
-  }
+  },
 };
 
 describe('Utils Unit Tests', () => {
@@ -107,7 +107,7 @@ describe('Utils Unit Tests', () => {
     it('should deep clone objects', () => {
       const original = { a: 1, b: { c: 2, d: [3, 4] } };
       const cloned = utils.deepClone(original);
-      
+
       expect(cloned).toEqual(original);
       expect(cloned).not.toBe(original);
       expect(cloned.b).not.toBe(original.b);
@@ -125,7 +125,7 @@ describe('Utils Unit Tests', () => {
     it('should clone arrays', () => {
       const original = [1, 2, { a: 3 }];
       const cloned = utils.deepClone(original);
-      
+
       expect(cloned).toEqual(original);
       expect(cloned).not.toBe(original);
       expect(cloned[2]).not.toBe(original[2]);

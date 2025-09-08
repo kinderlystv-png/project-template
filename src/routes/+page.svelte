@@ -112,15 +112,15 @@
     .container {
       padding: 1rem;
     }
-    
+
     .start-project {
       padding: 2rem;
     }
-    
+
     h1 {
       font-size: 2.5rem;
     }
-    
+
     .features {
       grid-template-columns: 1fr;
     }

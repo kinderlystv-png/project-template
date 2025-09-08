@@ -1,5 +1,9 @@
+import { initErrorHandling, handleSvelteKitError } from '$lib/utils/error-handler';
 import { log } from '$lib/logger';
-import type { Handle } from '@sveltejs/kit';
+import type { Handle, HandleServerError } from '@sveltejs/kit';
+
+// Инициализация системы обработки ошибок
+initErrorHandling();
 
 export const handle: Handle = async ({ event, resolve }) => {
   const start = Date.now();
@@ -35,6 +39,28 @@ export const handle: Handle = async ({ event, resolve }) => {
         path: pathname,
       }
     );
+
+    // Отправляем ошибку в систему мониторинга
+    handleSvelteKitError(error instanceof Error ? error : new Error(String(error)), event);
+
     throw error;
   }
+};
+
+// Обработчик ошибок сервера
+export const handleError: HandleServerError = ({ error, event }) => {
+  const errorObj = error instanceof Error ? error : new Error(String(error));
+
+  log.error('Server error:', {
+    message: errorObj.message,
+    stack: errorObj.stack,
+    path: event.url.pathname,
+  });
+
+  // Отправляем ошибку в систему мониторинга
+  handleSvelteKitError(errorObj, event);
+
+  return {
+    message: 'An unexpected error occurred',
+  };
 };

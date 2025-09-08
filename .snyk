@@ -1,0 +1,31 @@
+# Snyk (https://snyk.io) policy file
+version: v1.25.0
+
+# Игнорирование определенных уязвимостей
+ignore:
+  # Пример игнорирования уязвимости до определенной даты
+  # 'SNYK-JS-AXIOS-6124857':
+  #   - '*':
+  #       reason: 'No available upgrade path'
+  #       expires: 2024-12-31T00:00:00.000Z
+
+# Патчи для автоматического исправления
+patch: {}
+
+# Настройки проекта
+exclude:
+  global:
+    - node_modules/
+    - dist/
+    - .svelte-kit/
+    - coverage/
+    - test-results/
+    - reports/
+
+# Языки для анализа
+language-settings:
+  javascript:
+    includeDevDeps: true
+    
+# Настройки уровня серьезности
+severity-threshold: high

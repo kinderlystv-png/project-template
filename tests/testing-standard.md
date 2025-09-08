@@ -3,6 +3,7 @@
 ## 1. ФИЛОСОФИЯ И ПРИНЦИПЫ
 
 ### 1.1. Основополагающие принципы
+
 - **Тестируем поведение, а не реализацию** — тесты должны проверять, что делает компонент, а не как он это делает
 - **Изоляция тестов** — тесты не должны зависеть друг от друга
 - **Стабильность селекторов** — использование `data-testid` вместо текста или CSS-селекторов
@@ -11,6 +12,7 @@
 - **Централизованные моки** — единый подход к мокированию сервисов
 
 ### 1.2. Целевые метрики
+
 - **Покрытие кода:** минимум 80% для бизнес-логики
 - **Время выполнения:** до 2 минут для всего набора тестов
 - **Стабильность:** 99.9% тестов должны проходить стабильно
@@ -18,6 +20,7 @@
 ## 2. СТРУКТУРА ТЕСТОВОЙ ИНФРАСТРУКТУРЫ
 
 ### 2.1. Файловая структура
+
 ```
 tests/
 ├── utils/              # Утилиты для тестирования
@@ -38,6 +41,7 @@ tests/
 ```
 
 ### 2.2. Константы для селекторов
+
 ```typescript
 // src/constants/test-ids.ts
 export const TEST_IDS = {
@@ -64,15 +68,16 @@ export const TEST_IDS = {
 
   // Navigation
   NAV_CLIENT_LOGIN: 'nav-client-login',
-  NAV_ADMIN_LOGIN: 'nav-admin-login'
+  NAV_ADMIN_LOGIN: 'nav-admin-login',
 } as const;
 
-export type TestId = typeof TEST_IDS[keyof typeof TEST_IDS];
+export type TestId = (typeof TEST_IDS)[keyof typeof TEST_IDS];
 ```
 
 ## 3. ТЕСТОВЫЕ УТИЛИТЫ
 
 ### 3.1. Базовые утилиты рендеринга
+
 ```typescript
 // tests/utils/test-utils.tsx
 import React from 'react';
@@ -103,6 +108,7 @@ export { renderWithProviders as render };
 ```
 
 ### 3.2. Фабрики тестовых данных
+
 ```typescript
 // tests/fixtures/factories.ts
 import { faker } from '@faker-js/faker/locale/ru';
@@ -124,11 +130,11 @@ export const eventFactory = {
     created_by: 'test-user',
     last_modified_by: 'test-user',
     version: 1,
-    ...overrides
+    ...overrides,
   }),
 
   createMany: (count: number, overrides = {}): Event[] =>
-    Array.from({ length: count }, () => eventFactory.create(overrides))
+    Array.from({ length: count }, () => eventFactory.create(overrides)),
 };
 
 export const userFactory = {
@@ -137,12 +143,13 @@ export const userFactory = {
     email: faker.internet.email(),
     role: 'client',
     name: faker.person.fullName(),
-    ...overrides
-  })
+    ...overrides,
+  }),
 };
 ```
 
 ### 3.3. Моки сервисов
+
 ```typescript
 // tests/mocks/services.ts
 import { vi } from 'vitest';
@@ -152,26 +159,26 @@ export const createServiceMocks = () => ({
   eventsAPI: {
     createEvent: vi.fn().mockResolvedValue({
       success: true,
-      data: eventFactory.create()
+      data: eventFactory.create(),
     }),
     updateEvent: vi.fn().mockResolvedValue({ success: true }),
     deleteEvent: vi.fn().mockResolvedValue({ success: true }),
     getEvent: vi.fn().mockResolvedValue({
       success: true,
-      data: eventFactory.create()
+      data: eventFactory.create(),
     }),
     listEvents: vi.fn().mockResolvedValue({
       success: true,
-      data: eventFactory.createMany(5)
-    })
+      data: eventFactory.createMany(5),
+    }),
   },
 
   whatsappService: {
     sendInvitation: vi.fn().mockResolvedValue({ success: true }),
     createInvitation: vi.fn().mockResolvedValue({
       success: true,
-      data: { id: 'inv-123', url: 'https://test.com/inv' }
-    })
+      data: { id: 'inv-123', url: 'https://test.com/inv' },
+    }),
   },
 
   authService: {
@@ -179,9 +186,9 @@ export const createServiceMocks = () => ({
     logout: vi.fn().mockResolvedValue({ success: true }),
     getCurrentUser: vi.fn().mockResolvedValue({
       success: true,
-      data: userFactory.create()
-    })
-  }
+      data: userFactory.create(),
+    }),
+  },
 });
 
 // Автоматическое мокирование при импорте
@@ -193,6 +200,7 @@ vi.mock('@/services/auth', () => createServiceMocks().authService);
 ## 4. ПАТТЕРНЫ НАПИСАНИЯ ТЕСТОВ
 
 ### 4.1. Page Object Model для сложных компонентов
+
 ```typescript
 // tests/pages/CreateEventFormPage.ts
 import { screen } from '@testing-library/react';
@@ -252,6 +260,7 @@ it('should create event successfully', async () => {
 ```
 
 ### 4.2. Структура отдельного теста
+
 ```typescript
 // tests/components/ProfileStage.test.tsx
 import { describe, it, expect, vi, beforeEach } from 'vitest';
@@ -372,6 +381,7 @@ describe('ProfileStage', () => {
 ## 5. ИНТЕГРАЦИЯ С КОМПОНЕНТАМИ
 
 ### 5.1. Добавление data-testid в компоненты
+
 ```tsx
 // src/components/epupk/stages/ProfileStage.tsx
 import { TEST_IDS } from '@/constants/test-ids';
@@ -387,7 +397,7 @@ export default function ProfileStage({ eventData, stageData, locked }) {
         <InlineInput
           value={eventData.child_name}
           placeholder="Имя ребенка"
-          onSave={(value) => handleFieldSave('child_name', value)}
+          onSave={value => handleFieldSave('child_name', value)}
           disabled={locked}
           data-testid={TEST_IDS.FIELD_CHILD_NAME}
           input-testid={TEST_IDS.INPUT_CHILD_NAME}
@@ -396,7 +406,7 @@ export default function ProfileStage({ eventData, stageData, locked }) {
         <InlineInput
           value={eventData.child_age?.toString() || ''}
           placeholder="лет"
-          onSave={(value) => handleFieldSave('child_age', parseInt(value))}
+          onSave={value => handleFieldSave('child_age', parseInt(value))}
           disabled={locked}
           data-testid={TEST_IDS.FIELD_CHILD_AGE}
           input-testid={TEST_IDS.INPUT_CHILD_AGE}
@@ -408,6 +418,7 @@ export default function ProfileStage({ eventData, stageData, locked }) {
 ```
 
 ### 5.2. Общие компоненты для форм
+
 ```tsx
 // src/components/ui/Input.tsx
 import { TEST_IDS } from '@/constants/test-ids';
@@ -429,19 +440,17 @@ export function Input({
   value,
   onChange,
   error,
-  testId = `field-${name}`
+  testId = `field-${name}`,
 }: InputProps) {
   return (
     <div className="form-field">
       <label htmlFor={id || name}>{label}</label>
-      <input
-        id={id || name}
-        name={name}
-        value={value}
-        onChange={onChange}
-        data-testid={testId}
-      />
-      {error && <div className="error" data-testid={`${testId}-error`}>{error}</div>}
+      <input id={id || name} name={name} value={value} onChange={onChange} data-testid={testId} />
+      {error && (
+        <div className="error" data-testid={`${testId}-error`}>
+          {error}
+        </div>
+      )}
     </div>
   );
 }
@@ -450,6 +459,7 @@ export function Input({
 ## 6. КОНФИГУРАЦИЯ ТЕСТОВ
 
 ### 6.1. Vitest конфигурация
+
 ```typescript
 // vitest.config.ts
 import { defineConfig } from 'vitest/config';
@@ -465,35 +475,30 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      exclude: [
-        'node_modules/',
-        'tests/',
-        '*.config.*',
-        '**/types.ts',
-        '**/constants.ts'
-      ],
+      exclude: ['node_modules/', 'tests/', '*.config.*', '**/types.ts', '**/constants.ts'],
       thresholds: {
         lines: 80,
         functions: 80,
         branches: 70,
-        statements: 80
-      }
+        statements: 80,
+      },
     },
     include: ['tests/**/*.test.{ts,tsx}'],
     exclude: ['node_modules', 'dist', '.idea', '.git', '.cache'],
     testTimeout: 10000,
-    hookTimeout: 10000
+    hookTimeout: 10000,
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
-      '@tests': path.resolve(__dirname, './tests')
-    }
-  }
+      '@tests': path.resolve(__dirname, './tests'),
+    },
+  },
 });
 ```
 
 ### 6.2. Глобальная настройка тестов
+
 ```typescript
 // tests/setup.ts
 import '@testing-library/jest-dom';
@@ -512,7 +517,7 @@ beforeAll(() => {
   global.IntersectionObserver = vi.fn().mockImplementation(() => ({
     observe: vi.fn(),
     unobserve: vi.fn(),
-    disconnect: vi.fn()
+    disconnect: vi.fn(),
   }));
 
   // Mock window.matchMedia
@@ -524,8 +529,8 @@ beforeAll(() => {
       onchange: null,
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
-      dispatchEvent: vi.fn()
-    }))
+      dispatchEvent: vi.fn(),
+    })),
   });
 });
 ```
@@ -533,6 +538,7 @@ beforeAll(() => {
 ## 7. РЕШЕНИЕ ТИПИЧНЫХ ПРОБЛЕМ
 
 ### 7.1. Асинхронные операции и debounce
+
 ```typescript
 // Проблема: debounced функция не вызывается сразу в тесте
 it('should filter events when search term changes', async () => {
@@ -554,6 +560,7 @@ it('should filter events when search term changes', async () => {
 ```
 
 ### 7.2. Проблема с портал-компонентами
+
 ```typescript
 // Проблема: модальное окно в портале не находится в тесте
 it('should open modal and show content', async () => {
@@ -572,6 +579,7 @@ it('should open modal and show content', async () => {
 ```
 
 ### 7.3. Тестирование с Next.js Router
+
 ```typescript
 // Проблема: тесты падают из-за Next.js router
 import { useRouter } from 'next/navigation';
@@ -580,7 +588,7 @@ import { useRouter } from 'next/navigation';
 vi.mock('next/navigation', () => ({
   useRouter: vi.fn(),
   usePathname: vi.fn().mockReturnValue('/'),
-  useSearchParams: vi.fn().mockReturnValue(new URLSearchParams())
+  useSearchParams: vi.fn().mockReturnValue(new URLSearchParams()),
 }));
 
 // В тесте настраиваем мок
@@ -589,13 +597,14 @@ beforeEach(() => {
     push: vi.fn(),
     replace: vi.fn(),
     back: vi.fn(),
-    prefetch: vi.fn()
+    prefetch: vi.fn(),
   };
   (useRouter as any).mockReturnValue(mockRouter);
 });
 ```
 
 ### 7.4. Тестирование с изображениями
+
 ```typescript
 // Проблема: тесты падают из-за Next.js Image
 vi.mock('next/image', () => ({
@@ -615,6 +624,7 @@ vi.mock('next/image', () => ({
 ## 8. CONTINUOUS INTEGRATION
 
 ### 8.1. Pre-commit хуки
+
 ```bash
 # .husky/pre-commit
 #!/bin/sh
@@ -625,6 +635,7 @@ npm run test:affected
 ```
 
 ### 8.2. GitHub Actions настройка
+
 ```yaml
 # .github/workflows/test.yml
 name: Tests
@@ -664,6 +675,7 @@ jobs:
 ## 9. ЛУЧШИЕ ПРАКТИКИ И РЕКОМЕНДАЦИИ
 
 ### 9.1. Группировка тестов
+
 ```typescript
 // Плохо ❌
 it('test 1', () => {...})
@@ -682,6 +694,7 @@ describe('Feature B', () => {
 ```
 
 ### 9.2. Эффективное описание тестов
+
 ```typescript
 // Плохо ❌
 it('works', () => {...})
@@ -691,6 +704,7 @@ it('should update counter when button is clicked', () => {...})
 ```
 
 ### 9.3. Избегайте вложенных describe
+
 ```typescript
 // Плохо ❌
 describe('Component', () => {
@@ -708,6 +722,7 @@ describe('Component', () => {
 ```
 
 ### 9.4. Использование before/after хуков
+
 ```typescript
 // Лучшие практики для хуков
 describe('Component with complex setup', () => {
@@ -741,12 +756,14 @@ describe('Component with complex setup', () => {
 ## 10. МИГРАЦИЯ СУЩЕСТВУЮЩИХ ТЕСТОВ
 
 ### 10.1. Пошаговая стратегия миграции
+
 1. **Добавьте data-testid к компоненту**
 2. **Создайте дублирующий тест с новыми селекторами**
 3. **Проверьте, что оба теста работают**
 4. **Удалите старый тест**
 
 ### 10.2. Пример миграции
+
 ```typescript
 // Шаг 1: Добавьте data-testid к компоненту
 // src/components/Counter.tsx
@@ -791,6 +808,7 @@ it('should increment counter', async () => {
 ## 11. ШАБЛОНЫ ДЛЯ НОВЫХ ТЕСТОВ
 
 ### 11.1. Шаблон компонентного теста
+
 ```typescript
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen, waitFor } from '@/tests/utils/test-utils';
@@ -819,6 +837,7 @@ describe('MyComponent', () => {
 ```
 
 ### 11.2. Шаблон теста для хуков
+
 ```typescript
 import { renderHook, act } from '@testing-library/react-hooks';
 import { describe, it, expect, vi } from 'vitest';
@@ -861,6 +880,7 @@ describe('useMyHook', () => {
 ## КРАТКИЙ ЧЕКЛИСТ ДЛЯ AI-АССИСТЕНТА
 
 ### Проверьте в проекте:
+
 - [ ] Использование `data-testid` в компонентах
 - [ ] Фабрики данных для генерации тестовых объектов
 - [ ] Централизованные константы для селекторов
@@ -871,6 +891,7 @@ describe('useMyHook', () => {
 - [ ] Стабильность тестов (99%+ проходимость)
 
 ### Если НЕ соответствует эталону:
+
 1. Создайте план миграции по приоритету
 2. Начните с добавления TEST_IDS констант
 3. Создайте базовые фабрики данных

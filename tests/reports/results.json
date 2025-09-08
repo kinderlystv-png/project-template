@@ -14,11 +14,7 @@
     {
       "assertionResults": [
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Basic functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Basic functionality"],
           "fullName": " Sample Test Suite Basic functionality should return true for true",
           "status": "passed",
           "title": "should return true for true",
@@ -26,11 +22,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Basic functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Basic functionality"],
           "fullName": " Sample Test Suite Basic functionality should add numbers correctly",
           "status": "passed",
           "title": "should add numbers correctly",
@@ -38,11 +30,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Basic functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Basic functionality"],
           "fullName": " Sample Test Suite Basic functionality should handle floating point operations",
           "status": "passed",
           "title": "should handle floating point operations",
@@ -50,11 +38,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Calculator functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Calculator functionality"],
           "fullName": " Sample Test Suite Calculator functionality should perform basic arithmetic operations",
           "status": "passed",
           "title": "should perform basic arithmetic operations",
@@ -62,11 +46,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Calculator functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Calculator functionality"],
           "fullName": " Sample Test Suite Calculator functionality should handle division by zero",
           "status": "passed",
           "title": "should handle division by zero",
@@ -74,11 +54,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Calculator functionality"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Calculator functionality"],
           "fullName": " Sample Test Suite Calculator functionality should work with negative numbers",
           "status": "passed",
           "title": "should work with negative numbers",
@@ -86,11 +62,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Async operations"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Async operations"],
           "fullName": " Sample Test Suite Async operations should handle async functions",
           "status": "passed",
           "title": "should handle async functions",
@@ -98,11 +70,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Async operations"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Async operations"],
           "fullName": " Sample Test Suite Async operations should handle promises",
           "status": "passed",
           "title": "should handle promises",
@@ -110,11 +78,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Sample Test Suite",
-            "Mock functions"
-          ],
+          "ancestorTitles": ["", "Sample Test Suite", "Mock functions"],
           "fullName": " Sample Test Suite Mock functions should work with mocked functions",
           "status": "passed",
           "title": "should work with mocked functions",
@@ -131,11 +95,7 @@
     {
       "assertionResults": [
         {
-          "ancestorTitles": [
-            "",
-            "Infrastructure Integration Tests",
-            "Core Infrastructure"
-          ],
+          "ancestorTitles": ["", "Infrastructure Integration Tests", "Core Infrastructure"],
           "fullName": " Infrastructure Integration Tests Core Infrastructure should have access to basic infrastructure",
           "status": "passed",
           "title": "should have access to basic infrastructure",
@@ -143,11 +103,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Infrastructure Integration Tests",
-            "Core Infrastructure"
-          ],
+          "ancestorTitles": ["", "Infrastructure Integration Tests", "Core Infrastructure"],
           "fullName": " Infrastructure Integration Tests Core Infrastructure should handle basic operations",
           "status": "passed",
           "title": "should handle basic operations",
@@ -155,11 +111,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Infrastructure Integration Tests",
-            "Core Infrastructure"
-          ],
+          "ancestorTitles": ["", "Infrastructure Integration Tests", "Core Infrastructure"],
           "fullName": " Infrastructure Integration Tests Core Infrastructure should manage basic state",
           "status": "passed",
           "title": "should manage basic state",
@@ -167,11 +119,7 @@
           "failureMessages": []
         },
         {
-          "ancestorTitles": [
-            "",
-            "Infrastructure Integration Tests",
-            "Error Handling"
-          ],
+          "ancestorTitles": ["", "Infrastructure Integration Tests", "Error Handling"],
           "fullName": " Infrastructure Integration Tests Error Handling should handle errors gracefully",
           "status": "passed",
           "title": "should handle errors gracefully",

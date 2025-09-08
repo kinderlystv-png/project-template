@@ -1,0 +1,117 @@
+name: Security Audit
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Run weekly on Sunday
+  push:
+    branches: [master, main]
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  pull_request:
+    branches: [master, main]
+    paths:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+  workflow_dispatch: # Allow manual trigger
+
+env:
+  PNPM_VERSION: '8.15.0'
+
+jobs:
+  audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run pnpm audit
+        run: |
+          echo "Running pnpm audit..."
+          pnpm audit --audit-level=high --json > audit-results.json || true
+          echo "Audit completed"
+
+      - name: Generate audit report
+        run: |
+          echo "# Security Audit Report" > audit-report.md
+          echo "Generated on: $(date)" >> audit-report.md
+          echo "" >> audit-report.md
+          if [ -s audit-results.json ]; then
+            echo "## Vulnerabilities Found" >> audit-report.md
+            cat audit-results.json | jq -r '.advisories[] | "- **\(.title)** (\(.severity)): \(.overview)"' >> audit-report.md
+          else
+            echo "## ✅ No vulnerabilities found!" >> audit-report.md
+          fi
+
+      - name: Upload audit results
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-results
+          path: |
+            audit-results.json
+            audit-report.md
+
+      - name: Check for vulnerabilities
+        run: |
+          VULN_COUNT=$(cat audit-results.json | jq '.metadata.vulnerabilities.total // 0')
+          echo "Total vulnerabilities found: $VULN_COUNT"
+
+          if [ "$VULN_COUNT" -gt 0 ]; then
+            echo "⚠️ Security vulnerabilities detected!"
+            echo "Please review the audit report and update dependencies."
+            exit 1
+          else
+            echo "✅ No security vulnerabilities found!"
+          fi
+
+  snyk:
+    name: Snyk Security Scan
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@master
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --all-projects --severity-threshold=high
+
+      - name: Upload Snyk results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-results
+          path: snyk.json
