@@ -1,0 +1,270 @@
+name: Pull Request Checks
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-quality-gate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch full history for comparison
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linting on changed files
+        run: |
+          # Get list of changed TypeScript files
+          CHANGED_FILES=$(git diff --name-only origin/main..HEAD | grep -E '\.(ts|js)$' || true)
+
+          if [ -n "$CHANGED_FILES" ]; then
+            echo "Linting changed files: $CHANGED_FILES"
+            npx eslint $CHANGED_FILES
+          else
+            echo "No TypeScript/JavaScript files changed"
+          fi
+
+      - name: Run tests for changed modules
+        run: |
+          # Get changed source files and find corresponding tests
+          CHANGED_SRC=$(git diff --name-only origin/main..HEAD | grep -E '^src/.*\.(ts|js)$' || true)
+
+          if [ -n "$CHANGED_SRC" ]; then
+            # Map source files to test files
+            TEST_FILES=""
+            for src_file in $CHANGED_SRC; do
+              # Convert src/module/file.ts to tests/module/file.test.ts
+              test_file=$(echo "$src_file" | sed 's|^src/|tests/|' | sed 's|\.(ts|js)$|.test.ts|')
+              if [ -f "$test_file" ]; then
+                TEST_FILES="$TEST_FILES $test_file"
+              fi
+            done
+
+            if [ -n "$TEST_FILES" ]; then
+              echo "Running tests for changed modules: $TEST_FILES"
+              npx vitest run $TEST_FILES
+            else
+              echo "No corresponding test files found, running all tests"
+              npm test
+            fi
+          else
+            echo "No source files changed, running all tests"
+            npm test
+          fi
+
+      - name: Check test coverage delta
+        run: |
+          # Run coverage on current branch
+          npm run test:coverage
+          CURRENT_COVERAGE=$(npx vitest run --coverage --reporter=json | jq '.coverage.lines.pct // 0')
+
+          # Checkout main branch and run coverage
+          git checkout origin/main
+          npm ci
+          npm run test:coverage
+          MAIN_COVERAGE=$(npx vitest run --coverage --reporter=json | jq '.coverage.lines.pct // 0')
+
+          # Calculate delta
+          COVERAGE_DELTA=$(echo "$CURRENT_COVERAGE - $MAIN_COVERAGE" | bc -l)
+
+          echo "Coverage on main: $MAIN_COVERAGE%"
+          echo "Coverage on PR: $CURRENT_COVERAGE%"
+          echo "Coverage delta: $COVERAGE_DELTA%"
+
+          # Fail if coverage decreased significantly
+          if (( $(echo "$COVERAGE_DELTA < -2" | bc -l) )); then
+            echo "❌ Coverage decreased by more than 2%"
+            exit 1
+          elif (( $(echo "$COVERAGE_DELTA > 1" | bc -l) )); then
+            echo "✅ Coverage improved by $COVERAGE_DELTA%"
+          else
+            echo "✅ Coverage maintained"
+          fi
+
+      - name: Analyze code quality delta
+        run: |
+          # Checkout PR branch
+          git checkout ${{ github.head_ref }}
+          npm ci
+
+          # Run EAP analysis on PR
+          npx eap-analyzer analyze . --format json --output pr-quality.json
+          PR_QUALITY=$(jq '.overallScore // 0' pr-quality.json)
+
+          # Checkout main and analyze
+          git checkout origin/main
+          npm ci
+          npx eap-analyzer analyze . --format json --output main-quality.json
+          MAIN_QUALITY=$(jq '.overallScore // 0' main-quality.json)
+
+          # Calculate delta
+          QUALITY_DELTA=$(echo "$PR_QUALITY - $MAIN_QUALITY" | bc -l)
+
+          echo "Quality on main: $MAIN_QUALITY"
+          echo "Quality on PR: $PR_QUALITY"
+          echo "Quality delta: $QUALITY_DELTA"
+
+          # Check for quality regression
+          if (( $(echo "$QUALITY_DELTA < -5" | bc -l) )); then
+            echo "❌ Quality score decreased by more than 5 points"
+
+            # Show specific regressions
+            git checkout ${{ github.head_ref }}
+            npm ci
+            echo "## Quality Regressions"
+            jq -r '.recommendations[] | select(.priority == "high" or .priority == "critical")' pr-quality.json
+            exit 1
+          else
+            echo "✅ Quality maintained or improved"
+          fi
+
+  dependency-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check for new vulnerabilities
+        run: |
+          # Get changed package files
+          CHANGED_DEPS=$(git diff --name-only origin/main..HEAD | grep -E 'package\.json|package-lock\.json' || true)
+
+          if [ -n "$CHANGED_DEPS" ]; then
+            echo "Package files changed, running security audit"
+            npm audit --audit-level moderate
+
+            # Check for new high/critical vulnerabilities
+            VULN_COUNT=$(npm audit --json | jq '.metadata.vulnerabilities.high + .metadata.vulnerabilities.critical')
+
+            if [ "$VULN_COUNT" -gt 0 ]; then
+              echo "❌ Found $VULN_COUNT high/critical vulnerabilities"
+              npm audit
+              exit 1
+            else
+              echo "✅ No high/critical vulnerabilities found"
+            fi
+          else
+            echo "No dependency changes detected"
+          fi
+
+  build-verification:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Verify package contents
+        run: |
+          # Check that essential files are included in build
+          REQUIRED_FILES=("dist/index.js" "dist/cli.js" "dist/types.d.ts")
+
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Required file missing: $file"
+              exit 1
+            fi
+          done
+
+          echo "✅ All required files present in build"
+
+      - name: Test package installation
+        run: |
+          # Pack and install to test
+          npm pack
+          PACKAGE_FILE=$(ls *.tgz)
+
+          # Test in clean directory
+          mkdir test-install
+          cd test-install
+          npm init -y
+          npm install ../$PACKAGE_FILE
+
+          # Verify CLI works
+          npx eap-analyzer --version
+
+          echo "✅ Package installs and runs correctly"
+
+  comment-pr-results:
+    runs-on: ubuntu-latest
+    needs: [pr-quality-gate, dependency-security, build-verification]
+    if: always()
+
+    steps:
+      - name: Comment PR with results
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: checks } = await github.rest.checks.listForRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: context.payload.pull_request.head.sha
+            });
+
+            let statusIcon = '✅';
+            let overallStatus = 'Success';
+
+            const failed = checks.check_runs.some(check => check.conclusion === 'failure');
+            if (failed) {
+              statusIcon = '❌';
+              overallStatus = 'Failed';
+            }
+
+            const body = `## ${statusIcon} Pull Request Quality Check ${overallStatus}
+
+            ### 📊 Quality Metrics
+            - **Tests**: ${context.job_status === 'success' ? '✅ Passing' : '❌ Failed'}
+            - **Coverage**: ${context.job_status === 'success' ? '✅ Maintained' : '⚠️ Needs Review'}
+            - **Quality Score**: ${context.job_status === 'success' ? '✅ Maintained' : '⚠️ Regression Detected'}
+            - **Security**: ${context.job_status === 'success' ? '✅ No Issues' : '⚠️ Vulnerabilities Found'}
+            - **Build**: ${context.job_status === 'success' ? '✅ Success' : '❌ Failed'}
+
+            ### 🔍 What was checked
+            - Code quality analysis on changed files
+            - Test coverage impact
+            - Security vulnerability scan
+            - Build verification
+            - Package installation test
+
+            ${failed ? '### ❗ Action Required\nPlease review and fix the failing checks before merging.' : '### ✅ Ready to Merge\nAll quality checks passed!'}
+            `;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: body
+            });

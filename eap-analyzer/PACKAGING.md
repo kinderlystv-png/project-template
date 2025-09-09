@@ -48,11 +48,11 @@ node bin/eap.js analyze /path/to/your/project
 
 ```bash
 # Глобально
-npm install -g @shinomontagka/eap-analyzer
+npm install -g @kinderlystv-png/eap-analyzer
 eap analyze /path/to/project
 
 # Локально в проект
-npm install --save-dev @shinomontagka/eap-analyzer
+npm install --save-dev @kinderlystv-png/eap-analyzer
 npx eap analyze
 ```
 
@@ -84,7 +84,7 @@ node bin/eap.js analyze ../another-project         # Относительный 
 
 ```json
 {
-  "name": "@shinomontagka/eap-analyzer",
+  "name": "@kinderlystv-png/eap-analyzer",
   "version": "1.0.0",
   "type": "module",
   "bin": {

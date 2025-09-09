@@ -1,6 +1,7 @@
 /**
  * Эталонный Анализатор Проектов (ЭАП)
  * Главный класс для анализа проектов по золотому стандарту
+ * Включает улучшенную обработку ошибок, поддержку кодировок и адаптивные пороги
  */
 
 import * as path from 'path';
@@ -13,6 +14,34 @@ import { LoggingChecker } from './checkers/logging.js';
 import { SvelteKitChecker } from './checkers/sveltekit.js';
 import { VitestChecker } from './checkers/vitest.js';
 import { CheckContext, CheckResult, ComponentResult } from './types/index.js';
+import {
+  setupGlobalErrorHandlers,
+  handleAnalysisError,
+  safeExecute,
+  ErrorType,
+} from './utils/error-handler.js';
+import { readFileWithEncoding } from './utils/file-utils.js';
+import {
+  getProjectThresholds,
+  loadPreviousReport,
+  saveThresholds,
+  loadSavedThresholds,
+  ProjectThresholds,
+} from './utils/adaptive-thresholds.js';
+
+// Импорт новых улучшенных модулей
+import { ImprovedDuplicationDetector } from './modules/structure-analyzer/duplication-detector.js';
+import {
+  SmartFileClassifier,
+  FileCategory,
+  Framework,
+} from './modules/structure-analyzer/file-classifier.js';
+import { ImprovedComplexityCalculator } from './modules/structure-analyzer/complexity-calculator.js';
+
+// Импорт модулей валидации
+import { BugFixValidator } from './validation/bug-fix-validator.js';
+import { MetricsValidator } from './validation/metrics-validator.js';
+import { ValidationReporter } from './validation/validation-reporter.js';
 
 export interface SimpleAnalysisResult {
   projectPath: string;
@@ -28,16 +57,323 @@ export interface SimpleAnalysisResult {
   recommendations: string[];
   analyzedAt: Date;
   duration: number;
+  thresholds?: ProjectThresholds;
+  projectType?: string;
+  fileCount?: number;
 }
 
 export class GoldenStandardAnalyzer {
   private verbose = true;
+  private projectThresholds: ProjectThresholds | null = null;
 
+  // Новые улучшенные модули
+  private duplicationDetector: ImprovedDuplicationDetector;
+  private fileClassifier: SmartFileClassifier;
+  private complexityCalculator: ImprovedComplexityCalculator;
+
+  // Модули валидации
+  private bugFixValidator: BugFixValidator;
+  private metricsValidator: MetricsValidator;
+  private validationReporter: ValidationReporter;
+
+  constructor() {
+    // Настраиваем глобальные обработчики ошибок
+    setupGlobalErrorHandlers();
+
+    // Инициализируем новые модули
+    this.duplicationDetector = new ImprovedDuplicationDetector();
+    this.fileClassifier = new SmartFileClassifier();
+    this.complexityCalculator = new ImprovedComplexityCalculator();
+
+    // Инициализируем модули валидации
+    this.bugFixValidator = new BugFixValidator();
+    this.metricsValidator = new MetricsValidator();
+    this.validationReporter = new ValidationReporter();
+  }
   private log(message: string): void {
     if (this.verbose) {
       // eslint-disable-next-line no-console
       console.log(message);
     }
+  }
+
+  /**
+   * Инициализирует адаптивные пороги для проекта
+   */
+  private async initializeThresholds(projectPath: string): Promise<void> {
+    const operation = async () => {
+      // Пытаемся загрузить сохраненные пороги
+      this.projectThresholds = loadSavedThresholds(projectPath);
+
+      if (!this.projectThresholds) {
+        // Загружаем предыдущий отчет для адаптации
+        const previousReport = loadPreviousReport(projectPath);
+
+        // Подсчитываем количество файлов для определения размера проекта
+        const fileCount = await this.countProjectFiles(projectPath);
+
+        // Получаем оптимальные пороги
+        this.projectThresholds = getProjectThresholds(projectPath, previousReport, fileCount);
+
+        // Сохраняем пороги для будущего использования
+        saveThresholds(this.projectThresholds, projectPath);
+      }
+    };
+
+    await safeExecute(operation, ErrorType.CONFIG_ERROR, {
+      operation: 'threshold-initialization',
+      path: projectPath,
+    });
+  }
+
+  /**
+   * Выполняет структурный анализ проекта с использованием улучшенных модулей
+   */
+  async performStructuralAnalysis(projectPath: string): Promise<{
+    duplication: any;
+    complexity: any;
+    fileClassification: any;
+  }> {
+    this.log('🔬 Выполняем структурный анализ с улучшенными модулями...');
+
+    // Получаем список файлов для анализа
+    const files = await this.getProjectFiles(projectPath);
+    this.log(`📂 Найдено ${files.length} файлов для анализа`);
+
+    // Классификация файлов
+    this.log('📁 Классифицируем файлы...');
+    const classification = await this.fileClassifier.classifyFiles(files.map(f => f.path));
+
+    // Фильтруем только исходные файлы для анализа дупликации
+    const sourceFiles = files.filter(file => {
+      const fileClassification = classification.get(file.path);
+      return (
+        fileClassification?.category === FileCategory.SOURCE ||
+        fileClassification?.category === FileCategory.TEST
+      );
+    });
+
+    this.log(`📋 Отфильтровано ${sourceFiles.length} исходных файлов`);
+
+    // Подготовка данных для анализа дупликации
+    const filesWithContent = await Promise.all(
+      sourceFiles.slice(0, 20).map(async file => {
+        // Ограничиваем для демо
+        try {
+          const content = await readFileWithEncoding(file.path);
+          const lines = content.split('\n').length;
+          return { path: file.path, content, lines };
+        } catch (error) {
+          this.log(`⚠️ Ошибка чтения файла ${file.path}: ${error}`);
+          return null;
+        }
+      })
+    );
+
+    const validFiles = filesWithContent.filter(f => f !== null) as Array<{
+      path: string;
+      content: string;
+      lines: number;
+    }>;
+
+    // Анализ дупликации
+    this.log('🔄 Анализируем дупликацию...');
+    const duplication = await this.duplicationDetector.calculateDuplication(validFiles);
+
+    // Анализ сложности для каждого исходного файла
+    this.log('📊 Анализируем сложность...');
+    const complexityResults = [];
+
+    for (const file of validFiles.slice(0, 10)) {
+      // Ограничиваем для демо
+      try {
+        const fileClassification = classification.get(file.path);
+        const category = fileClassification?.category || FileCategory.SOURCE;
+        const framework = fileClassification?.framework;
+
+        const complexity = await this.complexityCalculator.calculateComplexity(
+          file.path,
+          file.content,
+          category,
+          framework
+        );
+
+        complexityResults.push({
+          file: file.path,
+          ...complexity,
+        });
+      } catch (error) {
+        this.log(`⚠️ Ошибка анализа сложности для ${file.path}: ${error}`);
+      }
+    }
+
+    return {
+      duplication: {
+        ...duplication,
+        analyzedFiles: validFiles.length,
+      },
+      complexity: {
+        files: complexityResults,
+        summary: this.summarizeComplexity(complexityResults),
+      },
+      fileClassification: {
+        total: files.length,
+        classified: classification.size,
+        categories: this.summarizeClassification(classification),
+      },
+    };
+  }
+
+  /**
+   * Получает список файлов проекта
+   */
+  private async getProjectFiles(
+    projectPath: string
+  ): Promise<Array<{ path: string; name: string }>> {
+    const fs = await import('fs');
+    const glob = await import('glob');
+
+    const pattern = path.join(projectPath, '**/*.{js,ts,jsx,tsx,vue,svelte,css,scss,json}');
+    const filePaths = await glob.glob(pattern, {
+      ignore: ['**/node_modules/**', '**/.git/**'],
+    });
+
+    return filePaths.map(filePath => ({
+      path: filePath,
+      name: path.basename(filePath),
+    }));
+  }
+
+  /**
+   * Создает сводку по классификации файлов
+   */
+  private summarizeClassification(classification: Map<string, any>): any {
+    const categories = new Map<string, number>();
+    const frameworks = new Map<string, number>();
+
+    for (const [, result] of classification) {
+      const category = result.category || 'unknown';
+      categories.set(category, (categories.get(category) || 0) + 1);
+
+      if (result.framework) {
+        frameworks.set(result.framework, (frameworks.get(result.framework) || 0) + 1);
+      }
+    }
+
+    return {
+      byCategory: Object.fromEntries(categories),
+      byFramework: Object.fromEntries(frameworks),
+    };
+  }
+
+  /**
+   * Выполняет полную валидацию результатов структурного анализа
+   */
+  async validateAnalysisResults(
+    analysisResults: any,
+    projectPath: string,
+    options: {
+      generateReport?: boolean;
+      reportFormat?: 'console' | 'json' | 'html' | 'markdown';
+      outputPath?: string;
+    } = {}
+  ): Promise<{
+    isValid: boolean;
+    confidence: number;
+    criticalIssues: number;
+    reportPath?: string;
+  }> {
+    this.log('🔍 Запуск валидации результатов анализа...');
+
+    // Валидация исправлений багов
+    const bugFixReport = await this.bugFixValidator.validateAnalysisResults(
+      analysisResults,
+      projectPath
+    );
+
+    // Валидация метрик
+    const metricsReport = await this.metricsValidator.validateMetrics(analysisResults, projectPath);
+
+    // Создание объединенного отчета
+    const combinedReport = await this.validationReporter.generateCombinedReport(
+      bugFixReport,
+      metricsReport
+    );
+
+    // Вывод в консоль
+    await this.validationReporter.printConsoleReport(combinedReport, {
+      includeDetails: true,
+      includeRecommendations: true,
+      includeTimestamp: false,
+    });
+
+    let reportPath: string | undefined;
+
+    // Генерация файлового отчета
+    if (options.generateReport) {
+      try {
+        reportPath = await this.validationReporter.saveReport(combinedReport, {
+          format: options.reportFormat || 'markdown',
+          outputPath: options.outputPath || './reports',
+          includeDetails: true,
+          includeRecommendations: true,
+          includeTimestamp: true,
+        });
+      } catch (error) {
+        this.log(`⚠️ Ошибка при сохранении отчета: ${error}`);
+      }
+    }
+
+    return {
+      isValid: combinedReport.overall.isValid,
+      confidence: combinedReport.overall.confidence,
+      criticalIssues: combinedReport.overall.criticalIssuesCount,
+      reportPath,
+    };
+  }
+
+  /**
+   * Создает сводку по сложности
+   */
+  private summarizeComplexity(results: any[]): any {
+    const validResults = results.filter(r => r.shouldAnalyze && r.metrics.cyclomatic > 0);
+
+    if (validResults.length === 0) {
+      return { avgCyclomatic: 0, avgCognitive: 0, totalFiles: 0 };
+    }
+
+    const totalCyclomatic = validResults.reduce((sum, r) => sum + r.metrics.cyclomatic, 0);
+    const totalCognitive = validResults.reduce((sum, r) => sum + r.metrics.cognitive, 0);
+
+    return {
+      avgCyclomatic: Math.round((totalCyclomatic / validResults.length) * 10) / 10,
+      avgCognitive: Math.round((totalCognitive / validResults.length) * 10) / 10,
+      totalFiles: validResults.length,
+      maxCyclomatic: Math.max(...validResults.map(r => r.metrics.cyclomatic)),
+      maxCognitive: Math.max(...validResults.map(r => r.metrics.cognitive)),
+    };
+  } /**
+   * Подсчитывает количество файлов в проекте
+   */
+  private async countProjectFiles(projectPath: string): Promise<number> {
+    const operation = async () => {
+      const fs = await import('fs');
+      const glob = await import('glob');
+
+      const pattern = path.join(projectPath, '**/*.{js,ts,jsx,tsx,vue,svelte}');
+      const files = await glob.glob(pattern, {
+        ignore: ['**/node_modules/**', '**/dist/**', '**/build/**'],
+      });
+
+      return files.length;
+    };
+
+    const result = await safeExecute(operation, ErrorType.FILE_ERROR, {
+      operation: 'file-counting',
+      path: projectPath,
+    });
+
+    return result || 0;
   }
   /**
    * Выполняет полный анализ проекта
@@ -48,6 +384,9 @@ export class GoldenStandardAnalyzer {
     this.log('🔍 Начинаем анализ проекта по Золотому Стандарту...');
     this.log(`📂 Путь: ${projectPath}`);
     this.log('');
+
+    // Инициализируем адаптивные пороги
+    await this.initializeThresholds(projectPath);
 
     const context: CheckContext = {
       projectPath: path.resolve(projectPath),
@@ -67,6 +406,7 @@ export class GoldenStandardAnalyzer {
       options: {
         projectPath: path.resolve(projectPath),
         verbose: true,
+        thresholds: this.projectThresholds || undefined,
       },
     };
 
@@ -75,18 +415,27 @@ export class GoldenStandardAnalyzer {
 
     // Выполняем проверки для каждого компонента
     for (const checker of availableCheckers) {
-      try {
-        this.log(`📋 Анализируем: ${checker.name}`);
-        const result = await checker.checkComponent(context);
-        componentResults.push(result);
+      const result = await safeExecute(
+        async () => {
+          this.log(`📋 Анализируем: ${checker.name}`);
+          const checkResult = await checker.checkComponent(context);
 
-        // Показываем промежуточный результат
-        this.log(
-          `   Результат: ${result.percentage}% - ${result.passed.length}/${result.passed.length + result.failed.length} проверок`
-        );
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.error(`❌ Ошибка при анализе ${checker.name}: ${error}`);
+          // Показываем промежуточный результат
+          this.log(
+            `   Результат: ${checkResult.percentage}% - ${checkResult.passed.length}/${checkResult.passed.length + checkResult.failed.length} проверок`
+          );
+
+          return checkResult;
+        },
+        ErrorType.ANALYSIS_ERROR,
+        {
+          operation: 'component-check',
+          context: { checkerName: checker.name },
+        }
+      );
+
+      if (result) {
+        componentResults.push(result);
       }
     }
 
@@ -123,6 +472,9 @@ export class GoldenStandardAnalyzer {
       recommendations: allRecommendations,
       analyzedAt: new Date(),
       duration: Date.now() - startTime,
+      thresholds: this.projectThresholds || undefined,
+      projectType: this.projectThresholds ? context.projectInfo.name : undefined,
+      fileCount: await this.countProjectFiles(projectPath),
     };
 
     this.printResults(result);

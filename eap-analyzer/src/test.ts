@@ -59,7 +59,7 @@ async function testAnalyzer() {
 }
 
 // Запуск если файл выполняется напрямую
-if (import.meta.url === `file://${process.argv[1]}`) {
+if (typeof require !== 'undefined' && require.main === module) {
   testAnalyzer().catch(console.error);
 }
 

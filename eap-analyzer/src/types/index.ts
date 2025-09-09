@@ -52,6 +52,75 @@ export interface ComponentResult {
   duration: number;
 }
 
+export interface ComprehensiveReport {
+  basicAnalysis?: AnalysisResult;
+  ultimateAnalysis?: any; // Добавляем для совместимости
+  aiInsights?: any;
+  technicalDebtAnalysis?: any;
+  refactoringRecommendations?: any;
+  [key: string]: any;
+}
+
+export interface DebtCategory {
+  name: string;
+  debt: number;
+  impact: string;
+  items: any[];
+}
+
+export interface DebtMetrics {
+  totalHours: number;
+  totalCost: number;
+  categories: DebtCategory[];
+}
+
+export interface DebtHeatmap {
+  files: HeatmapEntry[];
+  modules: HeatmapEntry[];
+}
+
+export interface HeatmapEntry {
+  name: string;
+  debt: number;
+  severity: string;
+}
+
+export interface DebtTimeline {
+  history: DebtSnapshot[];
+  projection: DebtProjection;
+}
+
+export interface DebtSnapshot {
+  date: string;
+  totalDebt: number;
+  trend: string;
+}
+
+export interface DebtProjection {
+  sixMonths: number;
+  oneYear: number;
+  trend: string;
+}
+
+export interface PayoffStrategy {
+  quickWins: RefactoringPhase[];
+  riskMitigation: RefactoringPhase[];
+  highImpact: RefactoringPhase[];
+}
+
+export interface RefactoringPhase {
+  description: string;
+  effort: number;
+  impact: string;
+}
+
+export interface TechnicalDebtAssessment {
+  totalDebt: number;
+  categories: DebtCategory[];
+  payoffPlan: PayoffStrategy;
+  [key: string]: any;
+}
+
 export interface AnalysisResult {
   timestamp: string;
   projectPath: string;
@@ -185,6 +254,7 @@ export interface AnalyzerOptions {
   excludeCategories?: CheckCategory[];
   onlyCategories?: CheckCategory[];
   threshold?: number;
+  thresholds?: any; // Добавлено для поддержки адаптивных порогов
   generateReport?: boolean;
   openReport?: boolean;
 }

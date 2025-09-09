@@ -1,0 +1,220 @@
+{
+  "module": {
+    "name": "structure-analyzer",
+    "version": "1.0.0",
+    "description": "Модуль анализа структуры проекта с системой самообучения",
+    "author": "EAP Integration Team",
+    "integration": {
+      "eapVersion": "3.0+",
+      "requiredFeatures": ["file-analysis", "git-integration", "learning-system"],
+      "optionalFeatures": ["database-storage", "web-dashboard"]
+    }
+  },
+  "analysis": {
+    "types": {
+      "basic": {
+        "enabled": true,
+        "description": "Базовый анализ структуры файлов и директорий",
+        "outputFormat": ["json", "text", "html"]
+      },
+      "advanced": {
+        "enabled": true,
+        "description": "Расширенный анализ с метриками сложности и качества",
+        "outputFormat": ["json", "text", "html", "csv"]
+      },
+      "learning": {
+        "enabled": true,
+        "description": "Система самообучения и адаптивных порогов",
+        "dataRetention": "365 days"
+      }
+    },
+    "defaultMode": "basic",
+    "quickAnalysisTimeout": 30000,
+    "fullAnalysisTimeout": 300000
+  },
+  "thresholds": {
+    "basic": {
+      "maxFileSize": 300,
+      "maxComplexity": 10,
+      "minMaintainability": 70,
+      "maxNestingDepth": 4,
+      "minTestCoverage": 80
+    },
+    "advanced": {
+      "maxCognitiveComplexity": 15,
+      "maxDuplicationPercentage": 5,
+      "minCohesion": 0.7,
+      "maxCoupling": 0.3,
+      "maxHotspotScore": 50
+    },
+    "adaptive": {
+      "enabled": true,
+      "minSampleSize": 5,
+      "adjustmentThreshold": 0.2,
+      "maxAdjustmentFactor": 2.0
+    }
+  },
+  "fileTypes": {
+    "source": {
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".vue",
+        ".svelte",
+        ".py",
+        ".java",
+        ".cs",
+        ".php",
+        ".rb",
+        ".go",
+        ".rs",
+        ".cpp",
+        ".c",
+        ".h"
+      ],
+      "exclude": ["node_modules", "dist", "build", ".git", "coverage"]
+    },
+    "test": {
+      "patterns": ["**/test/**", "**/tests/**", "**/__tests__/**", "**/*.test.*", "**/*.spec.*"],
+      "extensions": [
+        ".js",
+        ".jsx",
+        ".ts",
+        ".tsx",
+        ".py",
+        ".java",
+        ".cs",
+        ".php",
+        ".rb",
+        ".go",
+        ".rs"
+      ]
+    },
+    "configuration": {
+      "files": [
+        "package.json",
+        "tsconfig.json",
+        "webpack.config.js",
+        "vite.config.js",
+        ".eslintrc",
+        "tailwind.config.js",
+        "svelte.config.js"
+      ],
+      "extensions": [".json", ".yml", ".yaml", ".toml", ".ini", ".conf", ".config"]
+    },
+    "documentation": {
+      "extensions": [".md", ".txt", ".rst", ".asciidoc"],
+      "files": ["README.md", "CHANGELOG.md", "LICENSE", "CONTRIBUTING.md"]
+    }
+  },
+  "patterns": {
+    "frameworks": {
+      "react": {
+        "indicators": ["react", "@types/react", "jsx", "tsx"],
+        "structure": ["components", "hooks", "contexts"],
+        "recommendations": ["typescript", "testing", "storybook"]
+      },
+      "nextjs": {
+        "indicators": ["next"],
+        "structure": ["pages", "api", "public", "styles"],
+        "recommendations": ["typescript", "seo-optimization", "performance"]
+      },
+      "vue": {
+        "indicators": ["vue", "@vue/cli"],
+        "structure": ["components", "views", "store"],
+        "recommendations": ["composition-api", "typescript", "testing"]
+      },
+      "angular": {
+        "indicators": ["@angular/core", "@angular/cli"],
+        "structure": ["src/app", "services", "components"],
+        "recommendations": ["typescript", "rxjs", "ngrx"]
+      },
+      "svelte": {
+        "indicators": ["svelte", "@sveltejs/kit"],
+        "structure": ["src/lib", "src/routes", "src/app.html"],
+        "recommendations": ["typescript", "testing", "accessibility"]
+      },
+      "nodejs": {
+        "indicators": ["express", "fastify", "koa"],
+        "structure": ["routes", "controllers", "middleware", "models"],
+        "recommendations": ["typescript", "testing", "security", "logging"]
+      }
+    },
+    "architectures": {
+      "monolith": {
+        "indicators": ["single main entry", "shared dependencies"],
+        "recommendations": ["modularization", "separation-of-concerns"]
+      },
+      "microservices": {
+        "indicators": ["multiple services", "api gateways"],
+        "recommendations": ["containerization", "monitoring", "orchestration"]
+      },
+      "serverless": {
+        "indicators": ["lambda functions", "cloud functions"],
+        "recommendations": ["cold-start-optimization", "monitoring"]
+      }
+    }
+  },
+  "output": {
+    "formats": {
+      "json": {
+        "enabled": true,
+        "pretty": true,
+        "includeMetadata": true
+      },
+      "html": {
+        "enabled": true,
+        "template": "default",
+        "includeCharts": true,
+        "responsive": true
+      },
+      "text": {
+        "enabled": true,
+        "width": 120,
+        "includeProgress": true
+      },
+      "csv": {
+        "enabled": true,
+        "delimiter": ",",
+        "includeHeaders": true
+      }
+    },
+    "defaultFormat": "json",
+    "saveToFile": true,
+    "timestampedFiles": true
+  },
+  "integration": {
+    "eap": {
+      "scoreContribution": 0.25,
+      "criticalIssuesWeight": 0.4,
+      "recommendationsWeight": 0.3,
+      "trendsWeight": 0.3
+    },
+    "git": {
+      "enabled": true,
+      "analyzeHistory": false,
+      "commitMessageAnalysis": false
+    },
+    "ci": {
+      "generateReports": true,
+      "failOnCritical": false,
+      "reportPath": "./reports/structure-analysis"
+    }
+  },
+  "performance": {
+    "maxFileSize": "50MB",
+    "maxFiles": 10000,
+    "parallelProcessing": true,
+    "maxWorkers": 4,
+    "cacheResults": true,
+    "cacheTTL": 3600
+  },
+  "logging": {
+    "level": "info",
+    "file": "./logs/structure-analyzer.log",
+    "console": true,
+    "verbose": false
+  }
+}

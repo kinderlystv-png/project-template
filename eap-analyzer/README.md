@@ -26,7 +26,7 @@ node bin/eap.js analyze /path/to/your/project
 
 ```bash
 # Установка
-npm install -g @shinomontagka/eap-analyzer
+npm install -g @kinderlystv-png/eap-analyzer
 
 # Использование
 eap analyze /path/to/project
@@ -78,7 +78,7 @@ eap standard
 ## 🔧 Пример использования
 
 ```typescript
-import { GoldenStandardAnalyzer } from '@shinomontagka/eap-analyzer';
+import { GoldenStandardAnalyzer } from '@kinderlystv-png/eap-analyzer';
 
 const analyzer = new GoldenStandardAnalyzer();
 const result = await analyzer.analyzeProject('./my-project');

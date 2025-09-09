@@ -1,0 +1,41 @@
+{
+  "name": "project-structure-analyzers",
+  "version": "1.0.0",
+  "description": "Набор инструментов для анализа структуры проекта и оценки необходимости рефакторинга",
+  "main": "project-structure-analyzer.js",
+  "scripts": {
+    "analyze": "node project-structure-analyzer.js",
+    "analyze:advanced": "node advanced-project-analyzer.js",
+    "analyze:all": "npm run analyze && npm run analyze:advanced",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "bin": {
+    "project-analyzer": "./project-structure-analyzer.js",
+    "advanced-analyzer": "./advanced-project-analyzer.js"
+  },
+  "keywords": [
+    "code-quality",
+    "refactoring",
+    "static-analysis",
+    "project-structure",
+    "technical-debt",
+    "complexity-analysis"
+  ],
+  "author": "SHINOMONTAGKA Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "glob": "^8.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kinderlystv-png/project-template.git",
+    "directory": "scripts"
+  },
+  "bugs": {
+    "url": "https://github.com/kinderlystv-png/project-template/issues"
+  },
+  "homepage": "https://github.com/kinderlystv-png/project-template#readme"
+}

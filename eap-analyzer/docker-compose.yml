@@ -1,0 +1,136 @@
+# EAP Analyzer Docker Compose конфигурация
+version: '3.8'
+
+services:
+  # Основной анализатор
+  eap-analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: eap-analyzer:latest
+    container_name: eap-analyzer
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - EAP_LOG_LEVEL=info
+      - EAP_WORK_DIR=/projects
+      - EAP_CONFIG_DIR=/app/config
+    volumes:
+      # Монтируем директорию с проектами для анализа
+      - ./projects:/projects:ro
+      # Монтируем директорию для отчетов
+      - ./reports:/app/reports
+      # Опциональная кастомная конфигурация
+      - ./config:/app/config/custom:ro
+    networks:
+      - eap-network
+    command: ['--format', 'markdown', '--output', '/app/reports', '--verbose']
+
+  # Веб-интерфейс для просмотра отчетов (опционально)
+  eap-web:
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      target: web
+    image: eap-web:latest
+    container_name: eap-web
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - WEB_PORT=3000
+      - REPORTS_DIR=/app/reports
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./reports:/app/reports:ro
+    networks:
+      - eap-network
+    depends_on:
+      - eap-analyzer
+    profiles:
+      - web # Запускается только с профилем web
+
+  # Redis для кэширования результатов анализа (опционально)
+  redis:
+    image: redis:7-alpine
+    container_name: eap-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --requirepass eap123
+    volumes:
+      - redis_data:/data
+    networks:
+      - eap-network
+    profiles:
+      - cache
+
+  # Prometheus для мониторинга (опционально)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: eap-prometheus
+    restart: unless-stopped
+    ports:
+      - '9090:9090'
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+    networks:
+      - eap-network
+    profiles:
+      - monitoring
+
+networks:
+  eap-network:
+    driver: bridge
+    name: eap-network
+
+volumes:
+  redis_data:
+    name: eap_redis_data
+  prometheus_data:
+    name: eap_prometheus_data
+
+# Конфигурация для разработки
+# Запуск: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+---
+version: '3.8'
+
+services:
+  eap-analyzer-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    image: eap-analyzer:dev
+    container_name: eap-analyzer-dev
+    environment:
+      - NODE_ENV=development
+      - EAP_LOG_LEVEL=debug
+    volumes:
+      - .:/app:rw
+      - /app/node_modules
+      - ./projects:/projects:ro
+      - ./reports:/app/reports
+    networks:
+      - eap-network
+    command: ['npm', 'run', 'dev']
+    profiles:
+      - dev
+# Примеры запуска:
+#
+# Анализ проекта:
+# docker-compose run --rm eap-analyzer --format markdown --output /app/reports
+#
+# Запуск с веб-интерфейсом:
+# docker-compose --profile web up -d
+#
+# Запуск с мониторингом:
+# docker-compose --profile monitoring up -d
+#
+# Разработка:
+# docker-compose --profile dev up -d

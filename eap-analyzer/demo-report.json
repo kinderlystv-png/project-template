@@ -1,0 +1,26 @@
+{
+  "timestamp": "2025-09-09T07:15:08.497Z",
+  "projectAnalysis": {
+    "fileCount": 0,
+    "baseScore": 23,
+    "basePercentage": 3
+  },
+  "aiAnalysis": {
+    "overallQuality": 75.8,
+    "confidence": 0.85,
+    "prediction": 75.8,
+    "recommendations": [
+      {
+        "type": "improvement",
+        "message": "Провести рефакторинг дублированного кода",
+        "severity": "high",
+        "priority": 1
+      }
+    ]
+  },
+  "summary": {
+    "totalIssues": 12,
+    "passedChecks": 2,
+    "totalChecks": 71
+  }
+}

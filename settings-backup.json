@@ -1,0 +1,62 @@
+{
+  "chat.agent.enabled": true,
+  "chat.tools.autoApprove": true,
+  "chat.tools.terminal.autoApprove": {
+    "node": true,
+    "npm": true,
+    "/^git (status|show|diff)\\b/": true,
+    "rm": false,
+    "rmdir": false,
+    "del": false,
+    "/^Remove-Item\\b/i": false
+  },
+  "chat.agent.maxRequests": 200,
+  "git.openRepositoryInParentFolders": "always",
+  "workbench.colorTheme": "Visual Studio Dark",
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.editor.temporalContext.enabled": true,
+  "github.copilot.chat.defaultAgent": "claude-sonnet-4",
+  "github.copilot.ask.defaultAgent": "o3",
+  "mssql.connectionGroups": [{ "name": "ROOT", "id": "174FBAAD-04CB-45A4-8417-6AEA130EE341" }],
+  "mssql.autoDisableNonTSqlLanguageService": false,
+  "github.copilot.enable": { "*": true },
+  "github.copilot.advanced": { "language": "ru" },
+  "npm.keybindingsChangedWarningShown": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "editor.linkedEditing": true,
+  "terminal.integrated.scrollback": 1000,
+  "typescript.tsc.autoDetect": "off",
+  "npm.autoDetect": "off",
+  "debug.onTaskErrors": "showErrors",
+  "cSpell.language": "en,ru",
+  "cSpell.enabled": false,
+  "cSpell.languageSettings": [],
+  "cSpell.userWords": ["перемещено"],
+  "svelte.enable-ts-plugin": true,
+  "voiceChat.recognitionLanguages": ["ru-RU", "en-US"],
+  "voiceChat.defaultLanguage": "ru-RU",
+  "accessibility.signals.voiceRecordingStopped": {
+    "sound": "on"
+  },
+  "accessibility.voice.speechLanguage": "ru-RU",
+  "accessibility.voice": "on",
+  "accessibility.voice.autoSynthesize": "off",
+  "accessibility.voice.enabled": true,
+  "accessibility.voice.speechTimeout": 300000,
+  "github.copilot.chat.voice.enabled": true,
+  "github.copilot.chat.voice.speechTimeout": 300000,
+  "github.copilot.chat.voice.autoSubmit": false,
+  "github.copilot.chat.voice.autoSend": false,
+  "accessibility.signals.chatRequestSent": {
+    "sound": "off"
+  },
+  "accessibility.signals.chatResponseReceived": {
+    "sound": "off"
+  },
+  "accessibility.announcements.enabled": false,
+  "speech.enabled": true,
+  "vscode-speech.enabled": false,
+  "vscode-speech.autoStart": false,
+  "github.copilot.chat.speech.enabled": false
+}

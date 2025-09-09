@@ -1,0 +1,14 @@
+{
+  "timestamp": "2025-09-09T07:06:43.965Z",
+  "projectType": "default",
+  "thresholds": {
+    "fileSize": 300,
+    "complexity": 15,
+    "nesting": 4,
+    "duplication": 10,
+    "maintainabilityIndex": 65,
+    "linesPerFunction": 50,
+    "parametersPerFunction": 7,
+    "classesPerFile": 3
+  }
+}

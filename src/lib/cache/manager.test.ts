@@ -3,7 +3,7 @@
  * @file src/lib/cache/manager.test.ts
  */
 
-import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { CacheManager } from './manager.js';
 
 describe('CacheManager', () => {

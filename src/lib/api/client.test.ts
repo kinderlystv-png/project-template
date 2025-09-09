@@ -3,7 +3,7 @@
  * @file src/lib/api/client.test.ts
  */
 
-import { describe, it, expect, beforeEach, vi, afterEach } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { APIClient } from './client.js';
 
 // Mock fetch

@@ -1,0 +1,884 @@
+{
+  "timestamp": "2025-09-09T13:16:01.015Z",
+  "projectPath": "C:\\! HEYS 2",
+  "version": "3.0.0",
+  "analyzer": "Ultimate EAP Analyzer",
+  "summary": {
+    "totalFiles": 1628,
+    "codeFiles": 655,
+    "totalLines": 196317,
+    "issues": {
+      "security": 2,
+      "performance": 10,
+      "quality": 140,
+      "debt": 9
+    },
+    "totalIssues": 161
+  },
+  "fileTypes": {
+    ".bat": 9,
+    "": 27,
+    ".json": 87,
+    ".md": 269,
+    ".cjs": 10,
+    ".yml": 21,
+    ".sh": 5,
+    ".cookie": 1,
+    ".2025-08-31": 1,
+    ".2025-09-02": 1,
+    ".2025-09-03": 1,
+    ".2025-09-04": 1,
+    ".2025-09-07": 1,
+    ".2025-09-08": 1,
+    ".2025-09-09": 1,
+    ".log": 39,
+    ".js": 204,
+    ".html": 369,
+    ".ico": 3,
+    ".css": 28,
+    ".tsx": 73,
+    ".ts": 370,
+    ".ps1": 13,
+    ".png": 17,
+    ".info": 1,
+    ".sql": 16,
+    ".yaml": 5,
+    ".mdx": 2,
+    ".jpeg": 1,
+    ".jpg": 1,
+    ".svg": 8,
+    ".jsx": 1,
+    ".env": 1,
+    ".webmanifest": 1,
+    ".backup": 2,
+    ".0": 1,
+    ".tsbuildinfo": 8,
+    ".production": 1,
+    ".example": 2,
+    ".test": 1,
+    ".svelte": 6,
+    ".webm": 9,
+    ".xml": 2,
+    ".gz": 2,
+    ".bak": 1,
+    ".pcss": 1,
+    ".txt": 2,
+    ".py": 1
+  },
+  "recommendations": [
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_core_v12.js",
+      "issue": "Большой файл (685 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_core_v12.js",
+      "issue": "Много длинных строк (56) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_day_v12.js",
+      "issue": "Большой файл (1112 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_day_v12.js",
+      "issue": "Много длинных строк (85) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_performance_monitor.js",
+      "issue": "Большой файл (830 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_reports_v12.js",
+      "issue": "Большой файл (1262 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_reports_v12.js",
+      "issue": "Много длинных строк (87) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_storage_supabase_v1.js",
+      "issue": "Большой файл (548 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\heys_user_v12.js",
+      "issue": "Много длинных строк (30) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\src\\components\\lazy\\LazyReports.tsx",
+      "issue": "Большой файл (620 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\src\\components\\lazy\\LazySettings.tsx",
+      "issue": "Большой файл (555 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\src\\lib\\supabase\\__tests__\\rls-policies.test.ts",
+      "issue": "Большой файл (556 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\src\\utils\\validator.ts",
+      "issue": "Большой файл (536 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "apps\\web\\src\\utils\\__tests__\\validator.test.ts",
+      "issue": "Большой файл (704 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\core\\heys_core_v12.js",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\core\\heys_core_v12.js",
+      "issue": "Много длинных строк (56) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\core\\heys_core_v12.ts",
+      "issue": "Большой файл (664 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\day\\heys_day_v12.js",
+      "issue": "Большой файл (1112 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\day\\heys_day_v12.js",
+      "issue": "Много длинных строк (85) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\gaming\\heys_gaming_system_v1.js",
+      "issue": "Большой файл (872 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\gaming\\heys_gaming_system_v1_with_anchors.js",
+      "issue": "Большой файл (1022 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\integration\\heys_integration_layer.js",
+      "issue": "Большой файл (776 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\integration\\heys_integration_layer_v1.js",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_performance_monitor.js",
+      "issue": "Большой файл (830 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_performance_monitor.ts",
+      "issue": "Большой файл (662 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_reports_v12.js",
+      "issue": "Большой файл (1262 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_reports_v12.js",
+      "issue": "Много длинных строк (87) - ухудшает читаемость"
+    },
+    {
+      "type": "performance",
+      "file": "archive\\legacy-v12\\misc\\heys_reports_v12.ts",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_reports_v12.ts",
+      "issue": "Большой файл (765 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\misc\\heys_security_validation.js",
+      "issue": "Большой файл (577 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\search\\heys_smart_search.js",
+      "issue": "Большой файл (623 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\search\\heys_smart_search_with_typos_v1.js",
+      "issue": "Большой файл (563 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\storage\\heys_storage_indexeddb_v1.js",
+      "issue": "Большой файл (503 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\storage\\heys_storage_supabase_v1.js",
+      "issue": "Большой файл (548 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "archive\\legacy-v12\\user\\heys_user_v12.js",
+      "issue": "Много длинных строк (30) - ухудшает читаемость"
+    },
+    {
+      "type": "performance",
+      "file": "coverage\\lcov-report\\sorter.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "performance",
+      "file": "coverage\\sorter.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "docs\\automation\\actualization-runner.js",
+      "issue": "Большой файл (564 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "emt-v3-stable-clean\\project-detector.js",
+      "issue": "Большой файл (1400 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "emt-v3-stable-clean\\project-detector.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Большой файл (1400 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\analytics-dashboard\\src\\core\\ErrorImpactAnalyzer.ts",
+      "issue": "Большой файл (559 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\auth\\src\\services\\AuthService.ts",
+      "issue": "Большой файл (643 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\auth\\src\\services\\PermissionService.ts",
+      "issue": "Большой файл (501 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "packages\\core\\coverage\\sorter.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\core\\src\\legacy\\heys_core_v12.js",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\core\\src\\legacy\\heys_core_v12.js",
+      "issue": "Много длинных строк (56) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\core\\src\\legacy\\heys_core_v12.ts",
+      "issue": "Большой файл (665 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\gaming\\src\\legacy\\heys_gaming_system_v1.js",
+      "issue": "Большой файл (872 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\gaming\\src\\legacy\\heys_gaming_system_v1_with_anchors.js",
+      "issue": "Большой файл (1022 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\search\\src\\legacy\\heys_smart_search.js",
+      "issue": "Большой файл (623 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\search\\src\\legacy\\heys_smart_search_with_typos_v1.js",
+      "issue": "Большой файл (563 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\components\\TreeShakingMonitor.tsx",
+      "issue": "Большой файл (563 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\day\\heys_day_v12.js",
+      "issue": "Большой файл (1112 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\day\\heys_day_v12.js",
+      "issue": "Много длинных строк (85) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\integration\\heys_integration_layer.js",
+      "issue": "Большой файл (776 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\integration\\heys_integration_layer_v1.js",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_performance_monitor.js",
+      "issue": "Большой файл (830 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_performance_monitor.ts",
+      "issue": "Большой файл (662 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_reports_v12.js",
+      "issue": "Большой файл (1262 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_reports_v12.js",
+      "issue": "Много длинных строк (87) - ухудшает читаемость"
+    },
+    {
+      "type": "performance",
+      "file": "packages\\shared\\src\\misc\\heys_reports_v12.ts",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_reports_v12.ts",
+      "issue": "Большой файл (765 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\misc\\heys_security_validation.js",
+      "issue": "Большой файл (577 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\AdvancedAuditLogger.test.ts",
+      "issue": "Большой файл (600 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\AdvancedAuditLogger.ts",
+      "issue": "Большой файл (855 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\logger.ts",
+      "issue": "Большой файл (528 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\monitoring-service.ts",
+      "issue": "Большой файл (601 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\sentry-integration.ts",
+      "issue": "Большой файл (535 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\monitoring\\__tests__\\monitoring-service.test.ts",
+      "issue": "Большой файл (501 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\advanced-cache-manager.ts",
+      "issue": "Большой файл (1003 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\advanced-cache-strategies.test.ts",
+      "issue": "Большой файл (822 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\bundle-analyzer.ts",
+      "issue": "Большой файл (562 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\bundle-optimizer.test.ts",
+      "issue": "Большой файл (535 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\bundle-optimizer.ts",
+      "issue": "Большой файл (794 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\cache.ts",
+      "issue": "Большой файл (1236 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\cli\\lazy-loading-analyzer.js",
+      "issue": "Большой файл (564 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\http-cache-strategy.ts",
+      "issue": "Большой файл (541 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\LazyLoader.ts",
+      "issue": "Большой файл (654 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\LighthouseOptimizer.ts",
+      "issue": "Большой файл (703 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\load-testing-tools.ts",
+      "issue": "Большой файл (1039 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\mobile-performance-optimizer.test.ts",
+      "issue": "Большой файл (511 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\mobile-performance-optimizer.ts",
+      "issue": "Большой файл (1391 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\mobile.ts",
+      "issue": "Большой файл (695 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\network-optimization-integration.ts",
+      "issue": "Большой файл (648 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\network-optimizer.ts",
+      "issue": "Большой файл (1130 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "packages\\shared\\src\\performance\\network-performance-dashboard.ts",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\network-performance-dashboard.ts",
+      "issue": "Большой файл (1001 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\network.ts",
+      "issue": "Большой файл (731 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\performance-analytics-dashboard.ts",
+      "issue": "Большой файл (1347 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\performance-regression-tester.ts",
+      "issue": "Большой файл (1179 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\performance-test-framework.ts",
+      "issue": "Большой файл (1034 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\performance.test.ts",
+      "issue": "Большой файл (727 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\profiler.ts",
+      "issue": "Большой файл (652 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\real-time-performance-monitor.ts",
+      "issue": "Большой файл (1077 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\performance\\service-worker.js",
+      "issue": "Большой файл (553 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\security\\AdvancedEncryption.test.ts",
+      "issue": "Большой файл (524 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\security\\AdvancedEncryption.ts",
+      "issue": "Большой файл (550 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\security\\pentest.ts",
+      "issue": "Большой файл (563 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\security\\validation.ts",
+      "issue": "Большой файл (562 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\shared\\src\\user\\heys_user_v12.js",
+      "issue": "Много длинных строк (30) - ухудшает читаемость"
+    },
+    {
+      "type": "debt",
+      "file": "packages\\shared\\src\\__tests__\\utils.test.ts",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\storage\\src\\legacy\\heys_storage_indexeddb_v1.js",
+      "issue": "Большой файл (503 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\storage\\src\\legacy\\heys_storage_supabase_v1.js",
+      "issue": "Большой файл (548 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\threat-detection\\src\\core\\IncidentResponseManager.ts",
+      "issue": "Большой файл (688 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\threat-detection\\src\\ml\\AnomalyDetectionEngine.ts",
+      "issue": "Большой файл (519 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\threat-detection\\src\\ml\\ThreatIntelligenceEngine.ts",
+      "issue": "Большой файл (504 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\threat-detection\\src\\types\\index.ts",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\components\\performance\\PerformanceMonitorV2.tsx",
+      "issue": "Большой файл (539 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\hooks\\useLazyLoad.ts",
+      "issue": "Большой файл (532 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\utils\\cacheManager.ts",
+      "issue": "Большой файл (730 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\utils\\memoryProfiler.ts",
+      "issue": "Большой файл (607 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\utils\\performance\\performanceMetrics.ts",
+      "issue": "Большой файл (556 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\__tests__\\components\\LazyWrapper.test.tsx",
+      "issue": "Большой файл (510 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "packages\\web\\src\\__tests__\\components\\PerformanceMonitorV2.test.tsx",
+      "issue": "Большой файл (518 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\emt-v3-stable-clean\\project-detector.js",
+      "issue": "Большой файл (1420 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "project-template\\emt-v3-stable-clean\\project-detector.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Большой файл (1420 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "project-template\\emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\api\\optimized.ts",
+      "issue": "Большой файл (543 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\cache\\optimized.ts",
+      "issue": "Большой файл (981 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\config\\management.ts",
+      "issue": "Большой файл (812 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\errorHandling\\system.ts",
+      "issue": "Большой файл (797 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "project-template\\src\\lib\\logger\\utils\\index.ts",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\migrations\\system.ts",
+      "issue": "Большой файл (830 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\monitoring\\system.ts",
+      "issue": "Большой файл (848 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\pwa\\manager.ts",
+      "issue": "Большой файл (558 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\security\\manager.ts",
+      "issue": "Большой файл (503 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\src\\lib\\security\\optimized.ts",
+      "issue": "Большой файл (982 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\testing-integration-package\\utils\\project-detector.js",
+      "issue": "Большой файл (515 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "project-template\\tests\\performance\\benchmarks.test.ts",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "project-template\\tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "Много длинных строк (21) - ухудшает читаемость"
+    },
+    {
+      "type": "debt",
+      "file": "project-template\\tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "Много TODO/FIXME комментариев (20) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\advanced-deploy.js",
+      "issue": "Большой файл (608 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\advanced-project-analyzer.js",
+      "issue": "Большой файл (1291 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\advanced-project-analyzer.js",
+      "issue": "Много длинных строк (23) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\code-splitting-analysis.js",
+      "issue": "Большой файл (551 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\project-structure-analyzer.js",
+      "issue": "Большой файл (741 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\security\\dependency-check.js",
+      "issue": "Большой файл (580 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\security\\dependency-check.js",
+      "issue": "Много длинных строк (12) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\security\\security-report.js",
+      "issue": "Большой файл (1047 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\security\\security-report.js",
+      "issue": "Много длинных строк (21) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "test-results\\assets\\index-D_ryMEPs.js",
+      "issue": "Много длинных строк (33) - ухудшает читаемость"
+    },
+    {
+      "type": "debt",
+      "file": "test-results\\assets\\index-D_ryMEPs.js",
+      "issue": "Много TODO/FIXME комментариев (44) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "testing-integration-package\\utils\\project-detector.js",
+      "issue": "Большой файл (881 строк) - стоит разделить"
+    },
+    {
+      "type": "security",
+      "file": "TESTS\\security-automation.test.js",
+      "issue": "Использование eval() небезопасно"
+    },
+    {
+      "type": "performance",
+      "file": "TESTS\\security-automation.test.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "TESTS\\security-automation.test.js",
+      "issue": "Большой файл (676 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\enhanced-error-logger.js",
+      "issue": "Большой файл (549 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\error-classification-engine.js",
+      "issue": "Большой файл (675 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "TOOLS\\mass-navigation-deployer.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\real-time-error-dashboard.js",
+      "issue": "Большой файл (1094 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "TOOLS\\roadmap-manager.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\roadmap-manager.js",
+      "issue": "Большой файл (868 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "TOOLS\\roadmap-manager.js",
+      "issue": "Много TODO/FIXME комментариев (7) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\stack-trace-analyzer.js",
+      "issue": "Большой файл (585 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "TOOLS\\tests\\enhanced-error-logging-tests.js",
+      "issue": "Большой файл (569 строк) - стоит разделить"
+    },
+    {
+      "type": "security",
+      "file": "vitest.setup.ts",
+      "issue": "Использование eval() небезопасно"
+    },
+    {
+      "type": "quality",
+      "file": "workers\\calculation_worker.js",
+      "issue": "Большой файл (540 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "workers\\sync_worker.js",
+      "issue": "Большой файл (554 строк) - стоит разделить"
+    }
+  ],
+  "roi": {
+    "estimatedSavings": 322000,
+    "effortHours": 644,
+    "roiPercent": 400
+  },
+  "aiInsights": {
+    "enabled": false,
+    "reason": "Simplified analysis mode"
+  }
+}

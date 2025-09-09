@@ -1,0 +1,199 @@
+name: Documentation & Badges Update
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: ['EAP Analyzer CI/CD']
+    types:
+      - completed
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    if: github.event.workflow_run.conclusion == 'success' || github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate quality badges
+        run: |
+          # Run tests and generate coverage
+          npm run test:coverage
+
+          # Run EAP self-analysis
+          npx eap-analyzer analyze . --format json --output qa-badges.json
+
+          # Extract metrics
+          COVERAGE=$(npx vitest run --coverage --reporter=json | jq '.coverage.lines.pct // 0')
+          QUALITY_SCORE=$(jq '.overallScore // 0' qa-badges.json)
+          TESTS_PASSING=$(npx vitest run --reporter=json | jq '.testResults | map(select(.status == "passed")) | length')
+          TOTAL_TESTS=$(npx vitest run --reporter=json | jq '.testResults | length')
+
+          # Create badges data
+          cat > qa-badges.json << EOF
+          {
+            "coverage": $COVERAGE,
+            "qualityScore": $QUALITY_SCORE,
+            "testsTotal": $TOTAL_TESTS,
+            "testsPassing": $TESTS_PASSING,
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          }
+          EOF
+
+          echo "Generated quality metrics:"
+          cat qa-badges.json
+
+      - name: Update README badges
+        run: |
+          # Read current metrics
+          COVERAGE=$(jq -r '.coverage' qa-badges.json)
+          QUALITY=$(jq -r '.qualityScore' qa-badges.json)
+          TESTS=$(jq -r '.testsPassing' qa-badges.json)
+          TOTAL=$(jq -r '.testsTotal' qa-badges.json)
+
+          # Determine colors
+          if (( $(echo "$COVERAGE >= 80" | bc -l) )); then
+            COV_COLOR="brightgreen"
+          elif (( $(echo "$COVERAGE >= 60" | bc -l) )); then
+            COV_COLOR="yellow"
+          else
+            COV_COLOR="red"
+          fi
+
+          if (( $(echo "$QUALITY >= 80" | bc -l) )); then
+            QUAL_COLOR="brightgreen"
+          elif (( $(echo "$QUALITY >= 60" | bc -l) )); then
+            QUAL_COLOR="yellow"
+          else
+            QUAL_COLOR="red"
+          fi
+
+          if (( $(echo "$TESTS == $TOTAL" | bc -l) )); then
+            TEST_COLOR="brightgreen"
+          elif (( $(echo "$TESTS >= $TOTAL * 0.8" | bc -l) )); then
+            TEST_COLOR="yellow"
+          else
+            TEST_COLOR="red"
+          fi
+
+          # Update README.md with new badges
+          sed -i "s|Coverage-[0-9]*%-.*|Coverage-${COVERAGE}%-${COV_COLOR}|g" README.md
+          sed -i "s|Quality-[0-9]*%-.*|Quality-${QUALITY}%-${QUAL_COLOR}|g" README.md
+          sed -i "s|Tests-[0-9]*/[0-9]*-.*|Tests-${TESTS}/${TOTAL}-${TEST_COLOR}|g" README.md
+
+      - name: Generate documentation
+        run: |
+          # Generate API documentation
+          npx typedoc src/index.ts --out docs/api
+
+          # Update architecture documentation
+          npx eap-analyzer analyze . --format markdown --output docs/ARCHITECTURE_ANALYSIS.md
+
+          # Generate performance benchmarks
+          mkdir -p docs/benchmarks
+          node scripts/generate-benchmarks.js > docs/benchmarks/latest.md
+
+      - name: Commit updates
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          if [[ -n $(git status --porcelain) ]]; then
+            git add README.md qa-badges.json docs/
+            git commit -m "📊 Update quality badges and documentation [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
+
+  deploy-docs:
+    runs-on: ubuntu-latest
+    needs: update-badges
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build documentation site
+        run: |
+          # Generate comprehensive documentation
+          npx typedoc src/index.ts --out dist/docs/api
+
+          # Copy additional documentation
+          cp -r docs/* dist/docs/
+          cp README.md dist/docs/
+          cp CHANGELOG.md dist/docs/
+
+          # Create index page
+          cat > dist/docs/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <title>EAP Analyzer Documentation</title>
+            <meta charset="utf-8">
+            <style>
+              body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; margin: 40px; }
+              .nav { margin-bottom: 30px; }
+              .nav a { margin-right: 20px; text-decoration: none; color: #0366d6; }
+              .nav a:hover { text-decoration: underline; }
+              .section { margin-bottom: 30px; }
+              .badge { margin: 5px; }
+            </style>
+          </head>
+          <body>
+            <h1>EAP Analyzer Documentation</h1>
+
+            <div class="nav">
+              <a href="README.html">Overview</a>
+              <a href="api/index.html">API Reference</a>
+              <a href="ARCHITECTURE_ANALYSIS.html">Architecture Analysis</a>
+              <a href="benchmarks/latest.html">Performance Benchmarks</a>
+              <a href="CHANGELOG.html">Changelog</a>
+            </div>
+
+            <div class="section">
+              <h2>Quality Metrics</h2>
+              <div class="badges">
+                <img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/project/eap-analyzer/main/qa-badges.json&label=Coverage&query=$.coverage&suffix=%&color=brightgreen" alt="Coverage">
+                <img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/project/eap-analyzer/main/qa-badges.json&label=Quality&query=$.qualityScore&suffix=%&color=brightgreen" alt="Quality Score">
+                <img src="https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/project/eap-analyzer/main/qa-badges.json&label=Tests&query=$.testsPassing&color=brightgreen" alt="Tests">
+              </div>
+            </div>
+
+            <div class="section">
+              <h2>Quick Start</h2>
+              <pre><code>npm install -g eap-analyzer</code></pre>
+            </div>
+          </body>
+          </html>
+          EOF
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/docs
+          enable_jekyll: false

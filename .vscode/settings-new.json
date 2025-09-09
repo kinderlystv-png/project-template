@@ -1,0 +1,64 @@
+{
+  // Основные настройки редактора
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ESLint настройки
+  "eslint.enable": true,
+  "eslint.validate": ["javascript", "typescript", "svelte"],
+  "eslint.format.enable": true,
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+
+  // Автоматическое исправление при сохранении
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+
+  // Форматирование
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // TypeScript настройки
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.suggest.autoImports": true,
+
+  // Исключения для поиска
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.svelte-kit": true,
+    "**/coverage": true,
+    "**/test-results": true
+  },
+
+  // Исключения для файлового дерева
+  "files.exclude": {
+    "**/.git": true,
+    "**/node_modules": true,
+    "**/.svelte-kit": true,
+    "**/dist": true
+  },
+
+  // GitHub Copilot Voice Chat настройки - многоязычная поддержка
+  "github.copilot.chat.voice.autoDetectLanguage": true,
+  "github.copilot.chat.voice.keywordDetection": true,
+
+  // VS Code Speech настройки - поддержка русского и английского
+  "accessibility.voice.speechLanguage": "auto"
+}

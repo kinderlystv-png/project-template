@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-09-09T13:14:22.838Z",
+  "projectPath": "C:\\alphacore\\project-template",
+  "version": "3.0.0",
+  "analyzer": "Ultimate EAP Analyzer",
+  "summary": {
+    "totalFiles": 596,
+    "codeFiles": 175,
+    "totalLines": 66513,
+    "issues": {
+      "security": 1,
+      "performance": 4,
+      "quality": 23,
+      "debt": 5
+    },
+    "totalIssues": 33
+  },
+  "fileTypes": {
+    "": 16,
+    ".development": 1,
+    ".example": 1,
+    ".production": 1,
+    ".test": 1,
+    ".cjs": 7,
+    ".yml": 10,
+    ".json": 35,
+    ".sh": 4,
+    ".ts": 91,
+    ".js": 77,
+    ".svelte": 4,
+    ".svg": 5,
+    ".css": 12,
+    ".md": 89,
+    ".png": 21,
+    ".html": 166,
+    ".info": 1,
+    ".ps1": 20,
+    ".backup": 1,
+    ".log": 4,
+    ".yaml": 1,
+    ".csv": 1,
+    ".ico": 1,
+    ".gz": 2,
+    ".webm": 18,
+    ".tsx": 3,
+    ".xml": 2,
+    ".bak": 1
+  },
+  "recommendations": [
+    {
+      "type": "quality",
+      "file": ".svelte-kit\\output\\client\\_app\\immutable\\entry\\app.iX6gggNl.js",
+      "issue": "Много длинных строк (15) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": ".svelte-kit\\output\\server\\chunks\\internal.js",
+      "issue": "Большой файл (2079 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": ".svelte-kit\\output\\server\\chunks\\internal.js",
+      "issue": "Много длинных строк (16) - ухудшает читаемость"
+    },
+    {
+      "type": "security",
+      "file": ".svelte-kit\\output\\server\\index.js",
+      "issue": "Использование eval() небезопасно"
+    },
+    {
+      "type": "quality",
+      "file": ".svelte-kit\\output\\server\\index.js",
+      "issue": "Большой файл (3739 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": ".svelte-kit\\output\\server\\index.js",
+      "issue": "Много длинных строк (30) - ухудшает читаемость"
+    },
+    {
+      "type": "performance",
+      "file": "coverage\\lcov-report\\sorter.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "performance",
+      "file": "coverage\\sorter.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "emt-v3-stable-clean\\project-detector.js",
+      "issue": "Большой файл (1420 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "emt-v3-stable-clean\\project-detector.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Большой файл (1420 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "emt-v3-stable-clean\\utils\\project-detector-v3.0-stable.js",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\advanced-project-analyzer.js",
+      "issue": "Большой файл (1312 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\advanced-project-analyzer.js",
+      "issue": "Много длинных строк (21) - ухудшает читаемость"
+    },
+    {
+      "type": "quality",
+      "file": "scripts\\project-structure-analyzer.js",
+      "issue": "Большой файл (762 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\api\\optimized.ts",
+      "issue": "Большой файл (543 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\cache\\optimized.ts",
+      "issue": "Большой файл (981 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\config\\management.ts",
+      "issue": "Большой файл (812 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\errorHandling\\system.ts",
+      "issue": "Большой файл (797 строк) - стоит разделить"
+    },
+    {
+      "type": "debt",
+      "file": "src\\lib\\logger\\utils\\index.ts",
+      "issue": "Много TODO/FIXME комментариев (9) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\migrations\\system.ts",
+      "issue": "Большой файл (830 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\monitoring\\system.ts",
+      "issue": "Большой файл (848 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\pwa\\manager.ts",
+      "issue": "Большой файл (558 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\security\\manager.ts",
+      "issue": "Большой файл (503 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "src\\lib\\security\\optimized.ts",
+      "issue": "Большой файл (982 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "test-results\\assets\\index-D_ryMEPs.js",
+      "issue": "Много длинных строк (33) - ухудшает читаемость"
+    },
+    {
+      "type": "debt",
+      "file": "test-results\\assets\\index-D_ryMEPs.js",
+      "issue": "Много TODO/FIXME комментариев (44) - накапливается долг"
+    },
+    {
+      "type": "quality",
+      "file": "testing-integration-package\\utils\\project-detector.js",
+      "issue": "Большой файл (515 строк) - стоит разделить"
+    },
+    {
+      "type": "performance",
+      "file": "tests\\performance\\benchmarks.test.ts",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "performance",
+      "file": "tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "DOM-запросы в циклах замедляют работу"
+    },
+    {
+      "type": "quality",
+      "file": "tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "Большой файл (31866 строк) - стоит разделить"
+    },
+    {
+      "type": "quality",
+      "file": "tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "Много длинных строк (11) - ухудшает читаемость"
+    },
+    {
+      "type": "debt",
+      "file": "tests\\reports\\assets\\index-14ea7095.js",
+      "issue": "Много TODO/FIXME комментариев (20) - накапливается долг"
+    }
+  ],
+  "roi": {
+    "estimatedSavings": 66000,
+    "effortHours": 132,
+    "roiPercent": 400
+  },
+  "aiInsights": {
+    "enabled": false,
+    "reason": "Simplified analysis mode"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "outDir": "./dist-cjs",
+    "declaration": false,
+    "declarationMap": false
+  },
+  "exclude": ["dist", "dist-cjs", "node_modules", "**/*.test.ts", "**/*.spec.ts"]
+}

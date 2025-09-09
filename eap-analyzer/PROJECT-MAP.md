@@ -54,7 +54,7 @@ eap-analyzer/
 
 ### 🔗 NPM пакет
 
-- **Имя**: `@shinomontagka/eap-analyzer`
+- **Имя**: `@kinderlystv-png/eap-analyzer`
 - **Версия**: `1.0.0`
 - **Главный файл**: `dist/index.js`
 - **Типы**: `dist/index.d.ts`
@@ -70,7 +70,7 @@ golden-analyze    # Алиас для золотого стандарта
 ### 📖 Библиотека
 
 ```typescript
-import { GoldenStandardAnalyzer } from '@shinomontagka/eap-analyzer';
+import { GoldenStandardAnalyzer } from '@kinderlystv-png/eap-analyzer';
 ```
 
 ## 🚀 Как запустить

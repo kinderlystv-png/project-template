@@ -1,29 +1,82 @@
 {
-  "name": "@shinomontagka/eap-analyzer",
-  "version": "1.0.0",
-  "description": "Эталонный Анализатор Проектов (ЭАП) - инструмент для анализа проектов на соответствие золотому стандарту разработки SHINOMONTAGKA",
+  "name": "@kinderlystv-png/eap-analyzer",
+  "version": "3.0.0",
+  "description": "Эталонный Анализатор Проектов (ЭАП) v3.0 - современный инструмент для анализа проектов на соответствие золотому стандарту разработки с расширенными возможностями AI-анализа, поддержкой множественных кодировок и адаптивными порогами",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./analyzer": {
+      "import": "./dist/analyzer.js",
+      "require": "./dist/analyzer.cjs",
+      "types": "./dist/analyzer.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "require": "./dist/utils/index.cjs",
+      "types": "./dist/utils/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "bin": {
     "eap": "./bin/eap.js",
     "eap-analyze": "./bin/eap.js",
-    "golden-analyze": "./bin/eap.js"
+    "eap-ai": "./bin/eap-ai.js",
+    "golden-analyze": "./bin/eap.js",
+    "test-fixes": "./bin/test-fixes.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json && node scripts/fix-cjs-exports.js",
     "build:watch": "tsc --watch",
     "dev": "tsx src/index.ts",
     "test": "vitest",
+    "test:watch": "vitest --watch",
     "test:coverage": "vitest --coverage",
+    "test:integration": "vitest --config vitest.integration.config.ts",
+    "test-fixes": "node bin/test-fixes.js",
+    "test-project": "node bin/test-fixes.js test-project",
+    "test-integration": "node bin/test-integration.js",
+    "validate": "node bin/validate.js",
+    "validate:integration": "node bin/validate.js integration",
+    "validate:full": "node bin/validate.js full",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "dev:setup": "node scripts/dev-setup.js setup",
+    "dev:watch": "node scripts/dev-setup.js watch",
+    "dev:quality": "node scripts/dev-setup.js quality",
+    "dev:coverage": "node scripts/dev-setup.js coverage",
+    "dev:pre-commit": "node scripts/dev-setup.js pre-commit",
+    "production:validate": "node scripts/validate-production.js",
+    "production:check": "npm run production:validate",
+    "benchmarks": "node scripts/generate-benchmarks.js",
     "analyze": "node bin/eap.js",
     "analyze:current": "node bin/eap.js .",
     "analyze:demo": "node bin/eap.js ../",
-    "prepublishOnly": "npm run build",
-    "clean": "rimraf dist"
+    "quick-analyze": "node bin/quick-analyze.js .",
+    "quick-analyze:project": "node bin/quick-analyze.js",
+    "quick-analyze:cjs": "node bin/quick-analyze.cjs .",
+    "analyze:simple": "node bin/quick-analyze.js .",
+    "demo:ultimate": "node --loader ts-node/esm src/demo/ultimate-demo.ts",
+    "demo:ai": "npm run demo:ultimate",
+    "demo:full": "npm run demo:ultimate",
+    "docker:build": "docker build -t eap-analyzer:latest .",
+    "docker:run": "bash docker/run.sh",
+    "docker:web": "bash docker/run.sh web",
+    "docker:clean": "bash docker/run.sh clean",
+    "release": "node scripts/release.cjs",
+    "release:prepare": "node scripts/release.cjs",
+    "prepublishOnly": "npm run build && npm run test",
+    "clean": "rimraf dist",
+    "postinstall": "node scripts/postinstall.js"
   },
   "keywords": [
     "code-quality",
@@ -37,7 +90,13 @@
     "eslint",
     "testing",
     "docker",
-    "ci-cd"
+    "ci-cd",
+    "encoding-detection",
+    "adaptive-thresholds",
+    "error-handling",
+    "es-modules",
+    "commonjs",
+    "cross-platform"
   ],
   "author": {
     "name": "SHINOMONTAGKA Team",

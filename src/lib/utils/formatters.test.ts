@@ -3,17 +3,17 @@
  * @file src/lib/utils/formatters.test.ts
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import {
-  formatCurrency,
-  formatNumber,
-  formatMeters,
-  formatCentimeters,
-  formatWeight,
-  formatVolume,
   formatArea,
-  formatPlural,
+  formatCentimeters,
+  formatCurrency,
   formatDeliveryDays,
+  formatMeters,
+  formatNumber,
+  formatPlural,
+  formatVolume,
+  formatWeight,
 } from './formatters.js';
 
 describe('formatters', () => {
