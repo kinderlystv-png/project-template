@@ -1,7 +1,11 @@
 /**
- * Экспорт всех общих чекеров
+ * Экспорт всех чекеров ЭАП (старых и новых)
  */
 
+// Новые унифицированные чекеры
+export * from './docker';
+
+// Старые чекеры (для обратной совместимости)
 import { SecurityChecker } from './security.checker.js';
 import { PerformanceChecker } from './performance.checker.js';
 import { CodeQualityChecker } from './code-quality.checker.js';

@@ -6,35 +6,35 @@ export class LargeUserManager {
   async deleteUser(id: string) { return true; }
   async updateUser(id: string, data: any) { return data; }
   async listUsers(filters: any) { return []; }
-  
+
   // Validation methods
   validateEmail(email: string) { return email.includes('@'); }
   validatePassword(password: string) { return password.length > 8; }
   validateAge(age: number) { return age > 0 && age < 150; }
   validatePhone(phone: string) { return phone.length > 10; }
-  
+
   // Email operations
   sendWelcomeEmail(user: any) { console.log('Welcome email sent'); }
   sendPasswordResetEmail(user: any) { console.log('Reset email sent'); }
   sendVerificationEmail(user: any) { console.log('Verification email sent'); }
-  
+
   // Authentication
   authenticateUser(credentials: any) { return true; }
   generateToken(user: any) { return 'token'; }
   validateToken(token: string) { return true; }
   refreshToken(token: string) { return 'new-token'; }
-  
+
   // Reporting
   generateUserReport(userId: string) { return {}; }
   exportUserData(format: string) { return 'data'; }
   generateStatistics() { return {}; }
-  
+
   // Utility methods
   formatUserName(user: any) { return user.name; }
   calculateUserAge(birthDate: Date) { return 25; }
   getUserPermissions(user: any) { return []; }
   logUserActivity(user: any, action: string) { console.log(action); }
-  
+
   // More methods to make it large...
   method0() { return 0; }
   method1() { return 1; }

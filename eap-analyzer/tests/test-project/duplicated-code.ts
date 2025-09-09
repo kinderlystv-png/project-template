@@ -6,7 +6,7 @@ export class DuplicatedValidation {
     if (email.length < 5) return false;
     return true;
   }
-  
+
   validateAdminEmail(email: string) {
     if (!email) return false;
     if (!email.includes('@')) return false;
@@ -14,7 +14,7 @@ export class DuplicatedValidation {
     if (!email.endsWith('@company.com')) return false;
     return true;
   }
-  
+
   validateGuestEmail(email: string) {
     if (!email) return false;
     if (!email.includes('@')) return false;

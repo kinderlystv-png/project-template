@@ -39,31 +39,37 @@ export class TechnicalDebtAnalyzer extends BaseAnalyzer {
   async analyze(projectPath: string): Promise<any> {
     console.log('💰 Анализ технического долга...');
 
-    const files = await this.getCodeFiles(projectPath);
+    // Используем встроенный метод для анализа категорий долга
+    const categories = await this.categorizeDebt(projectPath);
+
     const debtData = {
       totalDebt: 0,
       monthlyInterest: 0,
-      categories: [] as any[],
+      categories: categories,
       hotspots: [] as any[],
-      payoffPlan: [] as any[],
+      payoffPlan: {} as any,
       roiAnalysis: {} as any,
     };
 
-    // Анализ категорий долга
-    debtData.categories = await this.analyzeDebtCategories(files);
-
-    // Поиск проблемных зон
-    debtData.hotspots = await this.findDebtHotspots(files);
+    // Генерируем тепловую карту для hotspots
+    const heatmap = await this.generateHeatmap(projectPath, categories);
+    debtData.hotspots = heatmap.files.slice(0, 10); // топ 10 проблемных файлов
 
     // Расчет общего долга
-    debtData.totalDebt = this.calculateTotalDebt(debtData.categories);
-    debtData.monthlyInterest = this.calculateMonthlyInterest(debtData.totalDebt);
+    const totalDebtMetrics = this.calculateTotalDebt(categories);
+    debtData.totalDebt = totalDebtMetrics.totalDays;
+    debtData.monthlyInterest = totalDebtMetrics.monthlyInterest;
 
     // План погашения долга
-    debtData.payoffPlan = this.generatePayoffPlan(debtData.categories);
+    debtData.payoffPlan = this.createPayoffStrategy(categories);
 
-    // ROI анализ
-    debtData.roiAnalysis = this.calculateROI(debtData.categories, debtData.totalDebt);
+    // ROI анализ (упрощенный)
+    debtData.roiAnalysis = {
+      investment: totalDebtMetrics.totalCost,
+      yearlyBenefit: totalDebtMetrics.totalCost * 0.2, // 20% improvement
+      paybackPeriod: totalDebtMetrics.breakEvenPoint,
+      roi: 20, // 20% ROI
+    };
 
     return {
       success: true,
@@ -72,7 +78,7 @@ export class TechnicalDebtAnalyzer extends BaseAnalyzer {
         analyzer: this.getName(),
         timestamp: new Date(),
         duration: 0,
-        filesAnalyzed: files.length,
+        filesAnalyzed: heatmap.files.length,
       },
     };
   }
