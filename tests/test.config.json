@@ -1,0 +1,53 @@
+{
+  "testConfig": {
+    "version": "1.0.0",
+    "environment": "test",
+    "coverage": {
+      "threshold": {
+        "global": {
+          "branches": 80,
+          "functions": 80,
+          "lines": 80,
+          "statements": 80
+        }
+      },
+      "include": ["src/**/*.{js,ts}", "tests/**/*.{js,ts}"],
+      "exclude": ["node_modules/**", "coverage/**", "dist/**", "build/**"]
+    },
+    "performance": {
+      "maxExecutionTime": 5000,
+      "maxMemoryUsage": 100,
+      "concurrency": 10
+    },
+    "reporters": ["default", "json", "html"],
+    "integration": {
+      "timeout": 30000,
+      "retries": 2,
+      "parallel": true
+    },
+    "mocks": {
+      "filesystem": true,
+      "network": true,
+      "timers": true
+    }
+  },
+  "automation": {
+    "github": {
+      "workflows": ["testing.yml"],
+      "triggers": ["push", "pull_request", "schedule"]
+    },
+    "notifications": {
+      "slack": false,
+      "email": false,
+      "github": true
+    }
+  },
+  "quality": {
+    "gates": {
+      "coverage": 80,
+      "performance": "acceptable",
+      "security": "no-high-vulnerabilities",
+      "linting": "no-errors"
+    }
+  }
+}

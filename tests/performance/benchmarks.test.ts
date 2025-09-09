@@ -146,7 +146,7 @@ class DOM_Operations {
     const baseStyle = {
       width: '100px',
       height: '100px',
-      display: 'inline-block'
+      display: 'inline-block',
     };
 
     // Создаем элементы batch-операцией

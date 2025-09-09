@@ -18,9 +18,7 @@ import { MetricsCalculator } from './metrics/calculator.js';
 import { EAPIntegration } from './integration/eap-integration.js';
 
 // Совместимость с существующими импортами
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const config = require('./config.json');
+import config from './config.json' assert { type: 'json' };
 
 /**
  * Основной класс анализатора структуры

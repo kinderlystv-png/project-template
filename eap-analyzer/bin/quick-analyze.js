@@ -262,10 +262,11 @@ const reportData = {
 
 // Создаем уникальные имена файлов с папкой, датой и временем
 const projectName = path.basename(path.resolve(targetProject)).replace(/[^\w\-]/g, '_');
-const timestamp = new Date().toISOString()
-  .replace(/[:.]/g, '-')      // Заменяем : и . на -
-  .replace('T', '_')          // Заменяем T на _
-  .slice(0, 19);              // Убираем миллисекунды
+const timestamp = new Date()
+  .toISOString()
+  .replace(/[:.]/g, '-') // Заменяем : и . на -
+  .replace('T', '_') // Заменяем T на _
+  .slice(0, 19); // Убираем миллисекунды
 
 // Создаем папку reports если её нет
 const reportsDir = path.join(analyzerDir, 'reports');
@@ -292,7 +293,8 @@ try {
   console.log(`📋 Дорожная карта сохранена: ${roadmapPath}`);
 } catch (error) {
   console.warn('⚠️ Не удалось создать дорожную карту:', error.message);
-}console.log('\n✅ Анализ завершен! Ultimate EAP Analyzer v3.0');
+}
+console.log('\n✅ Анализ завершен! Ultimate EAP Analyzer v3.0');
 
 // Экспорт для использования как модуль
 export { analyzeProject };
