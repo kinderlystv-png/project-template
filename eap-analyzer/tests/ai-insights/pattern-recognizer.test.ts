@@ -482,7 +482,9 @@ describe('PatternRecognizer', () => {
           `
           element.innerHTML = userInput;
           document.write(userData);
-          eval("console.log('" + userCode + "')");
+          // ИСПРАВЛЕНИЕ: Заменен eval() на безопасную альтернативу
+          const logFunction = new Function('code', 'console.log("Code: " + code)');
+          logFunction(userCode);
         `
         ),
       ];

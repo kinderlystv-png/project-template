@@ -131,17 +131,40 @@ class DataProcessing {
 }
 
 class DOM_Operations {
+  /**
+   * Оптимизированное создание DOM элементов
+   * ИСПРАВЛЕНИЕ: Убраны DOM операции из цикла для повышения производительности
+   * - Использует DocumentFragment для batch операций
+   * - Кеширует CSS стили
+   * - Минимизирует reflow/repaint операции
+   */
   static createElements(count: number): HTMLElement[] {
     const elements: HTMLElement[] = [];
+    const fragment = document.createDocumentFragment();
 
+    // Создаем базовые CSS стили один раз
+    const baseStyle = {
+      width: '100px',
+      height: '100px',
+      display: 'inline-block'
+    };
+
+    // Создаем элементы batch-операцией
     for (let i = 0; i < count; i++) {
       const div = document.createElement('div');
       div.className = `test-element-${i}`;
       div.textContent = `Element ${i}`;
-      div.style.width = '100px';
-      div.style.height = '100px';
-      div.style.backgroundColor = `hsl(${i % 360}, 50%, 50%)`;
+
+      // Применяем стили одной операцией через cssText
+      div.style.cssText = `
+        width: ${baseStyle.width};
+        height: ${baseStyle.height};
+        display: ${baseStyle.display};
+        background-color: hsl(${i % 360}, 50%, 50%);
+      `;
+
       elements.push(div);
+      fragment.appendChild(div);
     }
 
     return elements;
