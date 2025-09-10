@@ -1,6 +1,6 @@
 "use strict";
 /**
- * Экспорт всех общих чекеров
+ * Экспорт всех чекеров ЭАП (старых и новых)
  */
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -18,6 +18,10 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UNIVERSAL_CHECKERS = void 0;
+// Новые унифицированные чекеры
+__exportStar(require("./docker"), exports);
+__exportStar(require("./testing"), exports);
+// Старые чекеры (для обратной совместимости)
 const security_checker_js_1 = require("./security.checker.js");
 const performance_checker_js_1 = require("./performance.checker.js");
 const code_quality_checker_js_1 = require("./code-quality.checker.js");

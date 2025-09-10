@@ -12,6 +12,8 @@ import { DockerChecker } from './checkers/docker.js';
 import { EMTChecker } from './checkers/emt.js';
 import { LoggingChecker } from './checkers/logging.js';
 import { SvelteKitChecker } from './checkers/sveltekit.js';
+import { TestingChecker } from './checkers/unified-testing.js';
+import { SecurityChecker } from './checkers/security/SecurityChecker.js';
 import { VitestChecker } from './checkers/vitest.js';
 import { CheckContext, CheckResult, ComponentResult } from './types/index.js';
 import {
@@ -567,6 +569,14 @@ export class GoldenStandardAnalyzer {
       {
         name: 'ЭМТ (Эталонный Модуль Тестирования)',
         checkComponent: EMTChecker.checkComponent.bind(EMTChecker),
+      },
+      {
+        name: 'Unified Testing Analysis',
+        checkComponent: TestingChecker.checkComponent.bind(TestingChecker),
+      },
+      {
+        name: 'Security Analysis',
+        checkComponent: SecurityChecker.checkComponent.bind(SecurityChecker),
       },
       {
         name: 'Docker Infrastructure',

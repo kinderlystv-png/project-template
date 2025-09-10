@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Test XSS Page</title>
+  </head>
+  <body>
+    <!-- Форма с потенциальной XSS уязвимостью -->
+    <form method="post" action="/submit">
+      <input type="text" name="comment" id="userComment" />
+      <button type="submit">Submit Comment</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+      // Критическая XSS уязвимость
+      function displayComment() {
+        const comment = document.getElementById('userComment').value;
+        document.getElementById('output').innerHTML = comment;
+      }
+
+      // Уязвимость с URL параметрами
+      const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('msg');
+      if (message) {
+        document.write(`<div class="message">${message}</div>`);
+      }
+    </script>
+  </body>
+</html>

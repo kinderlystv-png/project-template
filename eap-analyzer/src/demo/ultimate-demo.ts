@@ -266,12 +266,13 @@ class EAPAnalyzerDemo {
 
 // Запуск демонстрации
 try {
-  if (import.meta.url === `file://${process.argv[1]}`) {
+  // Проверяем, вызван ли файл напрямую (CommonJS совместимость)
+  if (typeof require !== 'undefined' && require.main === module) {
     const demo = new EAPAnalyzerDemo();
     demo.runFullDemo().catch(console.error);
   }
 } catch (e) {
-  // Игнорируем в CJS среде
+  // Игнорируем в ESM среде без import.meta
 }
 
 export { EAPAnalyzerDemo };

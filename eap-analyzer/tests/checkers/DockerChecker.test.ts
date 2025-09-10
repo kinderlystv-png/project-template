@@ -2,6 +2,7 @@
  * Тест для унифицированного DockerChecker
  */
 
+import { describe, test, expect, beforeEach, vi } from 'vitest';
 import { DockerChecker } from '../../src/checkers/docker/DockerChecker';
 import { Project } from '../../src/types/Project';
 import { AnalysisCategory } from '../../src/types/AnalysisCategory';
@@ -10,6 +11,8 @@ import { SeverityLevel } from '../../src/types/SeverityLevel';
 // Мок для Project
 class MockProject implements Project {
   private files: Map<string, string> = new Map();
+  public readonly path: string = '/mock/project';
+  public readonly name: string = 'mock-project';
 
   constructor(files: Record<string, string> = {}) {
     Object.entries(files).forEach(([path, content]) => {
@@ -25,6 +28,25 @@ class MockProject implements Project {
     return this.files.get(filePath) || '';
   }
 
+  async getFileList(pattern?: string): Promise<string[]> {
+    return Array.from(this.files.keys());
+  }
+
+  async getFileStats(filePath: string): Promise<any> {
+    const content = this.files.get(filePath);
+    return {
+      size: content?.length || 0,
+      created: new Date(),
+      modified: new Date(),
+      isDirectory: false,
+      isFile: true,
+    };
+  }
+
+  resolvePath(relativePath: string): string {
+    return `${this.path}/${relativePath}`;
+  }
+
   async writeFile(filePath: string, content: string): Promise<void> {
     this.files.set(filePath, content);
   }
@@ -38,11 +60,11 @@ class MockProject implements Project {
   }
 
   async getStats(filePath: string): Promise<any> {
-    return { size: this.files.get(filePath)?.length || 0 };
+    return this.getFileStats(filePath);
   }
 
   getPath(): string {
-    return '/mock/project';
+    return this.path;
   }
 }
 
@@ -206,7 +228,7 @@ CMD ["npm", "start"]
     const project = new MockProject();
 
     // Мокаем метод exists для генерации ошибки
-    jest.spyOn(project, 'exists').mockRejectedValue(new Error('File system error'));
+    vi.spyOn(project, 'exists').mockRejectedValue(new Error('File system error'));
 
     const results = await checker.safeCheck(project);
 

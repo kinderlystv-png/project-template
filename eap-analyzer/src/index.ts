@@ -17,6 +17,21 @@ export type {
   AnalysisConfig,
 } from './core/types.js';
 
+// Типы проекта
+export type { Project } from './types/Project.js';
+
+// Типы репортеров
+export type { ReportFormat, ReportResult, ReporterConfig } from './reporters/interfaces.js';
+
+// Анализаторы
+export * from './analyzers';
+
+// Оценщики
+export * from './evaluators';
+
+// Система отчетов (v4.0)
+export * from './reporters';
+
 // Универсальные чекеры
 export {
   SecurityChecker,
@@ -91,6 +106,8 @@ export { testAnalyzer } from './test.js';
 import { AnalysisOrchestrator } from './core/orchestrator.js';
 import { UNIVERSAL_CHECKERS } from './checkers/index.js';
 import { ALL_MODULE_CHECKERS } from './modules/index.js';
+import type { Project } from './types/Project.js';
+import type { FullAnalysisResult } from './core/types.js';
 
 /**
  * Создает готовый к использованию анализатор с полной конфигурацией
@@ -114,6 +131,38 @@ export function createEAPAnalyzer(): AnalysisOrchestrator {
 }
 
 /**
+ * Создает анализатор с поддержкой отчетов
+ */
+export function createEAPAnalyzerWithReporting() {
+  const analyzer = createEAPAnalyzer();
+
+  const generateReport = async (
+    project: Project,
+    analysis: FullAnalysisResult,
+    format?: string,
+    config?: any
+  ) => {
+    const { AnalysisReportAdapter, ReporterFactory, ReportFormat } = await import('./reporters');
+
+    // Преобразуем результаты анализа в данные отчета
+    const reportData = AnalysisReportAdapter.convertAnalysisToReportData(project, analysis);
+
+    // Создаем репортер для указанного формата
+    const reportFormat =
+      format === 'json'
+        ? ReportFormat.JSON
+        : format === 'html'
+          ? ReportFormat.HTML
+          : ReportFormat.MARKDOWN;
+
+    const reporter = ReporterFactory.createReporter(reportFormat, config);
+
+    // Генерируем отчет
+    return reporter.generateReport(project, reportData, config);
+  };
+
+  return { analyzer, generateReport };
+} /**
  * Готовый к использованию анализатор с полной конфигурацией
  */
 export const EAPAnalyzer = createEAPAnalyzer();

@@ -4,6 +4,7 @@
 
 // Новые унифицированные чекеры
 export * from './docker';
+export * from './testing';
 
 // Старые чекеры (для обратной совместимости)
 import { SecurityChecker } from './security.checker.js';

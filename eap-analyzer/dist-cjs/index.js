@@ -26,6 +26,10 @@ var index_js_1 = require("./core/index.js");
 Object.defineProperty(exports, "BaseChecker", { enumerable: true, get: function () { return index_js_1.BaseChecker; } });
 Object.defineProperty(exports, "BaseAnalyzer", { enumerable: true, get: function () { return index_js_1.BaseAnalyzer; } });
 Object.defineProperty(exports, "AnalysisOrchestrator", { enumerable: true, get: function () { return index_js_1.AnalysisOrchestrator; } });
+// Анализаторы
+__exportStar(require("./analyzers"), exports);
+// Оценщики
+__exportStar(require("./evaluators"), exports);
 // Универсальные чекеры
 var index_js_2 = require("./checkers/index.js");
 Object.defineProperty(exports, "SecurityChecker", { enumerable: true, get: function () { return index_js_2.SecurityChecker; } });

@@ -8,6 +8,10 @@ static/
 .vscode/
 logs/
 
+# Test files with intentional vulnerabilities
+src/lib/test-xss-vulnerable.js
+src/routes/test-xss-vulnerable.svelte
+
 # Ignore vendor and library files
 vite.config.complex.ts
 *.min.js
