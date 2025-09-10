@@ -3,6 +3,7 @@ import { Project } from '../../types/Project';
 import { CheckResult } from '../../types/CheckResult';
 import { AnalysisCategory } from '../../types/AnalysisCategory';
 import { SeverityLevel } from '../../types/SeverityLevel';
+import { RuntimeMetricsAnalyzer } from './RuntimeMetricsAnalyzer';
 
 // Локальные типы для избежания проблем с импортом
 export interface IPerformanceAnalyzer {
