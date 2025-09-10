@@ -1,4 +1,3 @@
-// @ts-ignore - необходимо для импорта модулей из testing-library
 import '@testing-library/jest-dom';
 import { vi } from 'vitest';
 
@@ -269,7 +268,6 @@ const localStorageMock = {
   length: 0,
   key: vi.fn(),
 };
-// @ts-ignore
 global.localStorage = localStorageMock;
 
 // Мок для sessionStorage
@@ -281,7 +279,6 @@ const sessionStorageMock = {
   length: 0,
   key: vi.fn(),
 };
-// @ts-ignore
 global.sessionStorage = sessionStorageMock;
 
 // Мок для fetch API

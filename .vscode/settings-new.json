@@ -14,6 +14,7 @@
   "eslint.codeAction.showDocumentation": {
     "enable": true
   },
+  "eslint.workingDirectories": ["./", "./eap-analyzer"],
 
   // Автоматическое исправление при сохранении
   "editor.codeActionsOnSave": {

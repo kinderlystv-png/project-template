@@ -13,10 +13,18 @@ interface Logger {
 
 // Логгер для браузера (простая обертка над console)
 const browserLogger: Logger = {
-  debug: (message: string, meta: LogMeta = {}) => console.debug('[Debug]', message, meta),
-  info: (message: string, meta: LogMeta = {}) => console.info('[Info]', message, meta),
-  warn: (message: string, meta: LogMeta = {}) => console.warn('[Warning]', message, meta),
-  error: (message: string, meta: LogMeta = {}) => console.error('[Error]', message, meta),
+  debug: (message: string, meta: LogMeta = {}) =>
+    // eslint-disable-next-line no-console
+    console.debug('[Debug]', message, meta),
+  info: (message: string, meta: LogMeta = {}) =>
+    // eslint-disable-next-line no-console
+    console.info('[Info]', message, meta),
+  warn: (message: string, meta: LogMeta = {}) =>
+    // eslint-disable-next-line no-console
+    console.warn('[Warning]', message, meta),
+  error: (message: string, meta: LogMeta = {}) =>
+    // eslint-disable-next-line no-console
+    console.error('[Error]', message, meta),
 };
 
 // Функция создания серверного логгера

@@ -8,6 +8,19 @@ static/
 .vscode/
 logs/
 
+# Ignore HTML files with minified code
+catalog.html
+catalog-exact.html
+alfacore-catalog.html
+index.html
+
+# Ignore demo and phase files
+phase1-demo.js
+phase1-demo.cjs
+
+# Ignore eap-analyzer completely (it has its own ESLint config)
+eap-analyzer/
+
 # Test files with intentional vulnerabilities
 src/lib/test-xss-vulnerable.js
 src/routes/test-xss-vulnerable.svelte
