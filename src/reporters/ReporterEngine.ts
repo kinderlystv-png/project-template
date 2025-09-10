@@ -149,17 +149,18 @@ export class ReporterEngine {
       projectPath,
       summary,
       categories,
-      recommendations: analysisResult.recommendations?.map(rec => ({
-        id: rec.id,
-        category: rec.category || 'general',
-        component: rec.category || 'general',
-        priority: rec.priority as 'critical' | 'high' | 'medium' | 'low',
-        title: rec.title || rec.description,
-        description: rec.description || rec.title,
-        action: rec.description || rec.title,
-        estimatedTime: '2-4 hours',
-        impact: rec.priority || 'medium'
-      })) || [],
+      recommendations:
+        analysisResult.recommendations?.map(rec => ({
+          id: rec.id,
+          category: rec.category || 'general',
+          component: rec.category || 'general',
+          priority: rec.priority as 'critical' | 'high' | 'medium' | 'low',
+          title: rec.title || rec.description,
+          description: rec.description || rec.title,
+          action: rec.description || rec.title,
+          estimatedTime: '2-4 hours',
+          impact: rec.priority || 'medium',
+        })) || [],
       performance: this.extractPerformanceMetrics(analysisResult),
       security: this.extractSecurityReport(analysisResult),
       testing: this.extractTestingReport(analysisResult),
@@ -361,7 +362,7 @@ export class ReporterEngine {
           name: (asset as any)?.name || 'unknown',
           size: (asset as any)?.size || 0,
           gzipped: (asset as any)?.gzipped || 0,
-          type: (asset as any)?.type || 'other' as 'js' | 'css' | 'image' | 'font' | 'other'
+          type: (asset as any)?.type || ('other' as 'js' | 'css' | 'image' | 'font' | 'other'),
         })),
       },
       buildTime: analysisResult.performance?.buildTime || 0,
@@ -372,13 +373,15 @@ export class ReporterEngine {
   private static extractSecurityReport(analysisResult: AnalysisResult) {
     return {
       vulnerabilities: (analysisResult.security?.vulnerabilities || []).map((vuln: unknown) => ({
-        type: (vuln as any)?.type || 'other' as 'xss' | 'csrf' | 'sql-injection' | 'path-traversal' | 'other',
-        severity: (vuln as any)?.severity || 'medium' as 'critical' | 'high' | 'medium' | 'low',
+        type:
+          (vuln as any)?.type ||
+          ('other' as 'xss' | 'csrf' | 'sql-injection' | 'path-traversal' | 'other'),
+        severity: (vuln as any)?.severity || ('medium' as 'critical' | 'high' | 'medium' | 'low'),
         file: (vuln as any)?.file || 'unknown',
         line: (vuln as any)?.line || 0,
         description: (vuln as any)?.description || 'Security vulnerability',
         recommendation: (vuln as any)?.recommendation || 'Review and fix security issue',
-        cve: (vuln as any)?.cve
+        cve: (vuln as any)?.cve,
       })),
       securityScore: analysisResult.security?.score || 0,
       cspStatus: analysisResult.security?.csp || 'unknown',
@@ -404,13 +407,20 @@ export class ReporterEngine {
         duration: 0,
       },
       testFiles: (analysisResult.testing?.files || []).map(file => {
-        const testFile = file as { name?: string; path?: string; tests?: number; passed?: number; failed?: number; coverage?: number };
+        const testFile = file as {
+          name?: string;
+          path?: string;
+          tests?: number;
+          passed?: number;
+          failed?: number;
+          coverage?: number;
+        };
         return {
           path: testFile.path || testFile.name || 'unknown',
           tests: testFile.tests || 0,
           passed: testFile.passed || 0,
           failed: testFile.failed || 0,
-          coverage: testFile.coverage || 0
+          coverage: testFile.coverage || 0,
         };
       }),
       mockingStatus: analysisResult.testing?.mocking || 'unknown',

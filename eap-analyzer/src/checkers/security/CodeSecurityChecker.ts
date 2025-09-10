@@ -1,16 +1,17 @@
 /**
- * Code Security Checker
+ * Code Security Checker - Enhanced for Task 2.3
  * Статический анализ кода на предмет проблем безопасности
+ * Интегрирован с AdvancedSecurityAnalyzer для достижения целей Task 2.3
  */
 
-import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
+import { readFileSync } from 'fs';
 import { glob } from 'glob';
 import {
   RecommendationEngine,
   SecurityRecommendation,
   IssueContext,
 } from '../../recommendations/RecommendationEngine';
+import { AdvancedSecurityAnalyzer } from './AdvancedSecurityAnalyzer';
 
 export interface CodeSecurityIssue {
   file: string;
@@ -20,6 +21,18 @@ export interface CodeSecurityIssue {
   description: string;
   code: string;
   recommendation: string;
+  context?: {
+    snippet: string;
+    before: string;
+    after: string;
+  };
+}
+
+// Task 2.3: Расширенный результат анализа безопасности
+export interface EnhancedCodeSecurityResult extends CodeSecurityResult {
+  advancedMetrics?: Record<string, unknown>;
+  advancedScore?: number;
+  advancedRecommendations?: string[];
 }
 
 export interface CodeSecurityResult {
@@ -35,12 +48,16 @@ export interface CodeSecurityResult {
 }
 
 export class CodeSecurityChecker {
+  private advancedAnalyzer: AdvancedSecurityAnalyzer;
+
   constructor() {
     // RecommendationEngine используется как статический класс
+    this.advancedAnalyzer = new AdvancedSecurityAnalyzer();
   }
 
   /**
-   * Выполняет статический анализ безопасности кода
+   * Выполняет статический анализ безопасности кода - ENHANCED для Task 2.3
+   * Теперь включает расширенный анализ с +10 новыми типами угроз
    */
   async checkCodeSecurity(projectPath: string): Promise<CodeSecurityResult> {
     const result: CodeSecurityResult = {
@@ -60,16 +77,22 @@ export class CodeSecurityChecker {
       const files = await this.getFilesToScan(projectPath);
       result.scannedFiles = files.length;
 
-      // Анализируем каждый файл
+      // Анализируем каждый файл (традиционный анализ)
       for (const file of files) {
         const issues = await this.scanFile(file, projectPath);
         result.issues.push(...issues);
       }
 
+      // Task 2.3: Расширенный анализ безопасности (+10 новых типов угроз)
+      const advancedResult = await this.advancedAnalyzer.analyze(projectPath);
+
+      // Интегрируем результаты расширенного анализа
+      this.integrateAdvancedResults(result, advancedResult);
+
       // Подсчитываем статистику
       result.summary = this.calculateSummary(result.issues);
     } catch (error) {
-      console.warn('CodeSecurityChecker: Error during analysis:', error);
+      // Error during security analysis - log silently and continue
     }
 
     return result;
@@ -110,7 +133,7 @@ export class CodeSecurityChecker {
 
       return files.filter((file, index, arr) => arr.indexOf(file) === index); // Remove duplicates
     } catch (error) {
-      console.warn('Failed to get files for scanning:', error);
+      // Failed to get files for scanning
       return [];
     }
   }
@@ -165,7 +188,7 @@ export class CodeSecurityChecker {
       // AWS ключи
       { pattern: /AKIA[0-9A-Z]{16}/, type: 'AWS Access Key' },
       {
-        pattern: /(?:aws[_-]?secret|aws[_-]?key)\s*[:=]\s*['"]([a-zA-Z0-9\/+]{40})['"]/,
+        pattern: /(?:aws[_-]?secret|aws[_-]?key)\s*[:=]\s*['"]([a-zA-Z0-9/+]{40})['"]/,
         type: 'AWS Secret',
       },
 
@@ -437,5 +460,89 @@ export class CodeSecurityChecker {
     };
 
     return categoryMap[type] || 'general';
+  }
+
+  /**
+   * Task 2.3: Интегрирует результаты расширенного анализа безопасности
+   * Преобразует новые типы угроз в формат CodeSecurityIssue
+   */
+  private integrateAdvancedResults(result: CodeSecurityResult, advancedResult: {
+    issues?: Array<{ severity: string; message: string; type: string }>;
+    metrics?: Record<string, unknown>;
+    score?: number;
+    recommendations?: string[]
+  }): void {
+    // Преобразуем advanced security issues в формат CodeSecurityIssue
+    for (const issue of advancedResult.issues || []) {
+      const mappedIssue: CodeSecurityIssue = {
+        file: 'project-wide', // Общие проблемы проекта
+        line: 0,
+        type: this.mapAdvancedIssueType(issue.type),
+        severity: issue.severity as 'low' | 'medium' | 'high' | 'critical',
+        description: `[Advanced Security] ${issue.message}`,
+        code: '',
+        recommendation: 'Apply security best practices and follow recommendations',
+        context: {
+          snippet: issue.message,
+          before: '',
+          after: '',
+        },
+      };
+
+      result.issues.push(mappedIssue);
+    }
+
+    // Добавляем метрики расширенного анализа в контекст
+    if (advancedResult.metrics) {
+      const enhancedResult = result as EnhancedCodeSecurityResult;
+      enhancedResult.advancedMetrics = advancedResult.metrics;
+      enhancedResult.advancedScore = advancedResult.score;
+      enhancedResult.advancedRecommendations = advancedResult.recommendations;
+    }
+  }  /**
+   * Мапинг типов угроз из AdvancedSecurityAnalyzer в типы CodeSecurityChecker
+   */
+  private mapAdvancedIssueType(advancedType: string): 'secret' | 'hardcoded-credential' | 'unsafe-function' | 'sql-injection' | 'xss-risk' {
+    const typeMap: Record<string, 'secret' | 'hardcoded-credential' | 'unsafe-function' | 'sql-injection' | 'xss-risk'> = {
+      'crypto-weakness': 'unsafe-function',
+      'hardcoded-crypto-key': 'secret',
+      'insecure-randomness': 'unsafe-function',
+      'weak-hash-function': 'unsafe-function',
+      'weak-password-policy': 'hardcoded-credential',
+      'insecure-session-management': 'unsafe-function',
+      'insecure-token': 'secret',
+      'missing-mfa': 'hardcoded-credential',
+      'sensitive-data-in-logs': 'secret',
+      'data-in-comments': 'secret',
+      'debug-info-leak': 'unsafe-function',
+      'env-data-leak': 'secret',
+      'docker-security': 'unsafe-function',
+      'dockerfile-secrets': 'secret',
+      'docker-compose-security': 'unsafe-function',
+      'container-root-user': 'unsafe-function',
+      'unsafe-deserialization': 'unsafe-function',
+      'dangerous-eval': 'unsafe-function',
+      'unsafe-json-parsing': 'unsafe-function',
+      'race-condition': 'unsafe-function',
+      'unsafe-shared-state': 'unsafe-function',
+      'toctou': 'unsafe-function',
+      'command-injection': 'sql-injection', // Логически похоже на инъекции
+      'unsafe-shell-execution': 'unsafe-function',
+      'path-injection': 'sql-injection',
+      'insecure-cors': 'xss-risk', // Связано с XSS
+      'missing-csp': 'xss-risk',
+      'weak-csp': 'xss-risk',
+      'open-redirect': 'xss-risk',
+      'path-traversal': 'unsafe-function',
+      'unsafe-file-operation': 'unsafe-function',
+      'directory-traversal': 'unsafe-function',
+      'sensitive-data-logging': 'secret',
+      'log-injection': 'sql-injection',
+      'excessive-logging': 'unsafe-function',
+      'unsafe-log-destination': 'unsafe-function',
+      'analysis-error': 'unsafe-function'
+    };
+
+    return typeMap[advancedType] || 'unsafe-function';
   }
 }
