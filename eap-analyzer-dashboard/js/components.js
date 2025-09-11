@@ -681,5 +681,19 @@ const EAP_COMPONENTS_DATA = {
 // Привязываем утилиты к данным
 EAP_COMPONENTS_DATA.utils.components = EAP_COMPONENTS_DATA.components;
 
-// Глобальный доступ к данным
-window.EAP_DATA = EAP_COMPONENTS_DATA;
+// Глобальный доступ к данным - только если данные еще не загружены из data.js
+if (
+  !window.EAP_DATA ||
+  !window.EAP_DATA.components ||
+  Object.keys(window.EAP_DATA.components).length === 0
+) {
+  console.log('📊 Загружаем данные из components.js (fallback)');
+  window.EAP_DATA = EAP_COMPONENTS_DATA;
+} else {
+  console.log('📊 Данные уже загружены из data.js, пропускаем components.js');
+
+  // Дополняем только утилиты если их нет
+  if (!window.EAP_DATA.utils) {
+    window.EAP_DATA.utils = EAP_COMPONENTS_DATA.utils;
+  }
+}

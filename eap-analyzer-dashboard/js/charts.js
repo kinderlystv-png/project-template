@@ -21,7 +21,7 @@ class EAPChartsManager {
   /**
    * Инициализация всех графиков
    */
-  initializeCharts() {
+  async initializeCharts() {
     // Расширенная проверка доступности Chart.js
     if (typeof Chart === 'undefined') {
       console.error('❌ Chart.js не загружен!');
@@ -31,6 +31,9 @@ class EAPChartsManager {
 
     console.log('📊 Chart.js версия:', Chart.version || 'неизвестна');
     console.log('📊 Доступные типы графиков:', Object.keys(Chart.controllers || {}));
+
+    // Ждем немного для загрузки данных
+    await new Promise(resolve => setTimeout(resolve, 500));
 
     try {
       this.createCategoriesOverviewChart();
@@ -69,9 +72,24 @@ class EAPChartsManager {
    */
   createCategoriesOverviewChart() {
     const ctx = document.getElementById('categories-chart');
-    if (!ctx) return;
+    if (!ctx) {
+      console.error('❌ Элемент categories-chart не найден!');
+      return;
+    }
+
+    console.log('📊 Создание диаграммы категорий...');
+    console.log('📊 EAP_DATA доступна:', !!window.EAP_DATA);
+    console.log('📊 Категории доступны:', !!window.EAP_DATA?.categories);
 
     const categoryData = this.prepareCategoryData();
+
+    console.log('📊 Данные для диаграммы:', categoryData);
+
+    if (!categoryData.labels || categoryData.labels.length === 0) {
+      console.error('❌ Нет данных для отображения диаграммы!');
+      ctx.getContext('2d').fillText('Нет данных для отображения', 10, 50);
+      return;
+    }
 
     this.charts.categories = new Chart(ctx, {
       type: 'bar',
@@ -132,10 +150,32 @@ class EAPChartsManager {
                 return `${context.dataset.label}: ${context.parsed.y}%`;
               },
               afterBody: function (context) {
-                const categoryName = context[0].label.toLowerCase();
-                const components =
-                  window.EAP_DATA?.utils?.getComponentsByCategory(categoryName) || {};
-                return `Компонентов: ${Object.keys(components).length}`;
+                // Находим категорию по названию
+                const categoryLabel = context[0].label;
+                const categories = window.EAP_DATA?.categories || {};
+
+                console.log('🖱️ Tooltip - поиск категории:', categoryLabel);
+                console.log('🖱️ Доступные категории:', Object.keys(categories));
+
+                // Ищем категорию по названию
+                let categoryData = null;
+                Object.keys(categories).forEach(key => {
+                  if (categories[key].name === categoryLabel) {
+                    categoryData = categories[key];
+                    console.log('🖱️ Найдена категория:', key, categoryData);
+                  }
+                });
+
+                if (categoryData) {
+                  return [
+                    `Компонентов: ${categoryData.count}`,
+                    `Логика: ${categoryData.logic}%`,
+                    `Функциональность: ${categoryData.functionality}%`,
+                  ];
+                }
+
+                console.log('⚠️ Категория не найдена:', categoryLabel);
+                return 'Данные недоступны';
               },
             },
           },
@@ -373,15 +413,31 @@ class EAPChartsManager {
     const logic = [];
     const functionality = [];
 
+    console.log('📊 Подготовка данных категорий:', categories);
+    console.log('📊 Ключи категорий:', Object.keys(categories));
+    console.log('📊 Количество категорий:', Object.keys(categories).length);
+
     Object.keys(categories).forEach(categoryKey => {
-      const stats = window.EAP_DATA?.utils?.getCategoryStats(categoryKey);
-      if (stats && stats.count > 0) {
-        labels.push(categories[categoryKey].name);
-        logic.push(Math.round(stats.avgLogic));
-        functionality.push(Math.round(stats.avgFunctionality));
+      const category = categories[categoryKey];
+      console.log(`📊 Обработка категории ${categoryKey}:`, category);
+
+      if (category && category.count > 0) {
+        labels.push(category.name);
+        logic.push(Math.round(category.logic || 0));
+        functionality.push(Math.round(category.functionality || 0));
+
+        console.log(`📊 Категория ${categoryKey}:`, {
+          name: category.name,
+          logic: category.logic,
+          functionality: category.functionality,
+          count: category.count,
+        });
+      } else {
+        console.log(`⚠️ Пропуск категории ${categoryKey}: недостаточно данных`);
       }
     });
 
+    console.log('📊 Итоговые данные диаграммы:', { labels, logic, functionality });
     return { labels, logic, functionality };
   }
 

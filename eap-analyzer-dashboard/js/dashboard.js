@@ -6,6 +6,7 @@ class EAPDashboard {
     this.sortBy = 'name';
     this.sortOrder = 'asc';
     this.sortMode = 'category'; // По умолчанию сортируем по категориям
+    this.currentClassificationFilter = 'all'; // Новый фильтр по классификации
     this.initialized = false;
     this.componentsData = {};
     this.statistics = {};
@@ -41,10 +42,10 @@ class EAPDashboard {
           window.EAP_DATA = { components: {}, categories: {}, history: {}, utils: {} };
         }
 
-        // Мержим данные - приоритет live-данным
+        // Мержим данные - приоритет данным из data.js (более полным)
         window.EAP_DATA.components = {
-          ...window.EAP_DATA.components, // Сохраняем существующие
-          ...parsedData.components, // Добавляем/обновляем live-данные
+          ...parsedData.components, // Сначала markdown-данные (базовые)
+          ...window.EAP_DATA.components, // Затем данные из data.js (полные с fileSize, lines и т.д.)
         };
 
         // Обновляем историю
@@ -822,12 +823,20 @@ class EAPDashboard {
    * Отрисовка списка компонентов
    */
   renderComponentsList() {
+    console.log('🎨 renderComponentsList вызван');
+    console.log('🏷️ Текущий фильтр классификации:', this.currentClassificationFilter);
+
     const container = document.getElementById('components-table-body');
     const countContainer = document.getElementById('total-components-count');
-    if (!container) return;
+    if (!container) {
+      console.error('❌ Контейнер components-table-body не найден');
+      return;
+    }
 
     // Получаем отфильтрованные компоненты
+    console.log('🔍 Получаем отфильтрованные компоненты...');
     const filteredComponents = this.getFilteredComponents();
+    console.log('📊 Получено отфильтрованных компонентов:', filteredComponents.length);
     let sortedComponents = [];
 
     switch (this.sortMode) {
@@ -887,6 +896,24 @@ class EAPDashboard {
       countContainer.textContent = sortedComponents.length;
     }
 
+    // Обновляем статус фильтрации
+    const filterStatusElement = document.querySelector('#filter-status');
+    if (filterStatusElement) {
+      if (this.currentClassificationFilter === 'analyzer') {
+        filterStatusElement.textContent = '(только анализаторы)';
+        filterStatusElement.className = 'text-success ms-2';
+      } else if (this.currentClassificationFilter === 'auxiliary') {
+        filterStatusElement.textContent = '(только вспомогательные)';
+        filterStatusElement.className = 'text-secondary ms-2';
+      } else if (this.currentClassificationFilter === 'test') {
+        filterStatusElement.textContent = '(только тестовые)';
+        filterStatusElement.className = 'text-warning ms-2';
+      } else {
+        filterStatusElement.textContent = '(все компоненты)';
+        filterStatusElement.className = 'text-muted ms-2';
+      }
+    }
+
     if (sortedComponents.length === 0) {
       container.innerHTML = `
                 <tr>
@@ -923,7 +950,7 @@ class EAPDashboard {
       else if (component.functionality >= 70) funcClass = 'bg-warning';
 
       html += `
-                <tr data-component-name="${component.name}" style="cursor: pointer;" title="Нажмите для детального анализа">
+                <tr data-component-name="${component.name}" data-component-classification="${component.classification || 'auxiliary'}" style="cursor: pointer;" title="Нажмите для детального анализа">
                     <td>
                         <div class="d-flex align-items-center">
                             <i class="${categoryInfo.icon} me-2" style="color: ${categoryInfo.color}"></i>
@@ -971,7 +998,7 @@ class EAPDashboard {
     // Добавляем обработчики клика для детального анализа
     const rows = container.querySelectorAll('tr[data-component-name]');
     rows.forEach(row => {
-      row.addEventListener('click', (e) => {
+      row.addEventListener('click', e => {
         // Предотвращаем клик если пользователь выделяет текст
         if (window.getSelection().toString().length > 0) return;
 
@@ -1059,20 +1086,56 @@ class EAPDashboard {
    * Получение отфильтрованных компонентов
    */
   getFilteredComponents() {
+    console.log('🔍 getFilteredComponents вызван');
+    console.log('📊 Всего компонентов в данных:', Object.keys(this.componentsData).length);
+    console.log('🏷️ Текущий фильтр классификации:', this.currentClassificationFilter);
+    console.log('📋 Текущий фильтр категории:', this.currentFilter);
+
     let components = Object.values(this.componentsData);
+    console.log('📈 Компонентов после получения данных:', components.length);
 
     // Фильтрация по категории
     if (this.currentFilter !== 'all') {
+      console.log('🎯 Применяем фильтр по категории:', this.currentFilter);
       components = components.filter(comp => comp.category === this.currentFilter);
+      console.log('📉 Компонентов после фильтра категории:', components.length);
+    }
+
+    // Фильтрация по классификации
+    if (this.currentClassificationFilter !== 'all') {
+      console.log('🏷️ Применяем фильтр по классификации:', this.currentClassificationFilter);
+
+      const beforeCount = components.length;
+      components = components.filter(comp => {
+        const hasClassification = !!comp.classification;
+        const matches = comp.classification === this.currentClassificationFilter;
+
+        if (!hasClassification) {
+          console.warn('⚠️ Компонент без классификации:', comp.name);
+        }
+
+        return matches;
+      });
+
+      console.log('📉 Компонентов после фильтра классификации:', components.length);
     }
 
     // Поиск
     if (this.searchQuery) {
+      console.log('🔍 Применяем поисковый запрос:', this.searchQuery);
+      const beforeSearchCount = components.length;
       components = components.filter(
         comp =>
           comp.name.toLowerCase().includes(this.searchQuery) ||
           (comp.description && comp.description.toLowerCase().includes(this.searchQuery)) ||
           (comp.file && comp.file.toLowerCase().includes(this.searchQuery))
+      );
+      console.log(
+        '📉 Компонентов после поиска:',
+        components.length,
+        '(было:',
+        beforeSearchCount,
+        ')'
       );
     }
 
@@ -1105,6 +1168,7 @@ class EAPDashboard {
       }
     });
 
+    console.log('✅ Итоговое количество отфильтрованных компонентов:', components.length);
     return components;
   }
 
@@ -1117,102 +1181,6 @@ class EAPDashboard {
     if (score >= 70) return 'warning';
     if (score >= 50) return 'info';
     return 'secondary';
-  }
-
-  /**
-   * Показать детали компонента
-   */
-  showComponentDetails(componentName) {
-    const component = this.componentsData[componentName];
-    if (!component) return;
-
-    const overall = ((component.logic + component.functionality) / 2).toFixed(1);
-    const categoryInfo = window.EAP_DATA?.categories[component.category] || {
-      name: component.category,
-    };
-
-    const modalContent = `
-            <div class="modal fade" id="componentModal" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">${component.name}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row mb-3">
-                                <div class="col-md-6">
-                                    <strong>Категория:</strong> ${categoryInfo.name}
-                                </div>
-                                <div class="col-md-6">
-                                    <strong>Файл:</strong> ${component.file || 'Не указан'}
-                                </div>
-                            </div>
-
-                            <div class="mb-3">
-                                <strong>Описание:</strong><br>
-                                ${component.description || 'Описание отсутствует'}
-                            </div>
-
-                            <div class="row mb-3">
-                                <div class="col-md-4">
-                                    <div class="text-center">
-                                        <h3 class="text-primary">${component.logic}%</h3>
-                                        <small>Готовность логики</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center">
-                                        <h3 class="text-success">${component.functionality}%</h3>
-                                        <small>Функциональность</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="text-center">
-                                        <h3 class="text-info">${overall}%</h3>
-                                        <small>Общая готовность</small>
-                                    </div>
-                                </div>
-                            </div>
-
-                            ${
-                              component.tests
-                                ? `
-                                <div class="mb-3">
-                                    <strong>Тестирование:</strong><br>
-                                    <span class="badge bg-info">${component.tests}</span>
-                                </div>
-                            `
-                                : ''
-                            }
-
-                            <canvas id="component-chart-${componentName}" style="height: 200px;"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `;
-
-    // Удаляем предыдущий модал если есть
-    const existingModal = document.getElementById('componentModal');
-    if (existingModal) {
-      existingModal.remove();
-    }
-
-    document.body.insertAdjacentHTML('beforeend', modalContent);
-
-    const modal = new bootstrap.Modal(document.getElementById('componentModal'));
-    modal.show();
-
-    // Создаем график компонента
-    setTimeout(() => {
-      if (window.EAPCharts) {
-        window.EAPCharts.createComponentChart(`component-chart-${componentName}`, componentName, {
-          currentLogic: component.logic,
-          currentFunctionality: component.functionality,
-        });
-      }
-    }, 500);
   }
 
   /**
@@ -1354,11 +1322,23 @@ class EAPDashboard {
    * Показать детальный анализ компонента
    */
   showComponentDetails(componentName) {
+    console.log('Поиск компонента:', componentName);
+    console.log('Доступные компоненты:', Object.keys(this.componentsData));
+
     const component = Object.values(this.componentsData).find(comp => comp.name === componentName);
     if (!component) {
       this.showError('Компонент не найден');
       return;
     }
+
+    console.log('Найден компонент:', component);
+    console.log('Размер файла из component:', component.fileSize);
+    console.log('Строк кода из component:', component.lines);
+    console.log('window.EAP_DATA компоненты:', window.EAP_DATA?.components?.BugFixTester);
+    console.log(
+      'window.EAP_DATA полный объект:',
+      JSON.stringify(window.EAP_DATA?.components?.BugFixTester, null, 2)
+    );
 
     // Создаем модальное окно для детального анализа
     const modal = document.createElement('div');
@@ -1392,7 +1372,7 @@ class EAPDashboard {
                     <h6 class="mb-0">⚠️ Ключевой недостаток логики</h6>
                   </div>
                   <div class="card-body">
-                    <p class="mb-0">${component.logicIssue || "Недостатки в логике не обнаружены"}</p>
+                    <p class="mb-0">${component.logicIssue || 'Недостатки в логике не обнаружены'}</p>
                   </div>
                 </div>
               </div>
@@ -1402,7 +1382,7 @@ class EAPDashboard {
                     <h6 class="mb-0">🔧 Ключевой недостаток функциональности</h6>
                   </div>
                   <div class="card-body">
-                    <p class="mb-0">${component.functionalityIssue || "Недостатки в функциональности не обнаружены"}</p>
+                    <p class="mb-0">${component.functionalityIssue || 'Недостатки в функциональности не обнаружены'}</p>
                   </div>
                 </div>
               </div>
@@ -1440,19 +1420,19 @@ class EAPDashboard {
             <div class="row mb-3">
               <div class="col-md-6">
                 <p><strong>Категория:</strong> <span class="badge" style="background-color: ${categoryInfo.color}">${this.getCategoryDisplayName(component.category)}</span></p>
-                <p><strong>Файл:</strong> <code>${component.file || "Не указан"}</code></p>
-                <p><strong>Тестирование:</strong> <span class="text-info">${component.tests || "Нет информации"}</span></p>
+                <p><strong>Файл:</strong> <code>${component.file || 'Не указан'}</code></p>
+                <p><strong>Тестирование:</strong> <span class="text-info">${component.tests || 'Нет информации'}</span></p>
               </div>
               <div class="col-md-6">
-                <p><strong>Размер файла:</strong> ${component.fileSize ? (component.fileSize / 1024).toFixed(1) + ' KB' : "Неизвестен"}</p>
-                <p><strong>Строк кода:</strong> ${component.lines || "Неизвестно"}</p>
-                <p><strong>Последнее изменение:</strong> ${component.lastModified || "Нет данных"}</p>
+                <p><strong>Размер файла:</strong> ${component.fileSize ? (component.fileSize / 1024).toFixed(1) + ' KB' : 'Неизвестен'}</p>
+                <p><strong>Строк кода:</strong> ${component.lines || 'Неизвестно'}</p>
+                <p><strong>Последнее изменение:</strong> ${component.lastModified || 'Нет данных'}</p>
               </div>
             </div>
 
             <div class="mt-3">
               <h6>📝 Описание компонента:</h6>
-              <p class="text-muted">${component.description || "Описание отсутствует"}</p>
+              <p class="text-muted">${component.description || 'Описание отсутствует'}</p>
             </div>
 
             <!-- Рекомендации по улучшению -->
@@ -1486,14 +1466,14 @@ class EAPDashboard {
     });
 
     // Закрытие по клику вне модального окна
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener('click', e => {
       if (e.target === modal) {
         document.body.removeChild(modal);
       }
     });
 
     // Закрытие по клавише Escape
-    const escapeHandler = (e) => {
+    const escapeHandler = e => {
       if (e.key === 'Escape') {
         document.body.removeChild(modal);
         document.removeEventListener('keydown', escapeHandler);
@@ -1515,7 +1495,10 @@ class EAPDashboard {
     if (issue.toLowerCase().includes('безопас') || issue.toLowerCase().includes('xss')) {
       return 'Внедрите валидацию входных данных и санитизацию';
     }
-    if (issue.toLowerCase().includes('производительность') || issue.toLowerCase().includes('память')) {
+    if (
+      issue.toLowerCase().includes('производительность') ||
+      issue.toLowerCase().includes('память')
+    ) {
       return 'Оптимизируйте алгоритмы и добавьте кэширование';
     }
     if (issue.toLowerCase().includes('обработк') || issue.toLowerCase().includes('ошибк')) {
