@@ -18,12 +18,10 @@ class EAPDashboard {
    */
   async loadLatestReport() {
     try {
-      console.log('📊 Загрузка актуального отчета...');
-
       // Пробуем загрузить последний отчет
       const response = await fetch('./data/reports/EAP-ANALYZER-CURRENT-REPORT.md');
       if (!response.ok) {
-        console.log('⚠️  Актуальный отчет не найден, используем статичные данные');
+        // Актуальный отчет не найден, используем статичные данные
         return false;
       }
 
@@ -33,9 +31,7 @@ class EAPDashboard {
       const parsedData = this.parseMarkdownReport(markdownText);
 
       if (parsedData && Object.keys(parsedData.components).length > 0) {
-        console.log(
-          `📈 Обновлено ${Object.keys(parsedData.components).length} компонентов из live-отчета`
-        );
+        // Обновлено компонентов из live-отчета
 
         // Обновляем компоненты
         if (!window.EAP_DATA) {
@@ -63,7 +59,7 @@ class EAPDashboard {
         };
 
         this.liveDataLoaded = true;
-        console.log('✅ Live-данные успешно загружены и обновлены');
+        // Live-данные успешно загружены и обновлены
         return true;
       }
 
@@ -202,7 +198,7 @@ class EAPDashboard {
     if (this.initialized) return;
 
     try {
-      console.log('📊 Инициализация EAP Analyzer Dashboard...');
+      // Инициализация EAP Analyzer Dashboard
 
       // СНАЧАЛА пытаемся загрузить live-отчет
       await this.loadLatestReport();
@@ -216,7 +212,7 @@ class EAPDashboard {
 
       // Проверка доступности данных
       if (!window.EAP_DATA || !window.EAP_DATA.components) {
-        console.warn('Данные не загружены, используем заглушку');
+        // Данные не загружены, используем заглушку
         this.componentsData = {};
       } else {
         this.componentsData = window.EAP_DATA.components;
@@ -241,7 +237,7 @@ class EAPDashboard {
       await this.initializeChartsWhenReady();
 
       this.initialized = true;
-      console.log('✅ Dashboard успешно инициализирован');
+      // Dashboard успешно инициализирован
 
       // Показываем индикатор если загружены live-данные
       if (this.liveDataLoaded) {
@@ -356,21 +352,21 @@ class EAPDashboard {
     let attempts = 0;
     const maxAttempts = 50; // 5 секунд
 
-    console.log('🔄 Ожидание загрузки Chart.js и EAPCharts...');
+    // Ожидание загрузки Chart.js
 
     while (attempts < maxAttempts) {
       if (typeof Chart !== 'undefined') {
-        console.log('📊 Chart.js найден, инициализируем графики...');
+        // Chart.js найден, инициализируем графики
 
         // Создаем экземпляр EAPChartsManager если его нет
         if (!window.EAPCharts) {
-          console.log('🔧 Создаем EAPChartsManager...');
+          // Создаем EAPChartsManager
           window.EAPCharts = new EAPChartsManager();
         }
 
         const success = window.EAPCharts.initializeCharts();
         if (success) {
-          console.log('✅ Графики инициализированы успешно');
+          // Графики инициализированы успешно
         } else {
           console.warn('⚠️ Графики инициализированы с ошибками');
         }
@@ -627,28 +623,6 @@ class EAPDashboard {
           }
         }
 
-        // Отладочная информация
-        const allComponents = Object.values(this.componentsData);
-        const filteredComponents = this.getFilteredComponents();
-        console.log(`🔍 Фильтр: ${category}`);
-        console.log(`📊 Всего компонентов: ${allComponents.length}`);
-        console.log(`✅ Отфильтровано: ${filteredComponents.length}`);
-
-        // Показываем уникальные категории, которые есть у компонентов
-        const uniqueCategories = [...new Set(allComponents.map(c => c.category))];
-        console.log(`🏷️  Уникальные категории в данных:`, uniqueCategories);
-
-        if (category !== 'all') {
-          const categoryComponents = allComponents.filter(c => c.category === category);
-          console.log(`� Компоненты с категорией "${category}":`, categoryComponents.length);
-          if (categoryComponents.length > 0) {
-            console.log(
-              `📋 Первые 5 компонентов:`,
-              categoryComponents.slice(0, 5).map(c => c.name)
-            );
-          }
-        }
-
         this.renderComponentsList();
         this.updateCategoryCounters();
 
@@ -665,9 +639,26 @@ class EAPDashboard {
    * Обновление счетчиков компонентов по категориям
    */
   updateCategoryCounters() {
-    // Считаем компоненты по категориям
+    // Обновление счетчиков категорий
+
+    // Получаем компоненты только с фильтром по классификации, БЕЗ фильтра по категории
+    let components = Object.values(this.componentsData);
+
+    // Применяем только фильтр по классификации, игнорируем currentFilter (категорию)
+    if (this.currentClassificationFilter !== 'all') {
+      components = components.filter(comp => {
+        if (!comp.classification) {
+          console.warn('⚠️ Компонент без классификации:', comp.name);
+          return false;
+        }
+        return comp.classification === this.currentClassificationFilter;
+      });
+    }
+
+    // Компонентов для подсчета (только по классификации)
+
+    // Считаем компоненты по категориям из отфильтрованных по классификации
     const categoryStats = {};
-    const allComponents = Object.values(this.componentsData);
 
     // Инициализируем счетчики
     const categories = [
@@ -690,13 +681,15 @@ class EAPDashboard {
       categoryStats[cat] = 0;
     });
 
-    // Подсчитываем компоненты
-    categoryStats.all = allComponents.length;
-    allComponents.forEach(comp => {
+    // Подсчитываем компоненты из отфильтрованного по классификации набора
+    categoryStats.all = components.length;
+    components.forEach(comp => {
       if (comp.category && Object.prototype.hasOwnProperty.call(categoryStats, comp.category)) {
         categoryStats[comp.category]++;
       }
     });
+
+    // Статистика по категориям рассчитана
 
     // Обновляем текст на кнопках
     const categoryButtons = document.querySelectorAll('[data-category]');
@@ -837,8 +830,7 @@ class EAPDashboard {
    * Отрисовка списка компонентов
    */
   renderComponentsList() {
-    console.log('🎨 renderComponentsList вызван');
-    console.log('🏷️ Текущий фильтр классификации:', this.currentClassificationFilter);
+    // Рендеринг списка компонентов
 
     const container = document.getElementById('components-table-body');
     const countContainer = document.getElementById('total-components-count');
@@ -848,9 +840,7 @@ class EAPDashboard {
     }
 
     // Получаем отфильтрованные компоненты
-    console.log('🔍 Получаем отфильтрованные компоненты...');
     const filteredComponents = this.getFilteredComponents();
-    console.log('📊 Получено отфильтрованных компонентов:', filteredComponents.length);
     let sortedComponents = [];
 
     switch (this.sortMode) {
@@ -919,9 +909,9 @@ class EAPDashboard {
       } else if (this.currentClassificationFilter === 'auxiliary') {
         filterStatusElement.textContent = '(только вспомогательные)';
         filterStatusElement.className = 'text-secondary ms-2';
-      } else if (this.currentClassificationFilter === 'test') {
-        filterStatusElement.textContent = '(только тестовые)';
-        filterStatusElement.className = 'text-warning ms-2';
+      } else if (this.currentClassificationFilter === 'other') {
+        filterStatusElement.textContent = '(остальные компоненты)';
+        filterStatusElement.className = 'text-info ms-2';
       } else {
         filterStatusElement.textContent = '(все компоненты)';
         filterStatusElement.className = 'text-muted ms-2';
@@ -1029,6 +1019,9 @@ class EAPDashboard {
         row.style.backgroundColor = '';
       });
     });
+
+    // Обновляем счетчики категорий после отрисовки списка
+    this.updateCategoryCounters();
   }
 
   /**
@@ -1100,26 +1093,16 @@ class EAPDashboard {
    * Получение отфильтрованных компонентов
    */
   getFilteredComponents() {
-    console.log('🔍 getFilteredComponents вызван');
-    console.log('📊 Всего компонентов в данных:', Object.keys(this.componentsData).length);
-    console.log('🏷️ Текущий фильтр классификации:', this.currentClassificationFilter);
-    console.log('📋 Текущий фильтр категории:', this.currentFilter);
-
+    // Получение отфильтрованных компонентов
     let components = Object.values(this.componentsData);
-    console.log('📈 Компонентов после получения данных:', components.length);
 
     // Фильтрация по категории
     if (this.currentFilter !== 'all') {
-      console.log('🎯 Применяем фильтр по категории:', this.currentFilter);
       components = components.filter(comp => comp.category === this.currentFilter);
-      console.log('📉 Компонентов после фильтра категории:', components.length);
     }
 
     // Фильтрация по классификации
     if (this.currentClassificationFilter !== 'all') {
-      console.log('🏷️ Применяем фильтр по классификации:', this.currentClassificationFilter);
-
-      const beforeCount = components.length;
       components = components.filter(comp => {
         const hasClassification = !!comp.classification;
         const matches = comp.classification === this.currentClassificationFilter;
@@ -1130,26 +1113,15 @@ class EAPDashboard {
 
         return matches;
       });
-
-      console.log('📉 Компонентов после фильтра классификации:', components.length);
     }
 
     // Поиск
     if (this.searchQuery) {
-      console.log('🔍 Применяем поисковый запрос:', this.searchQuery);
-      const beforeSearchCount = components.length;
       components = components.filter(
         comp =>
           comp.name.toLowerCase().includes(this.searchQuery) ||
           (comp.description && comp.description.toLowerCase().includes(this.searchQuery)) ||
           (comp.file && comp.file.toLowerCase().includes(this.searchQuery))
-      );
-      console.log(
-        '📉 Компонентов после поиска:',
-        components.length,
-        '(было:',
-        beforeSearchCount,
-        ')'
       );
     }
 
@@ -1182,7 +1154,6 @@ class EAPDashboard {
       }
     });
 
-    console.log('✅ Итоговое количество отфильтрованных компонентов:', components.length);
     return components;
   }
 
@@ -1336,8 +1307,7 @@ class EAPDashboard {
    * Показать детальный анализ компонента
    */
   showComponentDetails(componentName) {
-    console.log('Поиск компонента:', componentName);
-    console.log('Доступные компоненты:', Object.keys(this.componentsData));
+    // Поиск компонента
 
     const component = Object.values(this.componentsData).find(comp => comp.name === componentName);
     if (!component) {
@@ -1345,14 +1315,7 @@ class EAPDashboard {
       return;
     }
 
-    console.log('Найден компонент:', component);
-    console.log('Размер файла из component:', component.fileSize);
-    console.log('Строк кода из component:', component.lines);
-    console.log('window.EAP_DATA компоненты:', window.EAP_DATA?.components?.BugFixTester);
-    console.log(
-      'window.EAP_DATA полный объект:',
-      JSON.stringify(window.EAP_DATA?.components?.BugFixTester, null, 2)
-    );
+    // Компонент найден, показываем детали
 
     // Создаем модальное окно для детального анализа
     const modal = document.createElement('div');

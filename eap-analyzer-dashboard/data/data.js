@@ -1,6 +1,6 @@
 // EAP Analyzer Dashboard Data
 // Автоматически сгенерирован live-generator.cjs
-// Дата генерации: 11.09.2025, 18:16:35
+// Дата генерации: 11.09.2025, 19:05:42
 
 window.EAP_DATA = {
   components: {
@@ -15,8 +15,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 127,
       lines: 1,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     1: {
       name: '1',
@@ -29,8 +30,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 126,
       lines: 1,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     eapthresholdsjson: {
       name: 'eapthresholdsjson',
@@ -45,6 +47,7 @@ window.EAP_DATA = {
       lines: 14,
       logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     cicdyml: {
       name: 'cicdyml',
@@ -59,6 +62,7 @@ window.EAP_DATA = {
       lines: 144,
       logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ciyml: {
       name: 'ciyml',
@@ -73,6 +77,7 @@ window.EAP_DATA = {
       lines: 248,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     docsyml: {
       name: 'docsyml',
@@ -87,6 +92,7 @@ window.EAP_DATA = {
       lines: 200,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     prchecksyml: {
       name: 'prchecksyml',
@@ -101,6 +107,7 @@ window.EAP_DATA = {
       lines: 271,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     lintstagedrcjson: {
       name: 'lintstagedrcjson',
@@ -115,6 +122,7 @@ window.EAP_DATA = {
       lines: 7,
       logicIssue: 'Высокая цикломатическая сложность функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ambientdts: {
       name: 'ambientdts',
@@ -128,8 +136,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 9913,
       lines: 272,
-      logicIssue: 'Монолитная архитектура затрудняет масштабирование',
+      logicIssue: 'Нарушение принципов SOLID',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     app: {
       name: 'app',
@@ -142,8 +151,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 562,
       lines: 27,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     matchers: {
       name: 'matchers',
@@ -156,8 +166,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 27,
       lines: 1,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     tsconfigjson: {
       name: 'tsconfigjson',
@@ -170,8 +181,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 620,
       lines: 24,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     AdvancedEAPDemo: {
       name: 'AdvancedEAPDemo',
@@ -186,6 +198,7 @@ window.EAP_DATA = {
       lines: 1045,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     aianalysisreportjson: {
       name: 'aianalysisreportjson',
@@ -198,8 +211,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 266,
       lines: 10,
-      logicIssue: 'Отсутствует обработка аномальных значений',
+      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     AIINTEGRATIONCOMPLETEmd: {
       name: 'AIINTEGRATIONCOMPLETEmd',
@@ -212,8 +226,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7159,
       lines: 174,
-      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     aireportmd: {
       name: 'aireportmd',
@@ -226,8 +241,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 327,
       lines: 12,
-      logicIssue: 'Недостаточная точность предсказательной модели',
+      logicIssue: 'Отсутствует мониторинг дрейфа модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     eapai: {
       name: 'eapai',
@@ -240,8 +256,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 325,
       lines: 9,
-      logicIssue: 'Отсутствует обработка аномальных значений',
+      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     eap: {
       name: 'eap',
@@ -254,8 +271,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 153,
       lines: 9,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     generatereport: {
       name: 'generatereport',
@@ -270,6 +288,7 @@ window.EAP_DATA = {
       lines: 1,
       logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     generateroadmap: {
       name: 'generateroadmap',
@@ -284,6 +303,7 @@ window.EAP_DATA = {
       lines: 334,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     quickanalyzees: {
       name: 'quickanalyzees',
@@ -296,8 +316,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     quickanalyze: {
       name: 'quickanalyze',
@@ -313,6 +334,7 @@ window.EAP_DATA = {
       lines: 301,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testfixes: {
       name: 'testfixes',
@@ -327,6 +349,7 @@ window.EAP_DATA = {
       lines: 70,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testintegration: {
       name: 'testintegration',
@@ -342,6 +365,7 @@ window.EAP_DATA = {
       lines: 88,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     validate: {
       name: 'validate',
@@ -356,6 +380,7 @@ window.EAP_DATA = {
       lines: 188,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     CHANGELOGmd: {
       name: 'CHANGELOGmd',
@@ -370,6 +395,7 @@ window.EAP_DATA = {
       lines: 77,
       logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     COMMITSUMMARYmd: {
       name: 'COMMITSUMMARYmd',
@@ -382,8 +408,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 6252,
       lines: 113,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     COMPONENTSPECIFICATIONmd: {
       name: 'COMPONENTSPECIFICATIONmd',
@@ -396,8 +423,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 9956,
       lines: 264,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     EAPAnalyzerStatusEvaluator: {
       name: 'EAPAnalyzerStatusEvaluator',
@@ -413,6 +441,7 @@ window.EAP_DATA = {
       lines: 722,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     CorrectedEAPEvaluator: {
       name: 'CorrectedEAPEvaluator',
@@ -428,6 +457,7 @@ window.EAP_DATA = {
       lines: 767,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     correctedfullsystemevaluationts: {
       name: 'correctedfullsystemevaluationts',
@@ -440,8 +470,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 20807,
       lines: 575,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     MockProject: {
       name: 'MockProject',
@@ -456,6 +487,7 @@ window.EAP_DATA = {
       lines: 207,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     demophase4integration: {
       name: 'demophase4integration',
@@ -469,8 +501,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5546,
       lines: 152,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     demoreportjson: {
       name: 'demoreportjson',
@@ -483,8 +516,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 578,
       lines: 26,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     demoreportmd: {
       name: 'demoreportmd',
@@ -497,8 +531,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 327,
       lines: 12,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     demov3ts: {
       name: 'demov3ts',
@@ -514,6 +549,7 @@ window.EAP_DATA = {
       lines: 228,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     cli: {
       name: 'cli',
@@ -528,6 +564,7 @@ window.EAP_DATA = {
       lines: 177,
       logicIssue: 'Реализовать создание HTML отчета',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     AIEnhancedAnalyzer: {
       name: 'AIEnhancedAnalyzer',
@@ -542,6 +579,7 @@ window.EAP_DATA = {
       lines: 89,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     AIReportGenerator: {
       name: 'AIReportGenerator',
@@ -556,6 +594,7 @@ window.EAP_DATA = {
       lines: 138,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     analyzemain: {
       name: 'analyzemain',
@@ -570,6 +609,7 @@ window.EAP_DATA = {
       lines: 147,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     GoldenStandardAnalyzer: {
       name: 'GoldenStandardAnalyzer',
@@ -585,6 +625,7 @@ window.EAP_DATA = {
       lines: 703,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     CodeStructureAnalyzer: {
       name: 'CodeStructureAnalyzer',
@@ -599,6 +640,7 @@ window.EAP_DATA = {
       lines: 235,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     index: {
       name: 'index',
@@ -611,8 +653,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 959,
       lines: 34,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DockerAnalyzer: {
       name: 'DockerAnalyzer',
@@ -627,6 +670,7 @@ window.EAP_DATA = {
       lines: 304,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EMTAnalyzer: {
       name: 'EMTAnalyzer',
@@ -641,6 +685,7 @@ window.EAP_DATA = {
       lines: 339,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     BaseAnalyzer: {
       name: 'BaseAnalyzer',
@@ -656,6 +701,7 @@ window.EAP_DATA = {
       lines: 140,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     CICDChecker: {
       name: 'CICDChecker',
@@ -671,6 +717,7 @@ window.EAP_DATA = {
       lines: 566,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CodeQualityChecker: {
       name: 'CodeQualityChecker',
@@ -685,6 +732,7 @@ window.EAP_DATA = {
       lines: 673,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DependenciesChecker: {
       name: 'DependenciesChecker',
@@ -700,6 +748,7 @@ window.EAP_DATA = {
       lines: 744,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DockerChecker: {
       name: 'DockerChecker',
@@ -714,6 +763,7 @@ window.EAP_DATA = {
       lines: 597,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EMTChecker: {
       name: 'EMTChecker',
@@ -728,6 +778,7 @@ window.EAP_DATA = {
       lines: 528,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     LoggingChecker: {
       name: 'LoggingChecker',
@@ -742,6 +793,7 @@ window.EAP_DATA = {
       lines: 606,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     BundleSizeAnalyzer: {
       name: 'BundleSizeAnalyzer',
@@ -757,6 +809,7 @@ window.EAP_DATA = {
       lines: 440,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     PerformanceChecker: {
       name: 'PerformanceChecker',
@@ -771,6 +824,7 @@ window.EAP_DATA = {
       lines: 290,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     RuntimeMetricsAnalyzer: {
       name: 'RuntimeMetricsAnalyzer',
@@ -786,6 +840,7 @@ window.EAP_DATA = {
       lines: 843,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Потенциальные утечки памяти из-за неочищенных таймеров',
+      classification: 'analyzer',
     },
     testarchitecture: {
       name: 'testarchitecture',
@@ -801,6 +856,7 @@ window.EAP_DATA = {
       lines: 111,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     types: {
       name: 'types',
@@ -815,6 +871,7 @@ window.EAP_DATA = {
       lines: 7,
       logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     AdvancedSecurityAnalyzer: {
       name: 'AdvancedSecurityAnalyzer',
@@ -830,6 +887,7 @@ window.EAP_DATA = {
       lines: 1517,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Потенциальные утечки памяти из-за неочищенных таймеров',
+      classification: 'analyzer',
     },
     CSRFAnalyzer: {
       name: 'CSRFAnalyzer',
@@ -845,6 +903,7 @@ window.EAP_DATA = {
       lines: 415,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     XSSAnalyzer: {
       name: 'XSSAnalyzer',
@@ -860,6 +919,7 @@ window.EAP_DATA = {
       lines: 413,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CodeSecurityChecker: {
       name: 'CodeSecurityChecker',
@@ -875,6 +935,7 @@ window.EAP_DATA = {
       lines: 549,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     ConfigSecurityChecker: {
       name: 'ConfigSecurityChecker',
@@ -889,6 +950,7 @@ window.EAP_DATA = {
       lines: 589,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DependenciesSecurityChecker: {
       name: 'DependenciesSecurityChecker',
@@ -904,6 +966,7 @@ window.EAP_DATA = {
       lines: 377,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CodeSecurityFixTemplates: {
       name: 'CodeSecurityFixTemplates',
@@ -918,7 +981,8 @@ window.EAP_DATA = {
       fileSize: 18024,
       lines: 434,
       logicIssue: 'Использование небезопасных динамических вызовов',
-      functionalityIssue: 'Недостаточная защита от брутфорс атак',
+      functionalityIssue: 'Не используется HTTPS для передачи данных',
+      classification: 'analyzer',
     },
     ConfigFixTemplates: {
       name: 'ConfigFixTemplates',
@@ -934,6 +998,7 @@ window.EAP_DATA = {
       lines: 526,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DependencyFixTemplates: {
       name: 'DependencyFixTemplates',
@@ -949,6 +1014,7 @@ window.EAP_DATA = {
       lines: 251,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     RecommendationEngine: {
       name: 'RecommendationEngine',
@@ -964,6 +1030,7 @@ window.EAP_DATA = {
       lines: 584,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     SecurityChecker: {
       name: 'SecurityChecker',
@@ -978,6 +1045,7 @@ window.EAP_DATA = {
       lines: 228,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     WebSecurityChecker: {
       name: 'WebSecurityChecker',
@@ -993,6 +1061,7 @@ window.EAP_DATA = {
       lines: 180,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     WebSecurityFixTemplates: {
       name: 'WebSecurityFixTemplates',
@@ -1008,6 +1077,7 @@ window.EAP_DATA = {
       lines: 655,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     SvelteKitChecker: {
       name: 'SvelteKitChecker',
@@ -1022,6 +1092,7 @@ window.EAP_DATA = {
       lines: 584,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CoverageAnalyzer: {
       name: 'CoverageAnalyzer',
@@ -1036,7 +1107,8 @@ window.EAP_DATA = {
       fileSize: 32842,
       lines: 923,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствует параллельное выполнение тестов',
+      functionalityIssue: 'Нестабильность тестов на разных окружениях',
+      classification: 'analyzer',
     },
     CoverageAnalyzerAdapter: {
       name: 'CoverageAnalyzerAdapter',
@@ -1051,6 +1123,7 @@ window.EAP_DATA = {
       lines: 451,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CypressChecker: {
       name: 'CypressChecker',
@@ -1066,6 +1139,7 @@ window.EAP_DATA = {
       lines: 1162,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CypressCheckerAdapter: {
       name: 'CypressCheckerAdapter',
@@ -1081,6 +1155,7 @@ window.EAP_DATA = {
       lines: 353,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Медленное выполнение тестового набора',
+      classification: 'analyzer',
     },
     E2ETestingChecker: {
       name: 'E2ETestingChecker',
@@ -1096,6 +1171,7 @@ window.EAP_DATA = {
       lines: 1016,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EnhancedJestChecker: {
       name: 'EnhancedJestChecker',
@@ -1111,6 +1187,7 @@ window.EAP_DATA = {
       lines: 532,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     JestChecker: {
       name: 'JestChecker',
@@ -1126,6 +1203,7 @@ window.EAP_DATA = {
       lines: 760,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     JestCheckerAdapter: {
       name: 'JestCheckerAdapter',
@@ -1140,6 +1218,7 @@ window.EAP_DATA = {
       lines: 303,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     PlaywrightChecker: {
       name: 'PlaywrightChecker',
@@ -1155,6 +1234,7 @@ window.EAP_DATA = {
       lines: 1052,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     PlaywrightCheckerAdapter: {
       name: 'PlaywrightCheckerAdapter',
@@ -1169,7 +1249,8 @@ window.EAP_DATA = {
       fileSize: 10899,
       lines: 307,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
+      functionalityIssue: 'Нет интеграции с системой непрерывной интеграции',
+      classification: 'analyzer',
     },
     VitestChecker: {
       name: 'VitestChecker',
@@ -1184,6 +1265,7 @@ window.EAP_DATA = {
       lines: 733,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     VitestCheckerAdapter: {
       name: 'VitestCheckerAdapter',
@@ -1198,6 +1280,7 @@ window.EAP_DATA = {
       lines: 219,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     constants: {
       name: 'constants',
@@ -1213,6 +1296,7 @@ window.EAP_DATA = {
       lines: 122,
       logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CoverageChecker: {
       name: 'CoverageChecker',
@@ -1227,6 +1311,7 @@ window.EAP_DATA = {
       lines: 473,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     E2EChecker: {
       name: 'E2EChecker',
@@ -1241,6 +1326,7 @@ window.EAP_DATA = {
       lines: 520,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     MockBaseChecker: {
       name: 'MockBaseChecker',
@@ -1256,6 +1342,7 @@ window.EAP_DATA = {
       lines: 271,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     READMEmd: {
       name: 'READMEmd',
@@ -1270,6 +1357,7 @@ window.EAP_DATA = {
       lines: 202,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     SimpleOrchestrator: {
       name: 'SimpleOrchestrator',
@@ -1284,6 +1372,7 @@ window.EAP_DATA = {
       lines: 67,
       logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     UnifiedTestingAnalyzer: {
       name: 'UnifiedTestingAnalyzer',
@@ -1297,8 +1386,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 3586,
       lines: 129,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testcoverageclean: {
       name: 'testcoverageclean',
@@ -1313,6 +1403,7 @@ window.EAP_DATA = {
       lines: 173,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testplaywrightclean: {
       name: 'testplaywrightclean',
@@ -1327,6 +1418,7 @@ window.EAP_DATA = {
       lines: 193,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TestingFrameworkChecker: {
       name: 'TestingFrameworkChecker',
@@ -1341,6 +1433,7 @@ window.EAP_DATA = {
       lines: 517,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     TestingTypes: {
       name: 'TestingTypes',
@@ -1354,8 +1447,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 308,
       lines: 8,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CheckResultUtils: {
       name: 'CheckResultUtils',
@@ -1370,6 +1464,7 @@ window.EAP_DATA = {
       lines: 168,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ConfigFileAnalyzer: {
       name: 'ConfigFileAnalyzer',
@@ -1384,6 +1479,7 @@ window.EAP_DATA = {
       lines: 444,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     PackageJsonAnalyzer: {
       name: 'PackageJsonAnalyzer',
@@ -1398,6 +1494,7 @@ window.EAP_DATA = {
       lines: 316,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     QualityMetricsAnalyzer: {
       name: 'QualityMetricsAnalyzer',
@@ -1413,6 +1510,7 @@ window.EAP_DATA = {
       lines: 860,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ResultBuilder: {
       name: 'ResultBuilder',
@@ -1428,6 +1526,7 @@ window.EAP_DATA = {
       lines: 370,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
+      classification: 'analyzer',
     },
     TestFileFinder: {
       name: 'TestFileFinder',
@@ -1442,6 +1541,7 @@ window.EAP_DATA = {
       lines: 868,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     TestingChecker: {
       name: 'TestingChecker',
@@ -1457,6 +1557,7 @@ window.EAP_DATA = {
       lines: 343,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     BaseChecker: {
       name: 'BaseChecker',
@@ -1471,6 +1572,7 @@ window.EAP_DATA = {
       lines: 101,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     BaseEvaluator: {
       name: 'BaseEvaluator',
@@ -1485,6 +1587,7 @@ window.EAP_DATA = {
       lines: 215,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     BaseReporter: {
       name: 'BaseReporter',
@@ -1499,6 +1602,7 @@ window.EAP_DATA = {
       lines: 434,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     CacheManager: {
       name: 'CacheManager',
@@ -1513,6 +1617,7 @@ window.EAP_DATA = {
       lines: 118,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     IAnalyzer: {
       name: 'IAnalyzer',
@@ -1525,8 +1630,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 116,
       lines: 3,
-      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
+      logicIssue: 'Жестко заданные конфигурационные значения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IChecker: {
       name: 'IChecker',
@@ -1539,8 +1645,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 115,
       lines: 3,
-      logicIssue: 'Нарушение принципа единственной ответственности',
+      logicIssue: 'Жестко заданные конфигурационные значения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IEvaluator: {
       name: 'IEvaluator',
@@ -1553,8 +1660,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 117,
       lines: 3,
-      logicIssue: 'Нарушение принципа единственной ответственности',
+      logicIssue: 'Избыточная связность между модулями',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IReporter: {
       name: 'IReporter',
@@ -1569,6 +1677,7 @@ window.EAP_DATA = {
       lines: 3,
       logicIssue: 'Недостаточная модульность архитектуры',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     AnalysisOrchestrator: {
       name: 'AnalysisOrchestrator',
@@ -1581,8 +1690,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 9596,
       lines: 227,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ResultAggregator: {
       name: 'ResultAggregator',
@@ -1597,6 +1707,7 @@ window.EAP_DATA = {
       lines: 290,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     ReportGenerator: {
       name: 'ReportGenerator',
@@ -1611,6 +1722,7 @@ window.EAP_DATA = {
       lines: 440,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     UltimateReportGenerator: {
       name: 'UltimateReportGenerator',
@@ -1626,6 +1738,7 @@ window.EAP_DATA = {
       lines: 1050,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     EAPAnalyzerDemo: {
       name: 'EAPAnalyzerDemo',
@@ -1640,6 +1753,7 @@ window.EAP_DATA = {
       lines: 279,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     detailedanalyzer: {
       name: 'detailedanalyzer',
@@ -1654,6 +1768,7 @@ window.EAP_DATA = {
       lines: 2,
       logicIssue: 'Нарушение принципа единственной ответственности',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DebtEvaluator: {
       name: 'DebtEvaluator',
@@ -1668,6 +1783,7 @@ window.EAP_DATA = {
       lines: 377,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     aiinsightsenginesimple: {
       name: 'aiinsightsenginesimple',
@@ -1682,6 +1798,7 @@ window.EAP_DATA = {
       lines: 2,
       logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     AIInsightsEngine: {
       name: 'AIInsightsEngine',
@@ -1696,6 +1813,7 @@ window.EAP_DATA = {
       lines: 321,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     AIAnalyzer: {
       name: 'AIAnalyzer',
@@ -1710,6 +1828,7 @@ window.EAP_DATA = {
       lines: 795,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     FeatureExtractor: {
       name: 'FeatureExtractor',
@@ -1725,6 +1844,7 @@ window.EAP_DATA = {
       lines: 341,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     has: {
       name: 'has',
@@ -1739,6 +1859,7 @@ window.EAP_DATA = {
       lines: 573,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     PatternMatchers: {
       name: 'PatternMatchers',
@@ -1753,6 +1874,7 @@ window.EAP_DATA = {
       lines: 413,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     PatternRecognizer: {
       name: 'PatternRecognizer',
@@ -1768,6 +1890,7 @@ window.EAP_DATA = {
       lines: 931,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     QualityPredictor: {
       name: 'QualityPredictor',
@@ -1783,6 +1906,7 @@ window.EAP_DATA = {
       lines: 571,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     ArchitectureAnalyzer: {
       name: 'ArchitectureAnalyzer',
@@ -1797,6 +1921,7 @@ window.EAP_DATA = {
       lines: 476,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     interfaces: {
       name: 'interfaces',
@@ -1811,6 +1936,7 @@ window.EAP_DATA = {
       lines: 6,
       logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     DockerOptimizationChecker: {
       name: 'DockerOptimizationChecker',
@@ -1826,6 +1952,7 @@ window.EAP_DATA = {
       lines: 264,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DockerSecurityChecker: {
       name: 'DockerSecurityChecker',
@@ -1840,6 +1967,7 @@ window.EAP_DATA = {
       lines: 204,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EMTConfigChecker: {
       name: 'EMTConfigChecker',
@@ -1854,6 +1982,7 @@ window.EAP_DATA = {
       lines: 207,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EMTDependenciesChecker: {
       name: 'EMTDependenciesChecker',
@@ -1868,6 +1997,7 @@ window.EAP_DATA = {
       lines: 208,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     EMTRoutesChecker: {
       name: 'EMTRoutesChecker',
@@ -1882,6 +2012,7 @@ window.EAP_DATA = {
       lines: 103,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ExecutionTimer: {
       name: 'ExecutionTimer',
@@ -1897,6 +2028,7 @@ window.EAP_DATA = {
       lines: 437,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     MemoryProfiler: {
       name: 'MemoryProfiler',
@@ -1912,6 +2044,7 @@ window.EAP_DATA = {
       lines: 333,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     RefactoringAnalyzer: {
       name: 'RefactoringAnalyzer',
@@ -1926,6 +2059,7 @@ window.EAP_DATA = {
       lines: 905,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     advancedanalyzer: {
       name: 'advancedanalyzer',
@@ -1941,6 +2075,7 @@ window.EAP_DATA = {
       lines: 569,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     AnalysisManager: {
       name: 'AnalysisManager',
@@ -1956,6 +2091,7 @@ window.EAP_DATA = {
       lines: 233,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     basicanalyzer: {
       name: 'basicanalyzer',
@@ -1971,6 +2107,7 @@ window.EAP_DATA = {
       lines: 402,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ImprovedComplexityCalculator: {
       name: 'ImprovedComplexityCalculator',
@@ -1985,7 +2122,8 @@ window.EAP_DATA = {
       fileSize: 18985,
       lines: 639,
       logicIssue: 'Использование небезопасных динамических вызовов',
-      functionalityIssue: 'Отсутствует кэширование результатов вычислений',
+      functionalityIssue: 'Недостаточная отказоустойчивость системы',
+      classification: 'analyzer',
     },
     configjson: {
       name: 'configjson',
@@ -1998,8 +2136,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6270,
       lines: 221,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     AnalyzerCore: {
       name: 'AnalyzerCore',
@@ -2015,6 +2154,7 @@ window.EAP_DATA = {
       lines: 134,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     demo: {
       name: 'demo',
@@ -2030,6 +2170,7 @@ window.EAP_DATA = {
       lines: 316,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     ImprovedDuplicationDetector: {
       name: 'ImprovedDuplicationDetector',
@@ -2045,6 +2186,7 @@ window.EAP_DATA = {
       lines: 325,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     SmartFileClassifier: {
       name: 'SmartFileClassifier',
@@ -2060,6 +2202,7 @@ window.EAP_DATA = {
       lines: 485,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     StructureAnalyzer: {
       name: 'StructureAnalyzer',
@@ -2075,6 +2218,7 @@ window.EAP_DATA = {
       lines: 346,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     EAPIntegration: {
       name: 'EAPIntegration',
@@ -2090,6 +2234,7 @@ window.EAP_DATA = {
       lines: 361,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     EAPStructureIntegration: {
       name: 'EAPStructureIntegration',
@@ -2105,6 +2250,7 @@ window.EAP_DATA = {
       lines: 274,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     LearningSystem: {
       name: 'LearningSystem',
@@ -2120,6 +2266,7 @@ window.EAP_DATA = {
       lines: 640,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     MetricsCalculator: {
       name: 'MetricsCalculator',
@@ -2135,6 +2282,7 @@ window.EAP_DATA = {
       lines: 349,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     RecommendationGenerator: {
       name: 'RecommendationGenerator',
@@ -2150,6 +2298,7 @@ window.EAP_DATA = {
       lines: 274,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     simpletest: {
       name: 'simpletest',
@@ -2162,8 +2311,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2766,
       lines: 59,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TechnicalDebtAnalyzer: {
       name: 'TechnicalDebtAnalyzer',
@@ -2178,6 +2328,7 @@ window.EAP_DATA = {
       lines: 481,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     SimpleTechnicalDebtAnalyzer: {
       name: 'SimpleTechnicalDebtAnalyzer',
@@ -2192,6 +2343,7 @@ window.EAP_DATA = {
       lines: 160,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     ProcessIsolatedAnalyzer: {
       name: 'ProcessIsolatedAnalyzer',
@@ -2207,6 +2359,7 @@ window.EAP_DATA = {
       lines: 289,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TestingAnalysisAdapter: {
       name: 'TestingAnalysisAdapter',
@@ -2222,6 +2375,7 @@ window.EAP_DATA = {
       lines: 466,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     test: {
       name: 'test',
@@ -2236,6 +2390,7 @@ window.EAP_DATA = {
       lines: 55,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     BugFixTester: {
       name: 'BugFixTester',
@@ -2251,6 +2406,7 @@ window.EAP_DATA = {
       lines: 517,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     IntegrationTester: {
       name: 'IntegrationTester',
@@ -2266,6 +2422,7 @@ window.EAP_DATA = {
       lines: 466,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     analysisresults: {
       name: 'analysisresults',
@@ -2279,8 +2436,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 282,
       lines: 7,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     AnalysisCategory: {
       name: 'AnalysisCategory',
@@ -2293,8 +2451,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 1341,
       lines: 29,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CheckResult: {
       name: 'CheckResult',
@@ -2309,6 +2468,7 @@ window.EAP_DATA = {
       lines: 3,
       logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     evaluationresults: {
       name: 'evaluationresults',
@@ -2322,8 +2482,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 284,
       lines: 7,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     Project: {
       name: 'Project',
@@ -2336,8 +2497,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 114,
       lines: 3,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     SeverityLevel: {
       name: 'SeverityLevel',
@@ -2350,8 +2512,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 1153,
       lines: 32,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     UnifiedResult: {
       name: 'UnifiedResult',
@@ -2367,6 +2530,7 @@ window.EAP_DATA = {
       lines: 8,
       logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     UltraEnhancedAnalyzer: {
       name: 'UltraEnhancedAnalyzer',
@@ -2381,6 +2545,7 @@ window.EAP_DATA = {
       lines: 436,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     adaptivethresholds: {
       name: 'adaptivethresholds',
@@ -2395,6 +2560,7 @@ window.EAP_DATA = {
       lines: 410,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     detailedroadmapgenerator: {
       name: 'detailedroadmapgenerator',
@@ -2407,8 +2573,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 69,
       lines: 2,
-      logicIssue: 'Недостаточная точность предсказательной модели',
+      logicIssue: 'Отсутствует мониторинг дрейфа модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     EAPError: {
       name: 'EAPError',
@@ -2423,6 +2590,7 @@ window.EAP_DATA = {
       lines: 238,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     fileutils: {
       name: 'fileutils',
@@ -2437,6 +2605,7 @@ window.EAP_DATA = {
       lines: 293,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     FileSystemUtils: {
       name: 'FileSystemUtils',
@@ -2450,7 +2619,8 @@ window.EAP_DATA = {
       fileSize: 12901,
       lines: 467,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Контейнер требует привилегированные права',
+      functionalityIssue: 'Отсутствует мониторинг состояния контейнера',
+      classification: 'auxiliary',
     },
     createCompatModule: {
       name: 'createCompatModule',
@@ -2465,6 +2635,7 @@ window.EAP_DATA = {
       lines: 215,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     reportgenerator: {
       name: 'reportgenerator',
@@ -2477,8 +2648,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 59,
       lines: 2,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     BugFixValidator: {
       name: 'BugFixValidator',
@@ -2494,6 +2666,7 @@ window.EAP_DATA = {
       lines: 419,
       logicIssue: 'получить из реальных данных',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     MetricsValidator: {
       name: 'MetricsValidator',
@@ -2509,6 +2682,7 @@ window.EAP_DATA = {
       lines: 438,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     ValidationReporter: {
       name: 'ValidationReporter',
@@ -2524,6 +2698,7 @@ window.EAP_DATA = {
       lines: 473,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     dockercomposeyml: {
       name: 'dockercomposeyml',
@@ -2536,8 +2711,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3829,
       lines: 137,
-      logicIssue: 'Отсутствует multi-stage сборка',
+      logicIssue: 'Неоптимальный размер Docker образа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     Dockerfile: {
       name: 'Dockerfile',
@@ -2550,8 +2726,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5418,
       lines: 173,
-      logicIssue: 'Отсутствует health check для контейнера',
+      logicIssue: 'Отсутствует multi-stage сборка',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     MyComponentChecker: {
       name: 'MyComponentChecker',
@@ -2565,8 +2742,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 5022,
       lines: 203,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     eapanalysislatestjson: {
       name: 'eapanalysislatestjson',
@@ -2579,8 +2757,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     EAPQUICKSTARTmd: {
       name: 'EAPQUICKSTARTmd',
@@ -2595,6 +2774,7 @@ window.EAP_DATA = {
       lines: 155,
       logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     enhancedaireportjson: {
       name: 'enhancedaireportjson',
@@ -2607,8 +2787,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 578,
       lines: 26,
-      logicIssue: 'Отсутствует обработка аномальных значений',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ESMODULEFIXmd: {
       name: 'ESMODULEFIXmd',
@@ -2621,8 +2802,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2142,
       lines: 74,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     eslintconfig: {
       name: 'eslintconfig',
@@ -2637,6 +2819,7 @@ window.EAP_DATA = {
       lines: 60,
       logicIssue: 'Неконсистентное именование переменных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     EXECUTIVESUMMARYmd: {
       name: 'EXECUTIVESUMMARYmd',
@@ -2649,8 +2832,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1780,
       lines: 37,
-      logicIssue: 'Дублирование кода в нескольких модулях',
+      logicIssue: 'Несоблюдение стандартов кодирования',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     finaldemo: {
       name: 'finaldemo',
@@ -2666,6 +2850,7 @@ window.EAP_DATA = {
       lines: 67,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     FINALGITHUBREADYmd: {
       name: 'FINALGITHUBREADYmd',
@@ -2678,8 +2863,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3276,
       lines: 89,
-      logicIssue: 'Отсутствует health check для контейнера',
+      logicIssue: 'Использование root пользователя в контейнере',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     FINALIMPLEMENTATIONSTATUSmd: {
       name: 'FINALIMPLEMENTATIONSTATUSmd',
@@ -2692,8 +2878,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7926,
       lines: 130,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     fullsystemdemo: {
       name: 'fullsystemdemo',
@@ -2708,6 +2895,7 @@ window.EAP_DATA = {
       lines: 256,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     fullsystemevaluationts: {
       name: 'fullsystemevaluationts',
@@ -2720,8 +2908,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 18394,
       lines: 538,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     HOWTOUSESIMPLEmd: {
       name: 'HOWTOUSESIMPLEmd',
@@ -2734,8 +2923,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1368,
       lines: 43,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     IMPLEMENTATIONSTATUSREPORTmd: {
       name: 'IMPLEMENTATIONSTATUSREPORTmd',
@@ -2748,8 +2938,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 13214,
       lines: 252,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     implementationstatusjson: {
       name: 'implementationstatusjson',
@@ -2764,6 +2955,7 @@ window.EAP_DATA = {
       lines: 84,
       logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     MyNewChecker: {
       name: 'MyNewChecker',
@@ -2778,6 +2970,7 @@ window.EAP_DATA = {
       lines: 243,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     PACKAGERENAMECOMPLETEmd: {
       name: 'PACKAGERENAMECOMPLETEmd',
@@ -2790,8 +2983,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2028,
       lines: 51,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     packagejson: {
       name: 'packagejson',
@@ -2804,8 +2998,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5679,
       lines: 161,
-      logicIssue: 'Отсутствует health check для контейнера',
+      logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     PACKAGINGmd: {
       name: 'PACKAGINGmd',
@@ -2820,6 +3015,7 @@ window.EAP_DATA = {
       lines: 156,
       logicIssue: 'Отсутствует health check для контейнера',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE12COMPLETIONREPORTmd: {
       name: 'PHASE12COMPLETIONREPORTmd',
@@ -2834,6 +3030,7 @@ window.EAP_DATA = {
       lines: 168,
       logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE1COMPLETIONREPORTmd: {
       name: 'PHASE1COMPLETIONREPORTmd',
@@ -2848,6 +3045,7 @@ window.EAP_DATA = {
       lines: 247,
       logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE12CICDCOMPLETEmd: {
       name: 'PHASE12CICDCOMPLETEmd',
@@ -2860,8 +3058,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2493,
       lines: 62,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE2COMPLETIONREPORTmd: {
       name: 'PHASE2COMPLETIONREPORTmd',
@@ -2874,8 +3073,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 12491,
       lines: 242,
-      logicIssue: 'Неоптимальный алгоритм с высокой сложностью',
+      logicIssue: 'Неэффективное использование памяти',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE3COMPLETIONREPORTmd: {
       name: 'PHASE3COMPLETIONREPORTmd',
@@ -2888,8 +3088,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 14156,
       lines: 243,
-      logicIssue: 'Синхронные операции блокируют основной поток',
+      logicIssue: 'Избыточные вызовы внешних API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PHASE41COMPLETIONREPORTmd: {
       name: 'PHASE41COMPLETIONREPORTmd',
@@ -2902,8 +3103,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 8088,
       lines: 193,
-      logicIssue: 'Отсутствует кэширование часто используемых данных',
+      logicIssue: 'Неэффективное использование памяти',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     pnpmlockyaml: {
       name: 'pnpmlockyaml',
@@ -2916,8 +3118,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 129903,
       lines: 3995,
-      logicIssue: 'Недостаточное кэширование зависимостей',
+      logicIssue: 'Отсутствуют проверки качества кода',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     PROJECTMAPmd: {
       name: 'PROJECTMAPmd',
@@ -2930,8 +3133,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 4528,
       lines: 122,
-      logicIssue: 'Небезопасные переменные окружения',
+      logicIssue: 'Неоптимальный размер Docker образа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     QUICKSTARTmd: {
       name: 'QUICKSTARTmd',
@@ -2944,8 +3148,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2933,
       lines: 84,
-      logicIssue: 'Небезопасные переменные окружения',
+      logicIssue: 'Использование root пользователя в контейнере',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     READMEGITHUBmd: {
       name: 'READMEGITHUBmd',
@@ -2958,8 +3163,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6168,
       lines: 202,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     READYTOUSEmd: {
       name: 'READYTOUSEmd',
@@ -2972,8 +3178,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6630,
       lines: 185,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     RELEASESUMMARYmd: {
       name: 'RELEASESUMMARYmd',
@@ -2986,8 +3193,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5816,
       lines: 145,
-      logicIssue: 'Отсутствует multi-stage сборка',
+      logicIssue: 'Использование root пользователя в контейнере',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysiskinderlyevents20250909130841json: {
       name: 'analysiskinderlyevents20250909130841json',
@@ -3000,8 +3208,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysiskinderlyevents20250909131720json: {
       name: 'analysiskinderlyevents20250909131720json',
@@ -3014,8 +3223,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysisprojecttemplate20250909131422json: {
       name: 'analysisprojecttemplate20250909131422json',
@@ -3030,6 +3240,7 @@ window.EAP_DATA = {
       lines: 225,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysissrc20250909130845json: {
       name: 'analysissrc20250909130845json',
@@ -3042,8 +3253,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2494,
       lines: 88,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysisHEYS220250909131601json: {
       name: 'analysisHEYS220250909131601json',
@@ -3058,6 +3270,7 @@ window.EAP_DATA = {
       lines: 884,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysisHEYS220250909201708json: {
       name: 'analysisHEYS220250909201708json',
@@ -3072,6 +3285,7 @@ window.EAP_DATA = {
       lines: 878,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     analysisHEYS220250909231643json: {
       name: 'analysisHEYS220250909231643json',
@@ -3086,6 +3300,7 @@ window.EAP_DATA = {
       lines: 2680,
       logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     ETALONANALIZROADMAPmd: {
       name: 'ETALONANALIZROADMAPmd',
@@ -3098,8 +3313,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6164,
       lines: 125,
-      logicIssue: 'Неструктурированный формат логов',
+      logicIssue: 'Отсутствуют уровни важности сообщений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPkinderlyevents20250909130841md: {
       name: 'ROADMAPkinderlyevents20250909130841md',
@@ -3112,8 +3328,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6164,
       lines: 125,
-      logicIssue: 'Отсутствуют уровни важности сообщений',
+      logicIssue: 'Отсутствует ротация файлов логов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPkinderlyevents20250909131720md: {
       name: 'ROADMAPkinderlyevents20250909131720md',
@@ -3126,8 +3343,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6164,
       lines: 125,
-      logicIssue: 'Отсутствует ротация файлов логов',
+      logicIssue: 'Отсутствуют уровни важности сообщений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPprojecttemplate20250909131422md: {
       name: 'ROADMAPprojecttemplate20250909131422md',
@@ -3142,6 +3360,7 @@ window.EAP_DATA = {
       lines: 131,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPsrc20250909130845md: {
       name: 'ROADMAPsrc20250909130845md',
@@ -3154,8 +3373,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5560,
       lines: 121,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPHEYS220250909131601md: {
       name: 'ROADMAPHEYS220250909131601md',
@@ -3170,6 +3390,7 @@ window.EAP_DATA = {
       lines: 133,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPHEYS220250909201708md: {
       name: 'ROADMAPHEYS220250909201708md',
@@ -3184,6 +3405,7 @@ window.EAP_DATA = {
       lines: 132,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     simpleanalysisreportjson: {
       name: 'simpleanalysisreportjson',
@@ -3196,8 +3418,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 6798,
       lines: 299,
-      logicIssue: 'Неоптимальный размер Docker образа',
+      logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     SIMPLEANALYSISSUMMARYmd: {
       name: 'SIMPLEANALYSISSUMMARYmd',
@@ -3210,8 +3433,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 1731,
       lines: 50,
-      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
+      logicIssue: 'Жестко заданные конфигурационные значения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     validationreportmd: {
       name: 'validationreportmd',
@@ -3224,8 +3448,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1603,
       lines: 52,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     '40md': {
       name: '40md',
@@ -3240,6 +3465,7 @@ window.EAP_DATA = {
       lines: 332,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     '2md': {
       name: '2md',
@@ -3255,6 +3481,7 @@ window.EAP_DATA = {
       lines: 1143,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     md: {
       name: 'md',
@@ -3267,8 +3494,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 1823,
       lines: 67,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPANALYSISmd: {
       name: 'ROADMAPANALYSISmd',
@@ -3281,8 +3509,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 12495,
       lines: 281,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Недостаточная защита от SQL-инъекций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     ROADMAPGENERATIONCOMPLETEmd: {
       name: 'ROADMAPGENERATIONCOMPLETEmd',
@@ -3297,6 +3526,7 @@ window.EAP_DATA = {
       lines: 279,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     DevEnvironment: {
       name: 'DevEnvironment',
@@ -3312,6 +3542,7 @@ window.EAP_DATA = {
       lines: 403,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     fixcjsexports: {
       name: 'fixcjsexports',
@@ -3326,6 +3557,7 @@ window.EAP_DATA = {
       lines: 58,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     Class: {
       name: 'Class',
@@ -3341,6 +3573,7 @@ window.EAP_DATA = {
       lines: 245,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     generatedetailedreport: {
       name: 'generatedetailedreport',
@@ -3353,8 +3586,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует мониторинг дрейфа модели',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     generatereportsimple: {
       name: 'generatereportsimple',
@@ -3367,8 +3601,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     postinstall: {
       name: 'postinstall',
@@ -3381,8 +3616,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     release: {
       name: 'release',
@@ -3397,6 +3633,7 @@ window.EAP_DATA = {
       lines: 261,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     ProductionValidator: {
       name: 'ProductionValidator',
@@ -3411,6 +3648,7 @@ window.EAP_DATA = {
       lines: 491,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     SELFANALYSISPROTECTIONmd: {
       name: 'SELFANALYSISPROTECTIONmd',
@@ -3425,6 +3663,7 @@ window.EAP_DATA = {
       lines: 99,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'other',
     },
     selfanalysisreportjson: {
       name: 'selfanalysisreportjson',
@@ -3437,8 +3676,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 580,
       lines: 26,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     SimpleEAPDemo: {
       name: 'SimpleEAPDemo',
@@ -3453,6 +3693,7 @@ window.EAP_DATA = {
       lines: 349,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     MockProcessIsolatedAnalyzer: {
       name: 'MockProcessIsolatedAnalyzer',
@@ -3468,6 +3709,7 @@ window.EAP_DATA = {
       lines: 529,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     SPRINT1COMPLETIONREPORTmd: {
       name: 'SPRINT1COMPLETIONREPORTmd',
@@ -3482,6 +3724,7 @@ window.EAP_DATA = {
       lines: 118,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     SPRINTCOMPLETIONREPORTmd: {
       name: 'SPRINTCOMPLETIONREPORTmd',
@@ -3494,8 +3737,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 8848,
       lines: 202,
-      logicIssue: 'Избыточные вызовы внешних API',
+      logicIssue: 'Синхронные операции блокируют основной поток',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     clits: {
       name: 'clits',
@@ -3510,6 +3754,7 @@ window.EAP_DATA = {
       lines: 161,
       logicIssue: 'Реализовать создание HTML отчета',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     UserService: {
       name: 'UserService',
@@ -3522,8 +3767,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 380,
       lines: 21,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     analyzemaints: {
       name: 'analyzemaints',
@@ -3538,6 +3784,7 @@ window.EAP_DATA = {
       lines: 122,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     indexts: {
       name: 'indexts',
@@ -3552,6 +3799,7 @@ window.EAP_DATA = {
       lines: 319,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     testarchitecturets: {
       name: 'testarchitecturets',
@@ -3567,6 +3815,7 @@ window.EAP_DATA = {
       lines: 129,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     typests: {
       name: 'typests',
@@ -3580,8 +3829,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5363,
       lines: 175,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     constantsts: {
       name: 'constantsts',
@@ -3595,8 +3845,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 4903,
       lines: 119,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     testcoveragecleants: {
       name: 'testcoveragecleants',
@@ -3611,6 +3862,7 @@ window.EAP_DATA = {
       lines: 203,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testplaywrightcleants: {
       name: 'testplaywrightcleants',
@@ -3625,6 +3877,7 @@ window.EAP_DATA = {
       lines: 224,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TestingTypests: {
       name: 'TestingTypests',
@@ -3638,8 +3891,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 4871,
       lines: 144,
-      logicIssue: 'Отсутствие интеграционных тестов',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     CheckResultUtilsts: {
       name: 'CheckResultUtilsts',
@@ -3654,6 +3908,7 @@ window.EAP_DATA = {
       lines: 201,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IAnalyzerts: {
       name: 'IAnalyzerts',
@@ -3669,6 +3924,7 @@ window.EAP_DATA = {
       lines: 64,
       logicIssue: 'Избыточная связность между модулями',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ICheckerts: {
       name: 'ICheckerts',
@@ -3682,8 +3938,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2889,
       lines: 114,
-      logicIssue: 'Нарушение принципа единственной ответственности',
+      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IEvaluatorts: {
       name: 'IEvaluatorts',
@@ -3699,6 +3956,7 @@ window.EAP_DATA = {
       lines: 92,
       logicIssue: 'Избыточная связность между модулями',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     IReporterts: {
       name: 'IReporterts',
@@ -3712,8 +3970,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3398,
       lines: 156,
-      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
+      logicIssue: 'Недостаточная модульность архитектуры',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     demoreportingts: {
       name: 'demoreportingts',
@@ -3729,6 +3988,7 @@ window.EAP_DATA = {
       lines: 288,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     detailedanalyzerts: {
       name: 'detailedanalyzerts',
@@ -3741,8 +4001,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Избыточная связность между модулями',
+      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     aiinsightsenginesimplets: {
       name: 'aiinsightsenginesimplets',
@@ -3755,8 +4016,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует мониторинг дрейфа модели',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     featureextractortestts: {
       name: 'featureextractortestts',
@@ -3769,8 +4031,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 11257,
       lines: 299,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     interfacests: {
       name: 'interfacests',
@@ -3783,8 +4046,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5861,
       lines: 205,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     INTEGRATIONCOMPLETEmd: {
       name: 'INTEGRATIONCOMPLETEmd',
@@ -3799,6 +4063,7 @@ window.EAP_DATA = {
       lines: 273,
       logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     AnalysisReportAdapter: {
       name: 'AnalysisReportAdapter',
@@ -3814,6 +4079,7 @@ window.EAP_DATA = {
       lines: 324,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     HTMLReporter: {
       name: 'HTMLReporter',
@@ -3828,6 +4094,7 @@ window.EAP_DATA = {
       lines: 775,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     JSONReporter: {
       name: 'JSONReporter',
@@ -3842,6 +4109,7 @@ window.EAP_DATA = {
       lines: 830,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Неустойчивость к временным сбоям',
+      classification: 'auxiliary',
     },
     MarkdownReporter: {
       name: 'MarkdownReporter',
@@ -3856,6 +4124,7 @@ window.EAP_DATA = {
       lines: 591,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     ReporterFactory: {
       name: 'ReporterFactory',
@@ -3869,7 +4138,8 @@ window.EAP_DATA = {
       fileSize: 6859,
       lines: 211,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствует кэширование результатов вычислений',
+      functionalityIssue: 'Сложность в отладке и диагностике проблем',
+      classification: 'auxiliary',
     },
     simpletemplatetest: {
       name: 'simpletemplatetest',
@@ -3882,8 +4152,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 3055,
       lines: 74,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     ExecutiveSummaryReporter: {
       name: 'ExecutiveSummaryReporter',
@@ -3899,6 +4170,7 @@ window.EAP_DATA = {
       lines: 420,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     RoadmapReporter: {
       name: 'RoadmapReporter',
@@ -3914,6 +4186,7 @@ window.EAP_DATA = {
       lines: 1057,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     TechnicalDebtReporter: {
       name: 'TechnicalDebtReporter',
@@ -3929,6 +4202,7 @@ window.EAP_DATA = {
       lines: 669,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     templatedemots: {
       name: 'templatedemots',
@@ -3944,6 +4218,7 @@ window.EAP_DATA = {
       lines: 144,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     TemplateEngine: {
       name: 'TemplateEngine',
@@ -3958,6 +4233,7 @@ window.EAP_DATA = {
       lines: 295,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     demots: {
       name: 'demots',
@@ -3973,6 +4249,7 @@ window.EAP_DATA = {
       lines: 160,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     TemplateLoader: {
       name: 'TemplateLoader',
@@ -3988,6 +4265,7 @@ window.EAP_DATA = {
       lines: 948,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TemplateManager: {
       name: 'TemplateManager',
@@ -4003,6 +4281,7 @@ window.EAP_DATA = {
       lines: 602,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     SimpleTemplateCache: {
       name: 'SimpleTemplateCache',
@@ -4017,7 +4296,8 @@ window.EAP_DATA = {
       fileSize: 13071,
       lines: 462,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Недостаточная отказоустойчивость системы',
+      functionalityIssue: 'Сложность в отладке и диагностике проблем',
+      classification: 'auxiliary',
     },
     UnifiedReportingSystem: {
       name: 'UnifiedReportingSystem',
@@ -4033,6 +4313,7 @@ window.EAP_DATA = {
       lines: 497,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     simpledemots: {
       name: 'simpledemots',
@@ -4048,6 +4329,7 @@ window.EAP_DATA = {
       lines: 275,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     testcriticalassessmentts: {
       name: 'testcriticalassessmentts',
@@ -4062,6 +4344,7 @@ window.EAP_DATA = {
       lines: 236,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testcriticalnewts: {
       name: 'testcriticalnewts',
@@ -4076,6 +4359,7 @@ window.EAP_DATA = {
       lines: 142,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testenhancedsecurityts: {
       name: 'testenhancedsecurityts',
@@ -4091,6 +4375,7 @@ window.EAP_DATA = {
       lines: 150,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testintegrationsimplets: {
       name: 'testintegrationsimplets',
@@ -4105,6 +4390,7 @@ window.EAP_DATA = {
       lines: 151,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testrecommendationsimple: {
       name: 'testrecommendationsimple',
@@ -4119,6 +4405,7 @@ window.EAP_DATA = {
       lines: 62,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testrecommendationsbasic: {
       name: 'testrecommendationsbasic',
@@ -4133,6 +4420,7 @@ window.EAP_DATA = {
       lines: 188,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testsecurityfinal: {
       name: 'testsecurityfinal',
@@ -4147,6 +4435,7 @@ window.EAP_DATA = {
       lines: 381,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testsecuritymaints: {
       name: 'testsecuritymaints',
@@ -4161,6 +4450,7 @@ window.EAP_DATA = {
       lines: 219,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testsecurityrealistic: {
       name: 'testsecurityrealistic',
@@ -4175,6 +4465,7 @@ window.EAP_DATA = {
       lines: 352,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testsecurityts: {
       name: 'testsecurityts',
@@ -4190,6 +4481,7 @@ window.EAP_DATA = {
       lines: 97,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testv3ts: {
       name: 'testv3ts',
@@ -4202,8 +4494,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     testwebsecurityts: {
       name: 'testwebsecurityts',
@@ -4218,6 +4511,7 @@ window.EAP_DATA = {
       lines: 95,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testxssanalyzerts: {
       name: 'testxssanalyzerts',
@@ -4233,6 +4527,7 @@ window.EAP_DATA = {
       lines: 134,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testxsssimplets: {
       name: 'testxsssimplets',
@@ -4247,6 +4542,7 @@ window.EAP_DATA = {
       lines: 57,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testts: {
       name: 'testts',
@@ -4261,6 +4557,7 @@ window.EAP_DATA = {
       lines: 67,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     analysisresultsts: {
       name: 'analysisresultsts',
@@ -4276,6 +4573,7 @@ window.EAP_DATA = {
       lines: 177,
       logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     AnalysisCategoryts: {
       name: 'AnalysisCategoryts',
@@ -4288,8 +4586,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 923,
       lines: 26,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     babeltraversedts: {
       name: 'babeltraversedts',
@@ -4302,8 +4601,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 705,
       lines: 33,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     CheckResultts: {
       name: 'CheckResultts',
@@ -4318,6 +4618,7 @@ window.EAP_DATA = {
       lines: 111,
       logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     evaluationresultsts: {
       name: 'evaluationresultsts',
@@ -4331,8 +4632,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 7213,
       lines: 230,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     Projectts: {
       name: 'Projectts',
@@ -4345,8 +4647,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2326,
       lines: 81,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     SeverityLevelts: {
       name: 'SeverityLevelts',
@@ -4359,8 +4662,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 840,
       lines: 30,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     adaptivethresholdsts: {
       name: 'adaptivethresholdsts',
@@ -4375,6 +4679,7 @@ window.EAP_DATA = {
       lines: 408,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'auxiliary',
     },
     detailedroadmapgeneratorts: {
       name: 'detailedroadmapgeneratorts',
@@ -4387,8 +4692,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Недостаточная точность предсказательной модели',
+      logicIssue: 'Отсутствует обработка аномальных значений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     fileutilsts: {
       name: 'fileutilsts',
@@ -4402,7 +4708,8 @@ window.EAP_DATA = {
       fileSize: 5341,
       lines: 239,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствует graceful shutdown при остановке',
+      functionalityIssue: 'Отсутствует мониторинг состояния контейнера',
+      classification: 'auxiliary',
     },
     reportgeneratorts: {
       name: 'reportgeneratorts',
@@ -4415,8 +4722,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     STARTHEREmd: {
       name: 'STARTHEREmd',
@@ -4429,8 +4737,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 1747,
       lines: 68,
-      logicIssue: 'Неоптимальный размер Docker образа',
+      logicIssue: 'Отсутствует multi-stage сборка',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     testaiintegration: {
       name: 'testaiintegration',
@@ -4445,6 +4754,7 @@ window.EAP_DATA = {
       lines: 61,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testallanalyzersfinal: {
       name: 'testallanalyzersfinal',
@@ -4460,6 +4770,7 @@ window.EAP_DATA = {
       lines: 365,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testallframeworks: {
       name: 'testallframeworks',
@@ -4474,6 +4785,7 @@ window.EAP_DATA = {
       lines: 195,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testbothframeworksts: {
       name: 'testbothframeworksts',
@@ -4488,6 +4800,7 @@ window.EAP_DATA = {
       lines: 200,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testcoveragesimple: {
       name: 'testcoveragesimple',
@@ -4502,6 +4815,7 @@ window.EAP_DATA = {
       lines: 125,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testcypresssimple: {
       name: 'testcypresssimple',
@@ -4516,6 +4830,7 @@ window.EAP_DATA = {
       lines: 297,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     teste2eframeworks: {
       name: 'teste2eframeworks',
@@ -4530,6 +4845,7 @@ window.EAP_DATA = {
       lines: 289,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     teste2esimple: {
       name: 'teste2esimple',
@@ -4544,6 +4860,7 @@ window.EAP_DATA = {
       lines: 251,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testjestcleants: {
       name: 'testjestcleants',
@@ -4558,6 +4875,7 @@ window.EAP_DATA = {
       lines: 192,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testphase3final: {
       name: 'testphase3final',
@@ -4573,6 +4891,7 @@ window.EAP_DATA = {
       lines: 299,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testphase4mvp: {
       name: 'testphase4mvp',
@@ -4588,6 +4907,7 @@ window.EAP_DATA = {
       lines: 86,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testphase41integration: {
       name: 'testphase41integration',
@@ -4603,6 +4923,7 @@ window.EAP_DATA = {
       lines: 205,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testplaywrightsimple: {
       name: 'testplaywrightsimple',
@@ -4617,6 +4938,7 @@ window.EAP_DATA = {
       lines: 223,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testrealproject: {
       name: 'testrealproject',
@@ -4632,6 +4954,7 @@ window.EAP_DATA = {
       lines: 338,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testrecommendationengineintegrationts: {
       name: 'testrecommendationengineintegrationts',
@@ -4647,6 +4970,7 @@ window.EAP_DATA = {
       lines: 174,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testrecommendationfinalts: {
       name: 'testrecommendationfinalts',
@@ -4662,6 +4986,7 @@ window.EAP_DATA = {
       lines: 247,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testunifiedanalyzer: {
       name: 'testunifiedanalyzer',
@@ -4677,6 +5002,7 @@ window.EAP_DATA = {
       lines: 86,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testvitestcleants: {
       name: 'testvitestcleants',
@@ -4691,6 +5017,7 @@ window.EAP_DATA = {
       lines: 168,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testvitestintegrationts: {
       name: 'testvitestintegrationts',
@@ -4705,6 +5032,7 @@ window.EAP_DATA = {
       lines: 113,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testvitestsimplets: {
       name: 'testvitestsimplets',
@@ -4719,6 +5047,7 @@ window.EAP_DATA = {
       lines: 150,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testwebfixtemplatests: {
       name: 'testwebfixtemplatests',
@@ -4734,6 +5063,7 @@ window.EAP_DATA = {
       lines: 211,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     testwebintegrationts: {
       name: 'testwebintegrationts',
@@ -4749,6 +5079,7 @@ window.EAP_DATA = {
       lines: 120,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     aiinsightsenginetestts: {
       name: 'aiinsightsenginetestts',
@@ -4763,6 +5094,7 @@ window.EAP_DATA = {
       lines: 276,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ProductModel: {
       name: 'ProductModel',
@@ -4778,6 +5110,7 @@ window.EAP_DATA = {
       lines: 615,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     qualitypredictortestts: {
       name: 'qualitypredictortestts',
@@ -4790,8 +5123,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 16579,
       lines: 443,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     analyzercoretestts: {
       name: 'analyzercoretestts',
@@ -4804,8 +5138,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2668,
       lines: 81,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     UserController: {
       name: 'UserController',
@@ -4819,7 +5154,8 @@ window.EAP_DATA = {
       fileSize: 8702,
       lines: 280,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Медленное выполнение тестового набора',
+      functionalityIssue: 'Отсутствует параллельное выполнение тестов',
+      classification: 'analyzer',
     },
     clitestts: {
       name: 'clitestts',
@@ -4834,6 +5170,7 @@ window.EAP_DATA = {
       lines: 250,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     dockeranalyzertestts: {
       name: 'dockeranalyzertestts',
@@ -4848,6 +5185,7 @@ window.EAP_DATA = {
       lines: 253,
       logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     eapsetupts: {
       name: 'eapsetupts',
@@ -4862,6 +5200,7 @@ window.EAP_DATA = {
       lines: 74,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     emtanalyzertestts: {
       name: 'emtanalyzertestts',
@@ -4874,8 +5213,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6007,
       lines: 167,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     FileSystemProject: {
       name: 'FileSystemProject',
@@ -4891,6 +5231,7 @@ window.EAP_DATA = {
       lines: 237,
       logicIssue: 'Отсутствует корректная обработка исключений в блоке try',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     executiontimertestts: {
       name: 'executiontimertestts',
@@ -4906,6 +5247,7 @@ window.EAP_DATA = {
       lines: 379,
       logicIssue: 'Использование небезопасных динамических вызовов',
       functionalityIssue: 'Потенциальные утечки памяти из-за неочищенных таймеров',
+      classification: 'analyzer',
     },
     memoryprofilertestts: {
       name: 'memoryprofilertestts',
@@ -4921,6 +5263,7 @@ window.EAP_DATA = {
       lines: 244,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Потенциальные утечки памяти из-за неочищенных таймеров',
+      classification: 'analyzer',
     },
     ComplexUserProcessor: {
       name: 'ComplexUserProcessor',
@@ -4935,6 +5278,7 @@ window.EAP_DATA = {
       lines: 322,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     setupts: {
       name: 'setupts',
@@ -4947,8 +5291,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1567,
       lines: 55,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     ComplexProcessor: {
       name: 'ComplexProcessor',
@@ -4963,6 +5308,7 @@ window.EAP_DATA = {
       lines: 351,
       logicIssue: 'Refactor this complex method - intentional debt for quick delivery',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     DuplicatedValidation: {
       name: 'DuplicatedValidation',
@@ -4977,6 +5323,7 @@ window.EAP_DATA = {
       lines: 26,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     LargeUserManager: {
       name: 'LargeUserManager',
@@ -4989,8 +5336,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 2868,
       lines: 90,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TestAnalyzer: {
       name: 'TestAnalyzer',
@@ -5003,8 +5351,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7425,
       lines: 226,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     utilstestts: {
       name: 'utilstestts',
@@ -5019,6 +5368,7 @@ window.EAP_DATA = {
       lines: 179,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
+      classification: 'analyzer',
     },
     TRANSFERTOGITHUBREADYmd: {
       name: 'TRANSFERTOGITHUBREADYmd',
@@ -5031,8 +5381,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3786,
       lines: 109,
-      logicIssue: 'Небезопасные переменные окружения',
+      logicIssue: 'Использование root пользователя в контейнере',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     tsconfigcjsjson: {
       name: 'tsconfigcjsjson',
@@ -5047,6 +5398,7 @@ window.EAP_DATA = {
       lines: 11,
       logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'auxiliary',
     },
     UNIQUEREPORTSmd: {
       name: 'UNIQUEREPORTSmd',
@@ -5061,6 +5413,7 @@ window.EAP_DATA = {
       lines: 123,
       logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'other',
     },
     vitestaiconfigts: {
       name: 'vitestaiconfigts',
@@ -5073,8 +5426,9 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 724,
       lines: 26,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     vitestconfigts: {
       name: 'vitestconfigts',
@@ -5090,6 +5444,7 @@ window.EAP_DATA = {
       lines: 41,
       logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
     vitestperformanceconfigts: {
       name: 'vitestperformanceconfigts',
@@ -5104,6 +5459,7 @@ window.EAP_DATA = {
       lines: 14,
       logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
+      classification: 'analyzer',
     },
   },
 
@@ -5225,19 +5581,14 @@ window.EAP_DATA = {
 
   classification: {
     analyzers: [
-      'ciyml',
-      'docsyml',
-      'prchecksyml',
       'generateroadmap',
       'quickanalyze',
       'testfixes',
       'testintegration',
-      'CHANGELOGmd',
-      'COMMITSUMMARYmd',
-      'COMPONENTSPECIFICATIONmd',
       'EAPAnalyzerStatusEvaluator',
       'CorrectedEAPEvaluator',
       'correctedfullsystemevaluationts',
+      'MockProject',
       'demov3ts',
       'AIEnhancedAnalyzer',
       'GoldenStandardAnalyzer',
@@ -5305,7 +5656,6 @@ window.EAP_DATA = {
       'IAnalyzer',
       'IChecker',
       'IEvaluator',
-      'AnalysisOrchestrator',
       'ReportGenerator',
       'UltimateReportGenerator',
       'EAPAnalyzerDemo',
@@ -5330,7 +5680,6 @@ window.EAP_DATA = {
       'AnalysisManager',
       'basicanalyzer',
       'ImprovedComplexityCalculator',
-      'configjson',
       'AnalyzerCore',
       'ImprovedDuplicationDetector',
       'SmartFileClassifier',
@@ -5348,39 +5697,12 @@ window.EAP_DATA = {
       'UltraEnhancedAnalyzer',
       'BugFixValidator',
       'MetricsValidator',
-      'MyComponentChecker',
-      'eapanalysislatestjson',
-      'EAPQUICKSTARTmd',
-      'FINALIMPLEMENTATIONSTATUSmd',
       'fullsystemdemo',
       'fullsystemevaluationts',
-      'IMPLEMENTATIONSTATUSREPORTmd',
-      'implementationstatusjson',
-      'MyNewChecker',
-      'PHASE12CICDCOMPLETEmd',
-      'PHASE2COMPLETIONREPORTmd',
-      'PHASE3COMPLETIONREPORTmd',
-      'PHASE41COMPLETIONREPORTmd',
-      'READMEGITHUBmd',
-      'READYTOUSEmd',
-      'analysiskinderlyevents20250909130841json',
-      'analysiskinderlyevents20250909131720json',
-      'analysisprojecttemplate20250909131422json',
-      'analysissrc20250909130845json',
-      'analysisHEYS220250909131601json',
-      'analysisHEYS220250909201708json',
-      'analysisHEYS220250909231643json',
-      'ROADMAPHEYS220250909131601md',
-      'ROADMAPHEYS220250909201708md',
-      '40md',
-      '2md',
-      'ROADMAPANALYSISmd',
       'DevEnvironment',
       'Class',
       'ProductionValidator',
-      'SELFANALYSISPROTECTIONmd',
       'MockProcessIsolatedAnalyzer',
-      'SPRINTCOMPLETIONREPORTmd',
       'UserService',
       'indexts',
       'testarchitecturets',
@@ -5396,7 +5718,6 @@ window.EAP_DATA = {
       'demoreportingts',
       'detailedanalyzerts',
       'featureextractortestts',
-      'INTEGRATIONCOMPLETEmd',
       'AnalysisReportAdapter',
       'simpletemplatetest',
       'ExecutiveSummaryReporter',
@@ -5470,29 +5791,20 @@ window.EAP_DATA = {
     auxiliary: [
       '0',
       '1',
-      'eapthresholdsjson',
-      'cicdyml',
-      'lintstagedrcjson',
       'ambientdts',
       'app',
       'matchers',
       'tsconfigjson',
       'AdvancedEAPDemo',
-      'aianalysisreportjson',
-      'AIINTEGRATIONCOMPLETEmd',
-      'aireportmd',
       'eapai',
       'eap',
       'generatereport',
       'quickanalyzees',
       'validate',
       'demophase4integration',
-      'demoreportjson',
-      'demoreportmd',
       'cli',
       'AIReportGenerator',
       'analyzemain',
-      'READMEmd',
       'BaseReporter',
       'CacheManager',
       'IReporter',
@@ -5519,42 +5831,16 @@ window.EAP_DATA = {
       'createCompatModule',
       'reportgenerator',
       'ValidationReporter',
-      'dockercomposeyml',
       'Dockerfile',
-      'enhancedaireportjson',
-      'ESMODULEFIXmd',
       'eslintconfig',
-      'EXECUTIVESUMMARYmd',
       'finaldemo',
-      'FINALGITHUBREADYmd',
-      'HOWTOUSESIMPLEmd',
-      'PACKAGERENAMECOMPLETEmd',
       'packagejson',
-      'PACKAGINGmd',
-      'PHASE12COMPLETIONREPORTmd',
-      'PHASE1COMPLETIONREPORTmd',
-      'pnpmlockyaml',
-      'PROJECTMAPmd',
-      'QUICKSTARTmd',
-      'RELEASESUMMARYmd',
-      'ETALONANALIZROADMAPmd',
-      'ROADMAPkinderlyevents20250909130841md',
-      'ROADMAPkinderlyevents20250909131720md',
-      'ROADMAPprojecttemplate20250909131422md',
-      'ROADMAPsrc20250909130845md',
-      'simpleanalysisreportjson',
-      'SIMPLEANALYSISSUMMARYmd',
-      'validationreportmd',
-      'md',
-      'ROADMAPGENERATIONCOMPLETEmd',
       'fixcjsexports',
       'generatedetailedreport',
       'generatereportsimple',
       'postinstall',
       'release',
-      'selfanalysisreportjson',
       'SimpleEAPDemo',
-      'SPRINT1COMPLETIONREPORTmd',
       'clits',
       'analyzemaints',
       'IReporterts',
@@ -5578,16 +5864,88 @@ window.EAP_DATA = {
       'detailedroadmapgeneratorts',
       'fileutilsts',
       'reportgeneratorts',
+      'tsconfigcjsjson',
+    ],
+    other: [
+      'eapthresholdsjson',
+      'cicdyml',
+      'ciyml',
+      'docsyml',
+      'prchecksyml',
+      'lintstagedrcjson',
+      'aianalysisreportjson',
+      'AIINTEGRATIONCOMPLETEmd',
+      'aireportmd',
+      'CHANGELOGmd',
+      'COMMITSUMMARYmd',
+      'COMPONENTSPECIFICATIONmd',
+      'demoreportjson',
+      'demoreportmd',
+      'READMEmd',
+      'AnalysisOrchestrator',
+      'configjson',
+      'dockercomposeyml',
+      'MyComponentChecker',
+      'eapanalysislatestjson',
+      'EAPQUICKSTARTmd',
+      'enhancedaireportjson',
+      'ESMODULEFIXmd',
+      'EXECUTIVESUMMARYmd',
+      'FINALGITHUBREADYmd',
+      'FINALIMPLEMENTATIONSTATUSmd',
+      'HOWTOUSESIMPLEmd',
+      'IMPLEMENTATIONSTATUSREPORTmd',
+      'implementationstatusjson',
+      'MyNewChecker',
+      'PACKAGERENAMECOMPLETEmd',
+      'PACKAGINGmd',
+      'PHASE12COMPLETIONREPORTmd',
+      'PHASE1COMPLETIONREPORTmd',
+      'PHASE12CICDCOMPLETEmd',
+      'PHASE2COMPLETIONREPORTmd',
+      'PHASE3COMPLETIONREPORTmd',
+      'PHASE41COMPLETIONREPORTmd',
+      'pnpmlockyaml',
+      'PROJECTMAPmd',
+      'QUICKSTARTmd',
+      'READMEGITHUBmd',
+      'READYTOUSEmd',
+      'RELEASESUMMARYmd',
+      'analysiskinderlyevents20250909130841json',
+      'analysiskinderlyevents20250909131720json',
+      'analysisprojecttemplate20250909131422json',
+      'analysissrc20250909130845json',
+      'analysisHEYS220250909131601json',
+      'analysisHEYS220250909201708json',
+      'analysisHEYS220250909231643json',
+      'ETALONANALIZROADMAPmd',
+      'ROADMAPkinderlyevents20250909130841md',
+      'ROADMAPkinderlyevents20250909131720md',
+      'ROADMAPprojecttemplate20250909131422md',
+      'ROADMAPsrc20250909130845md',
+      'ROADMAPHEYS220250909131601md',
+      'ROADMAPHEYS220250909201708md',
+      'simpleanalysisreportjson',
+      'SIMPLEANALYSISSUMMARYmd',
+      'validationreportmd',
+      '40md',
+      '2md',
+      'md',
+      'ROADMAPANALYSISmd',
+      'ROADMAPGENERATIONCOMPLETEmd',
+      'SELFANALYSISPROTECTIONmd',
+      'selfanalysisreportjson',
+      'SPRINT1COMPLETIONREPORTmd',
+      'SPRINTCOMPLETIONREPORTmd',
+      'INTEGRATIONCOMPLETEmd',
       'STARTHEREmd',
       'TRANSFERTOGITHUBREADYmd',
-      'tsconfigcjsjson',
       'UNIQUEREPORTSmd',
     ],
-    tests: ['MockProject'],
     stats: {
-      analyzersCount: 241,
-      auxiliaryCount: 114,
-      testsCount: 1,
+      analyzersCount: 206,
+      auxiliaryCount: 76,
+      otherCount: 74,
     },
   },
 

@@ -60,13 +60,20 @@
       <div class="row mb-4">
         <div class="col-12">
           <div class="card border-primary">
-            <div class="card-header bg-primary bg-opacity-10 d-flex justify-content-between align-items-center">
+            <div
+              class="card-header bg-primary bg-opacity-10 d-flex justify-content-between align-items-center"
+            >
               <h5 class="mb-0 text-primary">
                 <i class="bi bi-diagram-3"></i>
                 Классификация компонентов по назначению
               </h5>
               <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="analyzers-only-filter">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  role="switch"
+                  id="analyzers-only-filter"
+                />
                 <label class="form-check-label fw-semibold" for="analyzers-only-filter">
                   Только анализаторы
                 </label>
@@ -75,14 +82,24 @@
             <div class="card-body">
               <div class="alert alert-info mb-3" role="alert">
                 <i class="bi bi-info-circle"></i>
-                <strong>Главный фильтр:</strong> Выберите тип компонентов для отображения во всех разделах ниже
+                <strong>Главный фильтр:</strong> Выберите тип компонентов для отображения во всех
+                разделах ниже
               </div>
               <div class="row">
                 <!-- Analyzers Column -->
                 <div class="col-md-4">
-                  <div class="border rounded p-3 h-100" style="border-color: #28a745 !important; background-color: rgba(40, 167, 69, 0.05);">
+                  <div
+                    class="border rounded p-3 h-100"
+                    style="
+                      border-color: #28a745 !important;
+                      background-color: rgba(40, 167, 69, 0.05);
+                    "
+                  >
                     <div class="d-flex align-items-center mb-3">
-                      <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                      <div
+                        class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 40px; height: 40px"
+                      >
                         <i class="bi bi-search"></i>
                       </div>
                       <div>
@@ -104,9 +121,18 @@
 
                 <!-- Auxiliary Column -->
                 <div class="col-md-4">
-                  <div class="border rounded p-3 h-100" style="border-color: #6c757d !important; background-color: rgba(108, 117, 125, 0.05);">
+                  <div
+                    class="border rounded p-3 h-100"
+                    style="
+                      border-color: #6c757d !important;
+                      background-color: rgba(108, 117, 125, 0.05);
+                    "
+                  >
                     <div class="d-flex align-items-center mb-3">
-                      <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                      <div
+                        class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 40px; height: 40px"
+                      >
                         <i class="bi bi-tools"></i>
                       </div>
                       <div>
@@ -126,26 +152,35 @@
                   </div>
                 </div>
 
-                <!-- Tests Column -->
+                <!-- Other Column -->
                 <div class="col-md-4">
-                  <div class="border rounded p-3 h-100" style="border-color: #ffc107 !important; background-color: rgba(255, 193, 7, 0.05);">
+                  <div
+                    class="border rounded p-3 h-100"
+                    style="
+                      border-color: #6c757d !important;
+                      background-color: rgba(108, 117, 125, 0.05);
+                    "
+                  >
                     <div class="d-flex align-items-center mb-3">
-                      <div class="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
-                        <i class="bi bi-bug"></i>
+                      <div
+                        class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-3"
+                        style="width: 40px; height: 40px"
+                      >
+                        <i class="bi bi-file-text"></i>
                       </div>
                       <div>
-                        <h6 class="mb-0" style="color: #856404;">Тестовые</h6>
-                        <small class="text-muted">Внутренние тесты системы</small>
+                        <h6 class="mb-0" style="color: #495057">Остальное</h6>
+                        <small class="text-muted">Документация и конфиги</small>
                       </div>
                     </div>
                     <div class="text-center mb-3">
-                      <h2 class="mb-0" style="color: #856404;" id="tests-count">1</h2>
-                      <small class="text-muted">компонентов</small>
+                      <h2 class="mb-0" style="color: #495057" id="tests-count">0</h2>
+                      <small class="text-muted">файлов</small>
                     </div>
                     <div class="small text-muted">
-                      <div class="mb-1">• Юнит-тесты системы</div>
-                      <div class="mb-1">• Моки и фикстуры</div>
-                      <div>• Примеры использования</div>
+                      <div class="mb-1">• Документация (.md)</div>
+                      <div class="mb-1">• Конфигурации</div>
+                      <div>• Прочие файлы</div>
                     </div>
                   </div>
                 </div>
@@ -461,8 +496,7 @@
       chartScript.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js';
       chartScript.crossOrigin = 'anonymous';
       chartScript.onload = function () {
-        console.log('📊 Chart.js загружен успешно');
-        console.log('Chart доступен:', typeof Chart !== 'undefined');
+        // Chart.js успешно загружен
         if (typeof Chart !== 'undefined') {
           loadDashboardScripts();
         } else {
@@ -476,7 +510,7 @@
         const fallbackScript = document.createElement('script');
         fallbackScript.src = 'https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js';
         fallbackScript.onload = function () {
-          console.log('📊 Chart.js v3.9.1 загружен как fallback');
+          // Chart.js fallback загружен
           if (typeof Chart !== 'undefined') {
             loadDashboardScripts();
           } else {
@@ -510,7 +544,7 @@
           script.src = src;
           script.onload = function () {
             loadedScripts++;
-            console.log(`✅ Загружен: ${src}`);
+            // Модуль загружен
             if (loadedScripts === scripts.length) {
               initializeDashboard();
             }
@@ -540,7 +574,7 @@
           return;
         }
 
-        console.log('🚀 Инициализация Dashboard...');
+        // Инициализация Dashboard...
 
         setTimeout(() => {
           try {
@@ -557,7 +591,7 @@
             // Инициализируем классификацию
             initializeClassification();
 
-            console.log('✅ Dashboard инициализирован успешно');
+            // Dashboard инициализирован
           } catch (error) {
             console.error('❌ Ошибка инициализации Dashboard:', error);
           }
@@ -566,20 +600,20 @@
 
       // Инициализация классификации
       function initializeClassification() {
-        console.log('🔧 Инициализация классификации...');
+        // Инициализация классификации...
 
         // Проверяем наличие данных классификации
         if (typeof EAP_DATA !== 'undefined' && EAP_DATA.classification) {
-          console.log('📊 Найдены данные классификации:', EAP_DATA.classification);
+          // Данные классификации найдены
 
           const classification = EAP_DATA.classification;
           const counts = {
             analyzers: classification.stats?.analyzersCount || 0,
             auxiliary: classification.stats?.auxiliaryCount || 0,
-            tests: classification.stats?.testsCount || 0
+            other: classification.stats?.otherCount || 0,
           };
 
-          console.log('📊 Счетчики классификации:', counts);
+          // Счетчики обновлены
 
           // Обновляем счетчики в UI
           const analyzersElement = document.getElementById('analyzers-count');
@@ -588,9 +622,9 @@
 
           if (analyzersElement) analyzersElement.textContent = counts.analyzers;
           if (auxiliaryElement) auxiliaryElement.textContent = counts.auxiliary;
-          if (testsElement) testsElement.textContent = counts.tests;
+          if (testsElement) testsElement.textContent = counts.other;
 
-          console.log('✅ Счетчики классификации обновлены');
+          // Счетчики классификации обновлены
         } else {
           console.warn('⚠️ Данные классификации не найдены в EAP_DATA');
         }
@@ -600,9 +634,9 @@
           window.classificationData = {
             analyzers: new Set(EAP_DATA.classification.analyzers),
             auxiliary: new Set(EAP_DATA.classification.auxiliary),
-            tests: new Set(EAP_DATA.classification.tests)
+            other: new Set(EAP_DATA.classification.other),
           };
-          console.log('💾 Данные классификации сохранены для фильтрации');
+          // Данные классификации сохранены
 
           // Присваиваем классификацию всем компонентам
           assignClassificationToComponents();
@@ -610,45 +644,19 @@
 
         // Обработчик переключателя "Только анализаторы"
         const filterToggle = document.getElementById('analyzers-only-filter');
-        console.log('🔍 Поиск переключателя analyzers-only-filter:', filterToggle);
 
         if (filterToggle) {
-          console.log('✅ Переключатель найден!');
-          console.log('📊 Свойства элемента:', {
-            tagName: filterToggle.tagName,
-            type: filterToggle.type,
-            checked: filterToggle.checked,
-            disabled: filterToggle.disabled,
-            style: window.getComputedStyle(filterToggle).display,
-            pointerEvents: window.getComputedStyle(filterToggle).pointerEvents,
-            zIndex: window.getComputedStyle(filterToggle).zIndex
+          // Добавляем обработчики событий для переключателя
+          filterToggle.addEventListener('click', function (e) {
+            // Клик обработан
           });
 
-          // Проверим, нет ли перекрывающих элементов
-          const rect = filterToggle.getBoundingClientRect();
-          console.log('📐 Позиция элемента:', rect);
-          const elementAtPoint = document.elementFromPoint(rect.left + rect.width/2, rect.top + rect.height/2);
-          console.log('👆 Элемент под курсором в центре переключателя:', elementAtPoint);
-
-          console.log('✅ Переключатель найден, добавляем обработчик события');
-
-          // Добавляем несколько обработчиков для отладки
-          filterToggle.addEventListener('click', function(e) {
-            console.log('🖱️ КЛИК по переключателю!', e);
-            console.log('🔧 Состояние checked после клика:', this.checked);
+          filterToggle.addEventListener('input', function (e) {
+            // Input событие обработано
           });
 
-          filterToggle.addEventListener('input', function(e) {
-            console.log('⌨️ INPUT событие!', e);
-            console.log('🔧 Состояние checked на input:', this.checked);
-          });
-
-          filterToggle.addEventListener('change', function() {
-            console.log('🎯 СОБЫТИЕ: Переключатель изменен!');
+          filterToggle.addEventListener('change', function () {
             const showOnlyAnalyzers = this.checked;
-            console.log('📊 Состояние переключателя:', showOnlyAnalyzers);
-            console.log('🔧 Состояние window.dashboardInstance:', !!window.dashboardInstance);
-            console.log('📋 Состояние window.classificationData:', !!window.classificationData);
 
             // Сбрасываем активные карточки, если переключатель сброшен
             if (!showOnlyAnalyzers) {
@@ -660,12 +668,16 @@
 
             // Применяем фильтрацию через Dashboard
             if (window.dashboardInstance) {
-              console.log('✅ Используем Dashboard фильтрацию');
-              console.log('📝 Устанавливаем currentClassificationFilter:', showOnlyAnalyzers ? 'analyzer' : 'all');
-
-              window.dashboardInstance.currentClassificationFilter = showOnlyAnalyzers ? 'analyzer' : 'all';
-              console.log('🔄 Вызываем renderComponentsList()');
+              window.dashboardInstance.currentClassificationFilter = showOnlyAnalyzers
+                ? 'analyzer'
+                : 'all';
               window.dashboardInstance.renderComponentsList();
+              window.dashboardInstance.updateCategoryCounters();
+
+              // Обновляем диаграммы
+              if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+                window.EAPCharts.updateCategoriesChart();
+              }
 
               // Показываем уведомление
               if (showOnlyAnalyzers) {
@@ -674,64 +686,22 @@
                 showNotification('Отображаются все компоненты (356 компонентов)', 'info');
               }
             } else {
-              console.log('⚠️ Dashboard не найден, используем резервную фильтрацию');
               // Резервный вариант - прямая фильтрация DOM
               filterComponents(showOnlyAnalyzers);
 
               // Показываем уведомление
               if (showOnlyAnalyzers) {
-                showNotification(`Отображаются только анализаторы (${document.getElementById('analyzers-count').textContent} компонентов)`, 'info');
+                showNotification(
+                  `Отображаются только анализаторы (${document.getElementById('analyzers-count').textContent} компонентов)`,
+                  'info'
+                );
               } else {
                 showNotification('Отображаются все компоненты', 'info');
               }
             }
 
-            console.log('✅ Обработка события завершена');
+            // Обработка события завершена
           });
-
-          // Дополнительная проверка - можем ли мы программно изменить состояние
-          console.log('🧪 Тестируем программное изменение состояния...');
-          setTimeout(() => {
-            console.log('🧪 Текущее состояние checked:', filterToggle.checked);
-            console.log('🧪 Текущее значение value:', filterToggle.value);
-            console.log('🧪 Disabled?', filterToggle.disabled);
-          }, 1000);
-
-          console.log('✅ Обработчик события добавлен');
-
-          // Делаем функцию для тестирования доступной глобально
-          window.testToggle = function() {
-            console.log('🧪 Тестируем переключатель программно...');
-            filterToggle.checked = !filterToggle.checked;
-            console.log('🧪 Новое состояние:', filterToggle.checked);
-            // Программно вызываем событие
-            filterToggle.dispatchEvent(new Event('change'));
-          };
-          console.log('🧪 Функция window.testToggle() создана для тестирования');
-
-          // Также добавим обработчик на label
-          const filterLabel = document.querySelector('label[for="analyzers-only-filter"]');
-          if (filterLabel) {
-            console.log('🏷️ Найден label для переключателя, добавляем обработчик');
-            filterLabel.addEventListener('click', function(e) {
-              console.log('🏷️ КЛИК по label!', e);
-            });
-          }
-
-          // Универсальный отслеживатель событий для отладки
-          document.addEventListener('click', function(e) {
-            if (e.target.id === 'analyzers-only-filter' || e.target.closest('[for="analyzers-only-filter"]')) {
-              console.log('🌐 Глобальный обработчик поймал клик по переключателю или его label!', e.target);
-            }
-          });
-
-          // Проверим через небольшой таймаут все обработчики
-          setTimeout(() => {
-            console.log('⏰ Проверка состояния через 1 сек...');
-            console.log('🔄 Checked состояние:', filterToggle.checked);
-            console.log('🎯 Попытка программного клика...');
-            filterToggle.click();
-          }, 1000);
         } else {
           console.error('❌ Переключатель analyzers-only-filter не найден!');
         }
@@ -744,30 +714,28 @@
       function assignClassificationToComponents() {
         if (!window.EAP_DATA?.components || !window.classificationData) return;
 
-        console.log('🏷️ Присваивание классификации компонентам...');
-
         Object.keys(window.EAP_DATA.components).forEach(componentName => {
           const component = window.EAP_DATA.components[componentName];
 
           // Определяем тип компонента
           if (window.classificationData.analyzers.has(componentName)) {
             component.classification = 'analyzer';
-          } else if (window.classificationData.tests.has(componentName)) {
-            component.classification = 'test';
+          } else if (window.classificationData.other.has(componentName)) {
+            component.classification = 'other';
           } else {
             component.classification = 'auxiliary';
           }
         });
 
-        console.log('✅ Классификация присвоена всем компонентам');
+        // Классификация присвоена всем компонентам
       }
 
       // Фильтрация компонентов
       function filterComponents(showOnlyAnalyzers) {
-        console.log('🔍 Применение фильтрации, только анализаторы:', showOnlyAnalyzers);
-
         // Получаем строки таблицы компонентов
-        const componentRows = document.querySelectorAll('#components-table-body tr[data-component-name]');
+        const componentRows = document.querySelectorAll(
+          '#components-table-body tr[data-component-name]'
+        );
         let visibleCount = 0;
 
         if (!window.classificationData) {
@@ -782,8 +750,8 @@
           let componentType = 'auxiliary'; // по умолчанию
           if (window.classificationData.analyzers.has(componentName)) {
             componentType = 'analyzer';
-          } else if (window.classificationData.tests.has(componentName)) {
-            componentType = 'test';
+          } else if (window.classificationData.other.has(componentName)) {
+            componentType = 'other';
           }
 
           // Добавляем атрибут классификации для будущего использования
@@ -844,8 +812,6 @@
 
       // Функция для создания кликабельных карточек классификации
       function makeClassificationCardsClickable() {
-        console.log('🖱️ Инициализация кликабельных карточек классификации...');
-
         // Находим карточки классификации по их CSS селекторам
         const analyzerCard = document.querySelector('.col-md-4:nth-child(1) .border.rounded');
         const auxiliaryCard = document.querySelector('.col-md-4:nth-child(2) .border.rounded');
@@ -856,13 +822,13 @@
           return;
         }
 
-        console.log('✅ Карточки классификации найдены');
+        // Карточки классификации найдены
 
         // Добавляем стили и ID для кликабельности
         const cards = [
           { element: analyzerCard, id: 'analyzer-card', filter: 'analyzer' },
           { element: auxiliaryCard, id: 'auxiliary-card', filter: 'auxiliary' },
-          { element: testsCard, id: 'tests-card', filter: 'test' }
+          { element: testsCard, id: 'tests-card', filter: 'test' },
         ];
 
         cards.forEach(({ element, id, filter }) => {
@@ -889,8 +855,6 @@
 
         // Обработчик клика для карточки анализаторов
         analyzerCard.addEventListener('click', () => {
-          console.log('🖱️ Клик по карточке "Анализаторы"');
-
           // Устанавливаем переключатель "Только анализаторы"
           const toggle = document.getElementById('analyzers-only-filter');
           if (toggle) {
@@ -898,15 +862,25 @@
             toggle.dispatchEvent(new Event('change'));
           }
 
+          // Устанавливаем фильтр классификации
+          if (window.dashboardInstance) {
+            window.dashboardInstance.currentClassificationFilter = 'analyzer';
+            window.dashboardInstance.renderComponentsList();
+            window.dashboardInstance.updateCategoryCounters();
+
+            // Обновляем диаграммы
+            if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+              window.EAPCharts.updateCategoriesChart();
+            }
+          }
+
           // Применяем стили активной карточки
           setActiveCard('analyzer-card');
-          showNotification('Отображаются только анализаторы (241 компонент)', 'info');
+          showNotification('Отображаются только анализаторы (206 компонентов)', 'info');
         });
 
         // Обработчик клика для карточки вспомогательных
         auxiliaryCard.addEventListener('click', () => {
-          console.log('🖱️ Клик по карточке "Вспомогательные"');
-
           // Сбрасываем переключатель "Только анализаторы"
           const toggle = document.getElementById('analyzers-only-filter');
           if (toggle) {
@@ -917,35 +891,48 @@
           if (window.dashboardInstance) {
             window.dashboardInstance.currentClassificationFilter = 'auxiliary';
             window.dashboardInstance.renderComponentsList();
+            window.dashboardInstance.updateCategoryCounters();
+
+            // Обновляем диаграммы
+            if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+              window.EAPCharts.updateCategoriesChart();
+            }
           }
 
           // Применяем стили активной карточки
           setActiveCard('auxiliary-card');
-          showNotification('Отображаются только вспомогательные компоненты (114 компонентов)', 'info');
+          showNotification(
+            'Отображаются только вспомогательные компоненты (76 компонентов)',
+            'info'
+          );
         });
 
         // Обработчик клика для карточки тестовых
         testsCard.addEventListener('click', () => {
-          console.log('🖱️ Клик по карточке "Тестовые"');
-
           // Сбрасываем переключатель "Только анализаторы"
           const toggle = document.getElementById('analyzers-only-filter');
           if (toggle) {
             toggle.checked = false;
           }
 
-          // Устанавливаем фильтр на тестовые компоненты
+          // Устанавливаем фильтр на остальные компоненты
           if (window.dashboardInstance) {
-            window.dashboardInstance.currentClassificationFilter = 'test';
+            window.dashboardInstance.currentClassificationFilter = 'other';
             window.dashboardInstance.renderComponentsList();
+            window.dashboardInstance.updateCategoryCounters();
+
+            // Обновляем диаграммы
+            if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+              window.EAPCharts.updateCategoriesChart();
+            }
           }
 
           // Применяем стили активной карточки
           setActiveCard('tests-card');
-          showNotification('Отображается только тестовый компонент (1 компонент)', 'info');
+          showNotification('Отображаются остальные компоненты (74 файла)', 'info');
         });
 
-        console.log('✅ Карточки классификации стали кликабельными');
+        // Карточки классификации стали кликабельными
       }
 
       // Функция для выделения активной карточки

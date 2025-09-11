@@ -712,6 +712,31 @@ function getCategoryName(category) {
 function generateDataJs(data, classification = null) {
   const { components, categories } = data;
 
+  // Добавляем поле classification к каждому компоненту
+  const componentsWithClassification = { ...components };
+  if (classification) {
+    // Добавляем классификацию "analyzer"
+    Object.keys(classification.analyzers).forEach(id => {
+      if (componentsWithClassification[id]) {
+        componentsWithClassification[id].classification = 'analyzer';
+      }
+    });
+
+    // Добавляем классификацию "auxiliary"
+    Object.keys(classification.auxiliary).forEach(id => {
+      if (componentsWithClassification[id]) {
+        componentsWithClassification[id].classification = 'auxiliary';
+      }
+    });
+
+    // Добавляем классификацию "other"
+    Object.keys(classification.other).forEach(id => {
+      if (componentsWithClassification[id]) {
+        componentsWithClassification[id].classification = 'other';
+      }
+    });
+  }
+
   // Подготавливаем категории для JS
   const jsCategories = {};
   Object.keys(categories).forEach(key => {
@@ -798,22 +823,30 @@ function generateDataJs(data, classification = null) {
 // Дата генерации: ${new Date().toLocaleString('ru-RU')}
 
 window.EAP_DATA = {
-  components: ${JSON.stringify(components, null, 2)},
+  components: ${JSON.stringify(componentsWithClassification, null, 2)},
 
   categories: ${JSON.stringify(jsCategories, null, 2)},
 
   history: ${JSON.stringify(jsHistory, null, 2)},
 
-  classification: ${classification ? JSON.stringify({
-    analyzers: Object.keys(classification.analyzers),
-    auxiliary: Object.keys(classification.auxiliary),
-    tests: Object.keys(classification.tests),
-    stats: {
-      analyzersCount: Object.keys(classification.analyzers).length,
-      auxiliaryCount: Object.keys(classification.auxiliary).length,
-      testsCount: Object.keys(classification.tests).length
-    }
-  }, null, 2) : 'null'},
+  classification: ${
+    classification
+      ? JSON.stringify(
+          {
+            analyzers: Object.keys(classification.analyzers),
+            auxiliary: Object.keys(classification.auxiliary),
+            other: Object.keys(classification.other),
+            stats: {
+              analyzersCount: Object.keys(classification.analyzers).length,
+              auxiliaryCount: Object.keys(classification.auxiliary).length,
+              otherCount: Object.keys(classification.other).length,
+            },
+          },
+          null,
+          2
+        )
+      : 'null'
+  },
 
   utils: {
     getTopComponents: ${jsUtils.getTopComponents},
@@ -870,58 +903,107 @@ function classifyComponents(components) {
 
   const analyzers = {};
   const auxiliary = {};
-  const tests = {};
+  const other = {}; // Переименовали tests в other
 
   const total = Object.keys(components).length;
   let processed = 0;
 
   Object.entries(components).forEach(([id, comp]) => {
     processed++;
-    const name = (comp.name || "").toLowerCase();
-    const file = (comp.file || "").toLowerCase();
-    const desc = (comp.description || "").toLowerCase();
+    const name = (comp.name || '').toLowerCase();
+    const file = (comp.file || '').toLowerCase();
+    const desc = (comp.description || '').toLowerCase();
 
     // Логирование прогресса каждые 50 компонентов
     if (processed % 50 === 0) {
       console.log(`📊 Обработано ${processed}/${total} компонентов...`);
     }
 
-    // 1. Сначала определяем тестовые компоненты (исключая анализаторы тестов)
-    if ((file.includes('/test/') || file.includes('/spec/') || file.includes('/mock/') ||
-         file.includes('__tests__') || name.includes('mock') || name.includes('fixture')) &&
-        !name.includes('analyzer') && !name.includes('checker') && !name.includes('evaluator') &&
-        !desc.includes('анализир') && !desc.includes('проверя')) {
-      tests[id] = comp;
+    // 1. Сначала определяем "другие" компоненты (документация, конфиги, не-исполняемые файлы)
+    if (
+      // MD файлы и документация
+      file.endsWith('.md') ||
+      file.endsWith('.txt') ||
+      file.endsWith('.rst') ||
+      file.endsWith('.pdf') ||
+      file.endsWith('.doc') ||
+      file.endsWith('.docx') ||
+      // Конфигурационные файлы (исключая важные проектные конфиги)
+      (file.endsWith('.json') &&
+        !file.includes('package.json') &&
+        !file.includes('tsconfig') &&
+        !file.includes('jest.config') &&
+        !file.includes('vite.config') &&
+        !file.includes('playwright.config')) ||
+      file.endsWith('.yml') ||
+      file.endsWith('.yaml') ||
+      file.endsWith('.toml') ||
+      file.endsWith('.ini') ||
+      file.endsWith('.cfg') ||
+      file.endsWith('.conf') ||
+      // Другие не-исполняемые файлы
+      file.endsWith('.gitignore') ||
+      file.endsWith('.gitattributes') ||
+      file.endsWith('.npmrc') ||
+      file.endsWith('.nvmrc') ||
+      file.endsWith('license') ||
+      file.endsWith('readme') ||
+      // Тестовые компоненты (исключая анализаторы и их тесты)
+      ((file.includes('/test/') ||
+        file.includes('/spec/') ||
+        file.includes('/mock/') ||
+        file.includes('__tests__') ||
+        name.includes('mock') ||
+        name.includes('fixture')) &&
+        !name.includes('analyzer') &&
+        !name.includes('checker') &&
+        !name.includes('evaluator') &&
+        !desc.includes('анализир') &&
+        !desc.includes('проверя') &&
+        !file.includes('/checkers/')) // Исключаем тесты анализаторов (checkers)
+    ) {
+      other[id] = comp;
       return;
     }
 
     // 2. Определяем анализаторы (компоненты, которые будут анализировать другие проекты)
     const isAnalyzer =
       // Явные анализаторы
-      name.includes('analyzer') || name.includes('checker') || name.includes('evaluator') ||
-      name.includes('detector') || name.includes('inspector') || name.includes('validator') ||
-
+      name.includes('analyzer') ||
+      name.includes('checker') ||
+      name.includes('evaluator') ||
+      name.includes('detector') ||
+      name.includes('inspector') ||
+      name.includes('validator') ||
       // Компоненты анализа тестов (включаем их как анализаторы)
       (name.includes('test') && (name.includes('coverage') || name.includes('quality'))) ||
-      name.includes('e2e') && name.includes('check') ||
-
+      (name.includes('e2e') && name.includes('check')) ||
       // Чекеры качества и безопасности
-      name.includes('quality') || name.includes('security') || name.includes('performance') ||
-
+      name.includes('quality') ||
+      name.includes('security') ||
+      name.includes('performance') ||
       // Адаптеры анализаторов (интегрируют внешние инструменты анализа)
-      (name.includes('adapter') && (name.includes('jest') || name.includes('playwright') ||
-       name.includes('cypress') || name.includes('lint'))) ||
-
+      (name.includes('adapter') &&
+        (name.includes('jest') ||
+          name.includes('playwright') ||
+          name.includes('cypress') ||
+          name.includes('lint'))) ||
       // По описанию - если содержит слова анализа
-      desc.includes('анализир') || desc.includes('проверя') || desc.includes('оценива') ||
-      desc.includes('валидир') || desc.includes('контрол') ||
-
+      desc.includes('анализир') ||
+      desc.includes('проверя') ||
+      desc.includes('оценива') ||
+      desc.includes('валидир') ||
+      desc.includes('контрол') ||
       // Специальные компоненты архитектурного анализа
-      name.includes('debt') || name.includes('complexity') || name.includes('metrics') ||
-
+      name.includes('debt') ||
+      name.includes('complexity') ||
+      name.includes('metrics') ||
       // Категории, которые по определению являются анализаторами
-      comp.category === 'security' || comp.category === 'performance' ||
-      (comp.category === 'testing' && !name.includes('mock'));
+      comp.category === 'security' ||
+      comp.category === 'performance' ||
+      (comp.category === 'testing' && !name.includes('mock')) ||
+      // Тесты анализаторов (файлы *.test.ts в папке checkers)
+      (file.includes('/checkers/') && (file.includes('.test.') || file.includes('.spec.')));
 
     if (isAnalyzer) {
       analyzers[id] = comp;
@@ -935,9 +1017,9 @@ function classifyComponents(components) {
   console.log('✅ Классификация завершена:');
   console.log(`   🎯 Анализаторы: ${Object.keys(analyzers).length}`);
   console.log(`   🔧 Вспомогательные: ${Object.keys(auxiliary).length}`);
-  console.log(`   🧪 Тестовые: ${Object.keys(tests).length}`);
+  console.log(`   📄 Остальное: ${Object.keys(other).length}`);
 
-  return { analyzers, auxiliary, tests };
+  return { analyzers, auxiliary, other };
 }
 
 // Главная функция
@@ -958,7 +1040,7 @@ function main() {
   console.log(`\n🎯 Классификация по назначению:`);
   console.log(`   Анализаторы: ${Object.keys(classification.analyzers).length}`);
   console.log(`   Вспомогательные: ${Object.keys(classification.auxiliary).length}`);
-  console.log(`   Тестовые: ${Object.keys(classification.tests).length}`);
+  console.log(`   Остальное: ${Object.keys(classification.other).length}`);
 
   const markdown = generateMarkdownReport(data);
 
