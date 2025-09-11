@@ -1053,15 +1053,16 @@ class EAPDashboard {
     const container = document.getElementById('top-components-list');
     if (!container || !window.EAP_DATA?.utils) return;
 
-    // Используем те же фильтры, что и в основном списке
-    const filters = {
-      classification: this.currentClassificationFilter,
-      category: this.currentFilter,
-      searchTerm: this.searchQuery,
-      onlyAnalyzers: this.onlyAnalyzers,
-    };
+    // Получаем отфильтрованные компоненты с помощью той же логики, что и основной список
+    const filteredComponents = this.getFilteredComponents();
+    console.log('🔍 DEBUG - Filtered components for TOP:', filteredComponents.length);
+    console.log('🔍 DEBUG - Sample filtered component:', filteredComponents[0]);
+    console.log('🔍 DEBUG - window.EAP_DATA.utils available:', !!window.EAP_DATA?.utils);
 
-    const topComponents = window.EAP_DATA.utils.getTopComponents(10, filters);
+    // Применяем сортировку для топ компонентов к уже отфильтрованным данным
+    const topComponents = window.EAP_DATA.utils.getTopComponents(filteredComponents, 10);
+    console.log('🏆 DEBUG - Top components:', topComponents.length);
+    console.log('🏆 DEBUG - Sample top component:', topComponents[0]);
 
     let html = '';
     if (topComponents.length === 0) {
@@ -1073,13 +1074,12 @@ class EAPDashboard {
 
         html += `
                 <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
-                    <div class="flex-grow-1 me-2">
-                        <span class="me-1 small">${medal}</span>
-                        <small class="fw-bold">${component.name}</small>
-                        <br>
-                        <small class="text-muted" style="font-size: 0.75rem;">${component.category}</small>
+                    <div class="flex-grow-1 me-2 d-flex align-items-center">
+                        <span class="me-1 small flex-shrink-0">${medal}</span>
+                        <small class="fw-bold text-truncate" style="max-width: 120px;" title="${component.name}">${component.name}</small>
+                        <small class="text-muted ms-2 text-truncate" style="font-size: 0.75rem; max-width: 80px;" title="${component.category}">(${component.category})</small>
                     </div>
-                    <span class="badge bg-success small">${overall}%</span>
+                    <span class="badge bg-success small flex-shrink-0">${overall}%</span>
                 </div>
             `;
       });
@@ -1095,15 +1095,24 @@ class EAPDashboard {
     const container = document.getElementById('bottom-components-list');
     if (!container || !window.EAP_DATA?.utils) return;
 
-    // Используем те же фильтры, что и в основном списке
-    const filters = {
-      classification: this.currentClassificationFilter,
-      category: this.currentFilter,
-      searchTerm: this.searchQuery,
-      onlyAnalyzers: this.onlyAnalyzers,
-    };
+    // Получаем отфильтрованные компоненты с помощью той же логики, что и основной список
+    const filteredComponents = this.getFilteredComponents();
+    console.log('🔍 DEBUG - Filtered components for BOTTOM:', filteredComponents.length);
+    console.log('🔍 DEBUG - Sample filtered component for bottom:', filteredComponents[0]);
 
-    const bottomComponents = window.EAP_DATA.utils.getBottomComponents(10, filters);
+    // Применяем сортировку для худших компонентов к уже отфильтрованным данным
+    console.log(
+      '🔧 DEBUG - About to call getBottomComponents with:',
+      filteredComponents.length,
+      'components'
+    );
+    console.log(
+      '🔧 DEBUG - window.EAP_DATA.utils.getBottomComponents exists:',
+      typeof window.EAP_DATA.utils.getBottomComponents
+    );
+    const bottomComponents = window.EAP_DATA.utils.getBottomComponents(filteredComponents, 10);
+    console.log('🔧 DEBUG - Bottom components:', bottomComponents.length);
+    console.log('🔧 DEBUG - Sample bottom component:', bottomComponents[0]);
 
     let html = '';
     if (bottomComponents.length === 0) {
@@ -1120,13 +1129,12 @@ class EAPDashboard {
 
         html += `
                 <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
-                    <div class="flex-grow-1 me-2">
-                        <span class="me-1 small">${priority}</span>
-                        <small class="fw-bold">${component.name}</small>
-                        <br>
-                        <small class="text-muted" style="font-size: 0.75rem;">${component.category}</small>
+                    <div class="flex-grow-1 me-2 d-flex align-items-center">
+                        <span class="me-1 small flex-shrink-0">${priority}</span>
+                        <small class="fw-bold text-truncate" style="max-width: 120px;" title="${component.name}">${component.name}</small>
+                        <small class="text-muted ms-2 text-truncate" style="font-size: 0.75rem; max-width: 80px;" title="${component.category}">(${component.category})</small>
                     </div>
-                    <span class="badge ${badgeClass} small">${overall}%</span>
+                    <span class="badge ${badgeClass} small flex-shrink-0">${overall}%</span>
                 </div>
             `;
       });

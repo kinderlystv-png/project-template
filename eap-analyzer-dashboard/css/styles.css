@@ -345,3 +345,37 @@ body {
 #category-filters .btn.active {
   animation: filterSelect 0.3s ease;
 }
+
+/* Single line component display */
+#top-components-list .d-flex,
+#bottom-components-list .d-flex {
+  white-space: nowrap;
+}
+
+#top-components-list .flex-grow-1,
+#bottom-components-list .flex-grow-1 {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  min-width: 0; /* Important for flex items to allow shrinking */
+}
+
+#top-components-list .fw-bold,
+#bottom-components-list .fw-bold {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 120px; /* Limit component name width */
+  vertical-align: top;
+}
+
+#top-components-list .text-muted,
+#bottom-components-list .text-muted {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  max-width: 80px; /* Limit category width */
+  vertical-align: top;
+}

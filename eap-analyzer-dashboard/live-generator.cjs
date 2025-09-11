@@ -756,26 +756,58 @@ function generateDataJs(data, classification = null) {
 
   // Подготавливаем утилиты
   const jsUtils = {
-    getTopComponents: `function(limit = 10) {
-      const components = Object.values(window.EAP_DATA.components);
-      return components
+    getTopComponents: `function(componentsArray, limit = 10) {
+      console.log('🔍 DEBUG - getTopComponents called with:', componentsArray ? componentsArray.length : 'undefined', 'components, limit:', limit);
+
+      const components = componentsArray || Object.values(window.EAP_DATA.components);
+      console.log('🔍 DEBUG - Using components array with length:', components.length);
+
+      if (!components || components.length === 0) {
+        console.warn('⚠️ No components to process in getTopComponents');
+        return [];
+      }
+
+      const sorted = components
+        .filter(comp => comp && typeof comp.logic === 'number' && typeof comp.functionality === 'number')
         .sort((a, b) => {
           const overallA = (a.logic + a.functionality) / 2;
           const overallB = (b.logic + b.functionality) / 2;
           return overallB - overallA;
-        })
-        .slice(0, limit);
+        });
+
+      console.log('🔍 DEBUG - After filtering and sorting:', sorted.length, 'components');
+
+      const result = sorted.slice(0, limit);
+      console.log('🏆 DEBUG - getTopComponents returning:', result.length, 'components');
+
+      return result;
     }`,
 
-    getBottomComponents: `function(limit = 10) {
-      const components = Object.values(window.EAP_DATA.components);
-      return components
+    getBottomComponents: `function(componentsArray, limit = 10) {
+      console.log('🔍 DEBUG - getBottomComponents called with:', componentsArray ? componentsArray.length : 'undefined', 'components, limit:', limit);
+
+      const components = componentsArray || Object.values(window.EAP_DATA.components);
+      console.log('🔍 DEBUG - Using components array with length:', components.length);
+
+      if (!components || components.length === 0) {
+        console.warn('⚠️ No components to process in getBottomComponents');
+        return [];
+      }
+
+      const sorted = components
+        .filter(comp => comp && typeof comp.logic === 'number' && typeof comp.functionality === 'number')
         .sort((a, b) => {
           const overallA = (a.logic + a.functionality) / 2;
           const overallB = (b.logic + b.functionality) / 2;
           return overallA - overallB;
-        })
-        .slice(0, limit);
+        });
+
+      console.log('🔍 DEBUG - After filtering and sorting:', sorted.length, 'components');
+
+      const result = sorted.slice(0, limit);
+      console.log('🔧 DEBUG - getBottomComponents returning:', result.length, 'components');
+
+      return result;
     }`,
 
     getCategoryStats: `function(category) {
