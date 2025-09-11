@@ -1,15 +1,16 @@
 'use strict';
 /**
  * UnifiedTestingAnalyzer - Центральный анализатор тестовой экосистемы
- * Упрощенная версия для совместимости с BaseChecker архитектурой
+ * Enhanced версия с интеграцией EnhancedJestChecker
  *
- * Phase 3: Unified Testing Analyzer (Simplified)
+ * Phase 1.1: Enhanced Jest Integration
  */
 Object.defineProperty(exports, '__esModule', { value: true });
 exports.UnifiedTestingAnalyzer = void 0;
 const BaseChecker_js_1 = require('../../core/base/BaseChecker.js');
 const AnalysisCategory_js_1 = require('../../types/AnalysisCategory.js');
 const SeverityLevel_js_1 = require('../../types/SeverityLevel.js');
+const { EnhancedJestChecker } = require('./EnhancedJestChecker.cjs');
 /**
  * Унифицированный анализатор тестовой экосистемы проекта
  * Упрощенная версия для совместимости с BaseChecker
@@ -29,11 +30,10 @@ class UnifiedTestingAnalyzer extends BaseChecker_js_1.BaseChecker {
   /**
    * Выполняет комплексный анализ тестовой экосистемы
    */
-  async check(project) {
-    const results = [];
+  async analyze(files, packageJson) {
     try {
-      // Простой анализ тестовых файлов
-      const files = await project.getFileList();
+      const results = [];
+      // Анализируем тестовые файлы
       const testFiles = files.filter(
         file =>
           file.includes('.test.') ||
@@ -49,9 +49,28 @@ class UnifiedTestingAnalyzer extends BaseChecker_js_1.BaseChecker {
           file.includes('playwright.config') ||
           file.includes('cypress.config')
       );
-      // Создаем результат проверки
-      const testingScore = this.calculateTestingScore(testFiles, configFiles, files);
-      const passed = testingScore >= 60;
+
+      // Используем EnhancedJestChecker для углубленного анализа Jest
+      let enhancedJestResult = null;
+      const hasJest = packageJson.dependencies?.jest || packageJson.devDependencies?.jest ||
+                    configFiles.some(f => f.includes('jest.config'));
+
+      if (hasJest) {
+        const enhancedJestChecker = new EnhancedJestChecker_js_1.EnhancedJestChecker();
+        const jestResults = await enhancedJestChecker.analyze(files, packageJson);
+        if (jestResults && jestResults.length > 0) {
+          enhancedJestResult = jestResults[0];
+          results.push(enhancedJestResult);
+        }
+      }
+
+      // Создаем результат общего анализа
+      const baseScore = this.calculateTestingScore(testFiles, configFiles, files);
+      // Если есть результат от EnhancedJestChecker, учитываем его
+      const finalScore = enhancedJestResult ?
+        Math.max(baseScore, enhancedJestResult.score) : baseScore;
+
+      const passed = finalScore >= 60;
       const result = {
         id: 'unified-testing-analysis',
         name: 'Unified Testing Analysis',
@@ -60,12 +79,12 @@ class UnifiedTestingAnalyzer extends BaseChecker_js_1.BaseChecker {
         severity: passed
           ? SeverityLevel_js_1.SeverityLevel.LOW
           : SeverityLevel_js_1.SeverityLevel.HIGH,
-        score: testingScore,
+        score: finalScore,
         maxScore: 100,
-        message: this.generateMessage(testingScore, testFiles.length, configFiles.length),
-        recommendations: this.generateRecommendations(testFiles, configFiles),
+        message: this.generateMessage(finalScore, testFiles.length, configFiles.length),
+        recommendations: this.generateRecommendations(testFiles, configFiles, enhancedJestResult),
         timestamp: new Date(),
-        duration: 50,
+        duration: enhancedJestResult ? 75 : 50,
       };
       results.push(result);
       return results;
@@ -117,8 +136,14 @@ class UnifiedTestingAnalyzer extends BaseChecker_js_1.BaseChecker {
       return `Недостаточная тестовая экосистема (${testCount} тестов, ${configCount} конфигураций)`;
     }
   }
-  generateRecommendations(testFiles, configFiles) {
+  generateRecommendations(testFiles, configFiles, enhancedJestResult) {
     const recommendations = [];
+
+    // Если есть результат от EnhancedJestChecker, используем его рекомендации
+    if (enhancedJestResult && enhancedJestResult.recommendations) {
+      recommendations.push(...enhancedJestResult.recommendations);
+    }
+
     if (testFiles.length === 0) {
       recommendations.push('Добавьте unit тесты для основных компонентов');
       recommendations.push('Настройте Jest или Vitest для тестирования');
@@ -135,7 +160,9 @@ class UnifiedTestingAnalyzer extends BaseChecker_js_1.BaseChecker {
     if (recommendations.length === 0) {
       recommendations.push('Отличная работа! Продолжайте поддерживать качество тестирования');
     }
-    return recommendations;
+
+    // Удаляем дубликаты рекомендаций
+    return [...new Set(recommendations)];
   }
 }
 exports.UnifiedTestingAnalyzer = UnifiedTestingAnalyzer;
