@@ -1,6 +1,6 @@
 // EAP Analyzer Dashboard Data
 // Автоматически сгенерирован live-generator.cjs
-// Дата генерации: 11.09.2025, 17:14:07
+// Дата генерации: 11.09.2025, 18:16:35
 
 window.EAP_DATA = {
   components: {
@@ -15,7 +15,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 127,
       lines: 1,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     1: {
@@ -29,7 +29,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 126,
       lines: 1,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     eapthresholdsjson: {
@@ -43,7 +43,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 309,
       lines: 14,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     cicdyml: {
@@ -57,7 +57,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3969,
       lines: 144,
-      logicIssue: 'Использование root пользователя в контейнере',
+      logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ciyml: {
@@ -128,7 +128,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 9913,
       lines: 272,
-      logicIssue: 'Нарушение принципов SOLID',
+      logicIssue: 'Монолитная архитектура затрудняет масштабирование',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     app: {
@@ -142,7 +142,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 562,
       lines: 27,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     matchers: {
@@ -156,7 +156,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 27,
       lines: 1,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     tsconfigjson: {
@@ -170,7 +170,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 620,
       lines: 24,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AdvancedEAPDemo: {
@@ -198,7 +198,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 266,
       lines: 10,
-      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
+      logicIssue: 'Отсутствует обработка аномальных значений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AIINTEGRATIONCOMPLETEmd: {
@@ -226,7 +226,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 327,
       lines: 12,
-      logicIssue: 'Отсутствует обработка аномальных значений',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     eapai: {
@@ -240,7 +240,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 325,
       lines: 9,
-      logicIssue: 'Недостаточная точность предсказательной модели',
+      logicIssue: 'Отсутствует обработка аномальных значений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     eap: {
@@ -254,7 +254,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 153,
       lines: 9,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     generatereport: {
@@ -368,7 +368,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 3410,
       lines: 77,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     COMMITSUMMARYmd: {
@@ -382,7 +382,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 6252,
       lines: 113,
-      logicIssue: 'Отсутствует валидация входных параметров',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     COMPONENTSPECIFICATIONmd: {
@@ -396,7 +396,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 9956,
       lines: 264,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     EAPAnalyzerStatusEvaluator: {
@@ -440,7 +440,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 20807,
       lines: 575,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     MockProject: {
@@ -469,7 +469,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5546,
       lines: 152,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     demoreportjson: {
@@ -497,7 +497,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 327,
       lines: 12,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     demov3ts: {
@@ -611,7 +611,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 959,
       lines: 34,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     DockerAnalyzer: {
@@ -813,7 +813,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 163,
       lines: 7,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AdvancedSecurityAnalyzer: {
@@ -918,7 +918,7 @@ window.EAP_DATA = {
       fileSize: 18024,
       lines: 434,
       logicIssue: 'Использование небезопасных динамических вызовов',
-      functionalityIssue: 'Слабая политика паролей пользователей',
+      functionalityIssue: 'Недостаточная защита от брутфорс атак',
     },
     ConfigFixTemplates: {
       name: 'ConfigFixTemplates',
@@ -1036,7 +1036,7 @@ window.EAP_DATA = {
       fileSize: 32842,
       lines: 923,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
+      functionalityIssue: 'Отсутствует параллельное выполнение тестов',
     },
     CoverageAnalyzerAdapter: {
       name: 'CoverageAnalyzerAdapter',
@@ -1080,7 +1080,7 @@ window.EAP_DATA = {
       fileSize: 12030,
       lines: 353,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
+      functionalityIssue: 'Медленное выполнение тестового набора',
     },
     E2ETestingChecker: {
       name: 'E2ETestingChecker',
@@ -1169,7 +1169,7 @@ window.EAP_DATA = {
       fileSize: 10899,
       lines: 307,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Медленное выполнение тестового набора',
+      functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
     },
     VitestChecker: {
       name: 'VitestChecker',
@@ -1211,7 +1211,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 5000,
       lines: 122,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     CoverageChecker: {
@@ -1282,7 +1282,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 1997,
       lines: 67,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     UnifiedTestingAnalyzer: {
@@ -1354,7 +1354,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 308,
       lines: 8,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     CheckResultUtils: {
@@ -1427,7 +1427,7 @@ window.EAP_DATA = {
       fileSize: 12417,
       lines: 370,
       logicIssue: 'Использование небезопасных динамических вызовов',
-      functionalityIssue: 'Медленное выполнение тестового набора',
+      functionalityIssue: 'Отсутствуют моки для внешних зависимостей',
     },
     TestFileFinder: {
       name: 'TestFileFinder',
@@ -1525,7 +1525,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 116,
       lines: 3,
-      logicIssue: 'Избыточная связность между модулями',
+      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IChecker: {
@@ -1539,7 +1539,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 115,
       lines: 3,
-      logicIssue: 'Недостаточная модульность архитектуры',
+      logicIssue: 'Нарушение принципа единственной ответственности',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IEvaluator: {
@@ -1553,7 +1553,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 117,
       lines: 3,
-      logicIssue: 'Отсутствует абстракция для внешних зависимостей',
+      logicIssue: 'Нарушение принципа единственной ответственности',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IReporter: {
@@ -1567,7 +1567,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 116,
       lines: 3,
-      logicIssue: 'Избыточная связность между модулями',
+      logicIssue: 'Недостаточная модульность архитектуры',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AnalysisOrchestrator: {
@@ -1581,7 +1581,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 9596,
       lines: 227,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ResultAggregator: {
@@ -1652,7 +1652,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 60,
       lines: 2,
-      logicIssue: 'Жестко заданные конфигурационные значения',
+      logicIssue: 'Нарушение принципа единственной ответственности',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     DebtEvaluator: {
@@ -1680,7 +1680,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 68,
       lines: 2,
-      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AIInsightsEngine: {
@@ -1809,7 +1809,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 216,
       lines: 6,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     DockerOptimizationChecker: {
@@ -1985,7 +1985,7 @@ window.EAP_DATA = {
       fileSize: 18985,
       lines: 639,
       logicIssue: 'Использование небезопасных динамических вызовов',
-      functionalityIssue: 'Сложность в отладке и диагностике проблем',
+      functionalityIssue: 'Отсутствует кэширование результатов вычислений',
     },
     configjson: {
       name: 'configjson',
@@ -1998,7 +1998,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6270,
       lines: 221,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AnalyzerCore: {
@@ -2307,7 +2307,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 118,
       lines: 3,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     evaluationresults: {
@@ -2322,7 +2322,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 284,
       lines: 7,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     Project: {
@@ -2336,7 +2336,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 114,
       lines: 3,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     SeverityLevel: {
@@ -2350,7 +2350,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 1153,
       lines: 32,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     UnifiedResult: {
@@ -2365,7 +2365,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 286,
       lines: 8,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Неоптимальная производительность алгоритмов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     UltraEnhancedAnalyzer: {
@@ -2407,7 +2407,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 69,
       lines: 2,
-      logicIssue: 'Отсутствует мониторинг дрейфа модели',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     EAPError: {
@@ -2450,7 +2450,7 @@ window.EAP_DATA = {
       fileSize: 12901,
       lines: 467,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Неправильная обработка сигналов системы',
+      functionalityIssue: 'Контейнер требует привилегированные права',
     },
     createCompatModule: {
       name: 'createCompatModule',
@@ -2477,7 +2477,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 59,
       lines: 2,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     BugFixValidator: {
@@ -2536,7 +2536,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3829,
       lines: 137,
-      logicIssue: 'Использование root пользователя в контейнере',
+      logicIssue: 'Отсутствует multi-stage сборка',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     Dockerfile: {
@@ -2550,7 +2550,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5418,
       lines: 173,
-      logicIssue: 'Неоптимальный размер Docker образа',
+      logicIssue: 'Отсутствует health check для контейнера',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     MyComponentChecker: {
@@ -2565,7 +2565,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 5022,
       lines: 203,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     eapanalysislatestjson: {
@@ -2579,7 +2579,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Неполное тестирование асинхронных операций',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     EAPQUICKSTARTmd: {
@@ -2593,7 +2593,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 4780,
       lines: 155,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     enhancedaireportjson: {
@@ -2607,7 +2607,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 578,
       lines: 26,
-      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
+      logicIssue: 'Отсутствует обработка аномальных значений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ESMODULEFIXmd: {
@@ -2621,7 +2621,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2142,
       lines: 74,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     eslintconfig: {
@@ -2635,7 +2635,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 1430,
       lines: 60,
-      logicIssue: 'Отсутствуют комментарии к сложной логике',
+      logicIssue: 'Неконсистентное именование переменных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     EXECUTIVESUMMARYmd: {
@@ -2649,7 +2649,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1780,
       lines: 37,
-      logicIssue: 'Неконсистентное именование переменных',
+      logicIssue: 'Дублирование кода в нескольких модулях',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     finaldemo: {
@@ -2678,7 +2678,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3276,
       lines: 89,
-      logicIssue: 'Неоптимальный размер Docker образа',
+      logicIssue: 'Отсутствует health check для контейнера',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     FINALIMPLEMENTATIONSTATUSmd: {
@@ -2692,7 +2692,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7926,
       lines: 130,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     fullsystemdemo: {
@@ -2720,7 +2720,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 18394,
       lines: 538,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     HOWTOUSESIMPLEmd: {
@@ -2734,7 +2734,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1368,
       lines: 43,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IMPLEMENTATIONSTATUSREPORTmd: {
@@ -2748,7 +2748,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 13214,
       lines: 252,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     implementationstatusjson: {
@@ -2762,7 +2762,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1993,
       lines: 84,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     MyNewChecker: {
@@ -2790,7 +2790,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2028,
       lines: 51,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     packagejson: {
@@ -2804,7 +2804,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5679,
       lines: 161,
-      logicIssue: 'Неоптимальный размер Docker образа',
+      logicIssue: 'Отсутствует health check для контейнера',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PACKAGINGmd: {
@@ -2818,7 +2818,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5588,
       lines: 156,
-      logicIssue: 'Использование root пользователя в контейнере',
+      logicIssue: 'Отсутствует health check для контейнера',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE12COMPLETIONREPORTmd: {
@@ -2832,7 +2832,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 7487,
       lines: 168,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE1COMPLETIONREPORTmd: {
@@ -2846,7 +2846,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 12313,
       lines: 247,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE12CICDCOMPLETEmd: {
@@ -2860,7 +2860,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2493,
       lines: 62,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE2COMPLETIONREPORTmd: {
@@ -2874,7 +2874,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 12491,
       lines: 242,
-      logicIssue: 'Синхронные операции блокируют основной поток',
+      logicIssue: 'Неоптимальный алгоритм с высокой сложностью',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE3COMPLETIONREPORTmd: {
@@ -2888,7 +2888,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 14156,
       lines: 243,
-      logicIssue: 'Неоптимальный алгоритм с высокой сложностью',
+      logicIssue: 'Синхронные операции блокируют основной поток',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PHASE41COMPLETIONREPORTmd: {
@@ -2902,7 +2902,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 8088,
       lines: 193,
-      logicIssue: 'Избыточные вызовы внешних API',
+      logicIssue: 'Отсутствует кэширование часто используемых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     pnpmlockyaml: {
@@ -2916,7 +2916,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 129903,
       lines: 3995,
-      logicIssue: 'Отсутствуют параллельные этапы в пайплайне',
+      logicIssue: 'Недостаточное кэширование зависимостей',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     PROJECTMAPmd: {
@@ -2944,7 +2944,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2933,
       lines: 84,
-      logicIssue: 'Отсутствует multi-stage сборка',
+      logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     READMEGITHUBmd: {
@@ -2958,7 +2958,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6168,
       lines: 202,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     READYTOUSEmd: {
@@ -2972,7 +2972,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6630,
       lines: 185,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     RELEASESUMMARYmd: {
@@ -2986,7 +2986,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5816,
       lines: 145,
-      logicIssue: 'Использование root пользователя в контейнере',
+      logicIssue: 'Отсутствует multi-stage сборка',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     analysiskinderlyevents20250909130841json: {
@@ -3000,7 +3000,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     analysiskinderlyevents20250909131720json: {
@@ -3014,7 +3014,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 22563,
       lines: 826,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     analysisprojecttemplate20250909131422json: {
@@ -3042,7 +3042,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2494,
       lines: 88,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует валидация входных параметров',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     analysisHEYS220250909131601json: {
@@ -3098,7 +3098,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6164,
       lines: 125,
-      logicIssue: 'Логи содержат конфиденциальную информацию',
+      logicIssue: 'Неструктурированный формат логов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ROADMAPkinderlyevents20250909130841md: {
@@ -3112,7 +3112,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6164,
       lines: 125,
-      logicIssue: 'Отсутствует ротация файлов логов',
+      logicIssue: 'Отсутствуют уровни важности сообщений',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ROADMAPkinderlyevents20250909131720md: {
@@ -3154,7 +3154,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 5560,
       lines: 121,
-      logicIssue: 'Смешивание различных уровней абстракции',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ROADMAPHEYS220250909131601md: {
@@ -3196,7 +3196,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-11',
       fileSize: 6798,
       lines: 299,
-      logicIssue: 'Небезопасные переменные окружения',
+      logicIssue: 'Неоптимальный размер Docker образа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     SIMPLEANALYSISSUMMARYmd: {
@@ -3224,7 +3224,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1603,
       lines: 52,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     '40md': {
@@ -3267,7 +3267,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 1823,
       lines: 67,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ROADMAPANALYSISmd: {
@@ -3281,7 +3281,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 12495,
       lines: 281,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ROADMAPGENERATIONCOMPLETEmd: {
@@ -3367,7 +3367,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Смешивание различных уровней абстракции',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     postinstall: {
@@ -3381,7 +3381,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует обработка граничных случаев',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     release: {
@@ -3437,7 +3437,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 580,
       lines: 26,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     SimpleEAPDemo: {
@@ -3494,7 +3494,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 8848,
       lines: 202,
-      logicIssue: 'Отсутствует кэширование часто используемых данных',
+      logicIssue: 'Избыточные вызовы внешних API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     clits: {
@@ -3522,7 +3522,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 380,
       lines: 21,
-      logicIssue: 'Отсутствие интеграционных тестов',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     analyzemaints: {
@@ -3580,7 +3580,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5363,
       lines: 175,
-      logicIssue: 'Недостаточная защита от SQL-инъекций',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     constantsts: {
@@ -3638,7 +3638,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 4871,
       lines: 144,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Отсутствие интеграционных тестов',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     CheckResultUtilsts: {
@@ -3667,7 +3667,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 1939,
       lines: 64,
-      logicIssue: 'Жестко заданные конфигурационные значения',
+      logicIssue: 'Избыточная связность между модулями',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     ICheckerts: {
@@ -3682,7 +3682,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2889,
       lines: 114,
-      logicIssue: 'Недостаточная модульность архитектуры',
+      logicIssue: 'Нарушение принципа единственной ответственности',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IEvaluatorts: {
@@ -3697,7 +3697,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2395,
       lines: 92,
-      logicIssue: 'Жестко заданные конфигурационные значения',
+      logicIssue: 'Избыточная связность между модулями',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     IReporterts: {
@@ -3755,7 +3755,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует обработка аномальных значений',
+      logicIssue: 'Отсутствует мониторинг дрейфа модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     featureextractortestts: {
@@ -3769,7 +3769,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 11257,
       lines: 299,
-      logicIssue: 'Отсутствие интеграционных тестов',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     interfacests: {
@@ -3797,7 +3797,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 11935,
       lines: 273,
-      logicIssue: 'Отсутствует проверка прав доступа',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AnalysisReportAdapter: {
@@ -3869,7 +3869,7 @@ window.EAP_DATA = {
       fileSize: 6859,
       lines: 211,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Сложность в отладке и диагностике проблем',
+      functionalityIssue: 'Отсутствует кэширование результатов вычислений',
     },
     simpletemplatetest: {
       name: 'simpletemplatetest',
@@ -3882,7 +3882,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 3055,
       lines: 74,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     ExecutiveSummaryReporter: {
@@ -4017,7 +4017,7 @@ window.EAP_DATA = {
       fileSize: 13071,
       lines: 462,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Сложность в отладке и диагностике проблем',
+      functionalityIssue: 'Недостаточная отказоустойчивость системы',
     },
     UnifiedReportingSystem: {
       name: 'UnifiedReportingSystem',
@@ -4202,7 +4202,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Недостаточное покрытие крайних случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     testwebsecurityts: {
@@ -4274,7 +4274,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 5506,
       lines: 177,
-      logicIssue: 'Уязвимость к XSS атакам через пользовательский ввод',
+      logicIssue: 'Небезопасное хранение конфиденциальных данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     AnalysisCategoryts: {
@@ -4302,7 +4302,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 705,
       lines: 33,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует документация API',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     CheckResultts: {
@@ -4331,7 +4331,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 7213,
       lines: 230,
-      logicIssue: 'Небезопасное хранение конфиденциальных данных',
+      logicIssue: 'Отсутствует проверка прав доступа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     Projectts: {
@@ -4359,7 +4359,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 840,
       lines: 30,
-      logicIssue: 'Недостаточная переиспользуемость функций',
+      logicIssue: 'Отсутствует обработка граничных случаев',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     adaptivethresholdsts: {
@@ -4387,7 +4387,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Неоптимальный выбор алгоритма машинного обучения',
+      logicIssue: 'Недостаточная точность предсказательной модели',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     fileutilsts: {
@@ -4402,7 +4402,7 @@ window.EAP_DATA = {
       fileSize: 5341,
       lines: 239,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Неправильная обработка сигналов системы',
+      functionalityIssue: 'Отсутствует graceful shutdown при остановке',
     },
     reportgeneratorts: {
       name: 'reportgeneratorts',
@@ -4415,7 +4415,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 0,
       lines: 1,
-      logicIssue: 'Отсутствует документация API',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     STARTHEREmd: {
@@ -4429,7 +4429,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-08',
       fileSize: 1747,
       lines: 68,
-      logicIssue: 'Небезопасные переменные окружения',
+      logicIssue: 'Неоптимальный размер Docker образа',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     testaiintegration: {
@@ -4804,7 +4804,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 2668,
       lines: 81,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     UserController: {
@@ -4819,7 +4819,7 @@ window.EAP_DATA = {
       fileSize: 8702,
       lines: 280,
       logicIssue: 'Отсутствуют блоки {} для условных выражений',
-      functionalityIssue: 'Нестабильность тестов на разных окружениях',
+      functionalityIssue: 'Медленное выполнение тестового набора',
     },
     clitestts: {
       name: 'clitestts',
@@ -4846,7 +4846,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7390,
       lines: 253,
-      logicIssue: 'Отсутствие интеграционных тестов',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     eapsetupts: {
@@ -4874,7 +4874,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 6007,
       lines: 167,
-      logicIssue: 'Недостаточное покрытие крайних случаев',
+      logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     FileSystemProject: {
@@ -4989,7 +4989,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 2868,
       lines: 90,
-      logicIssue: 'Отсутствие интеграционных тестов',
+      logicIssue: 'Отсутствуют тесты для негативных сценариев',
       functionalityIssue: 'Необходимо удалить отладочные выводы перед продакшеном',
     },
     TestAnalyzer: {
@@ -5003,7 +5003,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 7425,
       lines: 226,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     utilstestts: {
@@ -5031,7 +5031,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 3786,
       lines: 109,
-      logicIssue: 'Использование root пользователя в контейнере',
+      logicIssue: 'Небезопасные переменные окружения',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     tsconfigcjsjson: {
@@ -5045,7 +5045,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-10',
       fileSize: 264,
       lines: 11,
-      logicIssue: 'Неоптимальная производительность алгоритмов',
+      logicIssue: 'Недостаточная переиспользуемость функций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     UNIQUEREPORTSmd: {
@@ -5073,7 +5073,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 724,
       lines: 26,
-      logicIssue: 'Недостаточная валидация тестовых данных',
+      logicIssue: 'Неполное тестирование асинхронных операций',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
     vitestconfigts: {
@@ -5102,7 +5102,7 @@ window.EAP_DATA = {
       lastModified: '2025-09-09',
       fileSize: 275,
       lines: 14,
-      logicIssue: 'Отсутствуют тесты для негативных сценариев',
+      logicIssue: 'Недостаточная валидация тестовых данных',
       functionalityIssue: 'Отсутствует корректная обработка критических ошибок',
     },
   },

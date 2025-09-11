@@ -613,6 +613,20 @@ class EAPDashboard {
         // Обновляем текущий фильтр и перерендериваем
         this.currentFilter = category;
 
+        // Если выбраны "Все" компоненты, сбрасываем фильтр классификации и карточки
+        if (category === 'all') {
+          this.currentClassificationFilter = 'all';
+          // Сбрасываем переключатель "Только анализаторы"
+          const filterToggle = document.getElementById('analyzers-only-filter');
+          if (filterToggle) {
+            filterToggle.checked = false;
+          }
+          // Сбрасываем активные карточки классификации
+          if (typeof resetActiveCards === 'function') {
+            resetActiveCards();
+          }
+        }
+
         // Отладочная информация
         const allComponents = Object.values(this.componentsData);
         const filteredComponents = this.getFilteredComponents();

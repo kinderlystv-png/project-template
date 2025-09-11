@@ -650,6 +650,14 @@
             console.log('🔧 Состояние window.dashboardInstance:', !!window.dashboardInstance);
             console.log('📋 Состояние window.classificationData:', !!window.classificationData);
 
+            // Сбрасываем активные карточки, если переключатель сброшен
+            if (!showOnlyAnalyzers) {
+              resetActiveCards();
+            } else {
+              // Если включены только анализаторы, выделяем карточку анализаторов
+              setActiveCard('analyzer-card');
+            }
+
             // Применяем фильтрацию через Dashboard
             if (window.dashboardInstance) {
               console.log('✅ Используем Dashboard фильтрацию');
@@ -727,6 +735,9 @@
         } else {
           console.error('❌ Переключатель analyzers-only-filter не найден!');
         }
+
+        // Инициализируем кликабельные карточки классификации
+        makeClassificationCardsClickable();
       }
 
       // Присваивание классификации компонентам
@@ -829,6 +840,151 @@
             notification.remove();
           }
         }, 3000);
+      }
+
+      // Функция для создания кликабельных карточек классификации
+      function makeClassificationCardsClickable() {
+        console.log('🖱️ Инициализация кликабельных карточек классификации...');
+
+        // Находим карточки классификации по их CSS селекторам
+        const analyzerCard = document.querySelector('.col-md-4:nth-child(1) .border.rounded');
+        const auxiliaryCard = document.querySelector('.col-md-4:nth-child(2) .border.rounded');
+        const testsCard = document.querySelector('.col-md-4:nth-child(3) .border.rounded');
+
+        if (!analyzerCard || !auxiliaryCard || !testsCard) {
+          console.error('❌ Не удалось найти карточки классификации');
+          return;
+        }
+
+        console.log('✅ Карточки классификации найдены');
+
+        // Добавляем стили и ID для кликабельности
+        const cards = [
+          { element: analyzerCard, id: 'analyzer-card', filter: 'analyzer' },
+          { element: auxiliaryCard, id: 'auxiliary-card', filter: 'auxiliary' },
+          { element: testsCard, id: 'tests-card', filter: 'test' }
+        ];
+
+        cards.forEach(({ element, id, filter }) => {
+          element.id = id;
+          element.style.cursor = 'pointer';
+          element.style.transition = 'all 0.2s ease';
+          element.title = 'Нажмите для фильтрации по этому типу компонентов';
+
+          // Эффект при наведении
+          element.addEventListener('mouseover', () => {
+            element.style.transform = 'translateY(-3px)';
+            element.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            element.style.opacity = '0.95';
+          });
+
+          element.addEventListener('mouseout', () => {
+            if (!element.classList.contains('active-filter')) {
+              element.style.transform = 'translateY(0)';
+              element.style.boxShadow = 'none';
+              element.style.opacity = '1';
+            }
+          });
+        });
+
+        // Обработчик клика для карточки анализаторов
+        analyzerCard.addEventListener('click', () => {
+          console.log('🖱️ Клик по карточке "Анализаторы"');
+
+          // Устанавливаем переключатель "Только анализаторы"
+          const toggle = document.getElementById('analyzers-only-filter');
+          if (toggle) {
+            toggle.checked = true;
+            toggle.dispatchEvent(new Event('change'));
+          }
+
+          // Применяем стили активной карточки
+          setActiveCard('analyzer-card');
+          showNotification('Отображаются только анализаторы (241 компонент)', 'info');
+        });
+
+        // Обработчик клика для карточки вспомогательных
+        auxiliaryCard.addEventListener('click', () => {
+          console.log('🖱️ Клик по карточке "Вспомогательные"');
+
+          // Сбрасываем переключатель "Только анализаторы"
+          const toggle = document.getElementById('analyzers-only-filter');
+          if (toggle) {
+            toggle.checked = false;
+          }
+
+          // Устанавливаем фильтр на вспомогательные компоненты
+          if (window.dashboardInstance) {
+            window.dashboardInstance.currentClassificationFilter = 'auxiliary';
+            window.dashboardInstance.renderComponentsList();
+          }
+
+          // Применяем стили активной карточки
+          setActiveCard('auxiliary-card');
+          showNotification('Отображаются только вспомогательные компоненты (114 компонентов)', 'info');
+        });
+
+        // Обработчик клика для карточки тестовых
+        testsCard.addEventListener('click', () => {
+          console.log('🖱️ Клик по карточке "Тестовые"');
+
+          // Сбрасываем переключатель "Только анализаторы"
+          const toggle = document.getElementById('analyzers-only-filter');
+          if (toggle) {
+            toggle.checked = false;
+          }
+
+          // Устанавливаем фильтр на тестовые компоненты
+          if (window.dashboardInstance) {
+            window.dashboardInstance.currentClassificationFilter = 'test';
+            window.dashboardInstance.renderComponentsList();
+          }
+
+          // Применяем стили активной карточки
+          setActiveCard('tests-card');
+          showNotification('Отображается только тестовый компонент (1 компонент)', 'info');
+        });
+
+        console.log('✅ Карточки классификации стали кликабельными');
+      }
+
+      // Функция для выделения активной карточки
+      function setActiveCard(activeCardId) {
+        const cards = ['analyzer-card', 'auxiliary-card', 'tests-card'];
+
+        cards.forEach(cardId => {
+          const card = document.getElementById(cardId);
+          if (card) {
+            if (cardId === activeCardId) {
+              card.classList.add('active-filter');
+              card.style.transform = 'translateY(-3px)';
+              card.style.boxShadow = '0 8px 25px rgba(0,0,0,0.2)';
+              card.style.opacity = '1';
+              card.style.border = '2px solid #007bff !important';
+            } else {
+              card.classList.remove('active-filter');
+              card.style.transform = 'translateY(0)';
+              card.style.boxShadow = 'none';
+              card.style.opacity = '1';
+              card.style.border = '';
+            }
+          }
+        });
+      }
+
+      // Функция для сброса всех активных карточек
+      function resetActiveCards() {
+        const cards = ['analyzer-card', 'auxiliary-card', 'tests-card'];
+        cards.forEach(cardId => {
+          const card = document.getElementById(cardId);
+          if (card) {
+            card.classList.remove('active-filter');
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = 'none';
+            card.style.opacity = '1';
+            card.style.border = '';
+          }
+        });
       }
     </script>
 
