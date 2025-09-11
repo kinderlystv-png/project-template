@@ -6,7 +6,8 @@ class EAPDashboard {
     this.sortBy = 'name';
     this.sortOrder = 'asc';
     this.sortMode = 'category'; // По умолчанию сортируем по категориям
-    this.currentClassificationFilter = 'all'; // Новый фильтр по классификации
+    this.readinessSortOrder = 'desc'; // Направление сортировки по готовности: 'desc' = от лучших к худшим, 'asc' = от худших к лучшим
+    this.currentClassificationFilter = 'analyzer'; // По умолчанию показываем только анализаторы
     this.onlyAnalyzers = false; // Фильтр "только анализаторы"
     this.initialized = false;
     this.componentsData = {};
@@ -514,6 +515,28 @@ class EAPDashboard {
    * Установка режима сортировки
    */
   setSortMode(mode) {
+    // Если кликнули на уже активную кнопку "По готовности", переключаем направление сортировки
+    if (mode === 'readiness' && this.sortMode === 'readiness') {
+      this.readinessSortOrder = this.readinessSortOrder === 'desc' ? 'asc' : 'desc';
+
+      // Обновляем иконку для индикации направления сортировки
+      const readinessBtn = document.getElementById('sort-by-readiness');
+      const icon = readinessBtn.querySelector('i');
+      if (this.readinessSortOrder === 'desc') {
+        icon.className = 'bi bi-sort-numeric-down';
+      } else {
+        icon.className = 'bi bi-sort-numeric-up';
+      }
+    } else {
+      // Сброс направления сортировки по готовности при переключении на другой режим
+      if (mode === 'readiness') {
+        this.readinessSortOrder = 'desc'; // По умолчанию от лучших к худшим
+        const readinessBtn = document.getElementById('sort-by-readiness');
+        const icon = readinessBtn.querySelector('i');
+        icon.className = 'bi bi-sort-numeric-down';
+      }
+    }
+
     // Обновляем активные кнопки
     document
       .querySelectorAll('#sort-by-name, #sort-by-readiness, #sort-by-category')
@@ -872,11 +895,18 @@ class EAPDashboard {
         break;
 
       case 'readiness': {
-        // Сортировка по готовности (по убыванию)
+        // Сортировка по готовности с учетом направления
         sortedComponents = [...filteredComponents].sort((a, b) => {
           const overallA = (a.logic + a.functionality) / 2;
           const overallB = (b.logic + b.functionality) / 2;
-          return overallB - overallA;
+
+          if (this.readinessSortOrder === 'desc') {
+            // От лучших к худшим (по умолчанию)
+            return overallB - overallA;
+          } else {
+            // От худших к лучшим
+            return overallA - overallB;
+          }
         });
         break;
       }
@@ -1400,20 +1430,38 @@ class EAPDashboard {
               <div class="col-md-6">
                 <div class="card border-danger">
                   <div class="card-header bg-danger text-white">
-                    <h6 class="mb-0">⚠️ Ключевой недостаток логики</h6>
+                    <h6 class="mb-0">⚠️ Ключевые недостатки логики ${component.logicIssues && component.logicIssues.length > 1 ? `(${component.logicIssues.length})` : ''}</h6>
                   </div>
                   <div class="card-body">
-                    <p class="mb-0">${component.logicIssue || 'Недостатки в логике не обнаружены'}</p>
+                    ${
+                      component.logicIssues && component.logicIssues.length > 0
+                        ? component.logicIssues
+                            .map(
+                              (issue, index) =>
+                                `<p class="mb-${index === component.logicIssues.length - 1 ? '0' : '2'}"><small class="text-muted">${index + 1}.</small> ${issue}</p>`
+                            )
+                            .join('')
+                        : '<p class="mb-0">Недостатки в логике не обнаружены</p>'
+                    }
                   </div>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="card border-warning">
                   <div class="card-header bg-warning text-dark">
-                    <h6 class="mb-0">🔧 Ключевой недостаток функциональности</h6>
+                    <h6 class="mb-0">🔧 Ключевые недостатки функциональности ${component.functionalityIssues && component.functionalityIssues.length > 1 ? `(${component.functionalityIssues.length})` : ''}</h6>
                   </div>
                   <div class="card-body">
-                    <p class="mb-0">${component.functionalityIssue || 'Недостатки в функциональности не обнаружены'}</p>
+                    ${
+                      component.functionalityIssues && component.functionalityIssues.length > 0
+                        ? component.functionalityIssues
+                            .map(
+                              (issue, index) =>
+                                `<p class="mb-${index === component.functionalityIssues.length - 1 ? '0' : '2'}"><small class="text-muted">${index + 1}.</small> ${issue}</p>`
+                            )
+                            .join('')
+                        : '<p class="mb-0">Недостатки в функциональности не обнаружены</p>'
+                    }
                   </div>
                 </div>
               </div>
@@ -1473,8 +1521,30 @@ class EAPDashboard {
               </div>
               <div class="card-body">
                 <ul class="mb-0">
-                  ${component.logicIssue ? `<li><strong>Логика:</strong> ${this.getImprovementSuggestion(component.logicIssue)}</li>` : ''}
-                  ${component.functionalityIssue ? `<li><strong>Функциональность:</strong> ${this.getImprovementSuggestion(component.functionalityIssue)}</li>` : ''}
+                  ${
+                    component.logicIssues && component.logicIssues.length > 0
+                      ? component.logicIssues
+                          .map(
+                            issue =>
+                              `<li><strong>Логика:</strong> ${this.getImprovementSuggestion(issue)}</li>`
+                          )
+                          .join('')
+                      : component.logicIssue
+                        ? `<li><strong>Логика:</strong> ${this.getImprovementSuggestion(component.logicIssue)}</li>`
+                        : ''
+                  }
+                  ${
+                    component.functionalityIssues && component.functionalityIssues.length > 0
+                      ? component.functionalityIssues
+                          .map(
+                            issue =>
+                              `<li><strong>Функциональность:</strong> ${this.getImprovementSuggestion(issue)}</li>`
+                          )
+                          .join('')
+                      : component.functionalityIssue
+                        ? `<li><strong>Функциональность:</strong> ${this.getImprovementSuggestion(component.functionalityIssue)}</li>`
+                        : ''
+                  }
                   <li><strong>Общее:</strong> Рассмотрите возможность рефакторинга для повышения показателей готовности</li>
                 </ul>
               </div>

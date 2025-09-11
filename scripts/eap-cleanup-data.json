@@ -1,0 +1,271 @@
+{
+  "timestamp": "2025-09-11T17:28:37.903Z",
+  "eapPath": "C:\\alphacore\\project-template\\eap-analyzer",
+  "toDelete": [
+    {
+      "file": "simple-demo.js",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\simple-demo.js"
+    },
+    {
+      "file": "advanced-demo.cjs",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\advanced-demo.cjs"
+    },
+    {
+      "file": "src/simple-demo.ts",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\simple-demo.ts"
+    },
+    {
+      "file": "demo-phase4-integration.cjs",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\demo-phase4-integration.cjs"
+    },
+    {
+      "file": "final-demo.mjs",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\final-demo.mjs"
+    },
+    {
+      "file": "src/modules/structure-analyzer/demo.js",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\modules\\structure-analyzer\\demo.js"
+    },
+    {
+      "file": "src/reporters/templates/demo.ts",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\reporters\\templates\\demo.ts"
+    },
+    {
+      "file": "src/reporters/template-demo.ts",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\reporters\\template-demo.ts"
+    },
+    {
+      "file": "demo-report.json",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\demo-report.json"
+    },
+    {
+      "file": "demo-report.md",
+      "reason": "Demo file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\demo-report.md"
+    },
+    {
+      "file": "dist-cjs/utils/adaptive-thresholds.js",
+      "reason": "Duplicate of src/utils/adaptive-thresholds.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\utils\\adaptive-thresholds.js"
+    },
+    {
+      "file": "dist-cjs/utils/file-utils.js",
+      "reason": "Duplicate of src/utils/file-utils.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\utils\\file-utils.js"
+    },
+    {
+      "file": "dist-cjs/utils/error-handler.js",
+      "reason": "Duplicate of src/utils/error-handler.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\utils\\error-handler.js"
+    },
+    {
+      "file": "dist-cjs/cli.js",
+      "reason": "Duplicate of src/cli.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\cli.js"
+    },
+    {
+      "file": "dist-cjs/modules/ai-insights/ai-insights-engine-simple.js",
+      "reason": "Duplicate of src/modules/ai-insights/ai-insights-engine-simple.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\modules\\ai-insights\\ai-insights-engine-simple.js"
+    },
+    {
+      "file": "dist-cjs/utils/detailed-roadmap-generator.js",
+      "reason": "Duplicate of src/utils/detailed-roadmap-generator.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\utils\\detailed-roadmap-generator.js"
+    },
+    {
+      "file": "dist-cjs/utils/report-generator.js",
+      "reason": "Duplicate of src/utils/report-generator.ts",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\dist-cjs\\utils\\report-generator.js"
+    },
+    {
+      "file": "reports/analysis_kinderly-events_2025-09-09_13-08-41.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis_kinderly-events_2025-09-09_13-08-41.json"
+    },
+    {
+      "file": "reports/analysis_kinderly-events_2025-09-09_13-17-20.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis_kinderly-events_2025-09-09_13-17-20.json"
+    },
+    {
+      "file": "reports/analysis_project-template_2025-09-09_13-14-22.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis_project-template_2025-09-09_13-14-22.json"
+    },
+    {
+      "file": "reports/analysis_src_2025-09-09_13-08-45.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis_src_2025-09-09_13-08-45.json"
+    },
+    {
+      "file": "reports/analysis___HEYS_2_2025-09-09_13-16-01.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis___HEYS_2_2025-09-09_13-16-01.json"
+    },
+    {
+      "file": "reports/analysis___HEYS_2_2025-09-09_20-17-08.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis___HEYS_2_2025-09-09_20-17-08.json"
+    },
+    {
+      "file": "reports/analysis___HEYS_2_2025-09-09_23-16-43.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\analysis___HEYS_2_2025-09-09_23-16-43.json"
+    },
+    {
+      "file": "reports/ROADMAP_kinderly-events_2025-09-09_13-08-41.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP_kinderly-events_2025-09-09_13-08-41.md"
+    },
+    {
+      "file": "reports/ROADMAP_kinderly-events_2025-09-09_13-17-20.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP_kinderly-events_2025-09-09_13-17-20.md"
+    },
+    {
+      "file": "reports/ROADMAP_project-template_2025-09-09_13-14-22.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP_project-template_2025-09-09_13-14-22.md"
+    },
+    {
+      "file": "reports/ROADMAP_src_2025-09-09_13-08-45.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP_src_2025-09-09_13-08-45.md"
+    },
+    {
+      "file": "reports/ROADMAP___HEYS_2_2025-09-09_13-16-01.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP___HEYS_2_2025-09-09_13-16-01.md"
+    },
+    {
+      "file": "reports/ROADMAP___HEYS_2_2025-09-09_20-17-08.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ROADMAP___HEYS_2_2025-09-09_20-17-08.md"
+    },
+    {
+      "file": "eap-analysis-latest.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\eap-analysis-latest.json"
+    },
+    {
+      "file": "ai-analysis-report.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\ai-analysis-report.json"
+    },
+    {
+      "file": "enhanced-ai-report.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\enhanced-ai-report.json"
+    },
+    {
+      "file": "self-analysis-report.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\self-analysis-report.json"
+    },
+    {
+      "file": "reports/validation-report.md",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\validation-report.md"
+    },
+    {
+      "file": "reports/simple-analysis-report.json",
+      "reason": "Old report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\simple-analysis-report.json"
+    },
+    {
+      "file": "AI-INTEGRATION-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\AI-INTEGRATION-COMPLETE.md"
+    },
+    {
+      "file": "src/ai-integration/AI-INTEGRATION-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\ai-integration\\AI-INTEGRATION-COMPLETE.md"
+    },
+    {
+      "file": "PACKAGE-RENAME-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PACKAGE-RENAME-COMPLETE.md"
+    },
+    {
+      "file": "ROADMAP-GENERATION-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\ROADMAP-GENERATION-COMPLETE.md"
+    },
+    {
+      "file": "src/modules/structure-analyzer/INTEGRATION-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\src\\modules\\structure-analyzer\\INTEGRATION-COMPLETE.md"
+    },
+    {
+      "file": "PHASE-1-COMPLETION-REPORT.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-1-COMPLETION-REPORT.md"
+    },
+    {
+      "file": "PHASE-1-2-COMPLETION-REPORT.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-1-2-COMPLETION-REPORT.md"
+    },
+    {
+      "file": "PHASE-2-COMPLETION-REPORT.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-2-COMPLETION-REPORT.md"
+    },
+    {
+      "file": "PHASE-3-COMPLETION-REPORT.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-3-COMPLETION-REPORT.md"
+    },
+    {
+      "file": "PHASE-4.1-COMPLETION-REPORT.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-4.1-COMPLETION-REPORT.md"
+    },
+    {
+      "file": "PHASE-1.2-CI-CD-COMPLETE.md",
+      "reason": "Completion report",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\PHASE-1.2-CI-CD-COMPLETE.md"
+    },
+    {
+      "file": "ai-report.md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\ai-report.md"
+    },
+    {
+      "file": "reports/ЭТАЛОН ОТЧЕТА — копия — копия (2).md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ЭТАЛОН ОТЧЕТА — копия — копия (2).md"
+    },
+    {
+      "file": "reports/ЧЁТКИЙ РОАДМАП ДЛЯ АПГРЕЙДА до 4,0.md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ЧЁТКИЙ РОАДМАП ДЛЯ АПГРЕЙДА до 4,0.md"
+    },
+    {
+      "file": "reports/ETALON_ANALIZ_ROADMAP.md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\reports\\ETALON_ANALIZ_ROADMAP.md"
+    },
+    {
+      "file": "как пользоваться .md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\как пользоваться .md"
+    },
+    {
+      "file": "HOW-TO-USE-SIMPLE.md",
+      "reason": "Experimental file",
+      "fullPath": "C:\\alphacore\\project-template\\eap-analyzer\\HOW-TO-USE-SIMPLE.md"
+    }
+  ]
+}
