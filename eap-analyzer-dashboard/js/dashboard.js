@@ -625,6 +625,8 @@ class EAPDashboard {
 
         this.renderComponentsList();
         this.updateCategoryCounters();
+        this.renderTopComponents();
+        this.renderBottomComponents();
 
         // Показываем уведомление
         const categoryName = this.getCategoryDisplayName(category);
@@ -731,6 +733,8 @@ class EAPDashboard {
       searchInput.addEventListener('input', e => {
         this.searchQuery = e.target.value.toLowerCase();
         this.renderComponentsList();
+        this.renderTopComponents();
+        this.renderBottomComponents();
       });
     }
   }
@@ -746,6 +750,8 @@ class EAPDashboard {
         this.sortBy = field;
         this.sortOrder = order;
         this.renderComponentsList();
+        this.renderTopComponents();
+        this.renderBottomComponents();
       });
     }
   }
@@ -1031,14 +1037,24 @@ class EAPDashboard {
     const container = document.getElementById('top-components-list');
     if (!container || !window.EAP_DATA?.utils) return;
 
-    const topComponents = window.EAP_DATA.utils.getTopComponents(10);
+    // Используем те же фильтры, что и в основном списке
+    const filters = {
+      categoryFilter: this.currentFilter,
+      classificationFilter: this.currentClassificationFilter,
+      searchQuery: this.searchQuery,
+    };
+
+    const topComponents = window.EAP_DATA.utils.getTopComponents(10, filters);
 
     let html = '';
-    topComponents.forEach((component, index) => {
-      const overall = ((component.logic + component.functionality) / 2).toFixed(1);
-      const medal = index < 3 ? ['🥇', '🥈', '🥉'][index] : `${index + 1}.`;
+    if (topComponents.length === 0) {
+      html = '<p class="text-muted small">Нет компонентов для отображения</p>';
+    } else {
+      topComponents.forEach((component, index) => {
+        const overall = ((component.logic + component.functionality) / 2).toFixed(1);
+        const medal = index < 3 ? ['🥇', '🥈', '🥉'][index] : `${index + 1}.`;
 
-      html += `
+        html += `
                 <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
                     <div class="flex-grow-1 me-2">
                         <span class="me-1 small">${medal}</span>
@@ -1049,9 +1065,10 @@ class EAPDashboard {
                     <span class="badge bg-success small">${overall}%</span>
                 </div>
             `;
-    });
+      });
+    }
 
-    container.innerHTML = html || '<p class="text-muted small">Нет данных</p>';
+    container.innerHTML = html;
   }
 
   /**
@@ -1061,19 +1078,29 @@ class EAPDashboard {
     const container = document.getElementById('bottom-components-list');
     if (!container || !window.EAP_DATA?.utils) return;
 
-    const bottomComponents = window.EAP_DATA.utils.getBottomComponents(10);
+    // Используем те же фильтры, что и в основном списке
+    const filters = {
+      categoryFilter: this.currentFilter,
+      classificationFilter: this.currentClassificationFilter,
+      searchQuery: this.searchQuery,
+    };
+
+    const bottomComponents = window.EAP_DATA.utils.getBottomComponents(10, filters);
 
     let html = '';
-    bottomComponents.forEach((component, index) => {
-      const overall = ((component.logic + component.functionality) / 2).toFixed(1);
-      const priority = index < 3 ? ['🚨', '⚠️', '🔧'][index] : `${index + 1}.`;
+    if (bottomComponents.length === 0) {
+      html = '<p class="text-muted small">Нет компонентов для отображения</p>';
+    } else {
+      bottomComponents.forEach((component, index) => {
+        const overall = ((component.logic + component.functionality) / 2).toFixed(1);
+        const priority = index < 3 ? ['🚨', '⚠️', '🔧'][index] : `${index + 1}.`;
 
-      // Определяем цвет бейджа на основе общего рейтинга
-      let badgeClass = 'bg-danger';
-      if (overall >= 70) badgeClass = 'bg-warning';
-      if (overall >= 60) badgeClass = 'bg-secondary';
+        // Определяем цвет бейджа на основе общего рейтинга
+        let badgeClass = 'bg-danger';
+        if (overall >= 70) badgeClass = 'bg-warning';
+        if (overall >= 60) badgeClass = 'bg-secondary';
 
-      html += `
+        html += `
                 <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
                     <div class="flex-grow-1 me-2">
                         <span class="me-1 small">${priority}</span>
@@ -1084,9 +1111,10 @@ class EAPDashboard {
                     <span class="badge ${badgeClass} small">${overall}%</span>
                 </div>
             `;
-    });
+      });
+    }
 
-    container.innerHTML = html || '<p class="text-muted small">Нет данных</p>';
+    container.innerHTML = html;
   }
 
   /**

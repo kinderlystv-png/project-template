@@ -673,6 +673,8 @@
                 : 'all';
               window.dashboardInstance.renderComponentsList();
               window.dashboardInstance.updateCategoryCounters();
+              window.dashboardInstance.renderTopComponents();
+              window.dashboardInstance.renderBottomComponents();
 
               // Обновляем диаграммы
               if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
@@ -867,6 +869,8 @@
             window.dashboardInstance.currentClassificationFilter = 'analyzer';
             window.dashboardInstance.renderComponentsList();
             window.dashboardInstance.updateCategoryCounters();
+            window.dashboardInstance.renderTopComponents();
+            window.dashboardInstance.renderBottomComponents();
 
             // Обновляем диаграммы
             if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
@@ -892,6 +896,8 @@
             window.dashboardInstance.currentClassificationFilter = 'auxiliary';
             window.dashboardInstance.renderComponentsList();
             window.dashboardInstance.updateCategoryCounters();
+            window.dashboardInstance.renderTopComponents();
+            window.dashboardInstance.renderBottomComponents();
 
             // Обновляем диаграммы
             if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
@@ -920,6 +926,8 @@
             window.dashboardInstance.currentClassificationFilter = 'other';
             window.dashboardInstance.renderComponentsList();
             window.dashboardInstance.updateCategoryCounters();
+            window.dashboardInstance.renderTopComponents();
+            window.dashboardInstance.renderBottomComponents();
 
             // Обновляем диаграммы
             if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
