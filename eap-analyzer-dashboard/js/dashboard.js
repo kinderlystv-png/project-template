@@ -906,8 +906,9 @@ class EAPDashboard {
         icon: 'bi-gear',
       };
 
-      // Получаем имя файла без пути
+      // Получаем полный путь и имя файла
       const fileName = component.file ? component.file.split('/').pop() : 'Файл не указан';
+      const filePath = component.file ? component.file : 'Путь не указан';
 
       // Определяем цвет прогресс-бара для логики
       let logicClass = 'bg-danger';
@@ -933,7 +934,11 @@ class EAPDashboard {
                         </div>
                     </td>
                     <td>
-                        <code class="small">${fileName}</code>
+                        <div>
+                            <code class="small fw-bold">${fileName}</code>
+                            <br>
+                            <small class="text-muted" title="Полный путь к файлу">${filePath}</small>
+                        </div>
                     </td>
                     <td>
                         <span class="small">${component.description || 'Описание отсутствует'}</span>
