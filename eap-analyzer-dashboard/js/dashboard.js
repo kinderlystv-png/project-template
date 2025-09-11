@@ -159,6 +159,29 @@ class EAPDashboard {
   }
 
   /**
+   * Получение отображаемого имени категории по ключу
+   */
+  getCategoryDisplayName(categoryKey) {
+    const categoryNames = {
+      all: 'Все категории',
+      testing: 'Testing',
+      security: 'Security',
+      performance: 'Performance',
+      docker: 'Docker',
+      dependencies: 'Dependencies',
+      logging: 'Logging',
+      cicd: 'CI/CD',
+      codequality: 'Code Quality',
+      core: 'Core',
+      ai: 'AI',
+      architecture: 'Architecture',
+      utils: 'Utils',
+    };
+
+    return categoryNames[categoryKey] || 'Unknown';
+  }
+
+  /**
    * Предположение о файле на основе имени компонента
    */
   guessFileFromName(name) {
@@ -211,6 +234,7 @@ class EAPDashboard {
       this.renderComponentsList();
       this.renderTopComponents();
       this.renderBottomComponents();
+      this.updateCategoryCounters();
 
       // Инициализация графиков после проверки Chart.js
       await this.initializeChartsWhenReady();
@@ -505,24 +529,192 @@ class EAPDashboard {
   }
 
   /**
-   * Инициализация фильтров
+   * Инициализация фильтров по категориям
    */
   initializeFilters() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Убираем активность со всех кнопок
-        filterButtons.forEach(b => b.classList.remove('active'));
-        // Добавляем активность на нажатую кнопку
-        btn.classList.add('active');
+    const categoryButtons = document.querySelectorAll('[data-category]');
 
-        this.currentFilter = btn.dataset.filter;
+    // Устанавливаем начальное состояние - кнопка "Все" активна
+    categoryButtons.forEach(btn => {
+      const category = btn.dataset.category;
+      if (category === 'all') {
+        btn.className = 'btn btn-primary active';
+      }
+    });
+
+    categoryButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Убираем активность со всех кнопок категорий
+        categoryButtons.forEach(b => {
+          b.classList.remove(
+            'active',
+            'btn-primary',
+            'btn-success',
+            'btn-danger',
+            'btn-warning',
+            'btn-info',
+            'btn-secondary',
+            'btn-dark'
+          );
+          // Возвращаем outline стиль
+          const category = b.dataset.category;
+          if (category === 'all') {
+            b.className = 'btn btn-outline-primary';
+          } else if (category === 'testing') {
+            b.className = 'btn btn-outline-success';
+          } else if (category === 'security') {
+            b.className = 'btn btn-outline-danger';
+          } else if (category === 'performance') {
+            b.className = 'btn btn-outline-warning';
+          } else if (category === 'docker') {
+            b.className = 'btn btn-outline-info';
+          } else if (category === 'codequality') {
+            b.className = 'btn btn-outline-dark';
+          } else if (category === 'cicd') {
+            b.className = 'btn btn-outline-success';
+          } else if (category === 'logging') {
+            b.className = 'btn btn-outline-primary';
+          } else if (category === 'architecture') {
+            b.className = 'btn btn-outline-primary';
+          } else if (category === 'ai') {
+            b.className = 'btn btn-outline-danger';
+          } else {
+            b.className = 'btn btn-outline-secondary';
+          }
+        });
+
+        // Активируем нажатую кнопку
+        const category = btn.dataset.category;
+        if (category === 'all') {
+          btn.className = 'btn btn-primary active';
+        } else if (category === 'testing') {
+          btn.className = 'btn btn-success active';
+        } else if (category === 'security') {
+          btn.className = 'btn btn-danger active';
+        } else if (category === 'performance') {
+          btn.className = 'btn btn-warning active';
+        } else if (category === 'docker') {
+          btn.className = 'btn btn-info active';
+        } else if (category === 'codequality') {
+          btn.className = 'btn btn-dark active';
+        } else if (category === 'cicd') {
+          btn.className = 'btn btn-success active';
+        } else if (category === 'logging') {
+          btn.className = 'btn btn-primary active';
+        } else if (category === 'architecture') {
+          btn.className = 'btn btn-primary active';
+        } else if (category === 'ai') {
+          btn.className = 'btn btn-danger active';
+        } else {
+          btn.className = 'btn btn-secondary active';
+        }
+
+        // Обновляем текущий фильтр и перерендериваем
+        this.currentFilter = category;
+
+        // Отладочная информация
+        const allComponents = Object.values(this.componentsData);
+        const filteredComponents = this.getFilteredComponents();
+        console.log(`🔍 Фильтр: ${category}`);
+        console.log(`📊 Всего компонентов: ${allComponents.length}`);
+        console.log(`✅ Отфильтровано: ${filteredComponents.length}`);
+
+        // Показываем уникальные категории, которые есть у компонентов
+        const uniqueCategories = [...new Set(allComponents.map(c => c.category))];
+        console.log(`🏷️  Уникальные категории в данных:`, uniqueCategories);
+
+        if (category !== 'all') {
+          const categoryComponents = allComponents.filter(c => c.category === category);
+          console.log(`� Компоненты с категорией "${category}":`, categoryComponents.length);
+          if (categoryComponents.length > 0) {
+            console.log(
+              `📋 Первые 5 компонентов:`,
+              categoryComponents.slice(0, 5).map(c => c.name)
+            );
+          }
+        }
+
         this.renderComponentsList();
+        this.updateCategoryCounters();
+
+        // Показываем уведомление
+        const categoryName = this.getCategoryDisplayName(category);
+        const components = this.getFilteredComponents();
+        this.showNotification(
+          `📂 Показано ${components.length} компонентов в категории "${categoryName}"`,
+          'success'
+        );
       });
     });
-  }
+  } /**
+   * Обновление счетчиков компонентов по категориям
+   */
+  updateCategoryCounters() {
+    // Считаем компоненты по категориям
+    const categoryStats = {};
+    const allComponents = Object.values(this.componentsData);
 
-  /**
+    // Инициализируем счетчики
+    const categories = [
+      'all',
+      'testing',
+      'security',
+      'performance',
+      'docker',
+      'dependencies',
+      'logging',
+      'cicd',
+      'codequality',
+      'core',
+      'ai',
+      'architecture',
+      'utils',
+    ];
+
+    categories.forEach(cat => {
+      categoryStats[cat] = 0;
+    });
+
+    // Подсчитываем компоненты
+    categoryStats.all = allComponents.length;
+    allComponents.forEach(comp => {
+      if (comp.category && Object.prototype.hasOwnProperty.call(categoryStats, comp.category)) {
+        categoryStats[comp.category]++;
+      }
+    });
+
+    // Обновляем текст на кнопках
+    const categoryButtons = document.querySelectorAll('[data-category]');
+    categoryButtons.forEach(btn => {
+      const category = btn.dataset.category;
+      const count = categoryStats[category] || 0;
+
+      // Получаем текущий HTML и проверяем наличие badge
+      const currentHTML = btn.innerHTML;
+      const hasExistingBadge = currentHTML.includes('badge');
+
+      if (hasExistingBadge) {
+        // Обновляем существующий badge
+        const badge = btn.querySelector('.badge');
+        if (badge) {
+          badge.textContent = count;
+        }
+      } else {
+        // Добавляем новый badge после текста
+        const textParts = currentHTML.split('</i>');
+        if (textParts.length === 2) {
+          btn.innerHTML = `${textParts[0]}</i> ${textParts[1]} <span class="badge bg-light text-dark ms-1">${count}</span>`;
+        }
+      }
+    }); // Обновляем общий счетчик категорий
+    const categoryCountElement = document.getElementById('category-count');
+    if (categoryCountElement) {
+      const nonEmptyCategories = categories.filter(
+        cat => cat !== 'all' && categoryStats[cat] > 0
+      ).length;
+      categoryCountElement.textContent = nonEmptyCategories;
+    }
+  } /**
    * Инициализация поиска
    */
   initializeSearch() {
@@ -634,19 +826,19 @@ class EAPDashboard {
     const countContainer = document.getElementById('total-components-count');
     if (!container) return;
 
-    // Получаем все компоненты и сортируем их по выбранному режиму
-    const allComponents = Object.values(this.componentsData);
+    // Получаем отфильтрованные компоненты
+    const filteredComponents = this.getFilteredComponents();
     let sortedComponents = [];
 
     switch (this.sortMode) {
       case 'name':
         // Сортировка по названию
-        sortedComponents = [...allComponents].sort((a, b) => a.name.localeCompare(b.name));
+        sortedComponents = [...filteredComponents].sort((a, b) => a.name.localeCompare(b.name));
         break;
 
       case 'readiness': {
         // Сортировка по готовности (по убыванию)
-        sortedComponents = [...allComponents].sort((a, b) => {
+        sortedComponents = [...filteredComponents].sort((a, b) => {
           const overallA = (a.logic + a.functionality) / 2;
           const overallB = (b.logic + b.functionality) / 2;
           return overallB - overallA;
@@ -674,14 +866,14 @@ class EAPDashboard {
 
         // Сначала добавляем компоненты в порядке категорий
         categoryOrder.forEach(category => {
-          const categoryComponents = allComponents.filter(comp => comp.category === category);
+          const categoryComponents = filteredComponents.filter(comp => comp.category === category);
           // Внутри категории сортируем по названию
           categoryComponents.sort((a, b) => a.name.localeCompare(b.name));
           sortedComponents.push(...categoryComponents);
         });
 
         // Добавляем оставшиеся компоненты, которые не попали в основные категории
-        const remainingComponents = allComponents.filter(
+        const remainingComponents = filteredComponents.filter(
           comp => !categoryOrder.includes(comp.category)
         );
         remainingComponents.sort((a, b) => a.name.localeCompare(b.name));

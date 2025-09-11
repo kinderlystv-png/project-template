@@ -13,7 +13,7 @@ console.log('   node live-generator.cjs');
 console.log('');
 console.log('✨ Преимущества live-generator.cjs:');
 console.log('   • Анализ 184+ реальных компонентов');
-console.log('   • Автоматические метрики готовности'); 
+console.log('   • Автоматические метрики готовности');
 console.log('   • Live-обновление dashboard');
 console.log('   • Архивирование отчетов');
 console.log('');
