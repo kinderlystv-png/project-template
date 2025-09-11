@@ -10,7 +10,7 @@ exports.UnifiedTestingAnalyzer = void 0;
 const BaseChecker_js_1 = require('../../core/base/BaseChecker.js');
 const AnalysisCategory_js_1 = require('../../types/AnalysisCategory.js');
 const SeverityLevel_js_1 = require('../../types/SeverityLevel.js');
-const { EnhancedJestChecker } = require('./EnhancedJestChecker.cjs');
+const { EnhancedJestChecker } = require('./checkers/EnhancedJestChecker.js');
 /**
  * Унифицированный анализатор тестовой экосистемы проекта
  * Упрощенная версия для совместимости с BaseChecker

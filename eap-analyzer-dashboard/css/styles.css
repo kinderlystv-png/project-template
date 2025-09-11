@@ -1,0 +1,270 @@
+/* Custom Styles for EAP Analyzer Dashboard */
+
+:root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --warning-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --danger-gradient: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%);
+  --chart-grid: rgba(0, 0, 0, 0.05);
+}
+
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Enhancements */
+.navbar-brand {
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Cards Enhancements */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 15px 15px 0 0 !important;
+  border-bottom: none;
+}
+
+/* Progress Bars */
+.progress {
+  height: 8px;
+  border-radius: 10px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* Component Status Indicators */
+.status-excellent {
+  background: var(--success-gradient);
+}
+
+.status-good {
+  background: linear-gradient(135deg, #96fbc4 0%, #f9f047 100%);
+}
+
+.status-average {
+  background: var(--warning-gradient);
+}
+
+.status-poor {
+  background: var(--danger-gradient);
+}
+
+/* Category Buttons */
+.btn-outline-primary.active,
+.btn-outline-success.active,
+.btn-outline-danger.active,
+.btn-outline-warning.active,
+.btn-outline-info.active,
+.btn-outline-secondary.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Component Cards in Accordion */
+.component-card {
+  background: white;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border-left: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.component-card.testing {
+  border-left-color: #28a745;
+}
+
+.component-card.security {
+  border-left-color: #dc3545;
+}
+
+.component-card.performance {
+  border-left-color: #ffc107;
+}
+
+.component-card.docker {
+  border-left-color: #17a2b8;
+}
+
+.component-card.core {
+  border-left-color: #6c757d;
+}
+
+/* Metrics Display */
+.metric-badge {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 2px;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logic-metric {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.functionality-metric {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Chart Containers */
+.chart-container {
+  position: relative;
+  height: 300px;
+  padding: 20px;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Top Components List */
+.top-component-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.top-component-item:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(5px);
+}
+
+.component-name {
+  font-weight: 600;
+  color: #495057;
+}
+
+.component-metrics {
+  display: flex;
+  gap: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .metric-badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .chart-container {
+    height: 250px;
+    padding: 10px;
+  }
+
+  .d-flex.gap-2 {
+    gap: 0.25rem !important;
+  }
+
+  .btn {
+    font-size: 0.875rem;
+  }
+}
+
+/* Animation Classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-up:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in-up:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-in-up:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fade-in-up:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Loading Spinner */
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
