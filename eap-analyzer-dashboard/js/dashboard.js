@@ -923,7 +923,7 @@ class EAPDashboard {
       else if (component.functionality >= 70) funcClass = 'bg-warning';
 
       html += `
-                <tr>
+                <tr data-component-name="${component.name}" style="cursor: pointer;" title="Нажмите для детального анализа">
                     <td>
                         <div class="d-flex align-items-center">
                             <i class="${categoryInfo.icon} me-2" style="color: ${categoryInfo.color}"></i>
@@ -967,6 +967,27 @@ class EAPDashboard {
     });
 
     container.innerHTML = html;
+
+    // Добавляем обработчики клика для детального анализа
+    const rows = container.querySelectorAll('tr[data-component-name]');
+    rows.forEach(row => {
+      row.addEventListener('click', (e) => {
+        // Предотвращаем клик если пользователь выделяет текст
+        if (window.getSelection().toString().length > 0) return;
+
+        const componentName = row.getAttribute('data-component-name');
+        this.showComponentDetails(componentName);
+      });
+
+      // Добавляем эффект при наведении
+      row.addEventListener('mouseenter', () => {
+        row.style.backgroundColor = '#f8f9fa';
+      });
+
+      row.addEventListener('mouseleave', () => {
+        row.style.backgroundColor = '';
+      });
+    });
   }
 
   /**
@@ -1328,6 +1349,188 @@ class EAPDashboard {
       });
     }, 5000);
   }
+
+  /**
+   * Показать детальный анализ компонента
+   */
+  showComponentDetails(componentName) {
+    const component = Object.values(this.componentsData).find(comp => comp.name === componentName);
+    if (!component) {
+      this.showError('Компонент не найден');
+      return;
+    }
+
+    // Создаем модальное окно для детального анализа
+    const modal = document.createElement('div');
+    modal.classList.add('modal', 'fade', 'show');
+    modal.style.display = 'block';
+    modal.style.backgroundColor = 'rgba(0,0,0,0.5)';
+
+    const categoryInfo = window.EAP_DATA?.categories[component.category] || {
+      name: component.category,
+      color: '#6c757d',
+      icon: 'bi-gear',
+    };
+
+    // Формируем HTML для модального окна
+    modal.innerHTML = `
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title">
+              <i class="${categoryInfo.icon} me-2"></i>
+              Детальный анализ: ${component.name}
+            </h5>
+            <button type="button" class="btn-close btn-close-white modal-close-btn" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Ключевые недостатки -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card border-danger">
+                  <div class="card-header bg-danger text-white">
+                    <h6 class="mb-0">⚠️ Ключевой недостаток логики</h6>
+                  </div>
+                  <div class="card-body">
+                    <p class="mb-0">${component.logicIssue || "Недостатки в логике не обнаружены"}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-warning">
+                  <div class="card-header bg-warning text-dark">
+                    <h6 class="mb-0">🔧 Ключевой недостаток функциональности</h6>
+                  </div>
+                  <div class="card-body">
+                    <p class="mb-0">${component.functionalityIssue || "Недостатки в функциональности не обнаружены"}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Показатели готовности -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <h6 class="card-title text-primary">📊 Готовность логики</h6>
+                    <div class="progress mb-2" style="height: 20px;">
+                      <div class="progress-bar ${component.logic >= 80 ? 'bg-success' : component.logic >= 60 ? 'bg-warning' : 'bg-danger'}"
+                           style="width: ${component.logic}%">${component.logic}%</div>
+                    </div>
+                    <small class="text-muted">Процент реализации логики компонента</small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card bg-light">
+                  <div class="card-body">
+                    <h6 class="card-title text-success">🚀 Функциональность</h6>
+                    <div class="progress mb-2" style="height: 20px;">
+                      <div class="progress-bar ${component.functionality >= 80 ? 'bg-success' : component.functionality >= 60 ? 'bg-warning' : 'bg-danger'}"
+                           style="width: ${component.functionality}%">${component.functionality}%</div>
+                    </div>
+                    <small class="text-muted">Процент работоспособности функций</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Основная информация -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <p><strong>Категория:</strong> <span class="badge" style="background-color: ${categoryInfo.color}">${this.getCategoryDisplayName(component.category)}</span></p>
+                <p><strong>Файл:</strong> <code>${component.file || "Не указан"}</code></p>
+                <p><strong>Тестирование:</strong> <span class="text-info">${component.tests || "Нет информации"}</span></p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Размер файла:</strong> ${component.fileSize ? (component.fileSize / 1024).toFixed(1) + ' KB' : "Неизвестен"}</p>
+                <p><strong>Строк кода:</strong> ${component.lines || "Неизвестно"}</p>
+                <p><strong>Последнее изменение:</strong> ${component.lastModified || "Нет данных"}</p>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <h6>📝 Описание компонента:</h6>
+              <p class="text-muted">${component.description || "Описание отсутствует"}</p>
+            </div>
+
+            <!-- Рекомендации по улучшению -->
+            <div class="card border-info mt-3">
+              <div class="card-header bg-info text-white">
+                <h6 class="mb-0">💡 Рекомендации по улучшению</h6>
+              </div>
+              <div class="card-body">
+                <ul class="mb-0">
+                  ${component.logicIssue ? `<li><strong>Логика:</strong> ${this.getImprovementSuggestion(component.logicIssue)}</li>` : ''}
+                  ${component.functionalityIssue ? `<li><strong>Функциональность:</strong> ${this.getImprovementSuggestion(component.functionalityIssue)}</li>` : ''}
+                  <li><strong>Общее:</strong> Рассмотрите возможность рефакторинга для повышения показателей готовности</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary modal-close-btn">Закрыть</button>
+            ${component.file ? `<a href="#" class="btn btn-outline-primary" onclick="navigator.clipboard.writeText('${component.file}')">📋 Копировать путь</a>` : ''}
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Добавляем обработчики закрытия
+    const closeButtons = modal.querySelectorAll('.modal-close-btn');
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        document.body.removeChild(modal);
+      });
+    });
+
+    // Закрытие по клику вне модального окна
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        document.body.removeChild(modal);
+      }
+    });
+
+    // Закрытие по клавише Escape
+    const escapeHandler = (e) => {
+      if (e.key === 'Escape') {
+        document.body.removeChild(modal);
+        document.removeEventListener('keydown', escapeHandler);
+      }
+    };
+    document.addEventListener('keydown', escapeHandler);
+
+    // Добавляем модальное окно в DOM
+    document.body.appendChild(modal);
+  }
+
+  /**
+   * Генерировать предложение по улучшению на основе недостатка
+   */
+  getImprovementSuggestion(issue) {
+    if (issue.toLowerCase().includes('тест')) {
+      return 'Добавьте unit-тесты и интеграционные тесты';
+    }
+    if (issue.toLowerCase().includes('безопас') || issue.toLowerCase().includes('xss')) {
+      return 'Внедрите валидацию входных данных и санитизацию';
+    }
+    if (issue.toLowerCase().includes('производительность') || issue.toLowerCase().includes('память')) {
+      return 'Оптимизируйте алгоритмы и добавьте кэширование';
+    }
+    if (issue.toLowerCase().includes('обработк') || issue.toLowerCase().includes('ошибк')) {
+      return 'Добавьте обработку исключений и логирование';
+    }
+    if (issue.toLowerCase().includes('документац')) {
+      return 'Добавьте JSDoc комментарии и README';
+    }
+    if (issue.toLowerCase().includes('связность') || issue.toLowerCase().includes('модул')) {
+      return 'Рефакторинг для снижения связности модулей';
+    }
+    return 'Ознакомьтесь с best practices для данной категории';
+  }
 }
+
+// Dashboard class will be initialized from HTML script
 
 // Dashboard class will be initialized from HTML script
