@@ -1553,6 +1553,7 @@ class EAPDashboard {
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary modal-close-btn">Закрыть</button>
             ${component.file ? `<a href="#" class="btn btn-outline-primary" onclick="navigator.clipboard.writeText('${component.file}')">📋 Копировать путь</a>` : ''}
+            <button type="button" class="btn btn-outline-success copy-all-info-btn">📋 Копировать всю информацию</button>
           </div>
         </div>
       </div>
@@ -1565,6 +1566,14 @@ class EAPDashboard {
         document.body.removeChild(modal);
       });
     });
+
+    // Добавляем обработчик для копирования всей информации
+    const copyAllInfoBtn = modal.querySelector('.copy-all-info-btn');
+    if (copyAllInfoBtn) {
+      copyAllInfoBtn.addEventListener('click', () => {
+        this.copyComponentInfo(component, categoryInfo);
+      });
+    }
 
     // Закрытие по клику вне модального окна
     modal.addEventListener('click', e => {
@@ -1613,8 +1622,82 @@ class EAPDashboard {
     }
     return 'Ознакомьтесь с best practices для данной категории';
   }
-}
 
-// Dashboard class will be initialized from HTML script
+  /**
+   * Копировать всю информацию о компоненте в буфер обмена
+   */
+  copyComponentInfo(component, _categoryInfo) {
+    try {
+      // Формируем текст со всей информацией о компоненте
+      let info = `=== ДЕТАЛЬНЫЙ АНАЛИЗ КОМПОНЕНТА ===\n\n`;
+
+      info += `📋 ОСНОВНАЯ ИНФОРМАЦИЯ\n`;
+      info += `Название: ${component.name}\n`;
+      info += `Путь к файлу: ${component.file || 'Не указан'}\n`;
+      info += `Категория: ${this.getCategoryDisplayName(component.category)}\n`;
+      info += `Размер файла: ${component.fileSize ? (component.fileSize / 1024).toFixed(1) + ' KB' : 'Неизвестен'}\n`;
+      info += `Строк кода: ${component.lines || 'Неизвестно'}\n`;
+      info += `Последнее изменение: ${component.lastModified || 'Нет данных'}\n`;
+      info += `Тестирование: ${component.tests || 'Нет информации'}\n\n`;
+
+      info += `📝 ОПИСАНИЕ\n`;
+      info += `${component.description || 'Описание отсутствует'}\n\n`;
+
+      info += `📊 ПОКАЗАТЕЛИ ГОТОВНОСТИ\n`;
+      info += `Готовность логики: ${component.logic}%\n`;
+      info += `Функциональность: ${component.functionality}%\n\n`;
+
+      if (component.logicIssues && component.logicIssues.length > 0) {
+        info += `⚠️ КЛЮЧЕВЫЕ НЕДОСТАТКИ ЛОГИКИ (${component.logicIssues.length})\n`;
+        component.logicIssues.forEach((issue, index) => {
+          info += `${index + 1}. ${issue}\n`;
+        });
+        info += `\n`;
+      }
+
+      if (component.functionalityIssues && component.functionalityIssues.length > 0) {
+        info += `🔧 КЛЮЧЕВЫЕ НЕДОСТАТКИ ФУНКЦИОНАЛЬНОСТИ (${component.functionalityIssues.length})\n`;
+        component.functionalityIssues.forEach((issue, index) => {
+          info += `${index + 1}. ${issue}\n`;
+        });
+        info += `\n`;
+      }
+
+      info += `💡 РЕКОМЕНДАЦИИ ПО УЛУЧШЕНИЮ\n`;
+      if (component.logicIssues && component.logicIssues.length > 0) {
+        component.logicIssues.forEach(issue => {
+          info += `• Логика: ${this.getImprovementSuggestion(issue)}\n`;
+        });
+      } else if (component.logicIssue) {
+        info += `• Логика: ${this.getImprovementSuggestion(component.logicIssue)}\n`;
+      }
+
+      if (component.functionalityIssues && component.functionalityIssues.length > 0) {
+        component.functionalityIssues.forEach(issue => {
+          info += `• Функциональность: ${this.getImprovementSuggestion(issue)}\n`;
+        });
+      } else if (component.functionalityIssue) {
+        info += `• Функциональность: ${this.getImprovementSuggestion(component.functionalityIssue)}\n`;
+      }
+
+      info += `• Общее: Рассмотрите возможность рефакторинга для повышения показателей готовности\n\n`;
+
+      info += `=== КОНЕЦ АНАЛИЗА ===`;
+
+      // Копируем в буфер обмена
+      navigator.clipboard
+        .writeText(info)
+        .then(() => {
+          // Показываем уведомление об успешном копировании
+          this.showNotification('Информация о компоненте скопирована в буфер обмена', 'success');
+        })
+        .catch(() => {
+          this.showNotification('Ошибка при копировании в буфер обмена', 'error');
+        });
+    } catch {
+      this.showNotification('Ошибка при подготовке данных для копирования', 'error');
+    }
+  }
+}
 
 // Dashboard class will be initialized from HTML script
