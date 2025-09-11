@@ -143,23 +143,44 @@ class EAPChartsManager {
                 return `${context.dataset.label}: ${context.parsed.y}%`;
               },
               afterBody: function (context) {
-                // Находим категорию по названию
                 const categoryLabel = context[0].label;
-                const categories = window.EAP_DATA?.categories || {};
+                const dashboard = window.dashboardInstance;
 
-                // Ищем категорию по названию
-                let categoryData = null;
-                Object.keys(categories).forEach(key => {
-                  if (categories[key].name === categoryLabel) {
-                    categoryData = categories[key];
+                if (!dashboard || !dashboard.componentsData) {
+                  return 'Данные недоступны';
+                }
+
+                // Получаем отфильтрованные компоненты
+                const filteredComponents = dashboard.getFilteredComponents();
+
+                // Группируем по категориям для подсчета
+                const categoryStats = {};
+                filteredComponents.forEach(comp => {
+                  const categoryName =
+                    window.EAP_DATA?.categories?.[comp.category]?.name || comp.category;
+                  if (categoryName === categoryLabel) {
+                    if (!categoryStats[categoryName]) {
+                      categoryStats[categoryName] = {
+                        count: 0,
+                        totalLogic: 0,
+                        totalFunctionality: 0,
+                      };
+                    }
+                    categoryStats[categoryName].count++;
+                    categoryStats[categoryName].totalLogic += comp.logic || 0;
+                    categoryStats[categoryName].totalFunctionality += comp.functionality || 0;
                   }
                 });
 
-                if (categoryData) {
+                const stats = categoryStats[categoryLabel];
+                if (stats && stats.count > 0) {
+                  const avgLogic = Math.round(stats.totalLogic / stats.count);
+                  const avgFunctionality = Math.round(stats.totalFunctionality / stats.count);
+
                   return [
-                    `Компонентов: ${categoryData.count}`,
-                    `Логика: ${categoryData.logic}%`,
-                    `Функциональность: ${categoryData.functionality}%`,
+                    `Компонентов: ${stats.count}`,
+                    `Логика: ${avgLogic}%`,
+                    `Функциональность: ${avgFunctionality}%`,
                   ];
                 }
 

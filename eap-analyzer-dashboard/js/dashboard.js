@@ -7,6 +7,7 @@ class EAPDashboard {
     this.sortOrder = 'asc';
     this.sortMode = 'category'; // По умолчанию сортируем по категориям
     this.currentClassificationFilter = 'all'; // Новый фильтр по классификации
+    this.onlyAnalyzers = false; // Фильтр "только анализаторы"
     this.initialized = false;
     this.componentsData = {};
     this.statistics = {};
@@ -628,6 +629,11 @@ class EAPDashboard {
         this.renderTopComponents();
         this.renderBottomComponents();
 
+        // Обновляем графики при изменении фильтров
+        if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+          window.EAPCharts.updateCategoriesChart();
+        }
+
         // Показываем уведомление
         const categoryName = this.getCategoryDisplayName(category);
         const components = this.getFilteredComponents();
@@ -735,6 +741,11 @@ class EAPDashboard {
         this.renderComponentsList();
         this.renderTopComponents();
         this.renderBottomComponents();
+
+        // Обновляем графики при поиске
+        if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+          window.EAPCharts.updateCategoriesChart();
+        }
       });
     }
   }
@@ -752,6 +763,11 @@ class EAPDashboard {
         this.renderComponentsList();
         this.renderTopComponents();
         this.renderBottomComponents();
+
+        // Обновляем графики при сортировке
+        if (window.EAPCharts && window.EAPCharts.updateCategoriesChart) {
+          window.EAPCharts.updateCategoriesChart();
+        }
       });
     }
   }
@@ -1039,9 +1055,10 @@ class EAPDashboard {
 
     // Используем те же фильтры, что и в основном списке
     const filters = {
-      categoryFilter: this.currentFilter,
-      classificationFilter: this.currentClassificationFilter,
-      searchQuery: this.searchQuery,
+      classification: this.currentClassificationFilter,
+      category: this.currentFilter,
+      searchTerm: this.searchQuery,
+      onlyAnalyzers: this.onlyAnalyzers,
     };
 
     const topComponents = window.EAP_DATA.utils.getTopComponents(10, filters);
@@ -1080,9 +1097,10 @@ class EAPDashboard {
 
     // Используем те же фильтры, что и в основном списке
     const filters = {
-      categoryFilter: this.currentFilter,
-      classificationFilter: this.currentClassificationFilter,
-      searchQuery: this.searchQuery,
+      classification: this.currentClassificationFilter,
+      category: this.currentFilter,
+      searchTerm: this.searchQuery,
+      onlyAnalyzers: this.onlyAnalyzers,
     };
 
     const bottomComponents = window.EAP_DATA.utils.getBottomComponents(10, filters);
