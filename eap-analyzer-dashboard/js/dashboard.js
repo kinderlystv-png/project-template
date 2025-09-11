@@ -5,9 +5,170 @@ class EAPDashboard {
     this.searchQuery = '';
     this.sortBy = 'name';
     this.sortOrder = 'asc';
+    this.sortMode = 'category'; // По умолчанию сортируем по категориям
     this.initialized = false;
     this.componentsData = {};
     this.statistics = {};
+    this.liveDataLoaded = false;
+  }
+
+  /**
+   * Автоматическая загрузка актуального отчета
+   */
+  async loadLatestReport() {
+    try {
+      console.log('📊 Загрузка актуального отчета...');
+
+      // Пробуем загрузить последний отчет
+      const response = await fetch('./data/reports/EAP-ANALYZER-CURRENT-REPORT.md');
+      if (!response.ok) {
+        console.log('⚠️  Актуальный отчет не найден, используем статичные данные');
+        return false;
+      }
+
+      const markdownText = await response.text();
+
+      // Используем парсер для обновления данных
+      const parsedData = this.parseMarkdownReport(markdownText);
+
+      if (parsedData && Object.keys(parsedData.components).length > 0) {
+        console.log(
+          `📈 Обновлено ${Object.keys(parsedData.components).length} компонентов из live-отчета`
+        );
+
+        // Обновляем компоненты
+        if (!window.EAP_DATA) {
+          window.EAP_DATA = { components: {}, categories: {}, history: {}, utils: {} };
+        }
+
+        // Мержим данные - приоритет live-данным
+        window.EAP_DATA.components = {
+          ...window.EAP_DATA.components, // Сохраняем существующие
+          ...parsedData.components, // Добавляем/обновляем live-данные
+        };
+
+        // Обновляем историю
+        const today = new Date().toISOString().split('T')[0];
+        if (!window.EAP_DATA.history) window.EAP_DATA.history = {};
+        window.EAP_DATA.history[today] = {
+          avgLogic: parsedData.avgLogic || 75,
+          avgFunctionality: parsedData.avgFunctionality || 70,
+          totalComponents: Object.keys(window.EAP_DATA.components).length,
+          changes: [
+            'Live-анализ проекта',
+            `Загружено ${Object.keys(parsedData.components).length} компонентов`,
+          ],
+          source: 'live-analysis',
+        };
+
+        this.liveDataLoaded = true;
+        console.log('✅ Live-данные успешно загружены и обновлены');
+        return true;
+      }
+
+      return false;
+    } catch (error) {
+      console.error('❌ Ошибка при загрузке live-отчета:', error);
+      return false;
+    }
+  }
+
+  /**
+   * Простой парсер MD-отчетов для извлечения данных компонентов
+   */
+  parseMarkdownReport(markdownText) {
+    const components = {};
+    let currentCategory = 'utils';
+    let totalLogic = 0;
+    let totalFunctionality = 0;
+    let componentCount = 0;
+
+    const lines = markdownText.split('\n');
+
+    // Регулярные выражения для парсинга
+    const categoryPattern = /###\s+\d+\.\s+.+?\*\*(.+?)\*\*\s+\[(\d+)%\s+\/\s+(\d+)%\]/;
+    const componentPattern = /-\s+\*\*(.+?)\*\*\s+\[(\d+)%\s+\/\s+(\d+)%\]\s+-\s+(.+)/;
+
+    for (const line of lines) {
+      // Парсинг категории
+      const categoryMatch = line.match(categoryPattern);
+      if (categoryMatch) {
+        const categoryName = categoryMatch[1];
+        currentCategory = this.getCategoryKeyFromName(categoryName);
+        continue;
+      }
+
+      // Парсинг компонента
+      const componentMatch = line.match(componentPattern);
+      if (componentMatch) {
+        const [_, name, logic, functionality, description] = componentMatch;
+        const componentKey = name.replace(/[^a-zA-Z0-9]/g, '');
+
+        components[componentKey] = {
+          name: name,
+          category: currentCategory,
+          logic: parseInt(logic),
+          functionality: parseInt(functionality),
+          description: description.trim(),
+          file: this.guessFileFromName(name),
+          tests: 'Live анализ',
+          lastModified: new Date().toISOString().split('T')[0],
+          source: 'live-analysis',
+        };
+
+        totalLogic += parseInt(logic);
+        totalFunctionality += parseInt(functionality);
+        componentCount++;
+      }
+    }
+
+    return {
+      components,
+      avgLogic: componentCount ? Math.round(totalLogic / componentCount) : 0,
+      avgFunctionality: componentCount ? Math.round(totalFunctionality / componentCount) : 0,
+      componentCount,
+    };
+  }
+
+  /**
+   * Определение ключа категории по названию
+   */
+  getCategoryKeyFromName(categoryName) {
+    const categoryMap = {
+      TESTING: 'testing',
+      SECURITY: 'security',
+      PERFORMANCE: 'performance',
+      DOCKER: 'docker',
+      DEPENDENCIES: 'dependencies',
+      LOGGING: 'logging',
+      'CI/CD': 'cicd',
+      'CODE QUALITY': 'codequality',
+      CORE: 'core',
+      AI: 'ai',
+      ARCHITECTURE: 'architecture',
+      UTILS: 'utils',
+    };
+
+    for (const [key, value] of Object.entries(categoryMap)) {
+      if (categoryName.includes(key)) {
+        return value;
+      }
+    }
+
+    return 'utils';
+  }
+
+  /**
+   * Предположение о файле на основе имени компонента
+   */
+  guessFileFromName(name) {
+    const fileName = name
+      .replace(/([A-Z])/g, '-$1')
+      .replace(/^-/, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-');
+
+    return `eap-analyzer/${fileName}.js`;
   }
 
   /**
@@ -18,6 +179,9 @@ class EAPDashboard {
 
     try {
       console.log('📊 Инициализация EAP Analyzer Dashboard...');
+
+      // СНАЧАЛА пытаемся загрузить live-отчет
+      await this.loadLatestReport();
 
       // Ждем загрузки данных с таймаутом
       let retries = 0;
@@ -46,16 +210,118 @@ class EAPDashboard {
       this.renderSummaryCards();
       this.renderComponentsList();
       this.renderTopComponents();
+      this.renderBottomComponents();
 
       // Инициализация графиков после проверки Chart.js
       await this.initializeChartsWhenReady();
 
       this.initialized = true;
       console.log('✅ Dashboard успешно инициализирован');
+
+      // Показываем индикатор если загружены live-данные
+      if (this.liveDataLoaded) {
+        this.showLiveDataIndicator();
+      }
     } catch (error) {
       console.error('❌ Ошибка инициализации dashboard:', error);
       this.showError('Ошибка загрузки дашборда: ' + error.message);
     }
+  }
+
+  /**
+   * Показывает индикатор live-данных
+   */
+  showLiveDataIndicator() {
+    const indicator = document.createElement('div');
+    indicator.className = 'alert alert-success d-flex align-items-center mb-3';
+    indicator.innerHTML = `
+      <i class="bi bi-broadcast me-2"></i>
+      <div>
+        <strong>Live-анализ активен!</strong>
+        Данные обновлены на основе реального состояния проекта.
+        <button class="btn btn-link btn-sm p-0 ms-2" onclick="this.parentElement.parentElement.remove()">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
+    `;
+
+    const container = document.querySelector('.container-fluid');
+    if (container && container.firstElementChild) {
+      container.insertBefore(indicator, container.firstElementChild);
+    }
+  }
+
+  /**
+   * Ручное обновление live-данных
+   */
+  async refreshLiveData() {
+    const btn = document.getElementById('live-update-btn');
+    if (btn) {
+      btn.disabled = true;
+      btn.innerHTML =
+        '<i class="bi bi-arrow-clockwise spinner-border spinner-border-sm"></i> Обновление...';
+    }
+
+    try {
+      const success = await this.loadLatestReport();
+
+      if (success) {
+        // Обновляем компоненты данными
+        this.componentsData = window.EAP_DATA.components;
+        this.calculateStatistics();
+
+        // Перерисовываем интерфейс
+        this.renderSummaryCards();
+        this.renderComponentsList();
+        this.renderTopComponents();
+        this.renderBottomComponents();
+
+        // Обновляем графики если они есть
+        if (this.chartsManager) {
+          this.chartsManager.updateCharts();
+        }
+
+        // Показываем уведомление об успехе
+        this.showNotification('✅ Данные успешно обновлены!', 'success');
+
+        // Обновляем дату в header
+        document.getElementById('last-update').textContent = new Date().toLocaleDateString('ru-RU');
+      } else {
+        this.showNotification('⚠️ Live-отчет не найден. Сгенерируйте его сначала.', 'warning');
+      }
+    } catch (error) {
+      console.error('Ошибка обновления данных:', error);
+      this.showNotification('❌ Ошибка при обновлении данных', 'danger');
+    }
+
+    // Восстанавливаем кнопку
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML =
+        '<i class="bi bi-arrow-clockwise"></i> <span class="d-none d-md-inline">Live Update</span>';
+    }
+  }
+
+  /**
+   * Показать уведомление
+   */
+  showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+    notification.style.cssText = 'top: 20px; right: 20px; z-index: 1050; min-width: 300px;';
+    notification.innerHTML = `
+      ${message}
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    `;
+
+    document.body.appendChild(notification);
+
+    // Автоматическое удаление через 5 секунд
+    setTimeout(() => {
+      if (notification.parentNode) {
+        notification.remove();
+      }
+    }, 5000);
   }
 
   /**
@@ -205,6 +471,37 @@ class EAPDashboard {
     if (loadFileBtn) {
       loadFileBtn.addEventListener('change', e => this.loadFile(e));
     }
+
+    // Кнопки сортировки для детального списка
+    const sortByName = document.getElementById('sort-by-name');
+    const sortByReadiness = document.getElementById('sort-by-readiness');
+    const sortByCategory = document.getElementById('sort-by-category');
+
+    if (sortByName) {
+      sortByName.addEventListener('click', () => this.setSortMode('name'));
+    }
+    if (sortByReadiness) {
+      sortByReadiness.addEventListener('click', () => this.setSortMode('readiness'));
+    }
+    if (sortByCategory) {
+      sortByCategory.addEventListener('click', () => this.setSortMode('category'));
+    }
+  }
+
+  /**
+   * Установка режима сортировки
+   */
+  setSortMode(mode) {
+    // Обновляем активные кнопки
+    document
+      .querySelectorAll('#sort-by-name, #sort-by-readiness, #sort-by-category')
+      .forEach(btn => {
+        btn.classList.remove('active');
+      });
+    document.getElementById(`sort-by-${mode}`).classList.add('active');
+
+    this.sortMode = mode;
+    this.renderComponentsList();
   }
 
   /**
@@ -333,72 +630,142 @@ class EAPDashboard {
    * Отрисовка списка компонентов
    */
   renderComponentsList() {
-    const container = document.getElementById('components-list');
+    const container = document.getElementById('components-table-body');
+    const countContainer = document.getElementById('total-components-count');
     if (!container) return;
 
-    const filteredComponents = this.getFilteredComponents();
+    // Получаем все компоненты и сортируем их по выбранному режиму
+    const allComponents = Object.values(this.componentsData);
+    let sortedComponents = [];
 
-    if (filteredComponents.length === 0) {
+    switch (this.sortMode) {
+      case 'name':
+        // Сортировка по названию
+        sortedComponents = [...allComponents].sort((a, b) => a.name.localeCompare(b.name));
+        break;
+
+      case 'readiness': {
+        // Сортировка по готовности (по убыванию)
+        sortedComponents = [...allComponents].sort((a, b) => {
+          const overallA = (a.logic + a.functionality) / 2;
+          const overallB = (b.logic + b.functionality) / 2;
+          return overallB - overallA;
+        });
+        break;
+      }
+
+      case 'category':
+      default: {
+        // Группировка по категориям для логической сортировки, но визуально без группировки
+        const categoryOrder = [
+          'testing',
+          'security',
+          'performance',
+          'docker',
+          'dependencies',
+          'logging',
+          'cicd',
+          'codequality',
+          'core',
+          'ai',
+          'architecture',
+          'utils',
+        ];
+
+        // Сначала добавляем компоненты в порядке категорий
+        categoryOrder.forEach(category => {
+          const categoryComponents = allComponents.filter(comp => comp.category === category);
+          // Внутри категории сортируем по названию
+          categoryComponents.sort((a, b) => a.name.localeCompare(b.name));
+          sortedComponents.push(...categoryComponents);
+        });
+
+        // Добавляем оставшиеся компоненты, которые не попали в основные категории
+        const remainingComponents = allComponents.filter(
+          comp => !categoryOrder.includes(comp.category)
+        );
+        remainingComponents.sort((a, b) => a.name.localeCompare(b.name));
+        sortedComponents.push(...remainingComponents);
+        break;
+      }
+    }
+
+    // Обновляем счетчик
+    if (countContainer) {
+      countContainer.textContent = sortedComponents.length;
+    }
+
+    if (sortedComponents.length === 0) {
       container.innerHTML = `
-                <div class="text-center py-5">
-                    <h5 class="text-muted">Компоненты не найдены</h5>
-                    <p class="text-muted">Попробуйте изменить фильтры или поисковый запрос</p>
-                </div>
+                <tr>
+                    <td colspan="6" class="text-center py-5">
+                        <h5 class="text-muted">Компоненты не найдены</h5>
+                    </td>
+                </tr>
             `;
       return;
     }
 
     let html = '';
-    filteredComponents.forEach((component, index) => {
-      const overall = ((component.logic + component.functionality) / 2).toFixed(1);
-      const statusClass = this.getStatusClass(overall);
+    sortedComponents.forEach(component => {
       const categoryInfo = window.EAP_DATA?.categories[component.category] || {
         name: component.category,
         color: '#6c757d',
+        icon: 'bi-gear',
       };
 
+      // Получаем имя файла без пути
+      const fileName = component.file ? component.file.split('/').pop() : 'Файл не указан';
+
+      // Определяем цвет прогресс-бара для логики
+      let logicClass = 'bg-danger';
+      if (component.logic >= 90) logicClass = 'bg-success';
+      else if (component.logic >= 80) logicClass = 'bg-info';
+      else if (component.logic >= 70) logicClass = 'bg-warning';
+
+      // Определяем цвет прогресс-бара для функциональности
+      let funcClass = 'bg-danger';
+      if (component.functionality >= 90) funcClass = 'bg-success';
+      else if (component.functionality >= 80) funcClass = 'bg-info';
+      else if (component.functionality >= 70) funcClass = 'bg-warning';
+
       html += `
-                <div class="component-card border rounded-lg p-3 mb-3" data-component="${component.name}">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <h6 class="mb-1 fw-bold">${component.name}</h6>
-                        <span class="badge bg-${statusClass} ms-2">${overall}%</span>
-                    </div>
-
-                    <div class="mb-2">
-                        <span class="badge" style="background-color: ${categoryInfo.color}; color: white;">
-                            ${categoryInfo.name}
-                        </span>
-                        <small class="text-muted ms-2">${component.file || 'Не указан файл'}</small>
-                    </div>
-
-                    <p class="text-muted small mb-3">${component.description || 'Описание отсутствует'}</p>
-
-                    <div class="row mb-2">
-                        <div class="col-6">
-                            <small class="text-muted">Логика</small>
-                            <div class="progress" style="height: 6px;">
-                                <div class="progress-bar bg-primary" style="width: ${component.logic}%"></div>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <i class="${categoryInfo.icon} me-2" style="color: ${categoryInfo.color}"></i>
+                            <div>
+                                <div class="fw-bold">${component.name}</div>
+                                <small class="text-muted">${categoryInfo.name}</small>
                             </div>
-                            <small>${component.logic}%</small>
                         </div>
-                        <div class="col-6">
-                            <small class="text-muted">Функциональность</small>
-                            <div class="progress" style="height: 6px;">
-                                <div class="progress-bar bg-success" style="width: ${component.functionality}%"></div>
+                    </td>
+                    <td>
+                        <code class="small">${fileName}</code>
+                    </td>
+                    <td>
+                        <span class="small">${component.description || 'Описание отсутствует'}</span>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="progress me-2 flex-grow-1" style="height: 8px;">
+                                <div class="progress-bar ${logicClass}" style="width: ${component.logic}%"></div>
                             </div>
-                            <small>${component.functionality}%</small>
+                            <span class="small fw-bold">${component.logic}%</span>
                         </div>
-                    </div>
-
-                    <div class="d-flex justify-content-between align-items-center">
-                        <small class="text-muted">
-                            ${component.tests ? `Тесты: ${component.tests}` : 'Тестов нет'}
-                        </small>
-                        <button class="btn btn-sm btn-outline-primary" onclick="dashboard.showComponentDetails('${component.name}')">
-                            Детали
-                        </button>
-                    </div>
-                </div>
+                    </td>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <div class="progress me-2 flex-grow-1" style="height: 8px;">
+                                <div class="progress-bar ${funcClass}" style="width: ${component.functionality}%"></div>
+                            </div>
+                            <span class="small fw-bold">${component.functionality}%</span>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-secondary">${component.tests || '0'}</span>
+                    </td>
+                </tr>
             `;
     });
 
@@ -409,10 +776,10 @@ class EAPDashboard {
    * Отрисовка топ компонентов
    */
   renderTopComponents() {
-    const container = document.getElementById('top-components');
+    const container = document.getElementById('top-components-list');
     if (!container || !window.EAP_DATA?.utils) return;
 
-    const topComponents = window.EAP_DATA.utils.getTopComponents(5);
+    const topComponents = window.EAP_DATA.utils.getTopComponents(10);
 
     let html = '';
     topComponents.forEach((component, index) => {
@@ -420,19 +787,54 @@ class EAPDashboard {
       const medal = index < 3 ? ['🥇', '🥈', '🥉'][index] : `${index + 1}.`;
 
       html += `
-                <div class="d-flex justify-content-between align-items-center py-2 border-bottom">
-                    <div>
-                        <span class="me-2">${medal}</span>
-                        <strong>${component.name}</strong>
+                <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
+                    <div class="flex-grow-1 me-2">
+                        <span class="me-1 small">${medal}</span>
+                        <small class="fw-bold">${component.name}</small>
                         <br>
-                        <small class="text-muted">${component.category}</small>
+                        <small class="text-muted" style="font-size: 0.75rem;">${component.category}</small>
                     </div>
-                    <span class="badge bg-success">${overall}%</span>
+                    <span class="badge bg-success small">${overall}%</span>
                 </div>
             `;
     });
 
-    container.innerHTML = html || '<p class="text-muted">Нет данных</p>';
+    container.innerHTML = html || '<p class="text-muted small">Нет данных</p>';
+  }
+
+  /**
+   * Отрисовка худших компонентов (нуждающихся в доработке)
+   */
+  renderBottomComponents() {
+    const container = document.getElementById('bottom-components-list');
+    if (!container || !window.EAP_DATA?.utils) return;
+
+    const bottomComponents = window.EAP_DATA.utils.getBottomComponents(10);
+
+    let html = '';
+    bottomComponents.forEach((component, index) => {
+      const overall = ((component.logic + component.functionality) / 2).toFixed(1);
+      const priority = index < 3 ? ['🚨', '⚠️', '🔧'][index] : `${index + 1}.`;
+
+      // Определяем цвет бейджа на основе общего рейтинга
+      let badgeClass = 'bg-danger';
+      if (overall >= 70) badgeClass = 'bg-warning';
+      if (overall >= 60) badgeClass = 'bg-secondary';
+
+      html += `
+                <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-light">
+                    <div class="flex-grow-1 me-2">
+                        <span class="me-1 small">${priority}</span>
+                        <small class="fw-bold">${component.name}</small>
+                        <br>
+                        <small class="text-muted" style="font-size: 0.75rem;">${component.category}</small>
+                    </div>
+                    <span class="badge ${badgeClass} small">${overall}%</span>
+                </div>
+            `;
+    });
+
+    container.innerHTML = html || '<p class="text-muted small">Нет данных</p>';
   }
 
   /**
@@ -613,6 +1015,7 @@ class EAPDashboard {
       this.renderSummaryCards();
       this.renderComponentsList();
       this.renderTopComponents();
+      this.renderBottomComponents();
 
       if (window.EAPCharts) {
         window.EAPCharts.updateAllCharts();

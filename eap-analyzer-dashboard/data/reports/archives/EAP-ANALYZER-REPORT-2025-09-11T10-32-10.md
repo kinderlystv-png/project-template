@@ -335,7 +335,7 @@ _Приоритет: КРИТИЧЕСКИЙ | Компонентов: 2776_
 - **Готовность логики:** 92%
 - **Функциональность:** 84%
 - **Файл:** `node_modules\.pnpm\@typescript-eslint+types@6.21.0\node_modules\@typescript-eslint\types\dist\generated\ast-spec.d.ts`
-- **Описание:** ********************\*\*\********************* DO NOT MODIFY THIS FILE MANUALLY \*
+- **Описание:** ********\*\*\*\*********\*\*\*********\*\*\*\********* DO NOT MODIFY THIS FILE MANUALLY \*
 - **Строк кода:** 1929
 - **Функций:** 20
 
@@ -9830,7 +9830,7 @@ _Приоритет: КРИТИЧЕСКИЙ | Компонентов: 2776_
 - **Готовность логики:** 35%
 - **Функциональность:** 28%
 - **Файл:** `node_modules\.pnpm\@typescript-eslint+types@6.21.0\node_modules\@typescript-eslint\types\dist\generated\ast-spec.js`
-- **Описание:** ********************\*\*\********************* DO NOT MODIFY THIS FILE MANUALLY \*
+- **Описание:** ********\*\*\*\*********\*\*\*********\*\*\*\********* DO NOT MODIFY THIS FILE MANUALLY \*
 - **Строк кода:** 201
 - **Функций:** 0
 

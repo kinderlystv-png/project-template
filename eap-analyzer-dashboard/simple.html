@@ -1,195 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EAP Analyzer Dashboard</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">
-                <i class="bi bi-bar-chart-line"></i>
-                EAP Analyzer Dashboard
-            </a>
-            <div class="navbar-nav ms-auto">
-                <span class="navbar-text me-3">
-                    <small class="text-muted">Обновить данные:</small>
-                    <code class="bg-dark text-warning px-2 py-1 rounded ms-1"
-                          style="cursor: pointer; user-select: all;"
-                          onclick="copyToClipboard('node eap-analyzer-dashboard\\generate-report.cjs')"
-                          title="Нажмите чтобы скопировать">
-                        node eap-analyzer-dashboard\generate-report.cjs
-                    </code>
-                </span>
-                <span class="navbar-text" id="last-update"></span>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="#">
+          <i class="bi bi-bar-chart-line"></i>
+          EAP Analyzer Dashboard
+        </a>
+        <div class="navbar-nav ms-auto">
+          <span class="navbar-text me-3">
+            <small class="text-muted">Обновить данные:</small>
+            <code
+              class="bg-dark text-warning px-2 py-1 rounded ms-1"
+              style="cursor: pointer; user-select: all"
+              onclick="copyToClipboard('node live-generator.cjs')"
+              title="Нажмите чтобы скопировать"
+            >
+              node live-generator.cjs
+            </code>
+          </span>
+          <span class="navbar-text" id="last-update"></span>
         </div>
+      </div>
     </nav>
 
     <!-- Main Content -->
     <div class="container-fluid py-4">
-        <!-- Summary Cards -->
-        <div class="row mb-4" id="summary-cards">
-            <!-- Cards will be populated by JavaScript -->
-        </div>
+      <!-- Summary Cards -->
+      <div class="row mb-4" id="summary-cards">
+        <!-- Cards will be populated by JavaScript -->
+      </div>
 
-        <!-- Charts Section -->
-        <div class="row mb-4">
-            <div class="col-lg-8">
-                <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Готовность по категориям</h5>
-                        <div class="btn-group btn-group-sm" role="group">
-                            <input type="radio" class="btn-check" name="chart-type" id="bar-chart" checked>
-                            <label class="btn btn-outline-primary" for="bar-chart">Столбцы</label>
-                            <input type="radio" class="btn-check" name="chart-type" id="line-chart">
-                            <label class="btn btn-outline-primary" for="line-chart">Линии</label>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="categories-chart" height="100"></canvas>
-                    </div>
-                </div>
+      <!-- Charts Section -->
+      <div class="row mb-4">
+        <div class="col-lg-8">
+          <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="mb-0">Готовность по категориям</h5>
+              <div class="btn-group btn-group-sm" role="group">
+                <input type="radio" class="btn-check" name="chart-type" id="bar-chart" checked />
+                <label class="btn btn-outline-primary" for="bar-chart">Столбцы</label>
+                <input type="radio" class="btn-check" name="chart-type" id="line-chart" />
+                <label class="btn btn-outline-primary" for="line-chart">Линии</label>
+              </div>
             </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Динамика развития</h5>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="timeline-chart" height="150"></canvas>
-                    </div>
-                </div>
+            <div class="card-body">
+              <canvas id="categories-chart" height="100"></canvas>
             </div>
+          </div>
         </div>
+        <div class="col-lg-4">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Динамика развития</h5>
+            </div>
+            <div class="card-body">
+              <canvas id="timeline-chart" height="150"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <!-- Components List -->
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="mb-0">Компоненты системы</h5>
-                    </div>
-                    <div class="card-body" id="components-list">
-                        <!-- Components will be populated by JavaScript -->
-                    </div>
-                </div>
+      <!-- Components List -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="mb-0">Компоненты системы</h5>
             </div>
+            <div class="card-body" id="components-list">
+              <!-- Components will be populated by JavaScript -->
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <script src="js/components.js"></script>
-    
+
     <!-- Simple Dashboard Script -->
     <script>
-        console.log('🚀 Инициализация простого dashboard...');
-        
-        // Проверяем доступность библиотек
-        console.log('Chart.js доступен:', typeof Chart !== 'undefined');
-        console.log('EAP_DATA доступен:', typeof window.EAP_DATA !== 'undefined');
-        
-        if (window.EAP_DATA) {
-            console.log('Категории:', Object.keys(window.EAP_DATA.categories));
-            console.log('Компоненты:', Object.keys(window.EAP_DATA.components));
+      console.log('🚀 Инициализация простого dashboard...');
+
+      // Проверяем доступность библиотек
+      console.log('Chart.js доступен:', typeof Chart !== 'undefined');
+      console.log('EAP_DATA доступен:', typeof window.EAP_DATA !== 'undefined');
+
+      if (window.EAP_DATA) {
+        console.log('Категории:', Object.keys(window.EAP_DATA.categories));
+        console.log('Компоненты:', Object.keys(window.EAP_DATA.components));
+      }
+
+      // Простая функция создания графика
+      function createSimpleChart() {
+        if (typeof Chart === 'undefined') {
+          console.error('Chart.js не загружен');
+          return;
         }
-        
-        // Простая функция создания графика
-        function createSimpleChart() {
-            if (typeof Chart === 'undefined') {
-                console.error('Chart.js не загружен');
-                return;
-            }
-            
-            const ctx = document.getElementById('categories-chart');
-            if (!ctx) {
-                console.error('Canvas не найден');
-                return;
-            }
-            
-            try {
-                // Подготавливаем данные
-                const categories = ['Testing', 'Security', 'Performance', 'Docker', 'Core', 'AI'];
-                const logicData = [90, 85, 75, 70, 80, 88];
-                const funcData = [85, 80, 73, 68, 75, 85];
-                
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: categories,
-                        datasets: [
-                            {
-                                label: 'Логика',
-                                data: logicData,
-                                backgroundColor: 'rgba(102, 126, 234, 0.8)',
-                                borderColor: 'rgba(102, 126, 234, 1)',
-                                borderWidth: 2
-                            },
-                            {
-                                label: 'Функциональность',
-                                data: funcData,
-                                backgroundColor: 'rgba(245, 87, 108, 0.8)',
-                                borderColor: 'rgba(245, 87, 108, 1)',
-                                borderWidth: 2
-                            }
-                        ]
+
+        const ctx = document.getElementById('categories-chart');
+        if (!ctx) {
+          console.error('Canvas не найден');
+          return;
+        }
+
+        try {
+          // Подготавливаем данные
+          const categories = ['Testing', 'Security', 'Performance', 'Docker', 'Core', 'AI'];
+          const logicData = [90, 85, 75, 70, 80, 88];
+          const funcData = [85, 80, 73, 68, 75, 85];
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: categories,
+              datasets: [
+                {
+                  label: 'Логика',
+                  data: logicData,
+                  backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                  borderColor: 'rgba(102, 126, 234, 1)',
+                  borderWidth: 2,
+                },
+                {
+                  label: 'Функциональность',
+                  data: funcData,
+                  backgroundColor: 'rgba(245, 87, 108, 0.8)',
+                  borderColor: 'rgba(245, 87, 108, 1)',
+                  borderWidth: 2,
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Готовность компонентов EAP Analyzer',
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  max: 100,
+                  ticks: {
+                    callback: function (value) {
+                      return value + '%';
                     },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Готовность компонентов EAP Analyzer'
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100,
-                                ticks: {
-                                    callback: function(value) {
-                                        return value + '%';
-                                    }
-                                }
-                            }
-                        }
-                    }
-                });
-                
-                console.log('✅ График создан успешно!');
-            } catch (error) {
-                console.error('❌ Ошибка создания графика:', error);
-            }
+                  },
+                },
+              },
+            },
+          });
+
+          console.log('✅ График создан успешно!');
+        } catch (error) {
+          console.error('❌ Ошибка создания графика:', error);
         }
-        
-        // Создание карточек статистики
-        function createSummaryCards() {
-            const summaryContainer = document.getElementById('summary-cards');
-            if (!summaryContainer) return;
-            
-            const stats = [
-                { title: 'Всего компонентов', value: '8', icon: 'bi-layers', color: 'primary' },
-                { title: 'Средняя логика', value: '81%', icon: 'bi-gear', color: 'success' },
-                { title: 'Функциональность', value: '77%', icon: 'bi-check-circle', color: 'info' },
-                { title: 'Общий прогресс', value: '79%', icon: 'bi-bar-chart', color: 'warning' }
-            ];
-            
-            stats.forEach(stat => {
-                const card = `
+      }
+
+      // Создание карточек статистики
+      function createSummaryCards() {
+        const summaryContainer = document.getElementById('summary-cards');
+        if (!summaryContainer) return;
+
+        const stats = [
+          { title: 'Всего компонентов', value: '8', icon: 'bi-layers', color: 'primary' },
+          { title: 'Средняя логика', value: '81%', icon: 'bi-gear', color: 'success' },
+          { title: 'Функциональность', value: '77%', icon: 'bi-check-circle', color: 'info' },
+          { title: 'Общий прогресс', value: '79%', icon: 'bi-bar-chart', color: 'warning' },
+        ];
+
+        stats.forEach(stat => {
+          const card = `
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="card border-0 shadow-sm h-100">
                             <div class="card-body text-center">
                                 <div class="d-flex justify-content-center align-items-center mb-3">
-                                    <div class="bg-${stat.color} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center" 
+                                    <div class="bg-${stat.color} bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center"
                                          style="width: 60px; height: 60px;">
                                         <i class="bi ${stat.icon} text-${stat.color} fs-4"></i>
                                     </div>
@@ -200,31 +208,31 @@
                         </div>
                     </div>
                 `;
-                summaryContainer.innerHTML += card;
-            });
-        }
-        
-        // Создание списка компонентов
-        function createComponentsList() {
-            const listContainer = document.getElementById('components-list');
-            if (!listContainer) return;
-            
-            const components = [
-                { name: 'UnifiedTestingAnalyzer', category: 'Testing', logic: 90, functionality: 85 },
-                { name: 'EnhancedJestChecker', category: 'Testing', logic: 95, functionality: 92 },
-                { name: 'AdvancedSecurityAnalyzer', category: 'Security', logic: 92, functionality: 88 },
-                { name: 'PerformanceChecker', category: 'Performance', logic: 85, functionality: 80 },
-                { name: 'DockerAnalyzer', category: 'Docker', logic: 82, functionality: 78 },
-                { name: 'AIInsights', category: 'AI', logic: 88, functionality: 85 }
-            ];
-            
-            let html = '<div class="row">';
-            
-            components.forEach(comp => {
-                const avgScore = Math.round((comp.logic + comp.functionality) / 2);
-                const badgeColor = avgScore >= 90 ? 'success' : avgScore >= 80 ? 'warning' : 'danger';
-                
-                html += `
+          summaryContainer.innerHTML += card;
+        });
+      }
+
+      // Создание списка компонентов
+      function createComponentsList() {
+        const listContainer = document.getElementById('components-list');
+        if (!listContainer) return;
+
+        const components = [
+          { name: 'UnifiedTestingAnalyzer', category: 'Testing', logic: 90, functionality: 85 },
+          { name: 'EnhancedJestChecker', category: 'Testing', logic: 95, functionality: 92 },
+          { name: 'AdvancedSecurityAnalyzer', category: 'Security', logic: 92, functionality: 88 },
+          { name: 'PerformanceChecker', category: 'Performance', logic: 85, functionality: 80 },
+          { name: 'DockerAnalyzer', category: 'Docker', logic: 82, functionality: 78 },
+          { name: 'AIInsights', category: 'AI', logic: 88, functionality: 85 },
+        ];
+
+        let html = '<div class="row">';
+
+        components.forEach(comp => {
+          const avgScore = Math.round((comp.logic + comp.functionality) / 2);
+          const badgeColor = avgScore >= 90 ? 'success' : avgScore >= 80 ? 'warning' : 'danger';
+
+          html += `
                     <div class="col-lg-4 col-md-6 mb-3">
                         <div class="card border-0 shadow-sm">
                             <div class="card-body">
@@ -247,47 +255,47 @@
                         </div>
                     </div>
                 `;
-            });
-            
-            html += '</div>';
-            listContainer.innerHTML = html;
-        }
-        
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                const toast = document.createElement('div');
-                toast.className = 'position-fixed top-0 end-0 p-3';
-                toast.style.zIndex = '9999';
-                toast.innerHTML = `
+        });
+
+        html += '</div>';
+        listContainer.innerHTML = html;
+      }
+
+      // Copy to clipboard function
+      function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(function () {
+          const toast = document.createElement('div');
+          toast.className = 'position-fixed top-0 end-0 p-3';
+          toast.style.zIndex = '9999';
+          toast.innerHTML = `
                     <div class="toast show" role="alert">
                         <div class="toast-body bg-success text-white rounded">
                             <i class="bi bi-check-circle"></i> Команда скопирована!
                         </div>
                     </div>
                 `;
-                document.body.appendChild(toast);
-                setTimeout(() => toast.remove(), 3000);
-            });
-        }
-        
-        // Инициализация при загрузке
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                console.log('🔧 Создание интерфейса...');
-                createSummaryCards();
-                createComponentsList();
-                createSimpleChart();
-                
-                // Обновляем время последнего обновления
-                const lastUpdateEl = document.getElementById('last-update');
-                if (lastUpdateEl) {
-                    lastUpdateEl.textContent = new Date().toLocaleString('ru-RU');
-                }
-                
-                console.log('✅ Dashboard готов!');
-            }, 200);
+          document.body.appendChild(toast);
+          setTimeout(() => toast.remove(), 3000);
         });
+      }
+
+      // Инициализация при загрузке
+      window.addEventListener('load', function () {
+        setTimeout(() => {
+          console.log('🔧 Создание интерфейса...');
+          createSummaryCards();
+          createComponentsList();
+          createSimpleChart();
+
+          // Обновляем время последнего обновления
+          const lastUpdateEl = document.getElementById('last-update');
+          if (lastUpdateEl) {
+            lastUpdateEl.textContent = new Date().toLocaleString('ru-RU');
+          }
+
+          console.log('✅ Dashboard готов!');
+        }, 200);
+      });
     </script>
-</body>
+  </body>
 </html>

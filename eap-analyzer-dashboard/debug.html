@@ -1,78 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EAP Dashboard - Debug Version</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+  <body>
     <div class="container-fluid p-4">
-        <h1>EAP Dashboard - Debug Version</h1>
-        <div id="debug-info"></div>
-        
-        <div class="row">
-            <div class="col-12">
-                <canvas id="categories-chart" height="100"></canvas>
-            </div>
+      <h1>EAP Dashboard - Debug Version</h1>
+      <div id="debug-info"></div>
+
+      <div class="row">
+        <div class="col-12">
+          <canvas id="categories-chart" height="100"></canvas>
         </div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <script src="js/components.js"></script>
-    
+
     <script>
-        const debugInfo = document.getElementById('debug-info');
-        
-        function addDebugMessage(message) {
-            const div = document.createElement('div');
-            div.className = 'alert alert-info';
-            div.textContent = message;
-            debugInfo.appendChild(div);
-            console.log(message);
+      const debugInfo = document.getElementById('debug-info');
+
+      function addDebugMessage(message) {
+        const div = document.createElement('div');
+        div.className = 'alert alert-info';
+        div.textContent = message;
+        debugInfo.appendChild(div);
+        console.log(message);
+      }
+
+      // Проверяем загрузку библиотек
+      addDebugMessage('Chart доступен: ' + (typeof Chart !== 'undefined'));
+      addDebugMessage('EAP_DATA доступен: ' + (typeof window.EAP_DATA !== 'undefined'));
+
+      if (window.EAP_DATA) {
+        addDebugMessage('Категории: ' + Object.keys(window.EAP_DATA.categories).length);
+        addDebugMessage('Компоненты: ' + Object.keys(window.EAP_DATA.components).length);
+      }
+
+      // Простой тест Chart.js
+      if (typeof Chart !== 'undefined') {
+        const ctx = document.getElementById('categories-chart');
+
+        try {
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Testing', 'Security', 'Performance'],
+              datasets: [
+                {
+                  label: 'Готовность %',
+                  data: [90, 85, 75],
+                  backgroundColor: ['#28a745', '#dc3545', '#ffc107'],
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                title: {
+                  display: true,
+                  text: 'Тест Chart.js',
+                },
+              },
+            },
+          });
+          addDebugMessage('✅ График создан успешно!');
+        } catch (error) {
+          addDebugMessage('❌ Ошибка создания графика: ' + error.message);
         }
-        
-        // Проверяем загрузку библиотек
-        addDebugMessage('Chart доступен: ' + (typeof Chart !== 'undefined'));
-        addDebugMessage('EAP_DATA доступен: ' + (typeof window.EAP_DATA !== 'undefined'));
-        
-        if (window.EAP_DATA) {
-            addDebugMessage('Категории: ' + Object.keys(window.EAP_DATA.categories).length);
-            addDebugMessage('Компоненты: ' + Object.keys(window.EAP_DATA.components).length);
-        }
-        
-        // Простой тест Chart.js
-        if (typeof Chart !== 'undefined') {
-            const ctx = document.getElementById('categories-chart');
-            
-            try {
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Testing', 'Security', 'Performance'],
-                        datasets: [{
-                            label: 'Готовность %',
-                            data: [90, 85, 75],
-                            backgroundColor: ['#28a745', '#dc3545', '#ffc107']
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: {
-                            title: {
-                                display: true,
-                                text: 'Тест Chart.js'
-                            }
-                        }
-                    }
-                });
-                addDebugMessage('✅ График создан успешно!');
-            } catch (error) {
-                addDebugMessage('❌ Ошибка создания графика: ' + error.message);
-            }
-        }
+      }
     </script>
-</body>
+  </body>
 </html>

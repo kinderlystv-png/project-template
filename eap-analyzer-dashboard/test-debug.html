@@ -1,96 +1,111 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EAP Dashboard Debug Test</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
-        .log { 
-            background: #f8f9fa; 
-            border: 1px solid #dee2e6; 
-            padding: 1rem; 
-            margin: 1rem 0; 
-            max-height: 400px;
-            overflow-y: auto;
-            font-family: monospace;
-            font-size: 12px;
-        }
-        .error { color: red; }
-        .success { color: green; }
-        .info { color: blue; }
+      .log {
+        background: #f8f9fa;
+        border: 1px solid #dee2e6;
+        padding: 1rem;
+        margin: 1rem 0;
+        max-height: 400px;
+        overflow-y: auto;
+        font-family: monospace;
+        font-size: 12px;
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+      .info {
+        color: blue;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container mt-4">
-        <h1>EAP Dashboard Debug Test</h1>
-        <button class="btn btn-primary" onclick="testChart()">Тест Chart.js</button>
-        <button class="btn btn-success" onclick="testComponents()">Тест Components</button>
-        <div id="log" class="log"></div>
-        <canvas id="chart" width="400" height="200"></canvas>
-        <pre id="data"></pre>
+      <h1>EAP Dashboard Debug Test</h1>
+      <button class="btn btn-primary" onclick="testChart()">Тест Chart.js</button>
+      <button class="btn btn-success" onclick="testComponents()">Тест Components</button>
+      <div id="log" class="log"></div>
+      <canvas id="chart" width="400" height="200"></canvas>
+      <pre id="data"></pre>
     </div>
 
     <script>
-        function log(msg, type = 'info') {
-            const div = document.getElementById('log');
-            div.innerHTML += `<div class="${type}">[${new Date().toLocaleTimeString()}] ${msg}</div>`;
-            div.scrollTop = div.scrollHeight;
-            console.log(msg);
+      function log(msg, type = 'info') {
+        const div = document.getElementById('log');
+        div.innerHTML += `<div class="${type}">[${new Date().toLocaleTimeString()}] ${msg}</div>`;
+        div.scrollTop = div.scrollHeight;
+        console.log(msg);
+      }
+
+      log('🚀 Debug начат');
+
+      // Загружаем Chart.js
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js';
+      script.onload = () => {
+        log('✅ Chart.js загружен', 'success');
+        log(`Chart доступен: ${typeof Chart !== 'undefined'}`, 'success');
+      };
+      script.onerror = () => log('❌ Chart.js ошибка', 'error');
+      document.head.appendChild(script);
+
+      function testChart() {
+        if (typeof Chart === 'undefined') {
+          log('❌ Chart не доступен', 'error');
+          return;
         }
 
-        log('🚀 Debug начат');
+        try {
+          const ctx = document.getElementById('chart').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['A', 'B'],
+              datasets: [
+                {
+                  data: [1, 2],
+                  backgroundColor: ['red', 'blue'],
+                },
+              ],
+            },
+          });
+          log('✅ График создан', 'success');
+        } catch (e) {
+          log(`❌ Ошибка графика: ${e.message}`, 'error');
+        }
+      }
 
-        // Загружаем Chart.js
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js';
-        script.onload = () => {
-            log('✅ Chart.js загружен', 'success');
-            log(`Chart доступен: ${typeof Chart !== 'undefined'}`, 'success');
+      function testComponents() {
+        const compScript = document.createElement('script');
+        compScript.src = 'js/components.js';
+        compScript.onload = () => {
+          log('✅ Components загружен', 'success');
+          if (window.EAP_DATA) {
+            const count = Object.keys(window.EAP_DATA.components || {}).length;
+            log(`✅ ${count} компонентов найдено`, 'success');
+            document.getElementById('data').textContent = JSON.stringify(
+              window.EAP_DATA.categories,
+              null,
+              2
+            );
+          } else {
+            log('❌ EAP_DATA не найден', 'error');
+          }
         };
-        script.onerror = () => log('❌ Chart.js ошибка', 'error');
-        document.head.appendChild(script);
-
-        function testChart() {
-            if (typeof Chart === 'undefined') {
-                log('❌ Chart не доступен', 'error');
-                return;
-            }
-            
-            try {
-                const ctx = document.getElementById('chart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['A', 'B'],
-                        datasets: [{
-                            data: [1, 2],
-                            backgroundColor: ['red', 'blue']
-                        }]
-                    }
-                });
-                log('✅ График создан', 'success');
-            } catch (e) {
-                log(`❌ Ошибка графика: ${e.message}`, 'error');
-            }
-        }
-
-        function testComponents() {
-            const compScript = document.createElement('script');
-            compScript.src = 'js/components.js';
-            compScript.onload = () => {
-                log('✅ Components загружен', 'success');
-                if (window.EAP_DATA) {
-                    const count = Object.keys(window.EAP_DATA.components || {}).length;
-                    log(`✅ ${count} компонентов найдено`, 'success');
-                    document.getElementById('data').textContent = JSON.stringify(window.EAP_DATA.categories, null, 2);
-                } else {
-                    log('❌ EAP_DATA не найден', 'error');
-                }
-            };
-            compScript.onerror = () => log('❌ Components ошибка', 'error');
-            document.head.appendChild(compScript);
-        }
+        compScript.onerror = () => log('❌ Components ошибка', 'error');
+        document.head.appendChild(compScript);
+      }
     </script>
-</body>
+  </body>
 </html>

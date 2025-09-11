@@ -490,7 +490,7 @@ class EAPReportGenerator {
 - **Средняя готовность логики:** ${statistics.avgLogic.toFixed(1)}%
 - **Средняя функциональность:** ${statistics.avgFunctionality.toFixed(1)}%
 - **Готовы к продакшену (>90%):** ${statistics.ready} компонентов
-- **В активной разработке (50-90%):** ${statistics.inProgress} компонентов  
+- **В активной разработке (50-90%):** ${statistics.inProgress} компонентов
 - **В планах (<50%):** ${statistics.planned} компонентов
 
 ---
