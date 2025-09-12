@@ -49,10 +49,5 @@
     "*.config.js",
     "src/lib/test-xss-vulnerable.js",
     "src/routes/test-xss-vulnerable.svelte"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
   ]
 }

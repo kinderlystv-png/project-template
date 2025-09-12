@@ -27,6 +27,7 @@ function analyzeProjectFiles(projectPath = '..') {
     ai: { totalLogic: 0, totalFunc: 0, count: 0, components: [] },
     architecture: { totalLogic: 0, totalFunc: 0, count: 0, components: [] },
     utils: { totalLogic: 0, totalFunc: 0, count: 0, components: [] },
+    other: { totalLogic: 0, totalFunc: 0, count: 0, components: [] },
   };
 
   console.log(`🔍 Анализ файлов в: ${path.resolve(projectPath)}`);
@@ -133,6 +134,52 @@ function analyzeProjectFiles(projectPath = '..') {
     }
   }
 
+  // Функция для определения demo/test/example компонентов
+  function isDemoOrExampleComponent(filename, filepath, content) {
+    const lowerPath = filepath.toLowerCase();
+    const lowerContent = content.toLowerCase();
+
+    // Path-based patterns для demo/test компонентов
+    const demoPatterns = [
+      'tests/components/', // TestButton.svelte и подобные
+      'examples/',
+      'demo/',
+      '.example.',
+      '.demo.',
+      'sample/',
+      'playground/',
+    ];
+
+    // Проверяем path patterns
+    for (const pattern of demoPatterns) {
+      if (lowerPath.includes(pattern)) {
+        return true;
+      }
+    }
+
+    // Проверяем comment markers (@demo, @example)
+    if (lowerContent.includes('@demo') || lowerContent.includes('@example')) {
+      return true;
+    }
+
+    // Специфичные файлы по названию (TestButton.svelte и подобные)
+    const demoFilePatterns = [
+      /^test.*\.(svelte|vue|jsx|tsx)$/i, // TestButton.svelte, TestComponent.jsx
+      /.*\.example\./i, // Button.example.js
+      /.*\.demo\./i, // Component.demo.tsx
+      /^demo.*\./i, // DemoButton.js
+      /^sample.*\./i, // SampleComponent.ts
+    ];
+
+    for (const pattern of demoFilePatterns) {
+      if (pattern.test(filename)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   // Анализ одного файла
   function analyzeFile(filename, filepath, content, stat) {
     try {
@@ -167,7 +214,10 @@ function analyzeProjectFiles(projectPath = '..') {
       const lowerPath = filepath.toLowerCase();
       const lowerContent = content.toLowerCase();
 
-      if (
+      // ПРИОРИТЕТ 1: Проверяем на demo/example компоненты ПЕРВЫМ (перед testing)
+      if (isDemoOrExampleComponent(filename, filepath, content)) {
+        category = 'other';
+      } else if (
         lowerPath.includes('test') ||
         lowerPath.includes('spec') ||
         filename.includes('.test.') ||
@@ -890,6 +940,7 @@ function getCategoryIcon(category) {
     ai: '🤖',
     architecture: '🏗️',
     utils: '🔧',
+    other: '📄',
   };
   return icons[category] || '📁';
 }
@@ -908,6 +959,7 @@ function getCategoryName(category) {
     ai: 'AI (Искусственный интеллект)',
     architecture: 'ARCHITECTURE (Архитектура)',
     utils: 'UTILS (Утилиты)',
+    other: 'OTHER (Остальное)',
   };
   return names[category] || category.toUpperCase();
 }
@@ -1111,6 +1163,7 @@ function getCategoryColor(key) {
     ai: '#e91e63',
     architecture: '#795548',
     utils: '#6c757d',
+    other: '#adb5bd',
   };
   return colors[key] || '#6c757d';
 }
@@ -1129,6 +1182,7 @@ function getCategoryDescription(key) {
     ai: 'ИИ и машинное обучение',
     architecture: 'Архитектурные решения',
     utils: 'Вспомогательные утилиты',
+    other: 'Demo, примеры и вспомогательные компоненты',
   };
   return descriptions[key] || 'Прочие компоненты';
 }
@@ -1184,6 +1238,12 @@ function classifyComponents(components) {
       file.endsWith('.nvmrc') ||
       file.endsWith('license') ||
       file.endsWith('readme') ||
+      // Простые вспомогательные скрипты (меньше 50 строк)
+      (comp.lines < 50 &&
+        (name.includes('setup') ||
+          name.includes('helper') ||
+          name.includes('util') ||
+          name.includes('config'))) ||
       // Тестовые компоненты (исключая анализаторы и их тесты)
       ((file.includes('/test/') ||
         file.includes('/spec/') ||
@@ -1204,42 +1264,98 @@ function classifyComponents(components) {
 
     // 2. Определяем анализаторы (компоненты, которые будут анализировать другие проекты)
     const isAnalyzer =
-      // Явные анализаторы
-      name.includes('analyzer') ||
-      name.includes('checker') ||
-      name.includes('evaluator') ||
-      name.includes('detector') ||
-      name.includes('inspector') ||
-      name.includes('validator') ||
-      // Компоненты анализа тестов (включаем их как анализаторы)
-      (name.includes('test') && (name.includes('coverage') || name.includes('quality'))) ||
-      (name.includes('e2e') && name.includes('check')) ||
-      // Чекеры качества и безопасности
-      name.includes('quality') ||
-      name.includes('security') ||
-      name.includes('performance') ||
-      // Адаптеры анализаторов (интегрируют внешние инструменты анализа)
-      (name.includes('adapter') &&
-        (name.includes('jest') ||
-          name.includes('playwright') ||
-          name.includes('cypress') ||
-          name.includes('lint'))) ||
-      // По описанию - если содержит слова анализа
-      desc.includes('анализир') ||
-      desc.includes('проверя') ||
-      desc.includes('оценива') ||
-      desc.includes('валидир') ||
-      desc.includes('контрол') ||
-      // Специальные компоненты архитектурного анализа
-      name.includes('debt') ||
-      name.includes('complexity') ||
-      name.includes('metrics') ||
-      // Категории, которые по определению являются анализаторами
-      comp.category === 'security' ||
-      comp.category === 'performance' ||
-      (comp.category === 'testing' && !name.includes('mock')) ||
-      // Тесты анализаторов (файлы *.test.ts в папке checkers)
-      (file.includes('/checkers/') && (file.includes('.test.') || file.includes('.spec.')));
+      // КРИТЕРИЙ 1: Явные анализаторы по названию
+      ((name.includes('analyzer') ||
+        name.includes('checker') ||
+        name.includes('evaluator') ||
+        name.includes('detector') ||
+        name.includes('inspector') ||
+        name.includes('validator')) &&
+        // ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА: исключаем простые тесты, setup, demo, утилиты
+        !name.includes('setup') &&
+        !name.includes('config') &&
+        !name.includes('mock') &&
+        !name.includes('demo') &&
+        !name.includes('test') && // Исключаем все тестовые файлы
+        !name.includes('cleanup') &&
+        !name.includes('reporter') && // Репортеры - это утилиты, не анализаторы
+        !name.includes('generator') && // Генераторы - это утилиты, не анализаторы
+        !name.includes('publisher') && // Публишеры - это утилиты
+        !name.includes('manager') && // Менеджеры - это утилиты
+        !name.includes('factory') && // Фабрики - это утилиты
+        !name.includes('loader') && // Загрузчики - это утилиты
+        !name.includes('builder') && // Строители - это утилиты
+        !file.includes('/test/') &&
+        !file.includes('/spec/') &&
+        !file.includes('/tests/') &&
+        !file.endsWith('.test.ts') &&
+        !file.endsWith('.test.js') &&
+        !file.endsWith('.test.mjs') &&
+        // КРИТЕРИЙ 2: Компоненты со сложной логикой анализа (больше 100 строк)
+        (comp.lines > 100 ||
+          // КРИТЕРИЙ 3: Высокие показатели готовности (реальные анализаторы должны быть качественными)
+          (comp.logic > 70 && comp.functionality > 60))) ||
+      // КРИТЕРИЙ 4: Специализированные анализаторы безопасности/производительности
+      (comp.category === 'security' &&
+        comp.lines > 50 &&
+        !name.includes('setup') &&
+        !name.includes('config') &&
+        !name.includes('demo') &&
+        !name.includes('reporter') &&
+        !name.includes('generator') &&
+        !name.includes('publisher') &&
+        !name.includes('manager') &&
+        !name.includes('factory') &&
+        !name.includes('loader')) ||
+      (comp.category === 'performance' &&
+        comp.lines > 50 &&
+        !name.includes('setup') &&
+        !name.includes('config') &&
+        !name.includes('demo') &&
+        !name.includes('reporter') &&
+        !name.includes('generator') &&
+        !name.includes('publisher') &&
+        !name.includes('manager') &&
+        !name.includes('factory') &&
+        !name.includes('loader')) ||
+      // КРИТЕРИЙ 5: Исключаем тестовые компоненты из категории testing
+      // (тесты НЕ должны быть анализаторами, даже если они большие)
+      false || // Отключаем этот критерий для testing категории
+      // КРИТЕРИЙ 6: По описанию - только с явными признаками анализа
+      (desc.includes('анализир') &&
+        comp.lines > 50 &&
+        !desc.includes('тест') &&
+        !desc.includes('demo') &&
+        !name.includes('reporter') &&
+        !name.includes('generator') &&
+        !name.includes('publisher')) ||
+      (desc.includes('проверя') &&
+        comp.lines > 50 &&
+        !desc.includes('простой') &&
+        !desc.includes('тест') &&
+        !name.includes('reporter') &&
+        !name.includes('generator')) ||
+      (desc.includes('оценива') &&
+        comp.lines > 50 &&
+        !desc.includes('тест') &&
+        !name.includes('reporter') &&
+        !name.includes('generator')) ||
+      // КРИТЕРИЙ 7: Специализированные метрики и debt анализаторы
+      (name.includes('debt') &&
+        comp.lines > 100 &&
+        !name.includes('test') &&
+        !name.includes('reporter') &&
+        !name.includes('generator')) ||
+      (name.includes('complexity') &&
+        comp.lines > 100 &&
+        !name.includes('test') &&
+        !name.includes('reporter') &&
+        !name.includes('generator')) ||
+      (name.includes('metrics') &&
+        comp.lines > 100 &&
+        !name.includes('test') &&
+        !name.includes('reporter') &&
+        !name.includes('generator'));
 
     if (isAnalyzer) {
       analyzers[id] = comp;

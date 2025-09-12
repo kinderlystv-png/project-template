@@ -3,10 +3,14 @@
  * Версия 2.0 - Улучшенная архитектура с утилитами и конфигурацией
  */
 
-import { BaseAnalyzer, AnalysisResult } from '../../core/analyzer.js';
-import { FileAnalysisUtils, FileAnalysisOptions } from './utils/file-analysis-utils.js';
-import { DebtMetricsCalculator, DebtCalculationConfig } from './utils/debt-metrics-calculator.js';
+import { BaseAnalyzer } from '../../core/analyzer.js';
+import type { AnalysisResult } from '../../core/analyzer.js';
+import { FileAnalysisUtils } from './utils/file-analysis-utils.js';
+import type { FileAnalysisOptions } from './utils/file-analysis-utils.js';
+import { DebtMetricsCalculator } from './utils/debt-metrics-calculator.js';
+import type { DebtCalculationConfig } from './utils/debt-metrics-calculator.js';
 import { ErrorHandler } from './utils/error-handler.js';
+import type { DebtCategory } from '../../types/index.js';
 
 export interface SimpleTechnicalDebtAnalyzerConfig {
   fileAnalysis: Partial<FileAnalysisOptions>;
@@ -18,7 +22,7 @@ export interface SimpleTechnicalDebtAnalyzerConfig {
 export interface TechnicalDebtData {
   totalDebt: number;
   totalCost: number;
-  categories: any[];
+  categories: DebtCategory[];
   monthlyInterest: number;
   roiAnalysis: {
     investmentRequired: number;

@@ -1,6 +1,6 @@
 // EAP Analyzer Dashboard Data
 // Автоматически сгенерирован live-generator.cjs
-// Дата генерации: 12.09.2025, 11:30:15
+// Дата генерации: 12.09.2025, 10:34:28
 
 window.EAP_DATA = {
   components: {
@@ -778,7 +778,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "validate": {
     "name": "validate",
@@ -1144,7 +1144,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "fullsystemevaluationts": {
     "name": "fullsystemevaluationts",
@@ -1339,7 +1339,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "pnpmlockyaml": {
     "name": "pnpmlockyaml",
@@ -2290,7 +2290,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "DependenciesSecurityChecker": {
     "name": "DependenciesSecurityChecker",
@@ -2353,7 +2353,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "DependencyFixTemplates": {
     "name": "DependencyFixTemplates",
@@ -2591,7 +2591,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "JestChecker": {
     "name": "JestChecker",
@@ -2700,7 +2700,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "VitestCheckerAdapter": {
     "name": "VitestCheckerAdapter",
@@ -2721,7 +2721,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "constantsts": {
     "name": "constantsts",
@@ -2807,7 +2807,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testcoveragecleants": {
     "name": "testcoveragecleants",
@@ -2828,7 +2828,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testplaywrightcleants": {
     "name": "testplaywrightcleants",
@@ -2870,7 +2870,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TestingTypests": {
     "name": "TestingTypests",
@@ -3218,7 +3218,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "UltimateReportGenerator": {
     "name": "UltimateReportGenerator",
@@ -3241,7 +3241,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "EAPAnalyzerDemo": {
     "name": "EAPAnalyzerDemo",
@@ -3262,7 +3262,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "demoreportingts": {
     "name": "demoreportingts",
@@ -3699,7 +3699,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "basicanalyzer": {
     "name": "basicanalyzer",
@@ -4001,101 +4001,15 @@ window.EAP_DATA = {
   },
   "SimpleTechnicalDebtAnalyzer": {
     "name": "SimpleTechnicalDebtAnalyzer",
-    "category": "codequality",
-    "logic": 95,
-    "functionality": 86,
-    "file": "eap-analyzer/src/modules/technical-debt/simple-analyzer.ts",
-    "description": "Упрощенный анализатор технического долга для интеграции\r   Версия 2.0 - Улучшенная архитектура с ути",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 6285,
-    "lines": 210,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
-  },
-  "DebtMetricsCalculator": {
-    "name": "DebtMetricsCalculator",
     "category": "core",
-    "logic": 95,
-    "functionality": 83,
-    "file": "eap-analyzer/src/modules/technical-debt/utils/debt-metrics-calculator.ts",
-    "description": "Конфигурируемый калькулятор метрик технического долга",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 8447,
-    "lines": 275,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "analyzer"
-  },
-  "ErrorHandler": {
-    "name": "ErrorHandler",
-    "category": "core",
-    "logic": 77,
-    "functionality": 83,
-    "file": "src/lib/errors/handler.ts",
-    "description": "Глобальный экземпляр обработчика ошибок",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-08",
-    "fileSize": 8007,
-    "lines": 262,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
-  },
-  "FileAnalysisUtils": {
-    "name": "FileAnalysisUtils",
-    "category": "core",
-    "logic": 71,
-    "functionality": 73,
-    "file": "eap-analyzer/src/modules/technical-debt/utils/file-analysis-utils.ts",
-    "description": "Утилиты для работы с файлами в анализаторах технического долга",
-    "tests": "2 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 5197,
-    "lines": 170,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
-  },
-  "debtmetricscalculatortestts": {
-    "name": "debtmetricscalculatortestts",
-    "category": "testing",
-    "logic": 54,
+    "logic": 53,
     "functionality": 42,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/debt-metrics-calculator.test.ts",
-    "description": "/",
-    "tests": "28 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 14717,
-    "lines": 459,
+    "file": "eap-analyzer/src/modules/technical-debt/simple-analyzer.ts",
+    "description": "Упрощенный анализатор технического долга для интеграции",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-09",
+    "fileSize": 5178,
+    "lines": 160,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
       "Возможны улучшения архитектуры"
@@ -4105,74 +4019,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "other"
-  },
-  "fileanalysisutilstestts": {
-    "name": "fileanalysisutilstestts",
-    "category": "testing",
-    "logic": 71,
-    "functionality": 73,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/file-analysis-utils.test.ts",
-    "description": "Тесты для FileAnalysisUtils",
-    "tests": "11 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 4822,
-    "lines": 146,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "other"
-  },
-  "simpleanalyzertestts": {
-    "name": "simpleanalyzertestts",
-    "category": "testing",
-    "logic": 75,
-    "functionality": 79,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/simple-analyzer.test.ts",
-    "description": "Comprehensive Test Suite для SimpleTechnicalDebtAnalyzer v2.0",
-    "tests": "28 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 14942,
-    "lines": 460,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
-  },
-  "testanalyzermanualts": {
-    "name": "testanalyzermanualts",
-    "category": "testing",
-    "logic": 53,
-    "functionality": 41,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/test-analyzer-manual.ts",
-    "description": "Test script for SimpleTechnicalDebtAnalyzer v2.0",
-    "tests": "1 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 2391,
-    "lines": 61,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "ProcessIsolatedAnalyzer": {
     "name": "ProcessIsolatedAnalyzer",
@@ -4237,7 +4084,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "JSONReporter": {
     "name": "JSONReporter",
@@ -4279,7 +4126,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "ReporterFactory": {
     "name": "ReporterFactory",
@@ -4342,7 +4189,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "RoadmapReporter": {
     "name": "RoadmapReporter",
@@ -4363,7 +4210,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TechnicalDebtReporter": {
     "name": "TechnicalDebtReporter",
@@ -4384,7 +4231,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TemplateEngine": {
     "name": "TemplateEngine",
@@ -4426,7 +4273,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TemplateManager": {
     "name": "TemplateManager",
@@ -4447,7 +4294,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "SimpleTemplateCache": {
     "name": "SimpleTemplateCache",
@@ -4680,7 +4527,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testsecurityts": {
     "name": "testsecurityts",
@@ -4743,7 +4590,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testxsssimplets": {
     "name": "testxsssimplets",
@@ -4808,7 +4655,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "IntegrationTester": {
     "name": "IntegrationTester",
@@ -5236,7 +5083,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testallframeworks": {
     "name": "testallframeworks",
@@ -5300,7 +5147,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testcypresssimple": {
     "name": "testcypresssimple",
@@ -5447,7 +5294,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testplaywrightsimple": {
     "name": "testplaywrightsimple",
@@ -5511,7 +5358,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testrecommendationfinalts": {
     "name": "testrecommendationfinalts",
@@ -5532,7 +5379,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testunifiedanalyzer": {
     "name": "testunifiedanalyzer",
@@ -5637,7 +5484,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testwebintegrationts": {
     "name": "testwebintegrationts",
@@ -5658,7 +5505,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "aiinsightsenginetestts": {
     "name": "aiinsightsenginetestts",
@@ -5702,7 +5549,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "qualitypredictortestts": {
     "name": "qualitypredictortestts",
@@ -5724,7 +5571,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "analyzercoretestts": {
     "name": "analyzercoretestts",
@@ -5810,7 +5657,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "eapsetupts": {
     "name": "eapsetupts",
@@ -5854,7 +5701,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "FileSystemProject": {
     "name": "FileSystemProject",
@@ -5897,7 +5744,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "memoryprofilertestts": {
     "name": "memoryprofilertestts",
@@ -5919,7 +5766,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "ComplexUserProcessor": {
     "name": "ComplexUserProcessor",
@@ -6052,7 +5899,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "utilstestts": {
     "name": "utilstestts",
@@ -6310,7 +6157,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "playwrightconfigts": {
     "name": "playwrightconfigts",
@@ -6331,7 +6178,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "postcssconfig": {
     "name": "postcssconfig",
@@ -6800,7 +6647,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "setupproject": {
     "name": "setupproject",
@@ -6821,7 +6668,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TemplatePublisher": {
     "name": "TemplatePublisher",
@@ -6842,7 +6689,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "TemplateSetup": {
     "name": "TemplateSetup",
@@ -6970,7 +6817,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "settingsbackupjson": {
     "name": "settingsbackupjson",
@@ -7249,7 +7096,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "AdvancedConfigManager": {
     "name": "AdvancedConfigManager",
@@ -7313,6 +7160,27 @@ window.EAP_DATA = {
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "analyzer"
+  },
+  "ErrorHandler": {
+    "name": "ErrorHandler",
+    "category": "core",
+    "logic": 77,
+    "functionality": 83,
+    "file": "src/lib/errors/handler.ts",
+    "description": "Глобальный экземпляр обработчика ошибок",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-08",
+    "fileSize": 8007,
+    "lines": 262,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
   },
   "AppError": {
     "name": "AppError",
@@ -7398,7 +7266,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "OptimizedLoggerFactory": {
     "name": "OptimizedLoggerFactory",
@@ -7421,7 +7289,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "OPTIMIZEDREADMEmd": {
     "name": "OPTIMIZEDREADMEmd",
@@ -7699,7 +7567,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "OptimizedSecurityMiddleware": {
     "name": "OptimizedSecurityMiddleware",
@@ -7846,7 +7714,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "demots": {
     "name": "demots",
@@ -8163,7 +8031,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "task22simpletest": {
     "name": "task22simpletest",
@@ -8268,7 +8136,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testreports": {
     "name": "testreports",
@@ -8289,7 +8157,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "testsecuritycheckerts": {
     "name": "testsecuritycheckerts",
@@ -8373,7 +8241,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "performancesetupts": {
     "name": "performancesetupts",
@@ -8709,7 +8577,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "PerformanceTester": {
     "name": "PerformanceTester",
@@ -8793,7 +8661,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "vitestsetupts": {
     "name": "vitestsetupts",
@@ -8900,7 +8768,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "apitestts": {
     "name": "apitestts",
@@ -9186,7 +9054,7 @@ window.EAP_DATA = {
     "icon": "🧪",
     "logic": 68,
     "functionality": 62,
-    "count": 184,
+    "count": 180,
     "description": "Модули тестирования и качества кода"
   },
   "security": {
@@ -9247,9 +9115,9 @@ window.EAP_DATA = {
     "name": "CODE QUALITY (Качество кода)",
     "color": "#6f42c1",
     "icon": "✨",
-    "logic": 61,
-    "functionality": 58,
-    "count": 19,
+    "logic": 59,
+    "functionality": 57,
+    "count": 18,
     "description": "Качество кода и линтинг"
   },
   "core": {
@@ -9257,8 +9125,8 @@ window.EAP_DATA = {
     "color": "#495057",
     "icon": "⚙️",
     "logic": 70,
-    "functionality": 67,
-    "count": 103,
+    "functionality": 66,
+    "count": 101,
     "description": "Основные модули анализатора"
   },
   "ai": {
@@ -9294,10 +9162,10 @@ window.EAP_DATA = {
   "2025-09-12": {
     "avgLogic": 69,
     "avgFunctionality": 66,
-    "totalComponents": 428,
+    "totalComponents": 422,
     "changes": [
       "Live-анализ проекта обновлен",
-      "Загружено 428 компонентов",
+      "Загружено 422 компонентов",
       "Добавлены ключевые недостатки для каждого компонента"
     ],
     "source": "live-analysis"
@@ -9308,11 +9176,14 @@ window.EAP_DATA = {
   "analyzers": [
     "generateroadmap",
     "quickanalyze",
+    "testintegration",
     "EAPAnalyzerStatusEvaluator",
     "CorrectedEAPEvaluator",
     "correctedfullsystemevaluationts",
+    "fullsystemdemo",
     "fullsystemevaluationts",
     "DockerChecker",
+    "TestingChecker",
     "DevEnvironment",
     "Class",
     "ProductionValidator",
@@ -9333,8 +9204,10 @@ window.EAP_DATA = {
     "CSRFAnalyzer",
     "XSSAnalyzer",
     "CodeSecurityChecker",
+    "ConfigSecurityChecker",
     "DependenciesSecurityChecker",
     "CodeSecurityFixTemplates",
+    "ConfigFixTemplates",
     "DependencyFixTemplates",
     "RecommendationEngine",
     "SecurityChecker",
@@ -9345,12 +9218,18 @@ window.EAP_DATA = {
     "CoverageAnalyzerAdapter",
     "CypressChecker",
     "CypressCheckerAdapter",
+    "E2ETestingChecker",
     "JestChecker",
     "JestCheckerAdapter",
     "PlaywrightChecker",
     "PlaywrightCheckerAdapter",
+    "VitestChecker",
+    "VitestCheckerAdapter",
     "CoverageChecker",
     "E2EChecker",
+    "UnifiedTestingAnalyzer",
+    "testcoveragecleants",
+    "TestingFrameworkChecker",
     "PackageJsonAnalyzer",
     "QualityMetricsAnalyzer",
     "BaseChecker",
@@ -9358,6 +9237,9 @@ window.EAP_DATA = {
     "IAnalyzerts",
     "ICheckerts",
     "IEvaluatorts",
+    "ReportGenerator",
+    "UltimateReportGenerator",
+    "EAPAnalyzerDemo",
     "DebtEvaluator",
     "AIInsightsEngine",
     "AIAnalyzer",
@@ -9372,6 +9254,7 @@ window.EAP_DATA = {
     "ExecutionTimer",
     "RefactoringAnalyzer",
     "advancedanalyzer",
+    "AnalysisManager",
     "basicanalyzer",
     "ImprovedComplexityCalculator",
     "AnalyzerCore",
@@ -9381,29 +9264,70 @@ window.EAP_DATA = {
     "MetricsCalculator",
     "TechnicalDebtAnalyzer",
     "SimpleTechnicalDebtAnalyzer",
-    "DebtMetricsCalculator",
     "ProcessIsolatedAnalyzer",
     "AnalysisReportAdapter",
+    "HTMLReporter",
+    "MarkdownReporter",
+    "ExecutiveSummaryReporter",
+    "RoadmapReporter",
+    "TechnicalDebtReporter",
+    "TemplateLoader",
+    "TemplateManager",
+    "testsecurityrealistic",
+    "testxssanalyzerts",
+    "BugFixTester",
     "analysisresultsts",
     "evaluationresultsts",
     "UltraEnhancedAnalyzer",
     "BugFixValidator",
     "MetricsValidator",
+    "testallanalyzersfinal",
+    "testcoveragesimple",
+    "testphase41integration",
+    "testrecommendationengineintegrationts",
+    "testrecommendationfinalts",
+    "testwebfixtemplatests",
+    "testwebintegrationts",
+    "ProductModel",
+    "qualitypredictortestts",
+    "dockeranalyzertestts",
+    "emtanalyzertestts",
+    "executiontimertestts",
+    "memoryprofilertestts",
+    "TestAnalyzer",
+    "phase1demo",
+    "playwrightconfigts",
     "advancedprojectanalyzer",
     "cleanup",
     "projectstructureanalyzer",
     "QualityAssurance",
+    "setupprojectfixed",
+    "setupproject",
+    "TemplatePublisher",
+    "validateperformanceconfig",
     "SimpleProjectAnalyzer",
+    "OptimizedCacheManager",
     "AdvancedErrorHandler",
     "Logger",
     "ComponentLogger",
+    "LoggerFactory",
+    "OptimizedLoggerFactory",
     "Sanitizer",
     "examplests",
     "AdvancedMigrationSystem",
     "MonitoringService",
     "AdvancedMonitoringSystem",
+    "SecurityManager",
     "OptimizedSecurityMiddleware",
-    "pagesvelte"
+    "ConsoleReporter",
+    "pagesvelte",
+    "task22runtimedemots",
+    "testreporters",
+    "testreports",
+    "PerformanceReporter",
+    "analyzerperformancetestts",
+    "TestResultValidator",
+    "AdvancedSecurityAnalyzertestts"
   ],
   "auxiliary": [
     "eslintrc",
@@ -9412,16 +9336,13 @@ window.EAP_DATA = {
     "eapai",
     "eap",
     "testfixes",
-    "testintegration",
     "validate",
     "MockProject",
     "demov3ts",
     "eslintconfig",
     "finaldemo",
-    "fullsystemdemo",
     "packagejson",
     "TestingAnalysisAdapter",
-    "TestingChecker",
     "fixcjsexports",
     "release",
     "SimpleEAPDemo",
@@ -9432,16 +9353,8 @@ window.EAP_DATA = {
     "AIReportGenerator",
     "indexts",
     "testarchitecturets",
-    "ConfigSecurityChecker",
-    "ConfigFixTemplates",
-    "E2ETestingChecker",
-    "VitestChecker",
-    "VitestCheckerAdapter",
     "constantsts",
-    "UnifiedTestingAnalyzer",
-    "testcoveragecleants",
     "testplaywrightcleants",
-    "TestingFrameworkChecker",
     "TestingTypests",
     "CheckResultUtilsts",
     "ConfigFileAnalyzer",
@@ -9449,35 +9362,20 @@ window.EAP_DATA = {
     "TestFileFinder",
     "BaseReporter",
     "IReporterts",
-    "ReportGenerator",
-    "UltimateReportGenerator",
-    "EAPAnalyzerDemo",
     "demoreportingts",
     "PatternMatchers",
     "featureextractortestts",
     "interfacests",
     "MemoryProfiler",
-    "AnalysisManager",
     "EAPIntegration",
     "EAPStructureIntegration",
     "LearningSystem",
     "RecommendationGenerator",
     "simpletest",
-    "ErrorHandler",
-    "FileAnalysisUtils",
-    "simpleanalyzertestts",
-    "testanalyzermanualts",
-    "HTMLReporter",
     "JSONReporter",
-    "MarkdownReporter",
     "ReporterFactory",
     "simpletemplatetest",
-    "ExecutiveSummaryReporter",
-    "RoadmapReporter",
-    "TechnicalDebtReporter",
     "TemplateEngine",
-    "TemplateLoader",
-    "TemplateManager",
     "SimpleTemplateCache",
     "UnifiedReportingSystem",
     "testcriticalassessmentts",
@@ -9488,13 +9386,10 @@ window.EAP_DATA = {
     "testrecommendationsbasic",
     "testsecurityfinal",
     "testsecuritymaints",
-    "testsecurityrealistic",
     "testsecurityts",
     "testwebsecurityts",
-    "testxssanalyzerts",
     "testxsssimplets",
     "testts",
-    "BugFixTester",
     "IntegrationTester",
     "AnalysisCategoryts",
     "babeltraversedts",
@@ -9508,59 +9403,39 @@ window.EAP_DATA = {
     "createCompatModule",
     "ValidationReporter",
     "testaiintegration",
-    "testallanalyzersfinal",
     "testallframeworks",
     "testbothframeworksts",
-    "testcoveragesimple",
     "testcypresssimple",
     "teste2eframeworks",
     "teste2esimple",
     "testjestcleants",
     "testphase3final",
     "testphase4mvp",
-    "testphase41integration",
     "testplaywrightsimple",
     "testrealproject",
-    "testrecommendationengineintegrationts",
-    "testrecommendationfinalts",
     "testunifiedanalyzer",
     "testvitestcleants",
     "testvitestintegrationts",
     "testvitestsimplets",
-    "testwebfixtemplatests",
-    "testwebintegrationts",
     "aiinsightsenginetestts",
-    "ProductModel",
-    "qualitypredictortestts",
     "analyzercoretestts",
     "UserController",
     "clitestts",
-    "dockeranalyzertestts",
     "eapsetupts",
-    "emtanalyzertestts",
     "FileSystemProject",
-    "executiontimertestts",
-    "memoryprofilertestts",
     "ComplexUserProcessor",
     "ComplexProcessor",
     "DuplicatedValidation",
     "LargeUserManager",
-    "TestAnalyzer",
     "utilstestts",
     "tsconfigjson",
     "vitestconfigts",
     "vitestperformanceconfigts",
-    "phase1demo",
-    "playwrightconfigts",
     "postcssconfig",
     "cli",
-    "setupprojectfixed",
-    "setupproject",
-    "TemplatePublisher",
     "TemplateSetup",
     "updatetemplate",
     "fileoperations",
-    "validateperformanceconfig",
     "hooksclientts",
     "hooksserverts",
     "clienttestts",
@@ -9569,38 +9444,30 @@ window.EAP_DATA = {
     "OptimizedAPIClient",
     "CacheMigrator",
     "managertestts",
-    "OptimizedCacheManager",
     "AdvancedConfigManager",
     "ConfigManager",
+    "ErrorHandler",
     "AppError",
-    "LoggerFactory",
-    "OptimizedLoggerFactory",
     "ConsoleTransport",
     "loggerts",
     "MigrationManager",
     "SimpleMigrationManager",
     "PWAManager",
-    "SecurityManager",
     "testxssvulnerable",
     "formatterstestfixedts",
     "formatterstestnewts",
     "formatterstestts",
     "formattersts",
-    "ConsoleReporter",
     "demots",
     "serverts",
     "testxssvulnerablesvelte",
     "cleants",
     "tailwindconfig",
-    "task22runtimedemots",
     "task22simpletest",
     "testdirect",
-    "testreporters",
-    "testreports",
     "testsecuritycheckerts",
     "testtask12",
     "globalperformancesetupts",
-    "PerformanceReporter",
     "performancesetupts",
     "TestButtonsvelte",
     "AppFlowtesttsx",
@@ -9612,11 +9479,8 @@ window.EAP_DATA = {
     "appflowtestts",
     "fullanalysistestts",
     "servicests",
-    "analyzerperformancetestts",
     "PerformanceTester",
     "exampleperformancetestts",
-    "TestResultValidator",
-    "AdvancedSecurityAnalyzertestts",
     "apitestts",
     "cachetestts",
     "MockAnalyzer",
@@ -9682,8 +9546,6 @@ window.EAP_DATA = {
     "AdvancedSecurityAnalyzer",
     "AnalysisOrchestrator",
     "configjson",
-    "debtmetricscalculatortestts",
-    "fileanalysisutilstestts",
     "STARTHEREmd",
     "setupts",
     "TRANSFERTOGITHUBREADYmd",
@@ -9740,9 +9602,9 @@ window.EAP_DATA = {
     "v50md"
   ],
   "stats": {
-    "analyzersCount": 98,
-    "auxiliaryCount": 220,
-    "otherCount": 110
+    "analyzersCount": 154,
+    "auxiliaryCount": 160,
+    "otherCount": 108
   }
 },
 
