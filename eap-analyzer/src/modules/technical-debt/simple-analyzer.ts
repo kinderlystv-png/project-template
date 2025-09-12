@@ -1,15 +1,53 @@
 /**
  * Упрощенный анализатор технического долга для интеграции
+ * Версия 2.0 - Улучшенная архитектура с утилитами и конфигурацией
  */
 
-import { BaseAnalyzer } from '../../core/analyzer.js';
-import { DebtCategory, DebtMetrics } from '../../types/index.js';
-import * as fs from 'fs';
-import * as path from 'path';
+import { BaseAnalyzer, AnalysisResult } from '../../core/analyzer.js';
+import { FileAnalysisUtils, FileAnalysisOptions } from './utils/file-analysis-utils.js';
+import { DebtMetricsCalculator, DebtCalculationConfig } from './utils/debt-metrics-calculator.js';
+import { ErrorHandler } from './utils/error-handler.js';
+
+export interface SimpleTechnicalDebtAnalyzerConfig {
+  fileAnalysis: Partial<FileAnalysisOptions>;
+  debtCalculation: Partial<DebtCalculationConfig>;
+  enableCaching: boolean;
+  detailedLogging: boolean;
+}
+
+export interface TechnicalDebtData {
+  totalDebt: number;
+  totalCost: number;
+  categories: any[];
+  monthlyInterest: number;
+  roiAnalysis: {
+    investmentRequired: number;
+    expectedReturn: number;
+    paybackPeriod: number;
+    roi: number;
+  };
+  fileMetrics: number;
+  errorStats: Record<string, unknown>;
+}
 
 export class SimpleTechnicalDebtAnalyzer extends BaseAnalyzer {
-  private readonly WORKING_HOURS_PER_DAY = 8;
-  private readonly HOURLY_RATE = 50;
+  private readonly config: SimpleTechnicalDebtAnalyzerConfig;
+  private readonly calculator: DebtMetricsCalculator;
+  private cache = new Map<string, AnalysisResult>();
+
+  constructor(config: Record<string, unknown> = {}) {
+    super();
+
+    this.config = {
+      fileAnalysis: {},
+      debtCalculation: {},
+      enableCaching: true,
+      detailedLogging: false,
+      ...config,
+    };
+
+    this.calculator = new DebtMetricsCalculator(this.config.debtCalculation);
+  }
 
   getName(): string {
     return 'simple-technical-debt';
@@ -18,142 +56,154 @@ export class SimpleTechnicalDebtAnalyzer extends BaseAnalyzer {
   get metadata() {
     return {
       name: 'Simple Technical Debt Analyzer',
-      version: '1.0.0',
-      description: 'Упрощенная оценка технического долга',
-      supportedFileTypes: ['.ts', '.js', '.tsx', '.jsx'],
+      version: '2.0.0',
+      description: 'Улучшенная оценка технического долга с конфигурируемыми параметрами',
+      supportedFileTypes: ['.ts', '.js', '.tsx', '.jsx', '.vue', '.svelte'],
     };
   }
 
-  async analyze(projectPath: string): Promise<any> {
-    console.log('💰 Простой анализ технического долга...');
+  async analyze(projectPath: string): Promise<AnalysisResult> {
+    // Очищаем ошибки перед началом анализа
+    ErrorHandler.clearErrors();
+
+    const cacheKey = `analysis_${projectPath}_${Date.now()}`;
+
+    if (this.config.enableCaching && this.cache.has(cacheKey)) {
+      const cachedResult = this.cache.get(cacheKey);
+      if (cachedResult) {
+        return cachedResult;
+      }
+    }
 
     try {
-      const files = await this.getCodeFiles(projectPath);
-      const categories = await this.analyzeDebtCategories(files);
-      const totalDebt = this.calculateTotalDebt(categories);
+      if (this.config.detailedLogging) {
+        // eslint-disable-next-line no-console
+        console.log('💰 Улучшенный анализ технического долга...');
+      }
 
-      return {
-        totalDebt: totalDebt.totalHours,
-        categories,
-        monthlyInterest: Math.round(totalDebt.totalHours * 0.05),
-        roiAnalysis: {
-          investmentRequired: Math.round(totalDebt.totalHours * 0.7),
-          expectedReturn: Math.round(totalDebt.totalHours * 1.4),
-          paybackPeriod: 12,
+      // Получаем список файлов для анализа
+      const files = await ErrorHandler.safeAsync(
+        () => FileAnalysisUtils.getCodeFiles(projectPath, this.config.fileAnalysis),
+        { operation: 'file-scan', details: { projectPath } },
+        []
+      );
+
+      if (files.length === 0) {
+        return this.getEmptyResult();
+      }
+
+      // Анализируем каждый файл
+      const fileMetrics = await this.analyzeFiles(files);
+
+      // Вычисляем метрики долга
+      const debtMetrics = this.calculator.calculateDebt(fileMetrics);
+
+      // Формируем данные технического долга
+      const technicalDebtData: TechnicalDebtData = {
+        totalDebt: debtMetrics.totalHours,
+        totalCost: debtMetrics.totalCost,
+        categories: debtMetrics.categories,
+        monthlyInterest: this.calculator.calculateMonthlyInterest(debtMetrics.totalHours),
+        roiAnalysis: this.calculator.generateROIAnalysis(debtMetrics.totalHours),
+        fileMetrics: fileMetrics.length,
+        errorStats: ErrorHandler.getErrorStats(),
+      };
+
+      // Формируем результат согласно базовому интерфейсу
+      const result: AnalysisResult = {
+        success: true,
+        data: technicalDebtData,
+        metadata: {
+          analyzer: this.getName(),
+          timestamp: new Date(),
+          duration: 0, // TODO: добавить замер времени
+          filesAnalyzed: files.length,
         },
       };
+
+      // Кэшируем результат
+      if (this.config.enableCaching) {
+        this.cache.set(cacheKey, result);
+      }
+
+      return result;
     } catch (error) {
-      console.error('Ошибка анализа технического долга:', error);
-      return {
-        totalDebt: 0,
-        categories: [],
-        monthlyInterest: 0,
-        roiAnalysis: null,
-      };
+      ErrorHandler.handle(error as Error, {
+        operation: 'analysis',
+        details: { projectPath },
+      });
+
+      return this.getEmptyResult();
     }
   }
 
-  private async getCodeFiles(projectPath: string): Promise<string[]> {
-    const files: string[] = [];
-    const extensions = ['.ts', '.js', '.tsx', '.jsx'];
+  /**
+   * Анализирует список файлов и возвращает метрики
+   */
+  private async analyzeFiles(files: string[]) {
+    const fileMetrics = [];
 
-    const scanDir = async (dir: string) => {
-      try {
-        const items = await fs.promises.readdir(dir);
-        for (const item of items) {
-          if (item.startsWith('.') || item === 'node_modules' || item === 'dist') continue;
+    for (const file of files) {
+      const metrics = await ErrorHandler.safeAsync(
+        () => FileAnalysisUtils.analyzeFile(file, files),
+        { operation: 'file-analysis', file },
+        null
+      );
 
-          const fullPath = path.join(dir, item);
-          const stat = await fs.promises.stat(fullPath);
-
-          if (stat.isDirectory()) {
-            await scanDir(fullPath);
-          } else if (extensions.some(ext => item.endsWith(ext))) {
-            files.push(fullPath);
-          }
-        }
-      } catch (error) {
-        // Игнорируем ошибки доступа к файлам
+      if (metrics) {
+        fileMetrics.push(metrics);
       }
+    }
+
+    return fileMetrics;
+  }
+
+  /**
+   * Возвращает пустой результат в случае ошибки
+   */
+  private getEmptyResult(): AnalysisResult {
+    const emptyData: TechnicalDebtData = {
+      totalDebt: 0,
+      totalCost: 0,
+      categories: [],
+      monthlyInterest: 0,
+      roiAnalysis: {
+        investmentRequired: 0,
+        expectedReturn: 0,
+        paybackPeriod: 0,
+        roi: 0,
+      },
+      fileMetrics: 0,
+      errorStats: ErrorHandler.getErrorStats(),
     };
 
-    await scanDir(projectPath);
-    return files;
-  }
-
-  private async analyzeDebtCategories(files: string[]): Promise<DebtCategory[]> {
-    const categories: DebtCategory[] = [];
-
-    // Анализ сложности
-    let complexityDebt = 0;
-    let duplicateDebt = 0;
-    let testDebt = 0;
-
-    for (const file of files.slice(0, 20)) {
-      // Ограничиваем для производительности
-      try {
-        const content = await fs.promises.readFile(file, 'utf-8');
-        const lines = content.split('\n').length;
-
-        // Примерная оценка сложности
-        const complexity = (content.match(/if|for|while|switch|catch/g) || []).length;
-        if (complexity > lines * 0.1) {
-          complexityDebt += complexity * 0.5; // 30 минут на единицу избыточной сложности
-        }
-
-        // Примерная оценка дублирования
-        const uniqueLines = new Set(content.split('\n').map(l => l.trim())).size;
-        const duplicationRatio = 1 - uniqueLines / lines;
-        if (duplicationRatio > 0.1) {
-          duplicateDebt += lines * duplicationRatio * 0.1; // 6 минут на дублированную строку
-        }
-
-        // Проверка наличия тестов
-        const hasTest = files.some(
-          f =>
-            f.includes(path.basename(file, path.extname(file))) &&
-            (f.includes('.test.') || f.includes('.spec.'))
-        );
-        if (!hasTest) {
-          testDebt += 4; // 4 часа на создание тестов для файла
-        }
-      } catch (error) {
-        // Игнорируем ошибки чтения файлов
-      }
-    }
-
-    categories.push({
-      name: 'High Complexity',
-      debt: Math.round(complexityDebt),
-      impact: 'High',
-      items: [],
-    });
-
-    categories.push({
-      name: 'Code Duplication',
-      debt: Math.round(duplicateDebt),
-      impact: 'Medium',
-      items: [],
-    });
-
-    categories.push({
-      name: 'Missing Tests',
-      debt: Math.round(testDebt),
-      impact: 'Critical',
-      items: [],
-    });
-
-    return categories.filter(c => c.debt > 0);
-  }
-
-  private calculateTotalDebt(categories: DebtCategory[]): DebtMetrics {
-    const totalHours = categories.reduce((sum, cat) => sum + cat.debt, 0);
-    const totalCost = totalHours * this.HOURLY_RATE;
-
     return {
-      totalHours,
-      totalCost,
-      categories,
+      success: false,
+      data: emptyData,
+      errors: ['Analysis failed'],
+      metadata: {
+        analyzer: this.getName(),
+        timestamp: new Date(),
+        duration: 0,
+        filesAnalyzed: 0,
+      },
+    };
+  }
+
+  /**
+   * Очищает кэш анализатора
+   */
+  clearCache(): void {
+    this.cache.clear();
+  }
+
+  /**
+   * Получает статистику кэша
+   */
+  getCacheStats() {
+    return {
+      size: this.cache.size,
+      enabled: this.config.enableCaching,
     };
   }
 }
