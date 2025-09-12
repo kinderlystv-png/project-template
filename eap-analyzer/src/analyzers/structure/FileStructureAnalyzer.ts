@@ -115,7 +115,7 @@ export class FileStructureAnalyzer {
         score: metrics.architecture.score,
         maxScore: 100,
         details: `Архитектурный счет: ${metrics.architecture.score}/100. Паттернов обнаружено: ${metrics.architecture.patterns_detected}. Разделение ответственности: ${metrics.architecture.separation_of_concerns}/100`,
-        recommendations: this.generateArchitectureRecommendations(metrics.architecture),
+        recommendations: this.generateArchitectureRecommendations(metrics.architecture, files),
         metrics: {
           patterns_detected: metrics.architecture.patterns_detected,
           separation_of_concerns: metrics.architecture.separation_of_concerns,
@@ -258,9 +258,18 @@ export class FileStructureAnalyzer {
   }
 
   /**
-   * Генерирует рекомендации по архитектуре
+   * Генерирует улучшенные рекомендации по архитектуре с учетом реального анализа
    */
-  private generateArchitectureRecommendations(arch: ArchitectureMetrics): string[] {
+  private generateArchitectureRecommendations(
+    arch: ArchitectureMetrics,
+    files?: ScannedFile[]
+  ): string[] {
+    // Если переданы файлы, используем улучшенную логику
+    if (files) {
+      return this.generateEnhancedRecommendations(files);
+    }
+
+    // Иначе используем старую логику
     const recommendations: string[] = [];
 
     if (arch.patterns_detected === 0) {
@@ -489,6 +498,144 @@ export class FileStructureAnalyzer {
         timestamp: new Date().toISOString(),
       },
     };
+  }
+  /**
+   * Улучшенный анализ захламленности корневой директории
+   */
+  private static analyzeRootClutter(files: ScannedFile[]): {
+    rootFileCount: number;
+    tempFilesInRoot: number;
+    documentationFilesInRoot: number;
+    clutterScore: number;
+  } {
+    const rootFiles = files.filter(f => f.depth === 0);
+    const rootFileCount = rootFiles.length;
+
+    // Извлекаем имя файла из relativePath
+    const getFileName = (file: ScannedFile): string => {
+      const parts = file.relativePath.split('/');
+      return parts[parts.length - 1];
+    };
+
+    const tempFilesInRoot = rootFiles.filter(f => {
+      const fileName = getFileName(f);
+      return (
+        fileName.includes('temp') ||
+        fileName.includes('test-') ||
+        fileName.includes('debug-') ||
+        f.extension === '.log' ||
+        f.extension === '.bak'
+      );
+    }).length;
+
+    const documentationFilesInRoot = rootFiles.filter(f => {
+      const fileName = getFileName(f);
+      return (
+        f.extension === '.md' && !['README.md', 'CHANGELOG.md', 'LICENSE.md'].includes(fileName)
+      );
+    }).length;
+
+    // Рассчитываем оценку захламленности
+    let clutterScore = 100;
+    if (rootFileCount > 50) clutterScore -= 40;
+    else if (rootFileCount > 30) clutterScore -= 25;
+    else if (rootFileCount > 20) clutterScore -= 15;
+
+    clutterScore -= tempFilesInRoot * 2;
+    clutterScore -= documentationFilesInRoot * 1;
+
+    return {
+      rootFileCount,
+      tempFilesInRoot,
+      documentationFilesInRoot,
+      clutterScore: Math.max(0, clutterScore),
+    };
+  }
+
+  /**
+   * Улучшенный анализ соблюдения конвенций именования
+   */
+  private static analyzeNamingConventions(files: ScannedFile[]): {
+    cyrillicFiles: number;
+    conventionScore: number;
+  } {
+    const getFileName = (file: ScannedFile): string => {
+      const parts = file.relativePath.split('/');
+      return parts[parts.length - 1];
+    };
+
+    const cyrillicFiles = files.filter(f => /[а-яё]/i.test(getFileName(f))).length;
+    const longNames = files.filter(f => getFileName(f).length > 50).length;
+
+    let conventionScore = 100;
+    conventionScore -= cyrillicFiles * 3; // -3 за каждый файл с кириллицей
+    conventionScore -= longNames * 2; // -2 за каждое длинное имя
+
+    return {
+      cyrillicFiles,
+      conventionScore: Math.max(0, conventionScore),
+    };
+  }
+
+  /**
+   * Улучшенные рекомендации с учетом реального анализа проекта
+   */
+  private generateEnhancedRecommendations(files: ScannedFile[]): string[] {
+    const recommendations: string[] = [];
+    const rootClutter = FileStructureAnalyzer.analyzeRootClutter(files);
+    const namingAnalysis = FileStructureAnalyzer.analyzeNamingConventions(files);
+
+    // Рекомендации по захламленности корня
+    if (rootClutter.rootFileCount > 30) {
+      recommendations.push('Очистить корень от временных файлов, переместить .md файлы в docs/');
+    }
+
+    if (rootClutter.tempFilesInRoot > 5) {
+      recommendations.push('Удалить временные и отладочные файлы из корневой директории');
+    }
+
+    if (rootClutter.documentationFilesInRoot > 10) {
+      recommendations.push('Переместить документацию из корня в папку docs/');
+    }
+
+    // Рекомендации по именованию
+    if (namingAnalysis.cyrillicFiles > 0) {
+      recommendations.push('Использовать английские имена файлов для лучшей совместимости');
+    }
+
+    // Проверяем структуру проекта
+    const hasReadme = files.some(f => {
+      const fileName = f.relativePath.split('/').pop()?.toLowerCase();
+      return fileName === 'readme.md';
+    });
+
+    const hasPackageJson = files.some(f => {
+      const fileName = f.relativePath.split('/').pop();
+      return fileName === 'package.json';
+    });
+
+    const hasProperSrcStructure = files.some(f => f.relativePath.startsWith('src/'));
+
+    // Корректные рекомендации только если что-то действительно отсутствует
+    if (!hasReadme) {
+      recommendations.push('Добавить README.md в корень проекта');
+    }
+
+    if (!hasPackageJson && files.some(f => f.extension === '.js' || f.extension === '.ts')) {
+      recommendations.push('Добавить package.json для управления зависимостями');
+    }
+
+    if (!hasProperSrcStructure && files.length > 20) {
+      recommendations.push('Создать папку src/ для организации исходного кода');
+    }
+
+    return recommendations.slice(0, 5);
+  }
+
+  private static calculateVariance(numbers: number[]): number {
+    if (numbers.length === 0) return 0;
+    const mean = numbers.reduce((sum, n) => sum + n, 0) / numbers.length;
+    return numbers.reduce((sum, n) => sum + Math.pow(n - mean, 2), 0) / numbers.length;
   }
 }
 
