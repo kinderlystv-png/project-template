@@ -152,7 +152,7 @@ class EAPReportGenerator {
       content.match(/(function\s+\w+|const\s+\w+\s*=\s*\(?|class\s+\w+|async\s+function)/g) || [];
     const classMatches = content.match(/class\s+\w+/g) || [];
 
-    let description = this.extractDescription(content) || this.generateAutoDescription(content);
+    const description = this.extractDescription(content) || this.generateAutoDescription(content);
 
     return {
       lines: nonEmptyLines,

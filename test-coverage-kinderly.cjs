@@ -151,7 +151,7 @@ async function testCoverageAnalyzer() {
     console.log('='.repeat(40));
 
     let score = 0;
-    let maxScore = 100;
+    const maxScore = 100;
 
     // Оценка наличия coverage файлов
     if (coverageFiles.length > 0) {

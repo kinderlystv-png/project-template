@@ -62,7 +62,7 @@ async function replaceRealComponents() {
 
     // Читаем HTML файл
     const htmlPath = './eap-enhanced-analysis-test.html';
-    let html = fs.readFileSync(htmlPath, 'utf8');
+    const html = fs.readFileSync(htmlPath, 'utf8');
 
     // Находим границы таблицы компонентов
     const tableStart = html.indexOf('<div class="components-table">');
