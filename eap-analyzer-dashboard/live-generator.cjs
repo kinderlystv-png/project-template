@@ -11,7 +11,8 @@ const path = require('path');
 const { smartComponentAnalyzer } = require('./smart-analyzer.cjs');
 
 // Функция для анализа файлов проекта
-function analyzeProjectFiles(projectPath = '../eap-analyzer') {
+function analyzeProjectFiles(projectPath = '..') {
+  // ИЗМЕНЕНО: анализируем весь проект
   const components = {};
   const categories = {
     testing: { totalLogic: 0, totalFunc: 0, count: 0, components: [] },
@@ -62,6 +63,18 @@ function analyzeProjectFiles(projectPath = '../eap-analyzer') {
                 'target',
                 '.next',
                 '.cache',
+                '.svelte-kit',
+                'test-results',
+                'logs',
+                'reports',
+                'data',
+                'assets',
+                'static',
+                'docker',
+                'docs',
+                'emt-v3-stable-clean',
+                'testing-integration-package',
+                'eap-analyzer-dashboard', // НЕ анализируем саму dashboard
               ].includes(file) || file.startsWith('dist');
 
             if (!shouldSkipDir) {

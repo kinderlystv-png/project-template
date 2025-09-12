@@ -1,0 +1,78 @@
+{
+  "analyzer": {
+    "name": "EAP Project Analyzer",
+    "version": "2.0.0",
+    "description": "Анализатор всего проекта template"
+  },
+  "paths": {
+    "project_root": "..",
+    "exclude_directories": [
+      "node_modules",
+      ".git",
+      "coverage",
+      ".nyc_output",
+      "build",
+      "out",
+      "target",
+      ".next",
+      ".cache",
+      ".svelte-kit",
+      "test-results",
+      "logs",
+      "reports",
+      "data",
+      "assets",
+      "static",
+      "docker",
+      "docs",
+      "emt-v3-stable-clean",
+      "testing-integration-package",
+      "eap-analyzer-dashboard"
+    ],
+    "include_extensions": [
+      ".js",
+      ".cjs",
+      ".mjs",
+      ".ts",
+      ".tsx",
+      ".jsx",
+      ".vue",
+      ".svelte",
+      ".py",
+      ".java",
+      ".go",
+      ".rs",
+      ".cpp",
+      ".c",
+      ".h",
+      ".cs",
+      ".php"
+    ]
+  },
+  "priorities": {
+    "config_files": [
+      "vitest.performance.config.ts",
+      "vitest.config.ts",
+      "vite.config.ts",
+      "svelte.config.js",
+      "package.json",
+      "tsconfig.json"
+    ],
+    "ignore_legacy": {
+      "enabled": true,
+      "description": "Игнорировать старые версии файлов если есть новые в корне"
+    }
+  },
+  "sync": {
+    "auto_sync_configs": false,
+    "warn_on_duplicates": true,
+    "prefer_root_files": true
+  },
+  "analysis": {
+    "deep_analysis": true,
+    "performance_threshold": {
+      "logic_readiness": 70,
+      "functionality": 60
+    }
+  }
+}
