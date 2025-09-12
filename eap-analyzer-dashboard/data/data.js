@@ -1,6 +1,6 @@
 // EAP Analyzer Dashboard Data
 // Автоматически сгенерирован live-generator.cjs
-// Дата генерации: 12.09.2025, 13:31:12
+// Дата генерации: 12.09.2025, 21:44:38
 
 window.EAP_DATA = {
   components: {
@@ -481,6 +481,27 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "auxiliary"
   },
+  "debugeap": {
+    "name": "debugeap",
+    "category": "codequality",
+    "logic": 42,
+    "functionality": 41,
+    "file": "debug-eap.mjs",
+    "description": "Быстрый запуск EAP Debugger\r   Использование: npm run debug-eap",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 792,
+    "lines": 31,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "dockercomposeprodyml": {
     "name": "dockercomposeprodyml",
     "category": "docker",
@@ -653,6 +674,28 @@ window.EAP_DATA = {
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
+  },
+  "analyzekinderlystructure": {
+    "name": "analyzekinderlystructure",
+    "category": "core",
+    "logic": 56,
+    "functionality": 45,
+    "file": "eap-analyzer/analyze-kinderly-structure.cjs",
+    "description": "Детальная проверка структуры kinderly-events\r   Анализирует конкретные характеристики проекта",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 14520,
+    "lines": 389,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "analyzer"
   },
   "eapai": {
     "name": "eapai",
@@ -1062,6 +1105,48 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
   },
+  "FileStructureAnalyzerV33": {
+    "name": "FileStructureAnalyzerV33",
+    "category": "codequality",
+    "logic": 59,
+    "functionality": 44,
+    "file": "eap-analyzer/FileStructureAnalyzerV33.cjs",
+    "description": "FileStructureAnalyzer v3.3 FINE-TUNED\r   Более тонкая настройка алгоритмов на основе ручной валидаци",
+    "tests": "17 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 18978,
+    "lines": 508,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "FileStructureAnalyzerV34": {
+    "name": "FileStructureAnalyzerV34",
+    "category": "codequality",
+    "logic": 58,
+    "functionality": 44,
+    "file": "eap-analyzer/FileStructureAnalyzerV34.cjs",
+    "description": "FileStructureAnalyzer v3.4 PRECISION\r   Точная калибровка на основе детального анализа расхождений",
+    "tests": "15 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 14893,
+    "lines": 429,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
   "finaldemo": {
     "name": "finaldemo",
     "category": "core",
@@ -1122,6 +1207,50 @@ window.EAP_DATA = {
       "Есть потенциал для улучшения функциональности"
     ],
     "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "other"
+  },
+  "finalvalidationsummary": {
+    "name": "finalvalidationsummary",
+    "category": "core",
+    "logic": 74,
+    "functionality": 79,
+    "file": "eap-analyzer/final-validation-summary.cjs",
+    "description": "ИТОГОВЫЙ ОТЧЕТ ВАЛИДАЦИИ FileStructureAnalyzer v3.0\r   Сравнение результатов анализа с реальными хар",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 11626,
+    "lines": 237,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "FINETUNINGREPORTFINALmd": {
+    "name": "FINETUNINGREPORTFINALmd",
+    "category": "core",
+    "logic": 57,
+    "functionality": 56,
+    "file": "eap-analyzer/FINE-TUNING-REPORT-FINAL.md",
+    "description": "EAP Analyzer компонент",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7772,
+    "lines": 154,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
   },
@@ -1232,6 +1361,27 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
   },
+  "manualvalidationkinderly": {
+    "name": "manualvalidationkinderly",
+    "category": "core",
+    "logic": 57,
+    "functionality": 42,
+    "file": "eap-analyzer/manual-validation-kinderly.cjs",
+    "description": "РУЧНАЯ ВАЛИДАЦИЯ ПРОЕКТА KINDERLY-EVENTS\r   Сравнение с результатами FileStructureAnalyzer v3.2\r   Д",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 11414,
+    "lines": 262,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "DockerChecker": {
     "name": "DockerChecker",
     "category": "security",
@@ -1254,69 +1404,6 @@ window.EAP_DATA = {
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
-  },
-  "FileStructureAnalyzer": {
-    "name": "FileStructureAnalyzer",
-    "category": "core",
-    "logic": 77,
-    "functionality": 79,
-    "file": "eap-analyzer/src/analyzers/structure/FileStructureAnalyzer.ts",
-    "description": "Fiimport FileSystemScanner, { type ScannedFile } from './FileSystemScanner.js';\r import MetricsCalcu",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 21674,
-    "lines": 496,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
-  },
-  "optimizeddemo": {
-    "name": "optimizeddemo",
-    "category": "core",
-    "logic": 51,
-    "functionality": 40,
-    "file": "eap-analyzer/optimized-demo.mjs",
-    "description": "Демонстрация оптимизированного анализатора v2.0\r   Показывает улучшенную архитектуру и снижение техн",
-    "tests": "2 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 5917,
-    "lines": 132,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
-  },
-  "optimizedprocessdemo": {
-    "name": "optimizedprocessdemo",
-    "category": "performance",
-    "logic": 58,
-    "functionality": 45,
-    "file": "eap-analyzer/optimized-process-demo.mjs",
-    "description": "Демо оптимизированного ProcessIsolatedAnalyzer v2.0\r   Тестирование улучшений: 60%/46% → 90%+/90%+",
-    "tests": "2 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 7443,
-    "lines": 149,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
   },
   "packagejson": {
     "name": "packagejson",
@@ -1765,27 +1852,6 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
-  "simpleprocessdemo": {
-    "name": "simpleprocessdemo",
-    "category": "codequality",
-    "logic": 53,
-    "functionality": 51,
-    "file": "eap-analyzer/simple-process-demo.mjs",
-    "description": "Простое демо оптимизированного ProcessIsolatedAnalyzer v2.0",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 3244,
-    "lines": 55,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
-  },
   "SPRINT1COMPLETIONREPORTmd": {
     "name": "SPRINT1COMPLETIONREPORTmd",
     "category": "core",
@@ -2043,6 +2109,27 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "analyzer"
   },
+  "FileStructureAnalyzer": {
+    "name": "FileStructureAnalyzer",
+    "category": "core",
+    "logic": 83,
+    "functionality": 86,
+    "file": "eap-analyzer/src/analyzers/structure/FileStructureAnalyzer.ts",
+    "description": "FileStructureAnalyzer v3.0 - Реальный анализатор структуры проекта\r  \r   Заменяет примитивное демо o",
+    "tests": "5 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 27088,
+    "lines": 632,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
   "FileSystemScanner": {
     "name": "FileSystemScanner",
     "category": "core",
@@ -2253,29 +2340,6 @@ window.EAP_DATA = {
     "lastModified": "2025-09-08",
     "fileSize": 22324,
     "lines": 606,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "analyzer"
-  },
-  "BaseFileChecker": {
-    "name": "BaseFileChecker",
-    "category": "core",
-    "logic": 92,
-    "functionality": 83,
-    "file": "eap-analyzer/src/checkers/SvelteKitChecker_v2.ts",
-    "description": "Оптимизированный SvelteKit Framework Checker v2.0\r   Устранение дублирования кода и улучшение функци",
-    "tests": "1 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 12835,
-    "lines": 393,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
       "Нет критических проблем"
@@ -2530,8 +2594,8 @@ window.EAP_DATA = {
   "CodeSecurityFixTemplates": {
     "name": "CodeSecurityFixTemplates",
     "category": "security",
-    "logic": 75,
-    "functionality": 76,
+    "logic": 73,
+    "functionality": 75,
     "file": "eap-analyzer/src/recommendations/CodeSecurityFixTemplates.ts",
     "description": "CodeSecurityFixTemplates - Шаблоны исправления для проблем безопасности кода\r   \r   Phase 5.2.1: Кон",
     "tests": "Нет тестов",
@@ -2618,7 +2682,7 @@ window.EAP_DATA = {
     "category": "security",
     "logic": 79,
     "functionality": 83,
-    "file": "eap-analyzer/src/checkers/security/SecurityChecker_v2_optimized.ts",
+    "file": "eap-analyzer/src/checkers/security/SecurityChecker.ts",
     "description": "SecurityChecker v2.0 - Оптимизированный анализатор безопасности\r  \r   Ключевые улучшения:\r   - Устра",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
@@ -2636,32 +2700,11 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
-  "BaseSecurityProcessor": {
-    "name": "BaseSecurityProcessor",
-    "category": "security",
-    "logic": 77,
-    "functionality": 78,
-    "file": "eap-analyzer/src/checkers/security/SecurityChecker_v2.ts",
-    "description": "SecurityChecker v2.0 - Оптимизированный анализатор безопасности\r  \r   Ключевые улучшения:\r   - Устра",
-    "tests": "1 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 20343,
-    "lines": 562,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
-  },
   "WebSecurityChecker": {
     "name": "WebSecurityChecker",
     "category": "security",
-    "logic": 93,
-    "functionality": 84,
+    "logic": 95,
+    "functionality": 85,
     "file": "eap-analyzer/src/checkers/security/WebSecurityChecker.ts",
     "description": "WebSecurityChecker - Главный анализатор веб-безопасности\r  \r   Координирует анализ XSS, CSRF и други",
     "tests": "Нет тестов",
@@ -2720,6 +2763,49 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "FileStructureChecker": {
+    "name": "FileStructureChecker",
+    "category": "codequality",
+    "logic": 70,
+    "functionality": 64,
+    "file": "eap-analyzer/src/checkers/structure.checker.ts",
+    "description": "FileStructureChecker - Обертка для интеграции FileStructureAnalyzer с оркестратором",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3403,
+    "lines": 87,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "SvelteKitChecker": {
+    "name": "SvelteKitChecker",
+    "category": "core",
+    "logic": 54,
+    "functionality": 43,
+    "file": "eap-analyzer/src/checkers/sveltekit.ts",
+    "description": "SvelteKit Framework Checker\r   Проверки конфигурации и настройки SvelteKit",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 19487,
+    "lines": 584,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
   "CoverageAnalyzer": {
@@ -4069,13 +4155,13 @@ window.EAP_DATA = {
     "name": "StructureAnalyzer",
     "category": "core",
     "logic": 80,
-    "functionality": 84,
-    "file": "eap-analyzer/src/modules/structure-analyzer/index.js",
+    "functionality": 85,
+    "file": "eap-analyzer/src/modules/structure-analyzer/index.ts",
     "description": "Рефакторированный анализатор структуры проекта для ЭАП\r   Модульная архитектура для улучшения поддер",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 12023,
-    "lines": 346,
+    "fileSize": 13015,
+    "lines": 383,
     "logicIssues": [
       "Нет критических проблем"
     ],
@@ -4303,35 +4389,14 @@ window.EAP_DATA = {
   "ProcessIsolatedAnalyzer": {
     "name": "ProcessIsolatedAnalyzer",
     "category": "performance",
-    "logic": 95,
-    "functionality": 92,
+    "logic": 60,
+    "functionality": 46,
     "file": "eap-analyzer/src/orchestrator/ProcessIsolatedAnalyzerJS.js",
-    "description": "/\r \r   ProcessIsolatedAnalyzer - Оптимизированная JavaScript версия v2.0  ProcessIsolatedAnalyzer - ",
-    "tests": "5 тестов",
+    "description": "ProcessIsolatedAnalyzer - JavaScript версия для тестирования\r   Phase 4.1: Изолированный запуск Unif",
+    "tests": "2 тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 23793,
-    "lines": 780,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
-  },
-  "index": {
-    "name": "index",
-    "category": "security",
-    "logic": 44,
-    "functionality": 45,
-    "file": "eap-analyzer/src/orchestrator/types/index.js",
-    "description": "Эталонный Анализатор Проектов (ЭАП)   Типы и интерфейсы для анализа проектов",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 812,
-    "lines": 31,
+    "fileSize": 9052,
+    "lines": 289,
     "logicIssues": [
       "Возможны улучшения архитектуры"
     ],
@@ -4340,7 +4405,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
+    "classification": "analyzer"
   },
   "AnalysisReportAdapter": {
     "name": "AnalysisReportAdapter",
@@ -5512,6 +5577,27 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
+  "testenhancedanalyzer": {
+    "name": "testenhancedanalyzer",
+    "category": "testing",
+    "logic": 52,
+    "functionality": 41,
+    "file": "eap-analyzer/test-enhanced-analyzer.cjs",
+    "description": "Тест улучшенного FileStructureAnalyzer",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 1735,
+    "lines": 50,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "testjestcleants": {
     "name": "testjestcleants",
     "category": "testing",
@@ -5523,6 +5609,219 @@ window.EAP_DATA = {
     "lastModified": "2025-09-12",
     "fileSize": 8793,
     "lines": 192,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testkinderlyanalysis": {
+    "name": "testkinderlyanalysis",
+    "category": "testing",
+    "logic": 58,
+    "functionality": 45,
+    "file": "eap-analyzer/test-kinderly-analysis.cjs",
+    "description": "Тестовый скрипт для запуска полного анализа проекта kinderly-events\r   Использует AnalysisOrchestrat",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7682,
+    "lines": 173,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "EventCard": {
+    "name": "EventCard",
+    "category": "testing",
+    "logic": 79,
+    "functionality": 85,
+    "file": "eap-analyzer/test-kinderly-direct.cjs",
+    "description": "Простой тест FileStructureAnalyzer v3.0 на проекте kinderly-events\r   Тестируем напрямую без Analysi",
+    "tests": "5 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 11425,
+    "lines": 359,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testkinderlyorchestrator": {
+    "name": "testkinderlyorchestrator",
+    "category": "testing",
+    "logic": 93,
+    "functionality": 85,
+    "file": "eap-analyzer/test-kinderly-orchestrator.mjs",
+    "description": "Полный тест AnalysisOrchestrator с оптимизированным FileStructureAnalyzer v3.2\r   Использует ES-моду",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7336,
+    "lines": 173,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testkinderlyv3": {
+    "name": "testkinderlyv3",
+    "category": "testing",
+    "logic": 56,
+    "functionality": 45,
+    "file": "eap-analyzer/test-kinderly-v3.cjs",
+    "description": "Интеграционный тест FileStructureAnalyzer v3.0 с полными метриками\r   Тестирует реальный анализатор ",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 17191,
+    "lines": 451,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "testkinderlyv31optimized": {
+    "name": "testkinderlyv31optimized",
+    "category": "testing",
+    "logic": 65,
+    "functionality": 50,
+    "file": "eap-analyzer/test-kinderly-v31-optimized.cjs",
+    "description": "Тест FileStructureAnalyzer v3.1 (оптимизированная версия)\r  \r   Простой тест с использованием оригин",
+    "tests": "21 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 33290,
+    "lines": 889,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "testkinderlyv32balanced": {
+    "name": "testkinderlyv32balanced",
+    "category": "testing",
+    "logic": 62,
+    "functionality": 49,
+    "file": "eap-analyzer/test-kinderly-v32-balanced.cjs",
+    "description": "Тест FileStructureAnalyzer v3.2 BALANCED\r  \r   Сбалансированная версия, которая:\r   1. Исправляет пе",
+    "tests": "20 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 33917,
+    "lines": 877,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "testkinderlyv33finetuned": {
+    "name": "testkinderlyv33finetuned",
+    "category": "testing",
+    "logic": 58,
+    "functionality": 45,
+    "file": "eap-analyzer/test-kinderly-v33-fine-tuned.cjs",
+    "description": "Тест FileStructureAnalyzer v3.3 FINE-TUNED\r   Тонкая настройка для максимального соответствия ручной",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 9900,
+    "lines": 219,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testkinderlyv34precision": {
+    "name": "testkinderlyv34precision",
+    "category": "testing",
+    "logic": 55,
+    "functionality": 44,
+    "file": "eap-analyzer/test-kinderly-v34-precision.cjs",
+    "description": "Тест FileStructureAnalyzer v3.4 PRECISION\r   Точная калибровка для идеального соответствия ручной ва",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 11433,
+    "lines": 255,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testminimaleap": {
+    "name": "testminimaleap",
+    "category": "testing",
+    "logic": 58,
+    "functionality": 46,
+    "file": "eap-analyzer/test-minimal-eap.cjs",
+    "description": "Минимальный тест EAP оркестратора\r   Использует только базовые компоненты",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5827,
+    "lines": 153,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testorchestratorfinal": {
+    "name": "testorchestratorfinal",
+    "category": "testing",
+    "logic": 90,
+    "functionality": 83,
+    "file": "eap-analyzer/test-orchestrator-final.mjs",
+    "description": "Полный тест AnalysisOrchestrator с оптимизированным FileStructureAnalyzer v3.2\r   Использует скомпил",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7072,
+    "lines": 165,
     "logicIssues": [
       "Нет критических проблем"
     ],
@@ -6327,6 +6626,50 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
   },
+  "validatekinderlyanalysis": {
+    "name": "validatekinderlyanalysis",
+    "category": "core",
+    "logic": 77,
+    "functionality": 83,
+    "file": "eap-analyzer/validate-kinderly-analysis.cjs",
+    "description": "Валидатор анализа FileStructureAnalyzer v3.0\r   Проверяет адекватность результатов анализа проекта k",
+    "tests": "4 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 16295,
+    "lines": 431,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "analyzer"
+  },
+  "VALIDATIONREPORTFINALmd": {
+    "name": "VALIDATIONREPORTFINALmd",
+    "category": "core",
+    "logic": 66,
+    "functionality": 71,
+    "file": "eap-analyzer/VALIDATION-REPORT-FINAL.md",
+    "description": "EAP Analyzer компонент",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5460,
+    "lines": 108,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "other"
+  },
   "vitestaiconfigts": {
     "name": "vitestaiconfigts",
     "category": "testing",
@@ -6412,6 +6755,302 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Обнаружено значительное дублирование кода",
     "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "other"
+  },
+  "BROWSERINTEGRATIONREPORTmd": {
+    "name": "BROWSERINTEGRATIONREPORTmd",
+    "category": "utils",
+    "logic": 57,
+    "functionality": 56,
+    "file": "eap-debugger/BROWSER-INTEGRATION-REPORT.md",
+    "description": "Быстрая генерация с автооткрытием браузера",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 8865,
+    "lines": 177,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "other"
+  },
+  "integrationdemots": {
+    "name": "integrationdemots",
+    "category": "security",
+    "logic": 63,
+    "functionality": 63,
+    "file": "eap-debugger/demo/integration-demo.ts",
+    "description": "Демонстрация интеграции EapDebugger с AnalysisOrchestrator\r   Показывает автоматическое открытие бра",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 8096,
+    "lines": 210,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "realisticintegrationts": {
+    "name": "realisticintegrationts",
+    "category": "security",
+    "logic": 56,
+    "functionality": 57,
+    "file": "eap-debugger/demo/realistic-integration.ts",
+    "description": "Практическая демонстрация интеграции с существующим оркестратором",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5282,
+    "lines": 129,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "orchestratorintegrationts": {
+    "name": "orchestratorintegrationts",
+    "category": "codequality",
+    "logic": 76,
+    "functionality": 79,
+    "file": "eap-debugger/examples/orchestrator-integration.ts",
+    "description": "Пример интеграции EapDebugger с реальным AnalysisOrchestrator\r   Показывает, как добавить автоматиче",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 6825,
+    "lines": 161,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "PROJECTCOMPLETIONREPORTmd": {
+    "name": "PROJECTCOMPLETIONREPORTmd",
+    "category": "security",
+    "logic": 60,
+    "functionality": 61,
+    "file": "eap-debugger/PROJECT-COMPLETION-REPORT.md",
+    "description": "Генерация отчета",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7696,
+    "lines": 161,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "other"
+  },
+  "ComponentRegistry": {
+    "name": "ComponentRegistry",
+    "category": "security",
+    "logic": 90,
+    "functionality": 78,
+    "file": "eap-debugger/src/core/ComponentRegistry.ts",
+    "description": "ComponentRegistry - извлекает зарегистрированные компоненты из AnalysisOrchestrator",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 4987,
+    "lines": 152,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "HtmlGenerator": {
+    "name": "HtmlGenerator",
+    "category": "core",
+    "logic": 95,
+    "functionality": 84,
+    "file": "eap-debugger/src/core/HtmlGenerator.ts",
+    "description": "Генератор HTML страниц для EAP Debugger\r   Генерирует HTML на основе шаблона и данных о компонентах",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 13708,
+    "lines": 326,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "Logger": {
+    "name": "Logger",
+    "category": "security",
+    "logic": 77,
+    "functionality": 79,
+    "file": "src/lib/logger/core/index.ts",
+    "description": "Уровни логирования в порядке приоритета",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-08",
+    "fileSize": 9564,
+    "lines": 352,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "OrchestratorIntegration": {
+    "name": "OrchestratorIntegration",
+    "category": "codequality",
+    "logic": 78,
+    "functionality": 79,
+    "file": "eap-debugger/src/integration/OrchestratorIntegration.ts",
+    "description": "OrchestratorIntegration - модуль для интеграции EapDebugger с AnalysisOrchestrator\r   Автоматически ",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 6121,
+    "lines": 174,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "Componentts": {
+    "name": "Componentts",
+    "category": "utils",
+    "logic": 82,
+    "functionality": 73,
+    "file": "eap-debugger/src/models/Component.ts",
+    "description": "Модели данных для EAP Debugger",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 1021,
+    "lines": 34,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "browseropentestts": {
+    "name": "browseropentestts",
+    "category": "testing",
+    "logic": 54,
+    "functionality": 43,
+    "file": "eap-debugger/tests/browser-open.test.ts",
+    "description": "Простой тест автооткрытия браузера",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 2275,
+    "lines": 71,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "debuggertestts": {
+    "name": "debuggertestts",
+    "category": "testing",
+    "logic": 53,
+    "functionality": 42,
+    "file": "eap-debugger/tests/debugger.test.ts",
+    "description": "Простой тест для EapDebugger",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3755,
+    "lines": 110,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "integrationtestts": {
+    "name": "integrationtestts",
+    "category": "testing",
+    "logic": 54,
+    "functionality": 42,
+    "file": "eap-debugger/tests/integration.test.ts",
+    "description": "Интеграционный тест для EAP Debugger\r   Тестирует работу с реальными компонентами",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 2458,
+    "lines": 72,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "EAPDEBUGGEREXECUTIONREPORTmd": {
+    "name": "EAPDEBUGGEREXECUTIONREPORTmd",
+    "category": "security",
+    "logic": 51,
+    "functionality": 50,
+    "file": "EAP-DEBUGGER-EXECUTION-REPORT.md",
+    "description": "EAP Analyzer компонент",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3302,
+    "lines": 77,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "other"
   },
   "minitest": {
@@ -6568,14 +7207,14 @@ window.EAP_DATA = {
   "PROJECTSTATUSCURRENTmd": {
     "name": "PROJECTSTATUSCURRENTmd",
     "category": "security",
-    "logic": 67,
-    "functionality": 71,
+    "logic": 74,
+    "functionality": 81,
     "file": "PROJECT-STATUS-CURRENT.md",
-    "description": "Добавить в vitest.config.ts:",
+    "description": "FileStructureAnalyzerV34.cjs - Production Ready",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 5619,
-    "lines": 160,
+    "fileSize": 6924,
+    "lines": 186,
     "logicIssues": [
       "Нет критических проблем"
     ],
@@ -6717,14 +7356,35 @@ window.EAP_DATA = {
   "ROADMAPV2md": {
     "name": "ROADMAPV2md",
     "category": "security",
-    "logic": 58,
-    "functionality": 52,
+    "logic": 75,
+    "functionality": 82,
     "file": "ROADMAP-V2.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-08",
-    "fileSize": 5694,
-    "lines": 187,
+    "lastModified": "2025-09-12",
+    "fileSize": 7066,
+    "lines": 210,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "other"
+  },
+  "runfixeddebuggerts": {
+    "name": "runfixeddebuggerts",
+    "category": "codequality",
+    "logic": 58,
+    "functionality": 58,
+    "file": "run-fixed-debugger.ts",
+    "description": "Обновленный простой запуск EAP Debugger с правильной интеграцией FileStructureChecker",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3755,
+    "lines": 74,
     "logicIssues": [
       "Возможны улучшения архитектуры"
     ],
@@ -6733,7 +7393,49 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "other"
+    "classification": "auxiliary"
+  },
+  "runorchestratordebuggerts": {
+    "name": "runorchestratordebuggerts",
+    "category": "security",
+    "logic": 62,
+    "functionality": 62,
+    "file": "run-orchestrator-debugger.ts",
+    "description": "Запуск EAP Debugger для текущего состояния оркестратора",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 6403,
+    "lines": 157,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "runsimpledebuggerts": {
+    "name": "runsimpledebuggerts",
+    "category": "security",
+    "logic": 58,
+    "functionality": 58,
+    "file": "run-simple-debugger.ts",
+    "description": "Простой запуск EAP Debugger для проверки оркестратора",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3722,
+    "lines": 94,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
   },
   "advancedprojectanalyzer": {
     "name": "advancedprojectanalyzer",
@@ -7525,27 +8227,6 @@ window.EAP_DATA = {
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
-  },
-  "Logger": {
-    "name": "Logger",
-    "category": "security",
-    "logic": 77,
-    "functionality": 79,
-    "file": "src/lib/logger/core/index.ts",
-    "description": "Уровни логирования в порядке приоритета",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-08",
-    "fileSize": 9564,
-    "lines": 352,
-    "logicIssues": [
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Нет критических проблем",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
   },
   "ComponentLogger": {
     "name": "ComponentLogger",
@@ -8440,6 +9121,112 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
+  "testeapanalyzerenhancedts": {
+    "name": "testeapanalyzerenhancedts",
+    "category": "testing",
+    "logic": 53,
+    "functionality": 41,
+    "file": "test-eap-analyzer-enhanced.ts",
+    "description": "Test script for enhanced EAP analyzer with actual project analysis\r   Проверяет работу анализатора с",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3034,
+    "lines": 73,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "testeapenhanced": {
+    "name": "testeapenhanced",
+    "category": "testing",
+    "logic": 52,
+    "functionality": 41,
+    "file": "test-eap-enhanced.js",
+    "description": "Simple test script for enhanced EAP analyzer\r   Tests the analyzer with actual project analysis on C",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 2465,
+    "lines": 77,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
+  },
+  "testeapfinal": {
+    "name": "testeapfinal",
+    "category": "testing",
+    "logic": 54,
+    "functionality": 44,
+    "file": "test-eap-final.cjs",
+    "description": "Simple Node.js test script for EAP Debugger",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 10613,
+    "lines": 263,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testintegratedstructurecheckerts": {
+    "name": "testintegratedstructurecheckerts",
+    "category": "testing",
+    "logic": 54,
+    "functionality": 42,
+    "file": "test-integrated-structure-checker.ts",
+    "description": "Тест интегрированного FileStructureChecker в оркестраторе",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 4398,
+    "lines": 84,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "testrealorchestratorts": {
+    "name": "testrealorchestratorts",
+    "category": "testing",
+    "logic": 52,
+    "functionality": 41,
+    "file": "test-real-orchestrator.ts",
+    "description": "Тест реального оркестратора для проверки зарегистрированных компонентов",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 2914,
+    "lines": 58,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "testreporters": {
     "name": "testreporters",
     "category": "testing",
@@ -8482,33 +9269,11 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
-  "testsecuritycheckeroptimization": {
-    "name": "testsecuritycheckeroptimization",
-    "category": "testing",
-    "logic": 56,
-    "functionality": 44,
-    "file": "test-security-checker-optimization.cjs",
-    "description": "SecurityChecker v2.0 Optimization Test\r   Проверяет производительность оптимизированного SecurityChe",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 6431,
-    "lines": 153,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "analyzer"
-  },
   "testsecuritycheckerts": {
     "name": "testsecuritycheckerts",
     "category": "testing",
-    "logic": 50,
-    "functionality": 40,
+    "logic": 52,
+    "functionality": 41,
     "file": "test-security-checker.ts",
     "description": "SecurityChecker Integration Test\r   Phase 5.1.1: Тестирование интеграции SecurityChecker с ЭАП систе",
     "tests": "2 тестов",
@@ -8528,7 +9293,7 @@ window.EAP_DATA = {
   "testtask12": {
     "name": "testtask12",
     "category": "testing",
-    "logic": 60,
+    "logic": 58,
     "functionality": 47,
     "file": "test-task1.2.mjs",
     "description": "🧪 ТЕСТ РЕПОРТЕРОВ EAP ANALYZER v6.0\r   Тестирование MarkdownReporter и улучшенного HTMLReporter",
@@ -9398,16 +10163,16 @@ window.EAP_DATA = {
     "color": "#28a745",
     "icon": "🧪",
     "logic": 67,
-    "functionality": 62,
-    "count": 184,
+    "functionality": 61,
+    "count": 202,
     "description": "Модули тестирования и качества кода"
   },
   "security": {
     "name": "SECURITY (Безопасность)",
     "color": "#dc3545",
     "icon": "🔒",
-    "logic": 75,
-    "functionality": 74,
+    "logic": 74,
+    "functionality": 73,
     "count": 142,
     "description": "Анализ безопасности и уязвимостей"
   },
@@ -9417,7 +10182,7 @@ window.EAP_DATA = {
     "icon": "⚡",
     "logic": 79,
     "functionality": 78,
-    "count": 41,
+    "count": 40,
     "description": "Оптимизация производительности"
   },
   "docker": {
@@ -9442,9 +10207,9 @@ window.EAP_DATA = {
     "name": "LOGGING (Логирование)",
     "color": "#fd7e14",
     "icon": "📝",
-    "logic": 75,
-    "functionality": 74,
-    "count": 9,
+    "logic": 71,
+    "functionality": 70,
+    "count": 12,
     "description": "Системы логирования"
   },
   "cicd": {
@@ -9460,18 +10225,18 @@ window.EAP_DATA = {
     "name": "CODE QUALITY (Качество кода)",
     "color": "#6f42c1",
     "icon": "✨",
-    "logic": 62,
-    "functionality": 60,
-    "count": 22,
+    "logic": 63,
+    "functionality": 59,
+    "count": 27,
     "description": "Качество кода и линтинг"
   },
   "core": {
     "name": "CORE (Ядро системы)",
     "color": "#495057",
     "icon": "⚙️",
-    "logic": 71,
+    "logic": 70,
     "functionality": 67,
-    "count": 111,
+    "count": 115,
     "description": "Основные модули анализатора"
   },
   "ai": {
@@ -9487,9 +10252,9 @@ window.EAP_DATA = {
     "name": "UTILS (Утилиты)",
     "color": "#6c757d",
     "icon": "🔧",
-    "logic": 58,
+    "logic": 59,
     "functionality": 56,
-    "count": 34,
+    "count": 36,
     "description": "Вспомогательные утилиты"
   },
   "other": {
@@ -9506,11 +10271,11 @@ window.EAP_DATA = {
   history: {
   "2025-09-12": {
     "avgLogic": 69,
-    "avgFunctionality": 66,
-    "totalComponents": 438,
+    "avgFunctionality": 65,
+    "totalComponents": 474,
     "changes": [
       "Live-анализ проекта обновлен",
-      "Загружено 438 компонентов",
+      "Загружено 474 компонентов",
       "Добавлены ключевые недостатки для каждого компонента"
     ],
     "source": "live-analysis"
@@ -9519,14 +10284,16 @@ window.EAP_DATA = {
 
   classification: {
   "analyzers": [
+    "analyzekinderlystructure",
     "generateroadmap",
     "quickanalyze",
     "EAPAnalyzerStatusEvaluator",
     "CorrectedEAPEvaluator",
     "correctedfullsystemevaluationts",
+    "FileStructureAnalyzerV33",
+    "FileStructureAnalyzerV34",
     "fullsystemevaluationts",
     "DockerChecker",
-    "FileStructureAnalyzer",
     "DevEnvironment",
     "Class",
     "ProductionValidator",
@@ -9536,13 +10303,13 @@ window.EAP_DATA = {
     "DockerAnalyzer",
     "EMTAnalyzer",
     "BaseAnalyzer",
+    "FileStructureAnalyzer",
     "MetricsCalculator",
     "CICDChecker",
     "CodeQualityChecker",
     "DependenciesChecker",
     "EMTChecker",
     "LoggingChecker",
-    "BaseFileChecker",
     "BundleSizeAnalyzer",
     "PerformanceChecker",
     "typests",
@@ -9554,10 +10321,10 @@ window.EAP_DATA = {
     "DependencyFixTemplates",
     "RecommendationEngine",
     "SecurityScoreProcessor",
-    "BaseSecurityProcessor",
     "WebSecurityChecker",
     "WebSecurityFixTemplates",
     "SecurityChecker",
+    "SvelteKitChecker",
     "CoverageAnalyzer",
     "CoverageAnalyzerAdapter",
     "CypressChecker",
@@ -9605,13 +10372,18 @@ window.EAP_DATA = {
     "UltraEnhancedAnalyzer",
     "BugFixValidator",
     "MetricsValidator",
+    "validatekinderlyanalysis",
+    "realisticintegrationts",
+    "ComponentRegistry",
+    "Logger",
+    "runorchestratordebuggerts",
+    "runsimpledebuggerts",
     "advancedprojectanalyzer",
     "cleanup",
     "projectstructureanalyzer",
     "QualityAssurance",
     "SimpleProjectAnalyzer",
     "AdvancedErrorHandler",
-    "Logger",
     "ComponentLogger",
     "Sanitizer",
     "examplests",
@@ -9620,11 +10392,12 @@ window.EAP_DATA = {
     "AdvancedMonitoringSystem",
     "OptimizedSecurityMiddleware",
     "pagesvelte",
-    "testsecuritycheckeroptimization"
+    "testeapanalyzerenhancedts"
   ],
   "auxiliary": [
     "eslintrc",
     "CacheManager",
+    "debugeap",
     "Dockerfile",
     "eapai",
     "eap",
@@ -9635,9 +10408,9 @@ window.EAP_DATA = {
     "demov3ts",
     "eslintconfig",
     "finaldemo",
+    "finalvalidationsummary",
     "fullsystemdemo",
-    "optimizeddemo",
-    "optimizedprocessdemo",
+    "manualvalidationkinderly",
     "packagejson",
     "TestingAnalysisAdapter",
     "TestingChecker",
@@ -9646,7 +10419,6 @@ window.EAP_DATA = {
     "SimpleEAPDemo",
     "MockProcessIsolatedAnalyzer",
     "SimpleOrchestrator",
-    "simpleprocessdemo",
     "clits",
     "UserService",
     "AIReportGenerator",
@@ -9658,6 +10430,7 @@ window.EAP_DATA = {
     "testarchitecturets",
     "ConfigSecurityChecker",
     "ConfigFixTemplates",
+    "FileStructureChecker",
     "E2ETestingChecker",
     "VitestChecker",
     "VitestCheckerAdapter",
@@ -9689,7 +10462,6 @@ window.EAP_DATA = {
     "simpletest",
     "ErrorHandler",
     "FileAnalysisUtils",
-    "index",
     "HTMLReporter",
     "JSONReporter",
     "MarkdownReporter",
@@ -9738,7 +10510,18 @@ window.EAP_DATA = {
     "testcypresssimple",
     "teste2eframeworks",
     "teste2esimple",
+    "testenhancedanalyzer",
     "testjestcleants",
+    "testkinderlyanalysis",
+    "EventCard",
+    "testkinderlyorchestrator",
+    "testkinderlyv3",
+    "testkinderlyv31optimized",
+    "testkinderlyv32balanced",
+    "testkinderlyv33finetuned",
+    "testkinderlyv34precision",
+    "testminimaleap",
+    "testorchestratorfinal",
     "testphase3final",
     "testphase4mvp",
     "testphase41integration",
@@ -9773,10 +10556,19 @@ window.EAP_DATA = {
     "tsconfigjson",
     "vitestconfigts",
     "vitestperformanceconfigts",
+    "integrationdemots",
+    "orchestratorintegrationts",
+    "HtmlGenerator",
+    "OrchestratorIntegration",
+    "Componentts",
+    "browseropentestts",
+    "debuggertestts",
+    "integrationtestts",
     "minitest",
     "phase1demo",
     "playwrightconfigts",
     "postcssconfig",
+    "runfixeddebuggerts",
     "cli",
     "setupprojectfixed",
     "setupproject",
@@ -9819,6 +10611,10 @@ window.EAP_DATA = {
     "task22runtimedemots",
     "task22simpletest",
     "testdirect",
+    "testeapenhanced",
+    "testeapfinal",
+    "testintegratedstructurecheckerts",
+    "testrealorchestratorts",
     "testreporters",
     "testreports",
     "testsecuritycheckerts",
@@ -9887,6 +10683,7 @@ window.EAP_DATA = {
     "EXECUTIVESUMMARYmd",
     "FINALGITHUBREADYmd",
     "FINALIMPLEMENTATIONSTATUSmd",
+    "FINETUNINGREPORTFINALmd",
     "IMPLEMENTATIONSTATUSREPORTmd",
     "implementationstatusjson",
     "MyNewChecker",
@@ -9912,8 +10709,12 @@ window.EAP_DATA = {
     "tsconfigcjsjson",
     "tsconfignodejson",
     "UNIQUEREPORTSmd",
+    "VALIDATIONREPORTFINALmd",
     "vitestaiconfigts",
     "eapcleanupexecutionreportmd",
+    "BROWSERINTEGRATIONREPORTmd",
+    "PROJECTCOMPLETIONREPORTmd",
+    "EAPDEBUGGEREXECUTIONREPORTmd",
     "packagelockjson",
     "projectanalysisreportmd",
     "PROJECTCOMPLETIONSUMMARYmd",
@@ -9963,9 +10764,9 @@ window.EAP_DATA = {
     "v50md"
   ],
   "stats": {
-    "analyzersCount": 102,
-    "auxiliaryCount": 227,
-    "otherCount": 109
+    "analyzersCount": 109,
+    "auxiliaryCount": 251,
+    "otherCount": 114
   }
 },
 

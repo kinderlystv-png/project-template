@@ -198,6 +198,13 @@ export class EapDebugger {
   }
 
   /**
+   * Публичный метод для получения регистрации компонентов
+   */
+  public getComponentRegistration(orchestrator: Record<string, unknown>) {
+    return this.componentRegistry.getRegisteredComponents(orchestrator);
+  }
+
+  /**
    * Запускает анализ проекта и показывает результаты в HTML
    */
   public static async runAnalysisAndShow(

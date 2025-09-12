@@ -17,9 +17,36 @@ import { RecommendationGenerator } from './recommendations/generator.js';
 import { MetricsCalculator } from './metrics/calculator.js';
 import { EAPIntegration } from './integration/eap-integration.js';
 
+// Типы
+interface AnalysisOptions {
+  config?: any;
+  deepAnalysis?: boolean;
+  eapIntegration?: boolean;
+}
+
+interface AnalysisResults {
+  basicResults: {
+    totalFiles: number;
+    totalLines: number;
+    largeFiles: number;
+    complexFiles: number;
+    criticalIssues: number;
+    filesByType: Record<string, any>;
+    directoryStats: Record<string, any>;
+    potentialRefactorFiles: any[];
+    circularDependencies: any[];
+    dependencyGraph: Record<string, any>;
+    technicalDebt: number;
+    filesNeedingRefactoring: number;
+    refactoringPercentage: number;
+    issues?: any[];
+    patterns?: any[];
+  };
+  advancedResults?: any;
+}
+
 // Совместимость с существующими импортами
 import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
 const config = require('./config.json');
 
 /**
@@ -27,7 +54,16 @@ const config = require('./config.json');
  * Координирует работу всех модулей
  */
 class StructureAnalyzer {
-  constructor(userConfig = {}) {
+  core: AnalyzerCore;
+  analysisManager: AnalysisManager;
+  metricsCalculator: MetricsCalculator;
+  recommendationGenerator: RecommendationGenerator;
+  eapIntegration: EAPIntegration;
+  config: any;
+  learningSystem: any;
+  version: string;
+
+  constructor(userConfig: any = {}) {
     // Инициализация основных компонентов
     this.core = new AnalyzerCore(userConfig);
     this.analysisManager = new AnalysisManager(this.core);
@@ -44,7 +80,7 @@ class StructureAnalyzer {
   /**
    * Основная функция анализа структуры проекта
    */
-  async analyzeProjectStructure(projectPath, options = {}) {
+  async analyzeProjectStructure(projectPath: string, options: any = {}): Promise<any> {
     console.log('[StructureAnalyzer] Начало полного анализа структуры проекта...');
 
     const startTime = Date.now();
@@ -107,8 +143,9 @@ class StructureAnalyzer {
 
       return result;
     } catch (error) {
-      console.error('[StructureAnalyzer] Ошибка при анализе:', error.message);
-      throw new Error(`Failed to analyze project structure: ${error.message}`);
+      const errorMessage = error instanceof Error ? error.message : String(error);
+      console.error('[StructureAnalyzer] Ошибка при анализе:', errorMessage);
+      throw new Error(`Failed to analyze project structure: ${errorMessage}`);
     }
   }
 
