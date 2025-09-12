@@ -1,6 +1,6 @@
 // EAP Analyzer Dashboard Data
 // Автоматически сгенерирован live-generator.cjs
-// Дата генерации: 12.09.2025, 11:30:15
+// Дата генерации: 12.09.2025, 13:31:12
 
 window.EAP_DATA = {
   components: {
@@ -96,7 +96,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/.github/workflows/ci-cd.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3969,
     "lines": 144,
     "logicIssues": [
@@ -140,7 +140,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/.github/workflows/pr-checks.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9216,
     "lines": 271,
     "logicIssues": [
@@ -208,7 +208,7 @@ window.EAP_DATA = {
     "file": ".github/workflows/testing.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4611,
     "lines": 189,
     "logicIssues": [
@@ -230,7 +230,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/.lintstagedrc.json",
     "description": "/.ts\": [\"npm run type-check\"],\r   \"tests/",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 192,
     "lines": 7,
     "logicIssues": [
@@ -336,8 +336,8 @@ window.EAP_DATA = {
     "file": ".vscode/settings-new.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 1997,
+    "lastModified": "2025-09-12",
+    "fileSize": 2062,
     "lines": 66,
     "logicIssues": [
       "Нет критических проблем"
@@ -421,8 +421,8 @@ window.EAP_DATA = {
     "file": "cleanup-analysis-report.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 10077,
+    "lastModified": "2025-09-12",
+    "fileSize": 10234,
     "lines": 158,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -444,8 +444,8 @@ window.EAP_DATA = {
     "file": "cleanup-execution-report.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 4275,
+    "lastModified": "2025-09-12",
+    "fileSize": 4359,
     "lines": 85,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -532,7 +532,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/docker-compose.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3829,
     "lines": 137,
     "logicIssues": [
@@ -576,7 +576,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/Dockerfile",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5418,
     "lines": 173,
     "logicIssues": [
@@ -597,7 +597,7 @@ window.EAP_DATA = {
     "file": "src/.eap-thresholds.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 308,
     "lines": 14,
     "logicIssues": [
@@ -618,7 +618,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/.github/workflows/ci.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
+    "lastModified": "2025-09-12",
     "fileSize": 6994,
     "lines": 248,
     "logicIssues": [
@@ -641,7 +641,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/.github/workflows/docs.yml",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7120,
     "lines": 200,
     "logicIssues": [
@@ -662,7 +662,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/bin/eap-ai.js",
     "description": "Загрузка с поддержкой ES modules",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 325,
     "lines": 9,
     "logicIssues": [
@@ -704,7 +704,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/bin/generate-roadmap.js",
     "description": "Вспомогательные функции",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 14069,
     "lines": 334,
     "logicIssues": [
@@ -725,7 +725,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/bin/quick-analyze.js",
     "description": "Ultimate EAP Analyzer v3.0 - Quick Analysis (ES Module)\r   Простой скрипт для быстрого анализа любог",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10553,
     "lines": 301,
     "logicIssues": [
@@ -746,7 +746,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/bin/test-fixes.js",
     "description": "CLI для тестирования исправлений критических багов EAP",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2181,
     "lines": 70,
     "logicIssues": [
@@ -767,7 +767,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/test-integration.js",
     "description": "Тест интеграции модульной архитектуры\r   Проверяет корректность работы рефакторированного анализатор",
     "tests": "2 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3975,
     "lines": 88,
     "logicIssues": [
@@ -788,7 +788,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/bin/validate.js",
     "description": "CLI для запуска валидации исправлений EAP",
     "tests": "7 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7260,
     "lines": 188,
     "logicIssues": [
@@ -830,7 +830,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/COMMIT-SUMMARY.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6252,
     "lines": 113,
     "logicIssues": [
@@ -851,7 +851,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/COMPONENT-SPECIFICATION.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9956,
     "lines": 264,
     "logicIssues": [
@@ -872,7 +872,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/comprehensive-status-evaluation.ts",
     "description": "Комплексная оценка состояния EAP Analyzer\r   Проверка всех компонентов с реальными тестами",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 26689,
     "lines": 722,
     "logicIssues": [
@@ -895,7 +895,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/corrected-comprehensive-evaluation.ts",
     "description": "ИСПРАВЛЕННАЯ Комплексная оценка состояния EAP Analyzer\r   Проверка всех компонентов с правильными ме",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 30499,
     "lines": 767,
     "logicIssues": [
@@ -918,7 +918,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/corrected-full-system-evaluation.ts",
     "description": "Реальная оценка всех компонентов EAP Analyzer с правильными путями",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 20807,
     "lines": 575,
     "logicIssues": [
@@ -941,7 +941,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/checkers/testing/TestingFrameworkChecker.test.ts",
     "description": "Mock Project implementation",
     "tests": "15 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6970,
     "lines": 207,
     "logicIssues": [
@@ -964,7 +964,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/demo-v3.ts",
     "description": "Демонстрация нового архитектурного движка EAP Analyzer v3.0\r   Полный анализ с комплексными отчетами",
     "tests": "2 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9912,
     "lines": 228,
     "logicIssues": [
@@ -985,7 +985,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/EAP-QUICK-START.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4780,
     "lines": 155,
     "logicIssues": [
@@ -1006,7 +1006,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/ES-MODULE-FIX.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2142,
     "lines": 74,
     "logicIssues": [
@@ -1027,8 +1027,8 @@ window.EAP_DATA = {
     "file": "eslint.config.js",
     "description": "@type {import('eslint').Linter.Config[]}",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 2602,
+    "lastModified": "2025-09-12",
+    "fileSize": 2703,
     "lines": 102,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -1049,7 +1049,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/EXECUTIVE-SUMMARY.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1780,
     "lines": 37,
     "logicIssues": [
@@ -1070,7 +1070,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/final-demo.cjs",
     "description": "Упрощенная демонстрация финальной системы - запуск через dist-cjs",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8535,
     "lines": 223,
     "logicIssues": [
@@ -1091,7 +1091,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/FINAL-GITHUB-READY.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3276,
     "lines": 89,
     "logicIssues": [
@@ -1112,7 +1112,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/FINAL-IMPLEMENTATION-STATUS.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7926,
     "lines": 130,
     "logicIssues": [
@@ -1133,7 +1133,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/full-system-demo.cjs",
     "description": "Полная демонстрация EAP Analyzer v3.0 с использованием всех компонентов",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10145,
     "lines": 256,
     "logicIssues": [
@@ -1154,7 +1154,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/full-system-evaluation.ts",
     "description": "Полная оценка всех компонентов EAP Analyzer",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 18394,
     "lines": 538,
     "logicIssues": [
@@ -1177,7 +1177,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/IMPLEMENTATION-STATUS-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 13214,
     "lines": 252,
     "logicIssues": [
@@ -1198,7 +1198,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/implementation-status.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1993,
     "lines": 84,
     "logicIssues": [
@@ -1219,7 +1219,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/IMPLEMENTATION-SUCCESS-REPORT.md",
     "description": "Проверка применимости",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11338,
     "lines": 243,
     "logicIssues": [
@@ -1255,6 +1255,69 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
+  "FileStructureAnalyzer": {
+    "name": "FileStructureAnalyzer",
+    "category": "core",
+    "logic": 77,
+    "functionality": 79,
+    "file": "eap-analyzer/src/analyzers/structure/FileStructureAnalyzer.ts",
+    "description": "Fiimport FileSystemScanner, { type ScannedFile } from './FileSystemScanner.js';\r import MetricsCalcu",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 21674,
+    "lines": 496,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "optimizeddemo": {
+    "name": "optimizeddemo",
+    "category": "core",
+    "logic": 51,
+    "functionality": 40,
+    "file": "eap-analyzer/optimized-demo.mjs",
+    "description": "Демонстрация оптимизированного анализатора v2.0\r   Показывает улучшенную архитектуру и снижение техн",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5917,
+    "lines": 132,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "optimizedprocessdemo": {
+    "name": "optimizedprocessdemo",
+    "category": "performance",
+    "logic": 58,
+    "functionality": 45,
+    "file": "eap-analyzer/optimized-process-demo.mjs",
+    "description": "Демо оптимизированного ProcessIsolatedAnalyzer v2.0\r   Тестирование улучшений: 60%/46% → 90%+/90%+",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 7443,
+    "lines": 149,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "packagejson": {
     "name": "packagejson",
     "category": "dependencies",
@@ -1263,7 +1326,7 @@ window.EAP_DATA = {
     "file": "scripts/package.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1321,
     "lines": 42,
     "logicIssues": [
@@ -1284,7 +1347,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/PACKAGING.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5588,
     "lines": 156,
     "logicIssues": [
@@ -1305,7 +1368,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/orchestrator/TestingAnalysisAdapterJS.js",
     "description": "TestingAnalysisAdapter - JavaScript версия для тестирования\r   Phase 4.1: Адаптер для интеграции с A",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 15137,
     "lines": 466,
     "logicIssues": [
@@ -1326,7 +1389,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/unified-testing.ts",
     "description": "TestingChecker - Интегрированный анализатор тестирования\r  \r   Phase 4.2: Интеграция UnifiedTestingA",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12553,
     "lines": 343,
     "logicIssues": [
@@ -1372,7 +1435,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/PROJECT-MAP.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4528,
     "lines": 122,
     "logicIssues": [
@@ -1393,7 +1456,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/QUICK-START.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2933,
     "lines": 84,
     "logicIssues": [
@@ -1414,7 +1477,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/README-GITHUB.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 6168,
     "lines": 202,
     "logicIssues": [
@@ -1456,7 +1519,7 @@ window.EAP_DATA = {
     "file": "scripts/READY-TO-USE.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4541,
     "lines": 96,
     "logicIssues": [
@@ -1477,7 +1540,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/RELEASE-SUMMARY.md",
     "description": "result: полный анализ + AI insights",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5816,
     "lines": 145,
     "logicIssues": [
@@ -1498,7 +1561,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/ROADMAP-ANALYSIS.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12495,
     "lines": 281,
     "logicIssues": [
@@ -1519,7 +1582,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/scripts/dev-setup.js",
     "description": "EAP Development Environment Setup\r   Automates local development workflow and quality checks",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11143,
     "lines": 403,
     "logicIssues": [
@@ -1540,7 +1603,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/scripts/fix-cjs-exports.js",
     "description": "Пост-обработка CommonJS сборки для совместимости",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1835,
     "lines": 58,
     "logicIssues": [
@@ -1561,7 +1624,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/scripts/generate-benchmarks.js",
     "description": "Benchmark generation script for EAP Analyzer\r   Generates performance benchmarks and comparison repo",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7117,
     "lines": 245,
     "logicIssues": [
@@ -1582,7 +1645,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/scripts/release.cjs",
     "description": "🚀 EAP Analyzer Release Script\r   Подготовка и выпуск новой версии пакета",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7690,
     "lines": 261,
     "logicIssues": [
@@ -1603,7 +1666,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/scripts/validate-production.js",
     "description": "Production Readiness Validator\r   Comprehensive check before deployment",
     "tests": "6 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15695,
     "lines": 491,
     "logicIssues": [
@@ -1624,7 +1687,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/SELF-ANALYSIS-PROTECTION.md",
     "description": "Проверяем, что мы не анализируем папку самого анализатора",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4060,
     "lines": 99,
     "logicIssues": [
@@ -1645,7 +1708,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/simple-demo.cjs",
     "description": "Простая демонстрация анализатора без TypeScript",
     "tests": "6 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 13011,
     "lines": 334,
     "logicIssues": [
@@ -1666,7 +1729,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/simple-eap-test.mjs",
     "description": "Упрощенный EAP анализатор для тестирования TestingChecker\r   Обходит проблемы компиляции других комп",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 17491,
     "lines": 529,
     "logicIssues": [
@@ -1689,9 +1752,30 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/SimpleOrchestratorJS.js",
     "description": "SimpleOrchestrator - JavaScript версия для UnifiedTestingAnalyzer",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 1997,
     "lines": 67,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "simpleprocessdemo": {
+    "name": "simpleprocessdemo",
+    "category": "codequality",
+    "logic": 53,
+    "functionality": 51,
+    "file": "eap-analyzer/simple-process-demo.mjs",
+    "description": "Простое демо оптимизированного ProcessIsolatedAnalyzer v2.0",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 3244,
+    "lines": 55,
     "logicIssues": [
       "Возможны улучшения архитектуры"
     ],
@@ -1710,7 +1794,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/SPRINT-1-COMPLETION-REPORT.md",
     "description": "Нормализация процента",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5573,
     "lines": 118,
     "logicIssues": [
@@ -1732,7 +1816,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/SPRINT-COMPLETION-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8848,
     "lines": 202,
     "logicIssues": [
@@ -1774,7 +1858,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/ai-integration/index.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2814,
     "lines": 89,
     "logicIssues": [
@@ -1795,7 +1879,7 @@ window.EAP_DATA = {
     "file": "test-improved-analyzer.cjs",
     "description": "Тест UserService",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
+    "lastModified": "2025-09-12",
     "fileSize": 2233,
     "lines": 78,
     "logicIssues": [
@@ -1818,7 +1902,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/ai-integration/report-generator.ts",
     "description": "Упрощенный генератор отчетов для AI анализа",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4853,
     "lines": 138,
     "logicIssues": [
@@ -1839,7 +1923,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/analyzer.ts",
     "description": "Эталонный Анализатор Проектов (ЭАП)\r   Главный класс для анализа проектов по золотому стандарту\r   В",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 25840,
     "lines": 703,
     "logicIssues": [
@@ -1860,7 +1944,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/analyzers/code/CodeStructureAnalyzer.ts",
     "description": "Code Structure Analyzer\r   Анализатор структуры кода проекта",
     "tests": "5 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8574,
     "lines": 235,
     "logicIssues": [
@@ -1902,7 +1986,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/analyzers/infrastructure/DockerAnalyzer.ts",
     "description": "Docker Analyzer\r   Анализатор конфигураций Docker",
     "tests": "6 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 14823,
     "lines": 407,
     "logicIssues": [
@@ -1923,7 +2007,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/emt/analyzer.ts",
     "description": "EMT модуль - анализирует проекты на базе EMT Framework",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10657,
     "lines": 339,
     "logicIssues": [
@@ -1940,15 +2024,15 @@ window.EAP_DATA = {
   },
   "BaseAnalyzer": {
     "name": "BaseAnalyzer",
-    "category": "core",
-    "logic": 72,
-    "functionality": 65,
-    "file": "eap-analyzer/src/core/base/BaseAnalyzer.ts",
-    "description": "Базовый класс для всех анализаторов\r   Предоставляет общую функциональность и стандартную реализацию",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
-    "fileSize": 4168,
-    "lines": 140,
+    "category": "codequality",
+    "logic": 95,
+    "functionality": 86,
+    "file": "eap-analyzer/src/optimized-analyzer.ts",
+    "description": "Оптимизированный Анализатор v2.0\r   Рефакторинг для устранения технического долга и улучшения произв",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 10647,
+    "lines": 311,
     "logicIssues": [
       "Нет критических проблем"
     ],
@@ -1958,6 +2042,113 @@ window.EAP_DATA = {
     "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "analyzer"
+  },
+  "FileSystemScanner": {
+    "name": "FileSystemScanner",
+    "category": "core",
+    "logic": 77,
+    "functionality": 79,
+    "file": "eap-analyzer/src/analyzers/structure/FileSystemScanner.ts",
+    "description": "FileSystemScanner - Модуль для сканирования файловой системы\r  \r   Предоставляет высокопроизводитель",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 10266,
+    "lines": 311,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "MetricsCalculator": {
+    "name": "MetricsCalculator",
+    "category": "core",
+    "logic": 58,
+    "functionality": 57,
+    "file": "eap-analyzer/src/modules/structure-analyzer/metrics/calculator.js",
+    "description": "Калькулятор метрик и оценок для анализа структуры\r   Вычисляет различные показатели качества и сложн",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 11246,
+    "lines": 349,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "quicktestts": {
+    "name": "quicktestts",
+    "category": "testing",
+    "logic": 51,
+    "functionality": 39,
+    "file": "eap-analyzer/src/analyzers/structure/quick-test.ts",
+    "description": "Быстрый тест FileStructureAnalyzer v3.0",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 1214,
+    "lines": 44,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "teststructureanalyzerts": {
+    "name": "teststructureanalyzerts",
+    "category": "testing",
+    "logic": 54,
+    "functionality": 42,
+    "file": "eap-analyzer/src/analyzers/structure/test-structure-analyzer.ts",
+    "description": "Тестовый файл для проверки FileStructureAnalyzer v3.0\r  \r   Проверяет реальную работу анализатора бе",
+    "tests": "2 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5667,
+    "lines": 126,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
+  "StructureAnalysisUtils": {
+    "name": "StructureAnalysisUtils",
+    "category": "core",
+    "logic": 76,
+    "functionality": 77,
+    "file": "eap-analyzer/src/analyzers/structure/types.ts",
+    "description": "Типы для интеграции FileStructureAnalyzer с основной системой анализа",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 10867,
+    "lines": 389,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "auxiliary"
   },
   "CICDChecker": {
     "name": "CICDChecker",
@@ -2074,16 +2265,39 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
+  "BaseFileChecker": {
+    "name": "BaseFileChecker",
+    "category": "core",
+    "logic": 92,
+    "functionality": 83,
+    "file": "eap-analyzer/src/checkers/SvelteKitChecker_v2.ts",
+    "description": "Оптимизированный SvelteKit Framework Checker v2.0\r   Устранение дублирования кода и улучшение функци",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 12835,
+    "lines": 393,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "analyzer"
+  },
   "BundleSizeAnalyzer": {
     "name": "BundleSizeAnalyzer",
     "category": "performance",
     "logic": 94,
     "functionality": 84,
     "file": "eap-analyzer/src/checkers/performance/BundleSizeAnalyzer.ts",
-    "description": "Анализатор размера бандла и зависимостей   Проверяет размеры файлов, package.json и webpack конфигур",
+    "description": "Анализатор размера бандла и зависимостей\r   Проверяет размеры файлов, package.json и webpack конфигу",
     "tests": "4 тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 14705,
+    "lastModified": "2025-09-12",
+    "fileSize": 15144,
     "lines": 440,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -2105,7 +2319,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/performance.checker.ts",
     "description": "Чекер производительности - проверяет общие проблемы производительности",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10275,
     "lines": 290,
     "logicIssues": [
@@ -2128,8 +2342,8 @@ window.EAP_DATA = {
     "file": "TASK-2-2-COMPLETION-REPORT.md",
     "description": "LCP Analysis - detects large images affecting paint time",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 10805,
+    "lastModified": "2025-09-12",
+    "fileSize": 11106,
     "lines": 302,
     "logicIssues": [
       "Нет критических проблем"
@@ -2147,10 +2361,10 @@ window.EAP_DATA = {
     "logic": 53,
     "functionality": 42,
     "file": "eap-analyzer/src/checkers/performance/test-architecture.ts",
-    "description": "Тестовый скрипт для модульной архитектуры PerformanceChecker   Демонстрирует работу нового модульног",
+    "description": "Тестовый скрипт для модульной архитектуры PerformanceChecker\r   Демонстрирует работу нового модульно",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 4682,
+    "lastModified": "2025-09-12",
+    "fileSize": 4810,
     "lines": 129,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -2170,7 +2384,7 @@ window.EAP_DATA = {
     "file": "src/reporters/types.ts",
     "description": "📋 EAP ANALYZER v6.0 - REPORTER TYPES\r   Интерфейсы и типы для системы отчетов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4458,
     "lines": 197,
     "logicIssues": [
@@ -2191,7 +2405,7 @@ window.EAP_DATA = {
     "file": "TASK-2.3-COMPLETION-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12832,
     "lines": 287,
     "logicIssues": [
@@ -2212,7 +2426,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/analyzers/CSRFAnalyzer.ts",
     "description": "CSRFAnalyzer - Анализатор CSRF уязвимостей\r  \r   Обнаруживает отсутствие защиты от Cross-Site Reques",
     "tests": "6 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12779,
     "lines": 415,
     "logicIssues": [
@@ -2233,7 +2447,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/analyzers/XSSAnalyzer.ts",
     "description": "XSSAnalyzer - Анализатор XSS уязвимостей\r  \r   Обнаруживает потенциальные Cross-Site Scripting уязви",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12279,
     "lines": 413,
     "logicIssues": [
@@ -2256,7 +2470,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/CodeSecurityChecker.ts",
     "description": "Code Security Checker - Enhanced for Task 2.3\r   Статический анализ кода на предмет проблем безопасн",
     "tests": "4 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 18684,
     "lines": 549,
     "logicIssues": [
@@ -2279,7 +2493,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/ConfigSecurityChecker.ts",
     "description": "Config Security Checker\r   Анализ безопасности конфигурационных файлов",
     "tests": "6 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 19771,
     "lines": 589,
     "logicIssues": [
@@ -2300,7 +2514,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/DependenciesSecurityChecker.ts",
     "description": "Dependencies Security Checker\r   Анализ безопасности зависимостей проекта\r  \r   Phase 5.2.1: Интегра",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 13661,
     "lines": 377,
     "logicIssues": [
@@ -2321,7 +2535,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/recommendations/CodeSecurityFixTemplates.ts",
     "description": "CodeSecurityFixTemplates - Шаблоны исправления для проблем безопасности кода\r   \r   Phase 5.2.1: Кон",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 18024,
     "lines": 434,
     "logicIssues": [
@@ -2342,7 +2556,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/recommendations/ConfigFixTemplates.ts",
     "description": "ConfigFixTemplates - Шаблоны исправления для проблем конфигурации безопасности\r   \r   Phase 5.2.1: К",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 18824,
     "lines": 526,
     "logicIssues": [
@@ -2363,7 +2577,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/recommendations/DependencyFixTemplates.ts",
     "description": "DependencyFixTemplates - Шаблоны исправления для уязвимостей зависимостей\r   \r   Phase 5.2.1: Конкре",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 9624,
     "lines": 251,
     "logicIssues": [
@@ -2384,7 +2598,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/recommendations/RecommendationEngine.ts",
     "description": "RecommendationEngine - Система практических рекомендаций по безопасности\r  \r   Phase 5.2.1: Создание",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 23765,
     "lines": 584,
     "logicIssues": [
@@ -2399,36 +2613,59 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
-  "SecurityChecker": {
-    "name": "SecurityChecker",
+  "SecurityScoreProcessor": {
+    "name": "SecurityScoreProcessor",
     "category": "security",
-    "logic": 58,
-    "functionality": 45,
-    "file": "eap-analyzer/src/checkers/security.checker.ts",
-    "description": "Чекер безопасности - проверяет общие проблемы безопасности",
-    "tests": "1 тестов",
-    "lastModified": "2025-09-09",
-    "fileSize": 8223,
-    "lines": 228,
+    "logic": 79,
+    "functionality": 83,
+    "file": "eap-analyzer/src/checkers/security/SecurityChecker_v2_optimized.ts",
+    "description": "SecurityChecker v2.0 - Оптимизированный анализатор безопасности\r  \r   Ключевые улучшения:\r   - Устра",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 25336,
+    "lines": 661,
     "logicIssues": [
-      "Возможны улучшения архитектуры"
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "analyzer"
+  },
+  "BaseSecurityProcessor": {
+    "name": "BaseSecurityProcessor",
+    "category": "security",
+    "logic": 77,
+    "functionality": 78,
+    "file": "eap-analyzer/src/checkers/security/SecurityChecker_v2.ts",
+    "description": "SecurityChecker v2.0 - Оптимизированный анализатор безопасности\r  \r   Ключевые улучшения:\r   - Устра",
+    "tests": "1 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 20343,
+    "lines": 562,
+    "logicIssues": [
+      "Нет критических проблем"
     ],
     "functionalityIssues": [
       "Есть потенциал для улучшения функциональности"
     ],
-    "logicIssue": "Возможны улучшения архитектуры",
+    "logicIssue": "Нет критических проблем",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "analyzer"
   },
   "WebSecurityChecker": {
     "name": "WebSecurityChecker",
     "category": "security",
-    "logic": 95,
-    "functionality": 85,
+    "logic": 93,
+    "functionality": 84,
     "file": "eap-analyzer/src/checkers/security/WebSecurityChecker.ts",
     "description": "WebSecurityChecker - Главный анализатор веб-безопасности\r  \r   Координирует анализ XSS, CSRF и други",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6500,
     "lines": 180,
     "logicIssues": [
@@ -2449,7 +2686,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/security/WebSecurityFixTemplates.ts",
     "description": "WebSecurityFixTemplates - Шаблоны исправлений для веб-уязвимостей\r  \r   Phase 5.2.2 - Задача 1.2\r   ",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 26313,
     "lines": 655,
     "logicIssues": [
@@ -2464,26 +2701,25 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "analyzer"
   },
-  "SvelteKitChecker": {
-    "name": "SvelteKitChecker",
-    "category": "core",
-    "logic": 56,
-    "functionality": 43,
-    "file": "eap-analyzer/src/checkers/sveltekit.ts",
-    "description": "SvelteKit Framework Checker   Проверки конфигурации и настройки SvelteKit",
+  "SecurityChecker": {
+    "name": "SecurityChecker",
+    "category": "security",
+    "logic": 58,
+    "functionality": 45,
+    "file": "eap-analyzer/src/checkers/security.checker.ts",
+    "description": "Чекер безопасности - проверяет общие проблемы безопасности",
     "tests": "1 тестов",
-    "lastModified": "2025-09-08",
-    "fileSize": 18904,
-    "lines": 584,
+    "lastModified": "2025-09-12",
+    "fileSize": 8223,
+    "lines": 228,
     "logicIssues": [
-      "Обнаружено значительное дублирование кода",
       "Возможны улучшения архитектуры"
     ],
     "functionalityIssues": [
-      "Обнаружено значительное дублирование кода"
+      "Есть потенциал для улучшения функциональности"
     ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "analyzer"
   },
   "CoverageAnalyzer": {
@@ -2494,7 +2730,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/CoverageAnalyzer.ts",
     "description": "CoverageAnalyzer - анализатор покрытия кода тестами\r   Анализирует отчеты покрытия и предоставляет д",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 32842,
     "lines": 923,
     "logicIssues": [
@@ -2515,7 +2751,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/CoverageAnalyzerAdapter.ts",
     "description": "Адаптер CoverageAnalyzer для интеграции с AnalysisOrchestrator",
     "tests": "7 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 15744,
     "lines": 451,
     "logicIssues": [
@@ -2536,7 +2772,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/CypressChecker.ts",
     "description": "CypressChecker - анализатор Cypress E2E тестирования\r   Проверяет конфигурацию, тесты и настройки Cy",
     "tests": "6 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 39116,
     "lines": 1162,
     "logicIssues": [
@@ -2557,7 +2793,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/CypressCheckerAdapter.ts",
     "description": "Адаптер CypressChecker для интеграции с AnalysisOrchестратором\r   Анализирует конфигурацию и настрой",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12030,
     "lines": 353,
     "logicIssues": [
@@ -2578,7 +2814,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/E2ETestingChecker.ts",
     "description": "E2ETestingChecker - универсальный анализатор E2E тестирования\r   Координирует анализ различных E2E ф",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 39395,
     "lines": 1016,
     "logicIssues": [
@@ -2601,7 +2837,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/JestChecker.ts",
     "description": "JestChecker - специализированный анализатор для Jest фреймворка\r   Проверяет конфигурацию, тесты и н",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 26464,
     "lines": 760,
     "logicIssues": [
@@ -2622,7 +2858,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/JestCheckerAdapter.ts",
     "description": "Адаптер JestChecker для интеграции с AnalysisOrchestrator",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 9980,
     "lines": 303,
     "logicIssues": [
@@ -2645,7 +2881,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/PlaywrightChecker.ts",
     "description": "PlaywrightChecker - анализатор Playwright E2E тестирования\r   Проверяет конфигурацию, тесты и настро",
     "tests": "5 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 35604,
     "lines": 1052,
     "logicIssues": [
@@ -2666,7 +2902,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/PlaywrightCheckerAdapter.ts",
     "description": "Адаптер PlaywrightChecker для интеграции с AnalysisOrchestrator\r   Анализирует конфигурацию и настро",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10899,
     "lines": 307,
     "logicIssues": [
@@ -2710,7 +2946,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/checkers/VitestCheckerAdapter.ts",
     "description": "Адаптер VitestChecker для интеграции с AnalysisOrchestrator",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6927,
     "lines": 219,
     "logicIssues": [
@@ -2731,7 +2967,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/constants.ts",
     "description": "Константы для модуля тестирования\r   Все пороговые значения, паттерны и сообщения для тестовых чекер",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4903,
     "lines": 119,
     "logicIssues": [
@@ -2752,7 +2988,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/CoverageChecker.ts",
     "description": "Конфигурация покрытия тестами",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 16599,
     "lines": 473,
     "logicIssues": [
@@ -2773,7 +3009,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/E2EChecker.ts",
     "description": "Информация о E2E фреймворке",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 17772,
     "lines": 520,
     "logicIssues": [
@@ -2796,7 +3032,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/UnifiedTestingAnalyzerJS.js",
     "description": "UnifiedTestingAnalyzer - JavaScript заглушка для тестирования Phase 4.1\r   Имитирует основную функци",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3586,
     "lines": 129,
     "logicIssues": [
@@ -2817,7 +3053,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/test-coverage-clean.ts",
     "description": "Тест CoverageAnalyzerAdapter - анализатор покрытия кода",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8422,
     "lines": 203,
     "logicIssues": [
@@ -2838,7 +3074,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/test-playwright-clean.ts",
     "description": "Тест PlaywrightCheckerAdapter - анализатор E2E тестирования с Playwright",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 9477,
     "lines": 224,
     "logicIssues": [
@@ -2859,7 +3095,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/TestingFrameworkChecker.ts",
     "description": "Информация о тестовом фреймворке",
     "tests": "5 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 17046,
     "lines": 517,
     "logicIssues": [
@@ -2880,7 +3116,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/types/TestingTypes.ts",
     "description": "Типы для модуля тестирования\r   Описывают структуры данных для обмена информацией между чекерами",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4871,
     "lines": 144,
     "logicIssues": [
@@ -2901,7 +3137,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/CheckResultUtils.ts",
     "description": "Утилиты для создания CheckResult в тестовых чекерах",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6159,
     "lines": 201,
     "logicIssues": [
@@ -2924,7 +3160,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/ConfigFileAnalyzer.ts",
     "description": "Анализатор конфигурационных файлов тестовых фреймворков",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 14277,
     "lines": 444,
     "logicIssues": [
@@ -2947,7 +3183,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/PackageJsonAnalyzer.ts",
     "description": "Анализатор package.json для тестовых фреймворков и конфигураций",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10302,
     "lines": 316,
     "logicIssues": [
@@ -2970,7 +3206,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/QualityMetricsAnalyzer.ts",
     "description": "QualityMetricsAnalyzer - анализатор качества и метрик тестирования\r   Предоставляет комплексный анал",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 30222,
     "lines": 860,
     "logicIssues": [
@@ -2993,7 +3229,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/ResultBuilder.ts",
     "description": "ResultBuilder - расширенный билдер для создания CheckResult\r   Предоставляет Fluent API и автоматиче",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12417,
     "lines": 370,
     "logicIssues": [
@@ -3014,7 +3250,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/checkers/testing/utils/TestFileFinder.ts",
     "description": "Утилиты для поиска и анализа тестовых файлов",
     "tests": "7 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 32026,
     "lines": 868,
     "logicIssues": [
@@ -3037,7 +3273,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/checker.ts",
     "description": "Базовый класс для всех чекеров системы",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2789,
     "lines": 101,
     "logicIssues": [
@@ -3058,7 +3294,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/evaluators/interfaces.ts",
     "description": "Base Evaluator Interface\r   Базовый интерфейс для всех оценщиков",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6815,
     "lines": 215,
     "logicIssues": [
@@ -3079,7 +3315,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/BaseReporter.ts",
     "description": "Base Reporter\r   Базовый класс для всех репортеров EAP v4.0",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 13323,
     "lines": 434,
     "logicIssues": [
@@ -3100,7 +3336,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/interfaces/IAnalyzer.ts",
     "description": "Базовый интерфейс для всех анализаторов\r   Анализаторы отвечают за сбор сырых данных из проекта\r   @",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1939,
     "lines": 64,
     "logicIssues": [
@@ -3121,7 +3357,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/interfaces/IChecker.ts",
     "description": "Базовый интерфейс для всех чекеров\r   Чекеры отвечают за проверку соответствия проекта стандартам и ",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2889,
     "lines": 114,
     "logicIssues": [
@@ -3142,7 +3378,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/interfaces/IEvaluator.ts",
     "description": "Базовый интерфейс для всех эвалюаторов\r   Эвалюаторы отвечают за оценку и расчет метрик на основе со",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2395,
     "lines": 92,
     "logicIssues": [
@@ -3163,7 +3399,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/interfaces/IReporter.ts",
     "description": "Базовый интерфейс для всех репортеров\r   Репортеры отвечают за формирование отчетов на основе резуль",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3398,
     "lines": 156,
     "logicIssues": [
@@ -3184,7 +3420,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/ULTIMATE-README.md",
     "description": "Примеры AI анализа",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9596,
     "lines": 227,
     "logicIssues": [
@@ -3207,7 +3443,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/report-generator.ts",
     "description": "Генератор комплексных отчетов с дорожной картой и визуализациями",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 14731,
     "lines": 440,
     "logicIssues": [
@@ -3228,7 +3464,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/core/ultimate-report-generator.ts",
     "description": "Генератор ultimate отчетов - высший стандарт анализа\r   Включает AI анализ, архитектуру, технический",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 39693,
     "lines": 1050,
     "logicIssues": [
@@ -3251,7 +3487,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/demo/ultimate-demo.ts",
     "description": "Демонстрация полной системы анализа v3.0 с AI инсайтами",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10912,
     "lines": 279,
     "logicIssues": [
@@ -3272,7 +3508,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/demo-reporting.ts",
     "description": "Demo: EAP v4.0 Unified Reporting System\r   Демонстрация работы унифицированной системы отчетов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10350,
     "lines": 288,
     "logicIssues": [
@@ -3293,7 +3529,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/evaluators/DebtEvaluator.ts",
     "description": "Debt Evaluator\r   Оценщик технического долга проекта",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 15555,
     "lines": 377,
     "logicIssues": [
@@ -3314,7 +3550,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/ai-insights-engine.ts",
     "description": "Упрощенный AI движок для интеграции с основным анализатором",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9064,
     "lines": 321,
     "logicIssues": [
@@ -3337,7 +3573,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/analyzer.ts",
     "description": "AI анализатор - интеллектуальный анализ кода с машинным обучением",
     "tests": "14 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 28043,
     "lines": 795,
     "logicIssues": [
@@ -3360,7 +3596,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/feature-extractor.ts",
     "description": "Feature Extractor для AI Quality Predictor\r   Извлекает признаки из результатов анализа всех модулей",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 14018,
     "lines": 341,
     "logicIssues": [
@@ -3383,7 +3619,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/pattern-definitions.ts",
     "description": "Улучшенные определения паттернов с более точными критериями обнаружения",
     "tests": "7 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15873,
     "lines": 573,
     "logicIssues": [
@@ -3406,7 +3642,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/pattern-matchers.ts",
     "description": "Специализированные матчеры для точного обнаружения паттернов",
     "tests": "8 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 13105,
     "lines": 413,
     "logicIssues": [
@@ -3429,7 +3665,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/pattern-recognizer.ts",
     "description": "Улучшенный модуль ИИ-распознавания паттернов в коде\r   Использует улучшенные алгоритмы и множественн",
     "tests": "2 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 33857,
     "lines": 931,
     "logicIssues": [
@@ -3450,7 +3686,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/ai-insights/quality-predictor.ts",
     "description": "Quality Predictor - Предсказатель качества кода\r   Rule-based система оценки качества с возможностью",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 22438,
     "lines": 571,
     "logicIssues": [
@@ -3471,7 +3707,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/ai-insights/feature-extractor.test.ts",
     "description": "Тесты для Feature Extractor",
     "tests": "16 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11257,
     "lines": 299,
     "logicIssues": [
@@ -3493,7 +3729,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/architecture-analyzer/analyzer.ts",
     "description": "Анализирует архитектуру проекта",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15858,
     "lines": 476,
     "logicIssues": [
@@ -3514,7 +3750,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/interfaces.ts",
     "description": "Reporter Interfaces\r   Базовые интерфейсы для системы отчетов EAP v4.0",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 5861,
     "lines": 205,
     "logicIssues": [
@@ -3535,7 +3771,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/emt/checkers/config.checker.ts",
     "description": "EMT Configuration Checker - проверяет конфигурацию EMT проекта",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7653,
     "lines": 207,
     "logicIssues": [
@@ -3556,7 +3792,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/emt/checkers/dependencies.checker.ts",
     "description": "EMT Dependencies Checker - проверяет зависимости EMT проекта",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7785,
     "lines": 208,
     "logicIssues": [
@@ -3577,7 +3813,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/emt/checkers/routes.checker.ts",
     "description": "EMT Routes Checker - проверяет конфигурацию и структуру роутов EMT",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3748,
     "lines": 103,
     "logicIssues": [
@@ -3598,7 +3834,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/performance-analyzer/execution-timer.ts",
     "description": "Профайлер времени выполнения\r   Измеряет производительность различных этапов анализа\r   и выявляет у",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 14258,
     "lines": 437,
     "logicIssues": [
@@ -3617,10 +3853,10 @@ window.EAP_DATA = {
     "logic": 77,
     "functionality": 79,
     "file": "test-utils/memory-profiler.ts",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║                    MEMORY PROF",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║                    MEMORY PRO",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 9333,
+    "fileSize": 9605,
     "lines": 273,
     "logicIssues": [
       "Нет критических проблем"
@@ -3640,7 +3876,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/refactoring-analyzer/analyzer.ts",
     "description": "Or using strategy pattern for more complex cases",
     "tests": "5 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 28999,
     "lines": 905,
     "logicIssues": [
@@ -3663,7 +3899,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/advanced-analyzer.js",
     "description": "Расширенный анализатор структуры проекта\r   Адаптированная версия advanced-project-analyzer.js для и",
     "tests": "10 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 18519,
     "lines": 569,
     "logicIssues": [
@@ -3686,7 +3922,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/analysis/analysis-manager.js",
     "description": "Модуль управления анализом проекта\r   Координирует базовый и расширенный анализ",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7537,
     "lines": 233,
     "logicIssues": [
@@ -3709,7 +3945,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/basic-analyzer.js",
     "description": "Базовый анализатор структуры проекта\r   Адаптированная версия project-structure-analyzer.js для инте",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12868,
     "lines": 402,
     "logicIssues": [
@@ -3730,7 +3966,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/complexity-calculator.ts",
     "description": "Улучшенный калькулятор цикломатической и когнитивной сложности\r   Исправляет неадекватные значения с",
     "tests": "6 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 18985,
     "lines": 639,
     "logicIssues": [
@@ -3751,7 +3987,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/config.json",
     "description": "\", \"",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 6270,
     "lines": 221,
     "logicIssues": [
@@ -3772,7 +4008,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/core/analyzer-core.js",
     "description": "Основной класс анализатора структуры проекта\r   Содержит базовую конфигурацию и координацию модулей",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4291,
     "lines": 134,
     "logicIssues": [
@@ -3793,7 +4029,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/duplication-detector.ts",
     "description": "Улучшенный детектор дублирования кода\r   Исправляет критические баги в расчете процента дублирования",
     "tests": "5 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10960,
     "lines": 325,
     "logicIssues": [
@@ -3816,7 +4052,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/file-classifier.ts",
     "description": "Система умной классификации файлов\r   Определяет тип файла и его назначение для корректного анализа",
     "tests": "10 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15575,
     "lines": 485,
     "logicIssues": [
@@ -3837,7 +4073,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/index.js",
     "description": "Рефакторированный анализатор структуры проекта для ЭАП\r   Модульная архитектура для улучшения поддер",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12023,
     "lines": 346,
     "logicIssues": [
@@ -3858,7 +4094,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/integration/eap-integration.js",
     "description": "Интеграция анализатора структуры с ЭАП (Enterprise Analysis Platform)\r   Генерирует данные в формате",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12467,
     "lines": 361,
     "logicIssues": [
@@ -3879,7 +4115,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/integration-example.js",
     "description": "Пример интеграции анализатора структуры с основной системой ЭАП\r   Демонстрирует полный цикл от анал",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9893,
     "lines": 274,
     "logicIssues": [
@@ -3900,7 +4136,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/learning.js",
     "description": "Модуль системы обучения для анализатора структуры проекта\r   Адаптированная версия для интеграции с ",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 22930,
     "lines": 640,
     "logicIssues": [
@@ -3913,27 +4149,6 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
-  "MetricsCalculator": {
-    "name": "MetricsCalculator",
-    "category": "core",
-    "logic": 58,
-    "functionality": 57,
-    "file": "eap-analyzer/src/modules/structure-analyzer/metrics/calculator.js",
-    "description": "Калькулятор метрик и оценок для анализа структуры\r   Вычисляет различные показатели качества и сложн",
-    "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
-    "fileSize": 11246,
-    "lines": 349,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
-  },
   "RecommendationGenerator": {
     "name": "RecommendationGenerator",
     "category": "core",
@@ -3942,7 +4157,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/recommendations/generator.js",
     "description": "Генератор рекомендаций по улучшению структуры проекта\r   Создает детальные рекомендации на основе ре",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 13004,
     "lines": 274,
     "logicIssues": [
@@ -3965,7 +4180,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/structure-analyzer/simple-test.js",
     "description": "Простой тест загрузки модульной архитектуры",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2766,
     "lines": 59,
     "logicIssues": [
@@ -3986,7 +4201,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/modules/technical-debt/new-analyzer.ts",
     "description": "Анализатор технического долга - количественная оценка и ROI",
     "tests": "9 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15398,
     "lines": 481,
     "logicIssues": [
@@ -4008,8 +4223,8 @@ window.EAP_DATA = {
     "description": "Упрощенный анализатор технического долга для интеграции\r   Версия 2.0 - Улучшенная архитектура с ути",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 6285,
-    "lines": 210,
+    "fileSize": 6515,
+    "lines": 214,
     "logicIssues": [
       "Нет критических проблем"
     ],
@@ -4073,7 +4288,7 @@ window.EAP_DATA = {
     "description": "Утилиты для работы с файлами в анализаторах технического долга",
     "tests": "2 тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 5197,
+    "fileSize": 5206,
     "lines": 170,
     "logicIssues": [
       "Нет критических проблем"
@@ -4085,106 +4300,38 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
-  "debtmetricscalculatortestts": {
-    "name": "debtmetricscalculatortestts",
-    "category": "testing",
-    "logic": 54,
-    "functionality": 42,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/debt-metrics-calculator.test.ts",
-    "description": "/",
-    "tests": "28 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 14717,
-    "lines": 459,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "other"
-  },
-  "fileanalysisutilstestts": {
-    "name": "fileanalysisutilstestts",
-    "category": "testing",
-    "logic": 71,
-    "functionality": 73,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/file-analysis-utils.test.ts",
-    "description": "Тесты для FileAnalysisUtils",
-    "tests": "11 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 4822,
-    "lines": 146,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "other"
-  },
-  "simpleanalyzertestts": {
-    "name": "simpleanalyzertestts",
-    "category": "testing",
-    "logic": 75,
-    "functionality": 79,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/simple-analyzer.test.ts",
-    "description": "Comprehensive Test Suite для SimpleTechnicalDebtAnalyzer v2.0",
-    "tests": "28 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 14942,
-    "lines": 460,
-    "logicIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Нет критических проблем"
-    ],
-    "functionalityIssues": [
-      "Обнаружено значительное дублирование кода",
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Обнаружено значительное дублирование кода",
-    "functionalityIssue": "Обнаружено значительное дублирование кода",
-    "classification": "auxiliary"
-  },
-  "testanalyzermanualts": {
-    "name": "testanalyzermanualts",
-    "category": "testing",
-    "logic": 53,
-    "functionality": 41,
-    "file": "eap-analyzer/src/modules/technical-debt/__tests__/test-analyzer-manual.ts",
-    "description": "Test script for SimpleTechnicalDebtAnalyzer v2.0",
-    "tests": "1 тестов",
-    "lastModified": "2025-09-12",
-    "fileSize": 2391,
-    "lines": 61,
-    "logicIssues": [
-      "Возможны улучшения архитектуры"
-    ],
-    "functionalityIssues": [
-      "Есть потенциал для улучшения функциональности"
-    ],
-    "logicIssue": "Возможны улучшения архитектуры",
-    "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "auxiliary"
-  },
   "ProcessIsolatedAnalyzer": {
     "name": "ProcessIsolatedAnalyzer",
     "category": "performance",
-    "logic": 60,
-    "functionality": 46,
+    "logic": 95,
+    "functionality": 92,
     "file": "eap-analyzer/src/orchestrator/ProcessIsolatedAnalyzerJS.js",
-    "description": "ProcessIsolatedAnalyzer - JavaScript версия для тестирования\r   Phase 4.1: Изолированный запуск Unif",
-    "tests": "2 тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 9052,
-    "lines": 289,
+    "description": "/\r \r   ProcessIsolatedAnalyzer - Оптимизированная JavaScript версия v2.0  ProcessIsolatedAnalyzer - ",
+    "tests": "5 тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 23793,
+    "lines": 780,
+    "logicIssues": [
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Нет критических проблем",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "analyzer"
+  },
+  "index": {
+    "name": "index",
+    "category": "security",
+    "logic": 44,
+    "functionality": 45,
+    "file": "eap-analyzer/src/orchestrator/types/index.js",
+    "description": "Эталонный Анализатор Проектов (ЭАП)   Типы и интерфейсы для анализа проектов",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 812,
+    "lines": 31,
     "logicIssues": [
       "Возможны улучшения архитектуры"
     ],
@@ -4193,7 +4340,7 @@ window.EAP_DATA = {
     ],
     "logicIssue": "Возможны улучшения архитектуры",
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
-    "classification": "analyzer"
+    "classification": "auxiliary"
   },
   "AnalysisReportAdapter": {
     "name": "AnalysisReportAdapter",
@@ -4203,7 +4350,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/AnalysisReportAdapter.ts",
     "description": "EAP Analysis to Report Data Adapter\r   Адаптер для преобразования результатов анализа EAP в данные д",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12058,
     "lines": 324,
     "logicIssues": [
@@ -4224,7 +4371,7 @@ window.EAP_DATA = {
     "file": "src/reporters/HTMLReporter.ts",
     "description": "📝 EAP ANALYZER v6.0 - HTML REPORTER\r   Генерация интерактивных HTML отчетов с разворачивающимися се",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 31739,
     "lines": 899,
     "logicIssues": [
@@ -4247,7 +4394,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/JSONReporter.ts",
     "description": "JSON Reporter\r   Генерирует отчеты в формате JSON с поддержкой JSON Schema",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 25039,
     "lines": 830,
     "logicIssues": [
@@ -4268,7 +4415,7 @@ window.EAP_DATA = {
     "file": "src/reporters/MarkdownReporter.ts",
     "description": "📝 EAP ANALYZER v6.0 - MARKDOWN REPORTER\r   Генерация документации в формате Markdown",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 16570,
     "lines": 407,
     "logicIssues": [
@@ -4289,7 +4436,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/ReporterFactory.ts",
     "description": "Report Factory\r   Фабрика для создания репортеров различных типов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6859,
     "lines": 211,
     "logicIssues": [
@@ -4310,7 +4457,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/simple-template-test.js",
     "description": "Простой тест библиотеки шаблонов\r   Тестирует основные компоненты отдельно",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3055,
     "lines": 74,
     "logicIssues": [
@@ -4331,7 +4478,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/specialized/ExecutiveSummaryReporter.ts",
     "description": "Executive Summary Reporter\r   Специализированный репортер для краткого резюме руководителей",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12780,
     "lines": 420,
     "logicIssues": [
@@ -4352,7 +4499,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/specialized/RoadmapReporter.ts",
     "description": "Roadmap Reporter\r   Специализированный репортер для создания дорожной карты развития проекта",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 34089,
     "lines": 1057,
     "logicIssues": [
@@ -4373,7 +4520,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/specialized/TechnicalDebtReporter.ts",
     "description": "Technical Debt Reporter\r   Специализированный репортер для анализа технического долга",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 22640,
     "lines": 669,
     "logicIssues": [
@@ -4394,7 +4541,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/TemplateEngine.ts",
     "description": "Template Engine\r   Движок шаблонов для генерации отчетов EAP v4.0",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 9521,
     "lines": 295,
     "logicIssues": [
@@ -4415,7 +4562,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/templates/TemplateLoader.ts",
     "description": "Template Loader - Загрузчик шаблонов из различных источников\r   Обеспечивает загрузку встроенных и п",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 31158,
     "lines": 948,
     "logicIssues": [
@@ -4436,7 +4583,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/templates/TemplateManager.ts",
     "description": "Template Manager - Менеджер шаблонов\r   Связующее звено между Registry, Loader и TemplateEngine\r   О",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 19235,
     "lines": 602,
     "logicIssues": [
@@ -4457,7 +4604,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/templates/TemplateRegistry.ts",
     "description": "Template Registry - Центральный реестр всех шаблонов\r   Синглтон для управления шаблонами, секциями ",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 13071,
     "lines": 462,
     "logicIssues": [
@@ -4478,7 +4625,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/reporters/UnifiedReportingSystem.ts",
     "description": "Unified Reporting System\r   Основной класс для координации всех репортеров и создания комплексных от",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 16150,
     "lines": 497,
     "logicIssues": [
@@ -4499,7 +4646,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-critical-assessment.ts",
     "description": "Критическая проверка: работают ли новые компоненты изолированно",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8332,
     "lines": 236,
     "logicIssues": [
@@ -4521,7 +4668,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-critical-new.ts",
     "description": "Критическая проверка: работают ли новые компоненты изолированно",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4778,
     "lines": 142,
     "logicIssues": [
@@ -4543,7 +4690,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-enhanced-security.ts",
     "description": "Test Enhanced SecurityChecker with RecommendationEngine\r   Phase 5.2.1: Проверка интеграции рекоменд",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6357,
     "lines": 150,
     "logicIssues": [
@@ -4564,7 +4711,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-integration-simple.ts",
     "description": "Тест интеграции RecommendationEngine",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6709,
     "lines": 151,
     "logicIssues": [
@@ -4585,7 +4732,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-recommendation-simple.js",
     "description": "Простой тест RecommendationEngine",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 2219,
     "lines": 62,
     "logicIssues": [
@@ -4606,7 +4753,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-recommendations-basic.js",
     "description": "Простой тест RecommendationEngine\r   Версия без сложных импортов",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6667,
     "lines": 188,
     "logicIssues": [
@@ -4627,7 +4774,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-security-final.cjs",
     "description": "Тест SecurityChecker - CommonJS версия",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 13609,
     "lines": 381,
     "logicIssues": [
@@ -4648,7 +4795,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-security-main.ts",
     "description": "Финальный тест SecurityChecker с RecommendationEngine",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8861,
     "lines": 219,
     "logicIssues": [
@@ -4669,7 +4816,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-security-realistic.js",
     "description": "Тест реального SecurityChecker\r   Проверяем интеграцию с RecommendationEngine",
     "tests": "3 тестов",
-    "lastModified": "2025-09-11",
+    "lastModified": "2025-09-12",
     "fileSize": 13940,
     "lines": 352,
     "logicIssues": [
@@ -4690,7 +4837,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-security.ts",
     "description": "SecurityChecker Test - Phase 5.1.1\r   Тестирование восстановленного SecurityChecker",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3576,
     "lines": 97,
     "logicIssues": [
@@ -4711,7 +4858,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-web-security.ts",
     "description": "Тест интеграции WebSecurityChecker",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3395,
     "lines": 95,
     "logicIssues": [
@@ -4732,7 +4879,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-xss-analyzer.ts",
     "description": "Тест XSS Detection Engine\r   Проверяет базовую функциональность поиска XSS уязвимостей",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4843,
     "lines": 134,
     "logicIssues": [
@@ -4753,7 +4900,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test-xss-simple.ts",
     "description": "Упрощенный тест XSS анализатора",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 1876,
     "lines": 57,
     "logicIssues": [
@@ -4774,7 +4921,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/test.ts",
     "description": "Тестовый запуск ЭАП анализатора",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2118,
     "lines": 67,
     "logicIssues": [
@@ -4795,7 +4942,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/testing/bug-fix-tester.ts",
     "description": "Модуль для тестирования исправлений критических багов EAP\r   Проверяет правильность расчета дупликац",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 17531,
     "lines": 517,
     "logicIssues": [
@@ -4818,7 +4965,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/testing/integration-tests.ts",
     "description": "Интеграционные тесты для проверки всего цикла валидации\r   Тестирует взаимодействие всех компонентов",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15103,
     "lines": 466,
     "logicIssues": [
@@ -4841,7 +4988,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/analysis-results.ts",
     "description": "Analysis Results Types\r   Типы данных для результатов анализа различных аспектов проекта",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 5506,
     "lines": 177,
     "logicIssues": [
@@ -4864,7 +5011,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/AnalysisCategory.ts",
     "description": "Категории анализа в EAP системе",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 923,
     "lines": 26,
     "logicIssues": [
@@ -4885,7 +5032,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/babel-traverse.d.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 705,
     "lines": 33,
     "logicIssues": [
@@ -4906,7 +5053,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/CheckResult.ts",
     "description": "Результат выполнения проверки",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2192,
     "lines": 111,
     "logicIssues": [
@@ -4927,7 +5074,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/evaluation-results.ts",
     "description": "Evaluation Results Types\r   Типы данных для результатов оценки различных аспектов проекта",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 7213,
     "lines": 230,
     "logicIssues": [
@@ -4948,7 +5095,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/Project.ts",
     "description": "Интерфейс для представления проекта в системе анализа",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2326,
     "lines": 81,
     "logicIssues": [
@@ -4969,7 +5116,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/types/SeverityLevel.ts",
     "description": "Уровни серьезности проблем и проверок",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 840,
     "lines": 30,
     "logicIssues": [
@@ -4990,7 +5137,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/ultra-enhanced-analyzer.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15490,
     "lines": 436,
     "logicIssues": [
@@ -5011,7 +5158,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/utils/adaptive-thresholds.ts",
     "description": "Конфигурация с адаптивными порогами (TypeScript версия)",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 14865,
     "lines": 408,
     "logicIssues": [
@@ -5032,7 +5179,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/utils/error-handler.ts",
     "description": "Система обработки ошибок (TypeScript версия)",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6649,
     "lines": 238,
     "logicIssues": [
@@ -5053,7 +5200,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/utils/file-utils.ts",
     "description": "Утилиты для работы с файлами и кодировками (TypeScript версия)",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5341,
     "lines": 239,
     "logicIssues": [
@@ -5095,7 +5242,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/utils/module-compatibility.js",
     "description": "Обеспечение совместимости между CommonJS и ES модулями",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7553,
     "lines": 215,
     "logicIssues": [
@@ -5116,7 +5263,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/validation/bug-fix-validator.ts",
     "description": "Валидатор исправлений критических багов EAP\r   Проверяет корректность метрик после исправлений",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 15860,
     "lines": 419,
     "logicIssues": [
@@ -5139,7 +5286,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/validation/metrics-validator.ts",
     "description": "Валидатор метрик для проверки корректности расчетов\r   Специализированная проверка числовых значений",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 16282,
     "lines": 438,
     "logicIssues": [
@@ -5162,7 +5309,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/src/validation/validation-reporter.ts",
     "description": "Генератор отчетов о валидации исправлений\r   Создает детальные отчеты о состоянии исправленных багов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 19266,
     "lines": 473,
     "logicIssues": [
@@ -5204,7 +5351,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-ai-integration.mjs",
     "description": "EAP Analyzer компонент",
     "tests": "1 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2253,
     "lines": 61,
     "logicIssues": [
@@ -5225,7 +5372,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-all-analyzers-final.mjs",
     "description": "ИТОГОВЫЙ КОМПЛЕКСНЫЙ ТЕСТ ВСЕХ АНАЛИЗАТОРОВ\r   Phase 1 (Unit Testing) + Phase 2 (E2E Testing)",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 13855,
     "lines": 365,
     "logicIssues": [
@@ -5246,7 +5393,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-all-frameworks.mjs",
     "description": "Комплексный тест всех тестовых анализаторов: Vitest, Jest и Coverage",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8436,
     "lines": 195,
     "logicIssues": [
@@ -5268,7 +5415,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-both-frameworks.ts",
     "description": "Объединенный тест VitestChecker и JestChecker с SimpleOrchestrator",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10468,
     "lines": 200,
     "logicIssues": [
@@ -5289,7 +5436,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-coverage-simple.mjs",
     "description": "Простой тест CoverageAnalyzer без TypeScript (для запуска)",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4727,
     "lines": 125,
     "logicIssues": [
@@ -5310,7 +5457,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-cypress-simple.mjs",
     "description": "Простой тест CypressChecker без TypeScript (для быстрого запуска)",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 11544,
     "lines": 297,
     "logicIssues": [
@@ -5331,7 +5478,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-e2e-frameworks.mjs",
     "description": "Комплексный тест всех E2E анализаторов: Playwright и Cypress",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12877,
     "lines": 289,
     "logicIssues": [
@@ -5352,7 +5499,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-e2e-simple.mjs",
     "description": "Простой комплексный тест E2E анализаторов",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 9972,
     "lines": 251,
     "logicIssues": [
@@ -5373,7 +5520,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-jest-clean.ts",
     "description": "Тест JestCheckerAdapter с SimpleOrchestrator",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8793,
     "lines": 192,
     "logicIssues": [
@@ -5394,7 +5541,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-phase3-final.mjs",
     "description": "Phase 3 Test - Финальный тест комплексного анализа тестовой экосистемы\r   Использует предыдущие тест",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 11135,
     "lines": 299,
     "logicIssues": [
@@ -5415,7 +5562,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-phase4-mvp.js",
     "description": "Простой тест интеграции TestingChecker с AnalysisOrchestrator\r   Phase 4.2 MVP тестирование",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3908,
     "lines": 86,
     "logicIssues": [
@@ -5436,7 +5583,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-phase41-integration.mjs",
     "description": "Тест интеграции Phase 4.1 - TestingAnalysisAdapter + ProcessIsolatedAnalyzer\r   Проверяет изолирован",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8143,
     "lines": 205,
     "logicIssues": [
@@ -5457,7 +5604,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-playwright-simple.mjs",
     "description": "Простой тест PlaywrightChecker без TypeScript (для быстрого запуска)",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8986,
     "lines": 223,
     "logicIssues": [
@@ -5478,7 +5625,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-real-project.mjs",
     "description": "Прямое тестирование TestingChecker на проекте\r   Обходит проблемы компиляции других файлов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 11562,
     "lines": 338,
     "logicIssues": [
@@ -5500,7 +5647,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-recommendation-engine-integration.ts",
     "description": "Тест интеграции веб-безопасности с RecommendationEngine\r   Проверяет полный поток: SecurityChecker →",
     "tests": "4 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8030,
     "lines": 174,
     "logicIssues": [
@@ -5521,7 +5668,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-recommendation-final.ts",
     "description": "Тест интеграции веб-безопасности с RecommendationEngine\r   Проверяет полный поток: WebSecurityChecke",
     "tests": "4 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10523,
     "lines": 247,
     "logicIssues": [
@@ -5542,7 +5689,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-unified-analyzer.mjs",
     "description": "Тест UnifiedTestingAnalyzer - Phase 3\r   Комплексный анализ всей тестовой экосистемы проекта",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3444,
     "lines": 86,
     "logicIssues": [
@@ -5563,7 +5710,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-vitest-clean.ts",
     "description": "Чистый тест VitestCheckerAdapter с SimpleOrchestrator (без AI модулей)",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8030,
     "lines": 168,
     "logicIssues": [
@@ -5584,7 +5731,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-vitest-integration.ts",
     "description": "Тестирование интеграции VitestChecker с AnalysisOrchestrator",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4990,
     "lines": 113,
     "logicIssues": [
@@ -5605,7 +5752,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-vitest-simple.ts",
     "description": "Простой тест интеграции VitestCheckerAdapter с AnalysisOrchestrator",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 7538,
     "lines": 150,
     "logicIssues": [
@@ -5626,7 +5773,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-web-fix-templates.ts",
     "description": "Тест WebSecurityFixTemplates - Генерация практических рекомендаций\r  \r   Проверяет создание детальны",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8715,
     "lines": 211,
     "logicIssues": [
@@ -5647,7 +5794,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/test-web-integration.ts",
     "description": "Тест интеграции WebSecurityChecker с основным SecurityChecker\r  \r   Проверяет что веб-анализ безопас",
     "tests": "3 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4756,
     "lines": 120,
     "logicIssues": [
@@ -5668,7 +5815,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/ai-insights/ai-insights-engine.test.ts",
     "description": "Тесты для AI Insights Engine - центрального движка AI анализа",
     "tests": "25 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11390,
     "lines": 276,
     "logicIssues": [
@@ -5689,7 +5836,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/ai-insights/pattern-recognizer.test.ts",
     "description": "Тесты для AI Pattern Recognizer\r   Проверяем обнаружение различных архитектурных паттернов и антипат",
     "tests": "30 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 22936,
     "lines": 615,
     "logicIssues": [
@@ -5712,7 +5859,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/ai-insights/quality-predictor.test.ts",
     "description": "Тесты для Quality Predictor - предсказателя качества кода",
     "tests": "22 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 16579,
     "lines": 443,
     "logicIssues": [
@@ -5734,7 +5881,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/analyzer-core.test.ts",
     "description": "Unit тесты для основного анализатора",
     "tests": "9 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2668,
     "lines": 81,
     "logicIssues": [
@@ -5756,7 +5903,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/architecture-analyzer.test.ts",
     "description": "EAP Analyzer компонент",
     "tests": "15 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8702,
     "lines": 280,
     "logicIssues": [
@@ -5777,7 +5924,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/cli.test.ts",
     "description": "Unit тесты для CLI интерфейса",
     "tests": "21 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8509,
     "lines": 250,
     "logicIssues": [
@@ -5798,7 +5945,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/docker-analyzer.test.ts",
     "description": "Unit тесты для Docker Analyzer",
     "tests": "16 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7390,
     "lines": 253,
     "logicIssues": [
@@ -5820,7 +5967,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/eap-setup.ts",
     "description": "Setup файл для Vitest тестов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2483,
     "lines": 74,
     "logicIssues": [
@@ -5841,7 +5988,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/emt-analyzer.test.ts",
     "description": "Unit тесты для EMT Analyzer",
     "tests": "15 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 6007,
     "lines": 167,
     "logicIssues": [
@@ -5864,7 +6011,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/integration/DockerChecker.integration.test.ts",
     "description": "Интеграционный тест для новой архитектуры ЭАП\r   Демонстрирует работу DockerChecker с реальными прим",
     "tests": "5 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 9023,
     "lines": 237,
     "logicIssues": [
@@ -5885,7 +6032,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/performance/execution-timer.test.ts",
     "description": "Тесты для Execution Timer\r   Проверяет корректность измерения времени выполнения и обнаружения узких",
     "tests": "24 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12894,
     "lines": 379,
     "logicIssues": [
@@ -5907,7 +6054,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/performance/memory-profiler.test.ts",
     "description": "Тесты для Memory Profiler\r   Проверяет корректность профилирования памяти и обнаружения утечек",
     "tests": "18 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8373,
     "lines": 244,
     "logicIssues": [
@@ -5929,7 +6076,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/ultra-enhanced-analyzer.test.ts",
     "description": "EAP Analyzer компонент",
     "tests": "16 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11674,
     "lines": 322,
     "logicIssues": [
@@ -5974,7 +6121,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/technical-debt-analyzer.test.ts",
     "description": "TODO: Refactor this complex method - intentional debt for quick delivery",
     "tests": "16 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11710,
     "lines": 351,
     "logicIssues": [
@@ -5997,8 +6144,8 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/test-project/duplicated-code.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 657,
+    "lastModified": "2025-09-12",
+    "fileSize": 682,
     "lines": 26,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -6020,8 +6167,8 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/test-project/large-class.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 2868,
+    "lastModified": "2025-09-12",
+    "fileSize": 2957,
     "lines": 90,
     "logicIssues": [
       "Нет критических проблем"
@@ -6041,7 +6188,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tests/types.test.ts",
     "description": "Unit тесты для типов EAP анализатора",
     "tests": "15 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7425,
     "lines": 226,
     "logicIssues": [
@@ -6083,7 +6230,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/TRANSFER-TO-GITHUB-READY.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3786,
     "lines": 109,
     "logicIssues": [
@@ -6104,7 +6251,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/tsconfig.cjs.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 264,
     "lines": 11,
     "logicIssues": [
@@ -6125,7 +6272,7 @@ window.EAP_DATA = {
     "file": "tsconfig.json",
     "description": "/.d.ts\", \"src/",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 1600,
     "lines": 59,
     "logicIssues": [
@@ -6167,7 +6314,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/UNIQUE-REPORTS.md",
     "description": "Создаем уникальные имена файлов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 3765,
     "lines": 123,
     "logicIssues": [
@@ -6188,7 +6335,7 @@ window.EAP_DATA = {
     "file": "eap-analyzer/vitest.ai.config.ts",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 724,
     "lines": 26,
     "logicIssues": [
@@ -6229,10 +6376,10 @@ window.EAP_DATA = {
     "logic": 95,
     "functionality": 90,
     "file": "vitest.performance.config.ts",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║                  VITEST PERFOR",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║                  VITEST PERFO",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 12869,
+    "fileSize": 13090,
     "lines": 222,
     "logicIssues": [
       "Нет критических проблем"
@@ -6252,8 +6399,8 @@ window.EAP_DATA = {
     "file": "eap-cleanup-execution-report.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 3611,
+    "lastModified": "2025-09-12",
+    "fileSize": 3680,
     "lines": 70,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -6267,6 +6414,27 @@ window.EAP_DATA = {
     "functionalityIssue": "Обнаружено значительное дублирование кода",
     "classification": "other"
   },
+  "minitest": {
+    "name": "minitest",
+    "category": "testing",
+    "logic": 50,
+    "functionality": 38,
+    "file": "mini-test.mjs",
+    "description": "Мини-тест FileStructureAnalyzer v3.0\r   Проверяет, что это реальный анализатор, а не демо",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 1186,
+    "lines": 31,
+    "logicIssues": [
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Возможны улучшения архитектуры",
+    "functionalityIssue": "Есть потенциал для улучшения функциональности",
+    "classification": "auxiliary"
+  },
   "packagelockjson": {
     "name": "packagelockjson",
     "category": "logging",
@@ -6275,9 +6443,9 @@ window.EAP_DATA = {
     "file": "package-lock.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 520090,
-    "lines": 14158,
+    "lastModified": "2025-09-12",
+    "fileSize": 522237,
+    "lines": 14217,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
       "Нет критических проблем"
@@ -6298,7 +6466,7 @@ window.EAP_DATA = {
     "file": "phase1-demo.js",
     "description": "🎯 EAP ANALYZER v6.0 - ФАЗА 1 ДЕМОНСТРАЦИЯ\r   Показ прогресса разработки системы отчетов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 15039,
     "lines": 369,
     "logicIssues": [
@@ -6363,7 +6531,7 @@ window.EAP_DATA = {
     "file": "project-analysis-report.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 11405,
     "lines": 253,
     "logicIssues": [
@@ -6405,8 +6573,8 @@ window.EAP_DATA = {
     "file": "PROJECT-STATUS-CURRENT.md",
     "description": "Добавить в vitest.config.ts:",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 5460,
+    "lastModified": "2025-09-12",
+    "fileSize": 5619,
     "lines": 160,
     "logicIssues": [
       "Нет критических проблем"
@@ -6426,8 +6594,8 @@ window.EAP_DATA = {
     "file": "PROJECT-STATUS-REAL-SEPTEMBER-11.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 12179,
+    "lastModified": "2025-09-12",
+    "fileSize": 12402,
     "lines": 224,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -6575,7 +6743,7 @@ window.EAP_DATA = {
     "file": "scripts/advanced-project-analyzer.js",
     "description": "Модуль самообучения анализатора",
     "tests": "16 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 53104,
     "lines": 1312,
     "logicIssues": [
@@ -6639,8 +6807,8 @@ window.EAP_DATA = {
     "file": "scripts/eap-cleanup-data.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 11114,
+    "lastModified": "2025-09-12",
+    "fileSize": 11385,
     "lines": 272,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -6725,7 +6893,7 @@ window.EAP_DATA = {
     "file": "scripts/PROJECT-ANALYZERS.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4436,
     "lines": 115,
     "logicIssues": [
@@ -6746,7 +6914,7 @@ window.EAP_DATA = {
     "file": "scripts/project-structure-analyzer.js",
     "description": "Конфигурация",
     "tests": "3 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 31044,
     "lines": 762,
     "logicIssues": [
@@ -6915,7 +7083,7 @@ window.EAP_DATA = {
     "file": "scripts/USAGE-INSTRUCTIONS.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5782,
     "lines": 129,
     "logicIssues": [
@@ -6972,6 +7140,29 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
+  "SECURITYCHECKERV2COMPLETIONREPORTmd": {
+    "name": "SECURITYCHECKERV2COMPLETIONREPORTmd",
+    "category": "security",
+    "logic": 72,
+    "functionality": 69,
+    "file": "SECURITY-CHECKER-V2-COMPLETION-REPORT.md",
+    "description": "Handles all 4 types with configurable rules",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 5513,
+    "lines": 136,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Нет критических проблем"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Есть потенциал для улучшения функциональности"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "other"
+  },
   "settingsbackupjson": {
     "name": "settingsbackupjson",
     "category": "utils",
@@ -6980,7 +7171,7 @@ window.EAP_DATA = {
     "file": "settings-backup.json",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 2291,
     "lines": 63,
     "logicIssues": [
@@ -7001,7 +7192,7 @@ window.EAP_DATA = {
     "file": "simple-analyzer.cjs",
     "description": "Простой анализатор проекта для тестирования",
     "tests": "4 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 15224,
     "lines": 452,
     "logicIssues": [
@@ -7022,7 +7213,7 @@ window.EAP_DATA = {
     "file": "SMART-ANALYZER-PHASE-1-REPORT.md",
     "description": "Priority 1: Code content analysis",
     "tests": "1 тестов",
-    "lastModified": "2025-09-11",
+    "lastModified": "2025-09-12",
     "fileSize": 7043,
     "lines": 185,
     "logicIssues": [
@@ -7087,7 +7278,7 @@ window.EAP_DATA = {
     "file": "src/lib/api/client.test.ts",
     "description": "Тесты для API клиента\r   @file src/lib/api/client.test.ts",
     "tests": "27 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10865,
     "lines": 326,
     "logicIssues": [
@@ -7215,7 +7406,7 @@ window.EAP_DATA = {
     "file": "src/lib/cache/manager.test.ts",
     "description": "Тесты для кэш-менеджера\r   @file src/lib/cache/manager.test.ts",
     "tests": "26 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7551,
     "lines": 227,
     "logicIssues": [
@@ -7515,8 +7706,8 @@ window.EAP_DATA = {
     "file": "src/lib/logger.ts",
     "description": "Типы для метаданных логов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 3243,
+    "lastModified": "2025-09-12",
+    "fileSize": 3334,
     "lines": 92,
     "logicIssues": [
       "Нет критических проблем"
@@ -7730,8 +7921,8 @@ window.EAP_DATA = {
     "file": "src/lib/test-xss-vulnerable.js",
     "description": "Тестовый файл с XSS уязвимостями для проверки анализатора",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 1338,
+    "lastModified": "2025-09-12",
+    "fileSize": 1381,
     "lines": 44,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -7751,7 +7942,7 @@ window.EAP_DATA = {
     "file": "src/lib/utils/formatters.test.fixed.ts",
     "description": "Тесты для утилит форматирования\r   @file src/lib/utils/formatters.test.ts",
     "tests": "31 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7705,
     "lines": 164,
     "logicIssues": [
@@ -7772,7 +7963,7 @@ window.EAP_DATA = {
     "file": "src/lib/utils/formatters.test.new.ts",
     "description": "Тесты для утилит форматирования\r   @file src/lib/utils/formatters.test.ts",
     "tests": "30 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7252,
     "lines": 167,
     "logicIssues": [
@@ -7793,7 +7984,7 @@ window.EAP_DATA = {
     "file": "src/lib/utils/formatters.test.ts",
     "description": "Тесты для утилит форматирования\r   @file src/lib/utils/formatters.test.ts",
     "tests": "30 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 7254,
     "lines": 167,
     "logicIssues": [
@@ -7835,7 +8026,7 @@ window.EAP_DATA = {
     "file": "src/reporters/ConsoleReporter.ts",
     "description": "🖥️ EAP ANALYZER v6.0 - CONSOLE REPORTER\r   Вывод отчетов в консоль для быстрого просмотра",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4516,
     "lines": 136,
     "logicIssues": [
@@ -7856,7 +8047,7 @@ window.EAP_DATA = {
     "file": "src/reporters/demo.ts",
     "description": "🧪 ТЕСТ СИСТЕМЫ ОТЧЕТОВ EAP ANALYZER v6.0\r   Демонстрация работы HTML и Console репортеров",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 12733,
     "lines": 364,
     "logicIssues": [
@@ -7877,7 +8068,7 @@ window.EAP_DATA = {
     "file": "TASK-1.3-SPECIFICATION.md",
     "description": "Новые методы для Task 1.3",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10302,
     "lines": 277,
     "logicIssues": [
@@ -7940,7 +8131,7 @@ window.EAP_DATA = {
     "file": "src/routes/test-xss-vulnerable.svelte",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 954,
     "lines": 34,
     "logicIssues": [
@@ -8089,7 +8280,7 @@ window.EAP_DATA = {
     "file": "TASK-1.2-COMMIT-SUCCESS-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4634,
     "lines": 123,
     "logicIssues": [
@@ -8110,7 +8301,7 @@ window.EAP_DATA = {
     "file": "TASK-1.2-COMPLETION-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6564,
     "lines": 183,
     "logicIssues": [
@@ -8131,7 +8322,7 @@ window.EAP_DATA = {
     "file": "TASK-2.1-COMPLETION-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 10296,
     "lines": 219,
     "logicIssues": [
@@ -8150,10 +8341,10 @@ window.EAP_DATA = {
     "logic": 61,
     "functionality": 47,
     "file": "task2-2-runtime-demo.ts",
-    "description": "Демонстрация Task 2.2: RuntimeMetricsAnalyzer + интеграция   Тестирует новую функциональность runtim",
+    "description": "Демонстрация Task 2.2: RuntimeMetricsAnalyzer + интеграция\r   Тестирует новую функциональность runti",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
-    "fileSize": 11807,
+    "lastModified": "2025-09-12",
+    "fileSize": 12088,
     "lines": 282,
     "logicIssues": [
       "Нет критических проблем"
@@ -8173,7 +8364,7 @@ window.EAP_DATA = {
     "file": "task2-2-simple-test.js",
     "description": "Простой тест Task 2.2: RuntimeMetricsAnalyzer\r   Тестирует новую функциональность runtime performanc",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 4235,
     "lines": 114,
     "logicIssues": [
@@ -8194,7 +8385,7 @@ window.EAP_DATA = {
     "file": "TECHNICAL-DEBT-REPORT.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 6156,
     "lines": 104,
     "logicIssues": [
@@ -8236,7 +8427,7 @@ window.EAP_DATA = {
     "file": "test-direct.cjs",
     "description": "Интегрированный тест анализатора без API сервера",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 2739,
     "lines": 71,
     "logicIssues": [
@@ -8257,7 +8448,7 @@ window.EAP_DATA = {
     "file": "test-reporters.mjs",
     "description": "🧪 ТЕСТ РЕПОРТЕРОВ EAP ANALYZER v6.0\r   Тестирование MarkdownReporter и улучшенного HTMLReporter",
     "tests": "1 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 8341,
     "lines": 260,
     "logicIssues": [
@@ -8278,7 +8469,7 @@ window.EAP_DATA = {
     "file": "test-reports.js",
     "description": "🧪 ТЕСТ СИСТЕМЫ ОТЧЕТОВ EAP ANALYZER v6.0\r   Простой Node.js скрипт для демонстрации",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 6189,
     "lines": 196,
     "logicIssues": [
@@ -8291,15 +8482,37 @@ window.EAP_DATA = {
     "functionalityIssue": "Есть потенциал для улучшения функциональности",
     "classification": "auxiliary"
   },
+  "testsecuritycheckeroptimization": {
+    "name": "testsecuritycheckeroptimization",
+    "category": "testing",
+    "logic": 56,
+    "functionality": 44,
+    "file": "test-security-checker-optimization.cjs",
+    "description": "SecurityChecker v2.0 Optimization Test\r   Проверяет производительность оптимизированного SecurityChe",
+    "tests": "Нет тестов",
+    "lastModified": "2025-09-12",
+    "fileSize": 6431,
+    "lines": 153,
+    "logicIssues": [
+      "Обнаружено значительное дублирование кода",
+      "Возможны улучшения архитектуры"
+    ],
+    "functionalityIssues": [
+      "Обнаружено значительное дублирование кода"
+    ],
+    "logicIssue": "Обнаружено значительное дублирование кода",
+    "functionalityIssue": "Обнаружено значительное дублирование кода",
+    "classification": "analyzer"
+  },
   "testsecuritycheckerts": {
     "name": "testsecuritycheckerts",
     "category": "testing",
-    "logic": 52,
-    "functionality": 41,
+    "logic": 50,
+    "functionality": 40,
     "file": "test-security-checker.ts",
     "description": "SecurityChecker Integration Test\r   Phase 5.1.1: Тестирование интеграции SecurityChecker с ЭАП систе",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 3947,
     "lines": 95,
     "logicIssues": [
@@ -8315,12 +8528,12 @@ window.EAP_DATA = {
   "testtask12": {
     "name": "testtask12",
     "category": "testing",
-    "logic": 58,
+    "logic": 60,
     "functionality": 47,
     "file": "test-task1.2.mjs",
     "description": "🧪 ТЕСТ РЕПОРТЕРОВ EAP ANALYZER v6.0\r   Тестирование MarkdownReporter и улучшенного HTMLReporter",
     "tests": "2 тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 7429,
     "lines": 216,
     "logicIssues": [
@@ -8339,10 +8552,10 @@ window.EAP_DATA = {
     "logic": 78,
     "functionality": 80,
     "file": "test-utils/global-performance-setup.ts",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║               GLOBAL PERFORMAN",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║               GLOBAL PERFORMA",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 9531,
+    "fileSize": 9783,
     "lines": 253,
     "logicIssues": [
       "Нет критических проблем"
@@ -8360,10 +8573,10 @@ window.EAP_DATA = {
     "logic": 59,
     "functionality": 46,
     "file": "test-utils/performance-reporter.js",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║              PERFORMANCE METRI",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║              PERFORMANCE METR",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 9354,
+    "fileSize": 9631,
     "lines": 278,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -8381,10 +8594,10 @@ window.EAP_DATA = {
     "logic": 77,
     "functionality": 79,
     "file": "test-utils/performance-setup.ts",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║                 PERFORMANCE SE",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║                 PERFORMANCE S",
     "tests": "Нет тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 8183,
+    "fileSize": 8412,
     "lines": 230,
     "logicIssues": [
       "Нет критических проблем"
@@ -8468,7 +8681,7 @@ window.EAP_DATA = {
     "description": "EAP Analyzer компонент",
     "tests": "6 тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 870,
+    "fileSize": 902,
     "lines": 33,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -8656,7 +8869,7 @@ window.EAP_DATA = {
     "file": "tests/integration/full-analysis.test.ts",
     "description": "Интеграционные тесты для полного анализа проекта",
     "tests": "19 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 8741,
     "lines": 232,
     "logicIssues": [
@@ -8698,7 +8911,7 @@ window.EAP_DATA = {
     "file": "tests/performance/analyzer-performance.test.ts",
     "description": "Тесты производительности для анализатора проектов",
     "tests": "13 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 10818,
     "lines": 304,
     "logicIssues": [
@@ -8719,7 +8932,7 @@ window.EAP_DATA = {
     "file": "tests/performance/benchmarks.test.ts",
     "description": "Тесты производительности для критических функций",
     "tests": "20 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 12730,
     "lines": 395,
     "logicIssues": [
@@ -8738,10 +8951,10 @@ window.EAP_DATA = {
     "logic": 57,
     "functionality": 47,
     "file": "tests/performance/example.performance.test.ts",
-    "description": "╔═══════════════════════════════════════════════════════════════╗   ║                     PERFORMANC",
+    "description": "╔═══════════════════════════════════════════════════════════════╗\r   ║                     PERFORMAN",
     "tests": "12 тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 7319,
+    "fileSize": 7516,
     "lines": 198,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -8782,7 +8995,7 @@ window.EAP_DATA = {
     "file": "tests/setup/test-utils.ts",
     "description": "Утилиты для тестирования",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 5165,
     "lines": 195,
     "logicIssues": [
@@ -8803,7 +9016,7 @@ window.EAP_DATA = {
     "file": "tests/setup/vitest.setup.ts",
     "description": "Настройка Vitest для тестов",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 983,
     "lines": 43,
     "logicIssues": [
@@ -8824,7 +9037,7 @@ window.EAP_DATA = {
     "file": "tests/test.config.json",
     "description": "/.{js,ts}\", \"tests/",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 1202,
     "lines": 54,
     "logicIssues": [
@@ -8887,8 +9100,8 @@ window.EAP_DATA = {
     "file": "tests/unit/AdvancedSecurityAnalyzer.test.ts",
     "description": "EAP Analyzer компонент",
     "tests": "20 тестов",
-    "lastModified": "2025-09-11",
-    "fileSize": 19411,
+    "lastModified": "2025-09-12",
+    "fileSize": 19950,
     "lines": 540,
     "logicIssues": [
       "Обнаружено значительное дублирование кода",
@@ -8952,7 +9165,7 @@ window.EAP_DATA = {
     "file": "tests/unit/core/analyzer.test.ts",
     "description": "Модульные тесты для основного анализатора",
     "tests": "12 тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 6043,
     "lines": 180,
     "logicIssues": [
@@ -9079,7 +9292,7 @@ window.EAP_DATA = {
     "file": "UPGRADE-PLAN.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-09",
+    "lastModified": "2025-09-12",
     "fileSize": 4608,
     "lines": 106,
     "logicIssues": [
@@ -9122,7 +9335,7 @@ window.EAP_DATA = {
     "description": "EAP Analyzer компонент",
     "tests": "1 тестов",
     "lastModified": "2025-09-12",
-    "fileSize": 245,
+    "fileSize": 259,
     "lines": 15,
     "logicIssues": [
       "Возможны улучшения архитектуры"
@@ -9164,7 +9377,7 @@ window.EAP_DATA = {
     "file": "ОБЩИЙ-ПЛАН-v5.0-РЕАЛЬНЫЙ-СТАТУС.md",
     "description": "EAP Analyzer компонент",
     "tests": "Нет тестов",
-    "lastModified": "2025-09-10",
+    "lastModified": "2025-09-12",
     "fileSize": 19128,
     "lines": 287,
     "logicIssues": [
@@ -9184,7 +9397,7 @@ window.EAP_DATA = {
     "name": "TESTING (Тестирование)",
     "color": "#28a745",
     "icon": "🧪",
-    "logic": 68,
+    "logic": 67,
     "functionality": 62,
     "count": 184,
     "description": "Модули тестирования и качества кода"
@@ -9194,8 +9407,8 @@ window.EAP_DATA = {
     "color": "#dc3545",
     "icon": "🔒",
     "logic": 75,
-    "functionality": 73,
-    "count": 134,
+    "functionality": 74,
+    "count": 142,
     "description": "Анализ безопасности и уязвимостей"
   },
   "performance": {
@@ -9204,7 +9417,7 @@ window.EAP_DATA = {
     "icon": "⚡",
     "logic": 79,
     "functionality": 78,
-    "count": 40,
+    "count": 41,
     "description": "Оптимизация производительности"
   },
   "docker": {
@@ -9247,18 +9460,18 @@ window.EAP_DATA = {
     "name": "CODE QUALITY (Качество кода)",
     "color": "#6f42c1",
     "icon": "✨",
-    "logic": 61,
-    "functionality": 58,
-    "count": 19,
+    "logic": 62,
+    "functionality": 60,
+    "count": 22,
     "description": "Качество кода и линтинг"
   },
   "core": {
     "name": "CORE (Ядро системы)",
     "color": "#495057",
     "icon": "⚙️",
-    "logic": 70,
+    "logic": 71,
     "functionality": 67,
-    "count": 103,
+    "count": 111,
     "description": "Основные модули анализатора"
   },
   "ai": {
@@ -9294,10 +9507,10 @@ window.EAP_DATA = {
   "2025-09-12": {
     "avgLogic": 69,
     "avgFunctionality": 66,
-    "totalComponents": 428,
+    "totalComponents": 438,
     "changes": [
       "Live-анализ проекта обновлен",
-      "Загружено 428 компонентов",
+      "Загружено 438 компонентов",
       "Добавлены ключевые недостатки для каждого компонента"
     ],
     "source": "live-analysis"
@@ -9313,6 +9526,7 @@ window.EAP_DATA = {
     "correctedfullsystemevaluationts",
     "fullsystemevaluationts",
     "DockerChecker",
+    "FileStructureAnalyzer",
     "DevEnvironment",
     "Class",
     "ProductionValidator",
@@ -9322,11 +9536,13 @@ window.EAP_DATA = {
     "DockerAnalyzer",
     "EMTAnalyzer",
     "BaseAnalyzer",
+    "MetricsCalculator",
     "CICDChecker",
     "CodeQualityChecker",
     "DependenciesChecker",
     "EMTChecker",
     "LoggingChecker",
+    "BaseFileChecker",
     "BundleSizeAnalyzer",
     "PerformanceChecker",
     "typests",
@@ -9337,10 +9553,11 @@ window.EAP_DATA = {
     "CodeSecurityFixTemplates",
     "DependencyFixTemplates",
     "RecommendationEngine",
-    "SecurityChecker",
+    "SecurityScoreProcessor",
+    "BaseSecurityProcessor",
     "WebSecurityChecker",
     "WebSecurityFixTemplates",
-    "SvelteKitChecker",
+    "SecurityChecker",
     "CoverageAnalyzer",
     "CoverageAnalyzerAdapter",
     "CypressChecker",
@@ -9378,7 +9595,6 @@ window.EAP_DATA = {
     "ImprovedDuplicationDetector",
     "SmartFileClassifier",
     "StructureAnalyzer",
-    "MetricsCalculator",
     "TechnicalDebtAnalyzer",
     "SimpleTechnicalDebtAnalyzer",
     "DebtMetricsCalculator",
@@ -9403,7 +9619,8 @@ window.EAP_DATA = {
     "MonitoringService",
     "AdvancedMonitoringSystem",
     "OptimizedSecurityMiddleware",
-    "pagesvelte"
+    "pagesvelte",
+    "testsecuritycheckeroptimization"
   ],
   "auxiliary": [
     "eslintrc",
@@ -9419,6 +9636,8 @@ window.EAP_DATA = {
     "eslintconfig",
     "finaldemo",
     "fullsystemdemo",
+    "optimizeddemo",
+    "optimizedprocessdemo",
     "packagejson",
     "TestingAnalysisAdapter",
     "TestingChecker",
@@ -9427,10 +9646,15 @@ window.EAP_DATA = {
     "SimpleEAPDemo",
     "MockProcessIsolatedAnalyzer",
     "SimpleOrchestrator",
+    "simpleprocessdemo",
     "clits",
     "UserService",
     "AIReportGenerator",
     "indexts",
+    "FileSystemScanner",
+    "quicktestts",
+    "teststructureanalyzerts",
+    "StructureAnalysisUtils",
     "testarchitecturets",
     "ConfigSecurityChecker",
     "ConfigFixTemplates",
@@ -9465,8 +9689,7 @@ window.EAP_DATA = {
     "simpletest",
     "ErrorHandler",
     "FileAnalysisUtils",
-    "simpleanalyzertestts",
-    "testanalyzermanualts",
+    "index",
     "HTMLReporter",
     "JSONReporter",
     "MarkdownReporter",
@@ -9550,6 +9773,7 @@ window.EAP_DATA = {
     "tsconfigjson",
     "vitestconfigts",
     "vitestperformanceconfigts",
+    "minitest",
     "phase1demo",
     "playwrightconfigts",
     "postcssconfig",
@@ -9682,8 +9906,6 @@ window.EAP_DATA = {
     "AdvancedSecurityAnalyzer",
     "AnalysisOrchestrator",
     "configjson",
-    "debtmetricscalculatortestts",
-    "fileanalysisutilstestts",
     "STARTHEREmd",
     "setupts",
     "TRANSFERTOGITHUBREADYmd",
@@ -9710,6 +9932,7 @@ window.EAP_DATA = {
     "PROJECTANALYZERSmd",
     "testsetup",
     "USAGEINSTRUCTIONSmd",
+    "SECURITYCHECKERV2COMPLETIONREPORTmd",
     "settingsbackupjson",
     "SMARTANALYZERPHASE1REPORTmd",
     "CustomAPIClient",
@@ -9740,9 +9963,9 @@ window.EAP_DATA = {
     "v50md"
   ],
   "stats": {
-    "analyzersCount": 98,
-    "auxiliaryCount": 220,
-    "otherCount": 110
+    "analyzersCount": 102,
+    "auxiliaryCount": 227,
+    "otherCount": 109
   }
 },
 
