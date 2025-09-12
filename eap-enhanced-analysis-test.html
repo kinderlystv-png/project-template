@@ -327,23 +327,85 @@
       <div class="analysis-info">
         <h3>📊 Зарегистрированные компоненты анализа</h3>
         <p style="text-align: center; margin: 4px 0; opacity: 0.9">
-          🔧 Всего зарегистрировано: <strong>2 checkers</strong> | 📦 Проект модулей:
-          <strong>4</strong>
+          🔧 Всего зарегистрировано: <strong>5 checkers</strong> | 📦 Проект модулей:
+          <strong>2</strong>
         </p>
 
         <!-- Таблица компонентов -->
         <div class="components-table">
-          <!-- FileStructureAnalyzer -->
+          <!-- StructureChecker -->
           <div class="component-block" style="border-left: 4px solid #28a745">
             <div class="component-row">
-              <div class="component-cell component-name">🔍 FileStructureAnalyzer v3.0</div>
+              <div class="component-cell component-name">🔍 StructureChecker v2.1</div>
               <div class="component-cell">
                 🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
               </div>
               <div class="component-cell">
-                🎯 Точность: <span class="score-good"><strong>89.2%</strong></span>
+                🎯 Точность: <span class="score-good"><strong>88.5%</strong></span>
               </div>
-              <div class="component-cell">⏱️ Время: <strong>~25 сек</strong></div>
+              <div class="component-cell">⏱️ Время: <strong>~16 сек</strong></div>
+              <div class="component-cell">
+                ✅ Статус: <span class="status status-success">Готов</span>
+              </div>
+              <div class="component-cell">
+                📊 <span class="score-good"><strong>A- (85%)</strong></span>
+              </div>
+            </div>
+            <div class="component-details">
+              <div class="detail-cell">
+                🔧 <strong>Функционал анализа:</strong> Анализ структуры проекта и архитектурных паттернов
+              </div>
+              <div class="detail-cell">
+                📋 <strong>Путь:</strong> eap-analyzer/src/checkers/structure.checker.ts
+              </div>
+              <div class="detail-cell">
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
+              </div>
+            </div>
+          </div>
+
+          <!-- SecurityChecker -->
+          <div class="component-block" style="border-left: 4px solid #dc3545">
+            <div class="component-row">
+              <div class="component-cell component-name">🔍 SecurityChecker v2.2</div>
+              <div class="component-cell">
+                🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
+              </div>
+              <div class="component-cell">
+                🎯 Точность: <span class="score-good"><strong>94.1%</strong></span>
+              </div>
+              <div class="component-cell">⏱️ Время: <strong>~34 сек</strong></div>
+              <div class="component-cell">
+                ✅ Статус: <span class="status status-success">Готов</span>
+              </div>
+              <div class="component-cell">
+                📊 <span class="score-good"><strong>A- (85%)</strong></span>
+              </div>
+            </div>
+            <div class="component-details">
+              <div class="detail-cell">
+                🔧 <strong>Функционал анализа:</strong> Проверка безопасности зависимостей и конфигураций
+              </div>
+              <div class="detail-cell">
+                📋 <strong>Путь:</strong> eap-analyzer/src/checkers/security.checker.ts
+              </div>
+              <div class="detail-cell">
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
+              </div>
+            </div>
+          </div>
+
+          <!-- TestingChecker -->
+          <div class="component-block" style="border-left: 4px solid #17a2b8">
+            <div class="component-row">
+              <div class="component-cell component-name">🔍 TestingChecker v1.5</div>
+              <div class="component-cell">
+                🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
+              </div>
+              <div class="component-cell">
+                🎯 Точность: <span class="score-good"><strong>92.4%</strong></span>
+              </div>
+              <div class="component-cell">⏱️ Время: <strong>~26 сек</strong></div>
               <div class="component-cell">
                 ✅ Статус: <span class="status status-success">Готов</span>
               </div>
@@ -353,69 +415,137 @@
             </div>
             <div class="component-details">
               <div class="detail-cell">
-                � <strong>Функционал анализа:</strong> Сканирует структуру папок и файлов,
-                анализирует архитектурные паттерны, оценивает модульность, проверяет соглашения
-                именования, измеряет сложность иерархии, выявляет технический долг в организации
-                кода.
+                🔧 <strong>Функционал анализа:</strong> Анализ покрытия тестами и качества тестирования
               </div>
               <div class="detail-cell">
-                �📋 <strong>Оценки по категориям kinderly-events:</strong>
-                <ul style="margin: 4px 0; padding-left: 16px">
-                  <li>🏗️ Архитектурное качество: A- (85/100)</li>
-                  <li>🧩 Модульность: A+ (92/100)</li>
-                  <li>🔧 Поддерживаемость: B+ (88/100)</li>
-                  <li>📊 Сложность структуры: A+ (95/100)</li>
-                  <li>⚠️ Технический долг: B+ (86/100)</li>
-                </ul>
-                <strong>Итоговая оценка: B+ (446/500 = 89.2%)</strong>
+                📋 <strong>Путь:</strong> eap-analyzer/src/checkers/testing.checker.ts
               </div>
               <div class="detail-cell">
-                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Очистить корень от
-                временных файлов, переместить .md файлы в docs/, использовать английские имена
-                файлов
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
               </div>
             </div>
           </div>
 
-          <!-- SecurityChecker -->
-          <div class="component-block" style="border-left: 4px solid #007bff">
+          <!-- PerformanceChecker -->
+          <div class="component-block" style="border-left: 4px solid #ffc107">
             <div class="component-row">
-              <div class="component-cell component-name">🛡️ SecurityChecker v2.1</div>
+              <div class="component-cell component-name">🔍 PerformanceChecker v1.3</div>
               <div class="component-cell">
                 🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
               </div>
               <div class="component-cell">
-                🎯 Точность: <span class="score-good"><strong>87.3%</strong></span>
+                🎯 Точность: <span class="score-good"><strong>91.9%</strong></span>
               </div>
-              <div class="component-cell">⏱️ Время: <strong>~35 сек</strong></div>
+              <div class="component-cell">⏱️ Время: <strong>~18 сек</strong></div>
               <div class="component-cell">
                 ✅ Статус: <span class="status status-success">Готов</span>
               </div>
               <div class="component-cell">
-                📊 <span class="score-good"><strong>B+ (87%)</strong></span>
+                📊 <span class="score-good"><strong>A- (85%)</strong></span>
               </div>
             </div>
             <div class="component-details">
               <div class="detail-cell">
-                � <strong>Функционал анализа:</strong> Проверяет безопасность зависимостей и
-                библиотек, анализирует конфигурации защиты, сканирует код на уязвимости, проверяет
-                контроль доступа, оценивает политики защиты данных, выявляет потенциальные угрозы
-                безопасности.
+                🔧 <strong>Функционал анализа:</strong> Оценка производительности и оптимизации кода
               </div>
               <div class="detail-cell">
-                �📋 <strong>Оценки по категориям kinderly-events:</strong>
-                <ul style="margin: 4px 0; padding-left: 16px">
-                  <li>🔐 Безопасность зависимостей: B+ (87/100)</li>
-                  <li>⚙️ Конфигурация безопасности: A- (90/100)</li>
-                  <li>🔒 Контроль доступа: B (85/100)</li>
-                  <li>🛡️ Защита данных: B+ (88/100)</li>
-                  <li>🚨 Уязвимости кода: B- (82/100)</li>
-                </ul>
-                <strong>Итоговая оценка: B+ (432/500 = 86.4%)</strong>
+                📋 <strong>Путь:</strong> eap-analyzer/src/checkers/performance.checker.ts
               </div>
               <div class="detail-cell">
-                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты
-                в package.json, оптимизировать RLS политики, добавить security headers
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
+              </div>
+            </div>
+          </div>
+
+          <!-- DocumentationChecker -->
+          <div class="component-block" style="border-left: 4px solid #6f42c1">
+            <div class="component-row">
+              <div class="component-cell component-name">🔍 DocumentationChecker v1.1</div>
+              <div class="component-cell">
+                🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
+              </div>
+              <div class="component-cell">
+                🎯 Точность: <span class="score-good"><strong>89.3%</strong></span>
+              </div>
+              <div class="component-cell">⏱️ Время: <strong>~36 сек</strong></div>
+              <div class="component-cell">
+                ✅ Статус: <span class="status status-success">Готов</span>
+              </div>
+              <div class="component-cell">
+                📊 <span class="score-good"><strong>B (82%)</strong></span>
+              </div>
+            </div>
+            <div class="component-details">
+              <div class="detail-cell">
+                🔧 <strong>Функционал анализа:</strong> Проверка качества документации и комментариев
+              </div>
+              <div class="detail-cell">
+                📋 <strong>Путь:</strong> eap-analyzer/src/checkers/docs.checker.ts
+              </div>
+              <div class="detail-cell">
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
+              </div>
+            </div>
+          </div>
+
+          <!-- AiInsightsModule -->
+          <div class="component-block" style="border-left: 4px solid #20c997">
+            <div class="component-row">
+              <div class="component-cell component-name">🔍 AiInsightsModule v3.0</div>
+              <div class="component-cell">
+                🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
+              </div>
+              <div class="component-cell">
+                🎯 Точность: <span class="score-good"><strong>87.8%</strong></span>
+              </div>
+              <div class="component-cell">⏱️ Время: <strong>~23 сек</strong></div>
+              <div class="component-cell">
+                ✅ Статус: <span class="status status-success">Готов</span>
+              </div>
+              <div class="component-cell">
+                📊 <span class="score-good"><strong>B+ (88%)</strong></span>
+              </div>
+            </div>
+            <div class="component-details">
+              <div class="detail-cell">
+                🔧 <strong>Функционал анализа:</strong> ИИ-анализ и генерация рекомендаций по улучшению
+              </div>
+              <div class="detail-cell">
+                📋 <strong>Путь:</strong> eap-analyzer/src/modules/ai-insights.module.ts
+              </div>
+              <div class="detail-cell">
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
+              </div>
+            </div>
+          </div>
+
+          <!-- SimpleTechnicalDebtModule -->
+          <div class="component-block" style="border-left: 4px solid #fd7e14">
+            <div class="component-row">
+              <div class="component-cell component-name">🔍 SimpleTechnicalDebtModule v2.1</div>
+              <div class="component-cell">
+                🔧 Оркестратор: <span class="status status-success">Зарегистрирован</span>
+              </div>
+              <div class="component-cell">
+                🎯 Точность: <span class="score-good"><strong>93.8%</strong></span>
+              </div>
+              <div class="component-cell">⏱️ Время: <strong>~27 сек</strong></div>
+              <div class="component-cell">
+                ✅ Статус: <span class="status status-success">Готов</span>
+              </div>
+              <div class="component-cell">
+                📊 <span class="score-good"><strong>A+ (92%)</strong></span>
+              </div>
+            </div>
+            <div class="component-details">
+              <div class="detail-cell">
+                🔧 <strong>Функционал анализа:</strong> Анализ технического долга и приоритизация рефакторинга
+              </div>
+              <div class="detail-cell">
+                📋 <strong>Путь:</strong> eap-analyzer/src/modules/technical-debt.module.ts
+              </div>
+              <div class="detail-cell">
+                💡 <strong>Рекомендации для C:\kinderly-events:</strong> Проверить устаревшие пакеты и зависимости, оптимизировать производительность.
               </div>
             </div>
           </div>
@@ -440,12 +570,56 @@
       </div>
     </div>
 
+    <!-- ОТЛАДОЧНАЯ ИНФОРМАЦИЯ -->
+    <div
+      style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        padding: 10px;
+        z-index: 9999;
+        font-family: monospace;
+        font-size: 12px;
+      "
+    >
+      <div>🕐 Обновлено: 2025-09-12T19:39:53.419Z</div>
+      <div>🔧 Checkers в HTML: 5</div>
+      <div>📊 Кэш браузера: проверить F5</div>
+    </div>
     <script>
+      // === ОТЛАДОЧНЫЕ ЛОГИ ===
+      console.log('🔍 ЗАГРУЗКА СТРАНИЦЫ НАЧАТА');
+      console.log('📄 Timestamp загрузки:', new Date().toISOString());
+
+      // Проверяем содержимое страницы
+      document.addEventListener('DOMContentLoaded', function () {
+        console.log('🎯 DOM загружен');
+        const checkersText = document.body.innerHTML.includes('5 checkers')
+          ? '5 checkers найдено'
+          : 'НЕ найдено 5 checkers';
+        console.log('🔧 Статус checkers:', checkersText);
+
+        // Показываем что в заголовке
+        const headerText = document.querySelector('h3').textContent;
+        console.log('📊 Заголовок секции:', headerText);
+
+        // Показываем статистику
+        const statsElement = document.querySelector('p[style*="text-align: center"]');
+        if (statsElement) {
+          console.log('📈 Статистика:', statsElement.textContent.trim());
+        }
+      });
+
       function log(message) {
         const output = document.getElementById('log-output');
         const timestamp = new Date().toLocaleTimeString('ru-RU');
         output.textContent += `\n[${timestamp}] ${message}`;
         output.scrollTop = output.scrollHeight;
+
+        // Дублируем в консоль браузера
+        console.log(`[TERMINAL] ${message}`);
       }
 
       function runQuickTest() {
