@@ -1,0 +1,94 @@
+{
+  "version": "3.3 FINE-TUNED",
+  "timestamp": "2025-09-12T11:51:33.055Z",
+  "projectPath": "C:\\kinderly-events",
+  "duration": 6184,
+  "metrics": {
+    "maintainability": {
+      "score": 70,
+      "details": {
+        "testCoverage": 90.7,
+        "docPenalty": -15,
+        "readmeBonus": 5,
+        "backupPenalty": -20,
+        "finalScore": 70
+      }
+    },
+    "technicalDebt": {
+      "score": 50,
+      "details": {
+        "largeFilePercent": 7.9,
+        "largeFilesPenalty": -15,
+        "maxDepth": 10,
+        "avgDepth": 4.2,
+        "depthPenalty": -15,
+        "structurePenalty": -10,
+        "maintenanceHours": 35117,
+        "maintenancePenalty": -10,
+        "finalScore": 50
+      }
+    },
+    "modularity": {
+      "score": 75,
+      "details": {
+        "moduleCount": 587,
+        "moduleBonus": 10,
+        "avgModuleSize": 1,
+        "patternBonus": 15,
+        "finalScore": 75
+      }
+    },
+    "complexity": {
+      "score": 29,
+      "details": {
+        "avgDepth": 4.2,
+        "avgDepthPenalty": -15,
+        "maxDepth": 10,
+        "maxDepthPenalty": -20,
+        "namingConsistency": 62,
+        "namingPenalty": -8,
+        "structuralPenalty": -8,
+        "finalScore": 29
+      }
+    },
+    "overallScore": 56,
+    "fileStats": {
+      "total": 39754,
+      "js": 408,
+      "tests": 370,
+      "docs": 1442,
+      "backup": 23,
+      "large": 3121
+    }
+  },
+  "comparison": {
+    "maintainability": {
+      "manual": 30,
+      "analyzer": 70,
+      "diff": 40,
+      "accuracy": 60
+    },
+    "technicalDebt": {
+      "manual": 40,
+      "analyzer": 50,
+      "diff": 10,
+      "accuracy": 90
+    },
+    "modularity": {
+      "manual": 72,
+      "analyzer": 75,
+      "diff": 3,
+      "accuracy": 97
+    },
+    "complexity": {
+      "manual": 55,
+      "analyzer": 29,
+      "diff": 26,
+      "accuracy": 74
+    }
+  },
+  "overallAccuracy": 80.25,
+  "improvements": {
+    "v3.2_to_v3.3": -8.049999999999997
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "metrics": {
+    "architecture": {
+      "score": 76,
+      "patterns_detected": 3,
+      "separation_of_concerns": 100,
+      "dependency_management": 100,
+      "layer_compliance": 40,
+      "cohesion_score": 50,
+      "config_quality": 100
+    },
+    "maintainability": {
+      "score": 31,
+      "test_coverage_indicator": 13.539553752535499,
+      "documentation_ratio": 5.780933062880324,
+      "code_duplication_risk": 80,
+      "file_size_distribution": 49.87681578438548,
+      "complexity_distribution": 100,
+      "backup_penalty": 15,
+      "empty_dirs_penalty": 0,
+      "naming_quality": 89.5
+    },
+    "technical_debt": {
+      "score": 55.199999999999996,
+      "large_files_penalty": 40,
+      "deep_nesting_penalty": 6,
+      "poor_structure_penalty": 10,
+      "outdated_tech_penalty": 0,
+      "maintenance_hours_estimate": 211,
+      "refactoring_priority": "medium"
+    },
+    "modularity": {
+      "score": 53,
+      "module_count": 1,
+      "average_module_size": 986,
+      "size_variance": 0,
+      "coupling_factor": 1,
+      "reusability_score": 96
+    },
+    "complexity": {
+      "score": 43,
+      "average_depth": 1.6815415821501014,
+      "max_depth": 8,
+      "directory_spread": 1,
+      "file_count_complexity": 10,
+      "naming_consistency": 62
+    }
+  },
+  "totalScore": 53,
+  "accuracy": {
+    "maintainability": 65,
+    "technicalDebt": 72,
+    "architecture": 76,
+    "overall": 72
+  },
+  "duration": 155,
+  "filesAnalyzed": 986,
+  "version": "3.2-balanced"
+}

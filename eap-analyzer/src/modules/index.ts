@@ -40,8 +40,15 @@ import { DockerAnalyzer } from './docker/index.js';
 
 export const ALL_ANALYZERS = [EMTAnalyzer, DockerAnalyzer] as const;
 
+// Структурные анализаторы
+import { STRUCTURE_ANALYZERS } from '../analyzers/structure/index.js';
+
 // Все чекеры из модулей
 import { EMT_CHECKERS } from './emt/index.js';
 import { DOCKER_CHECKERS } from './docker/index.js';
 
-export const ALL_MODULE_CHECKERS = [...EMT_CHECKERS, ...DOCKER_CHECKERS] as const;
+export const ALL_MODULE_CHECKERS = [
+  ...EMT_CHECKERS,
+  ...DOCKER_CHECKERS,
+  ...STRUCTURE_ANALYZERS,
+] as const;

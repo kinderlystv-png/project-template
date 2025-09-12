@@ -1,14 +1,5 @@
 /**
- * Fiimport FileSystemScanner, { type ScannedFile } from './FileSystemScanner.js';
-import MetricsCalculator, {
-  type QualityMetrics,
-  type ArchitectureMetrics,
-  type ModularityMetrics,
-  type MaintainabilityMetrics,
-  type ComplexityMetrics,
-  type TechnicalDebtMetrics
-} from './MetricsCalculator.js';
-import type { CheckContext, ComponentResult, CheckResult } from './types.js';nalyzer v3.0 - Реальный анализатор структуры проекта
+ * FileStructureAnalyzer v3.0 - Реальный анализатор структуры проекта
  *
  * Заменяет примитивное демо optimized-analyzer.cjs реальным анализатором:
  * - Сканирование 100% файлов проекта (не выборочное)
@@ -18,17 +9,15 @@ import type { CheckContext, ComponentResult, CheckResult } from './types.js';nal
  */
 
 import FileSystemScanner, { type ScannedFile } from './FileSystemScanner.js';
-import MetricsCalculator, { type QualityMetrics } from './MetricsCalculator.js';
-import type {
-  CheckContext,
-  ComponentResult,
-  CheckResult,
-  ArchitectureMetrics,
-  ModularityMetrics,
-  MaintainabilityMetrics,
-  ComplexityMetrics,
-  TechnicalDebtMetrics,
-} from './types.js';
+import MetricsCalculator, {
+  type QualityMetrics,
+  type ArchitectureMetrics,
+  type ModularityMetrics,
+  type MaintainabilityMetrics,
+  type ComplexityMetrics,
+  type TechnicalDebtMetrics,
+} from './MetricsCalculator.js';
+import type { CheckContext, ComponentResult, CheckResult } from './types.js';
 
 /**
  * Главный класс анализатора структуры файлов

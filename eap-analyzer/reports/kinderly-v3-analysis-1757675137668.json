@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-09-12T11:05:37.668Z",
+  "projectPath": "C:\\kinderly-events",
+  "duration": 95,
+  "analyzer": "FileStructureAnalyzer v3.0",
+  "totalFiles": 985,
+  "result": {
+    "status": "passed",
+    "score": 88,
+    "maxScore": 100,
+    "executionTime": 95,
+    "checkResults": [
+      {
+        "check": {
+          "id": "structure-architecture",
+          "name": "Архитектурное качество",
+          "description": "Оценка архитектурного качества и паттернов проекта",
+          "category": "structure",
+          "score": 100,
+          "critical": true,
+          "level": "high",
+          "tags": [
+            "architecture",
+            "quality",
+            "patterns"
+          ]
+        },
+        "passed": true,
+        "score": 90,
+        "maxScore": 100,
+        "details": "Архитектурный счет: 90/100. Паттернов обнаружено: 3. Разделение ответственности: 100/100",
+        "recommendations": [
+          "Оптимизируйте управление зависимостями"
+        ],
+        "metrics": {
+          "score": 90,
+          "patterns_detected": 3,
+          "separation_of_concerns": 100,
+          "dependency_management": 75,
+          "layer_compliance": 80,
+          "cohesion_score": 85
+        }
+      },
+      {
+        "check": {
+          "id": "structure-modularity",
+          "name": "Модульность",
+          "description": "Оценка модульности и организации кода",
+          "category": "structure",
+          "score": 100,
+          "critical": false,
+          "level": "medium",
+          "tags": [
+            "modularity",
+            "organization",
+            "coupling"
+          ]
+        },
+        "passed": true,
+        "score": 80,
+        "maxScore": 100,
+        "details": "Модульность: 80/100. Модулей: 237. Средний размер модуля: 4.2 файлов. Фактор связанности: 20.0%",
+        "recommendations": [],
+        "metrics": {
+          "score": 80,
+          "module_count": 237,
+          "average_module_size": 4.156118143459915,
+          "size_variance": 0.3,
+          "coupling_factor": 0.2,
+          "reusability_score": 75
+        }
+      },
+      {
+        "check": {
+          "id": "structure-maintainability",
+          "name": "Сопровождаемость",
+          "description": "Оценка удобства сопровождения и развития проекта",
+          "category": "structure",
+          "score": 100,
+          "critical": false,
+          "level": "medium",
+          "tags": [
+            "maintainability",
+            "documentation",
+            "readability"
+          ]
+        },
+        "passed": true,
+        "score": 95,
+        "maxScore": 100,
+        "details": "Сопровождаемость: 95/100. Покрытие документацией: 80%. Читаемость кода: 75/100",
+        "recommendations": [
+          "Повысьте читаемость кода через рефакторинг"
+        ],
+        "metrics": {
+          "score": 95,
+          "documentation_coverage": 80,
+          "code_readability": 75,
+          "configuration_management": 90,
+          "naming_consistency": 85
+        }
+      }
+    ],
+    "metadata": {
+      "filesAnalyzed": 985,
+      "totalSize": 6578480,
+      "uniqueExtensions": 37,
+      "deepestNesting": 8
+    }
+  },
+  "qualityMetrics": {
+    "architecture": {
+      "score": 90,
+      "patterns_detected": 3,
+      "separation_of_concerns": 100,
+      "dependency_management": 75,
+      "layer_compliance": 80,
+      "cohesion_score": 85
+    },
+    "modularity": {
+      "score": 80,
+      "module_count": 237,
+      "average_module_size": 4.156118143459915,
+      "size_variance": 0.3,
+      "coupling_factor": 0.2,
+      "reusability_score": 75
+    },
+    "maintainability": {
+      "score": 95,
+      "documentation_coverage": 80,
+      "code_readability": 75,
+      "configuration_management": 90,
+      "naming_consistency": 85
+    },
+    "complexity": {
+      "score": 90,
+      "cyclomatic_complexity": 5,
+      "cognitive_complexity": 4,
+      "nesting_depth": 8,
+      "file_complexity_distribution": "70% простых, 25% средних, 5% сложных"
+    },
+    "technicalDebt": {
+      "score": 54,
+      "estimated_hours": 23,
+      "debt_ratio": 0.46,
+      "priority_issues": 16,
+      "refactoring_candidates": 99
+    }
+  }
+}

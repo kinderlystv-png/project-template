@@ -73,6 +73,8 @@
     "analyze:sync": "cd eap-analyzer-dashboard && node config-sync.cjs && node live-generator.cjs",
     "analyze:check": "cd eap-analyzer-dashboard && node config-sync.cjs --dry-run",
     "analyze:dashboard": "cd eap-analyzer-dashboard && python -m http.server 8080",
+    "debug:eap": "npx tsx run-simple-debugger.ts",
+    "debug:eap:runner": "node debug-eap.mjs",
     "test:visual": "vitest run tests/visual",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",

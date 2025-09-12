@@ -1,0 +1,97 @@
+{
+  "version": "3.4 PRECISION",
+  "timestamp": "2025-09-12T11:51:38.451Z",
+  "projectPath": "C:\\kinderly-events",
+  "duration": 104,
+  "metrics": {
+    "maintainability": {
+      "score": 11,
+      "details": {
+        "testCoverage": 0,
+        "sourceFiles": 0,
+        "testFiles": 121,
+        "testPenalty": -45,
+        "docPenalty": -12,
+        "readmeBonus": 3,
+        "backupPenalty": -15,
+        "finalScore": 11
+      }
+    },
+    "technicalDebt": {
+      "score": 47,
+      "details": {
+        "largeFilePercent": 13.1,
+        "largeFilesPenalty": -25,
+        "maxDepth": 8,
+        "avgDepth": 3.4,
+        "depthPenalty": -8,
+        "finalScore": 47
+      }
+    },
+    "modularity": {
+      "score": 65,
+      "details": {
+        "moduleCount": 1,
+        "avgModuleSize": 0,
+        "patternBonus": 5,
+        "finalScore": 65
+      }
+    },
+    "complexity": {
+      "score": 61,
+      "details": {
+        "avgDepth": 3.4,
+        "avgDepthPenalty": -6,
+        "maxDepth": 8,
+        "maxDepthPenalty": -8,
+        "namingConsistency": 81,
+        "finalScore": 61
+      }
+    },
+    "overallScore": 46,
+    "fileStats": {
+      "total": 991,
+      "source": 0,
+      "tests": 121,
+      "docs": 285,
+      "backup": 21,
+      "large": 130
+    }
+  },
+  "comparison": {
+    "maintainability": {
+      "manual": 30,
+      "analyzer": 11,
+      "diff": 19,
+      "accuracy": 81
+    },
+    "technicalDebt": {
+      "manual": 40,
+      "analyzer": 47,
+      "diff": 7,
+      "accuracy": 93
+    },
+    "modularity": {
+      "manual": 72,
+      "analyzer": 65,
+      "diff": 7,
+      "accuracy": 93
+    },
+    "complexity": {
+      "manual": 55,
+      "analyzer": 61,
+      "diff": 6,
+      "accuracy": 94
+    }
+  },
+  "overallAccuracy": 90.25,
+  "improvements": {
+    "v3.2_to_v3.4": 1.9500000000000028,
+    "v3.3_to_v3.4": 9.950000000000003
+  },
+  "qualityMetrics": {
+    "excellentMetrics": 0,
+    "goodMetrics": 3,
+    "totalMetrics": 4
+  }
+}

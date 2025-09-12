@@ -1,0 +1,135 @@
+{
+  "timestamp": "2025-09-12T11:13:33.895Z",
+  "project": "kinderly-events",
+  "analyzer": "FileStructureAnalyzer v3.0",
+  "overallAccuracy": 82,
+  "detectionRate": 73,
+  "analyzerResults": {
+    "totalFiles": 985,
+    "score": 88,
+    "architecture": 90,
+    "modularity": 80,
+    "maintainability": 95,
+    "complexity": 90,
+    "technicalDebt": 54,
+    "modules": 237,
+    "patterns": 3,
+    "nestingDepth": 8,
+    "priorityIssues": 16
+  },
+  "realityResults": {
+    "totalFiles": 985,
+    "score": 74,
+    "architecture": 100,
+    "modularity": 90,
+    "maintainability": 48,
+    "complexity": 88,
+    "technicalDebt": 43,
+    "modules": 237,
+    "patterns": 4,
+    "nestingDepth": 8,
+    "priorityIssues": 15
+  },
+  "comparisons": [
+    {
+      "metric": "Количество файлов",
+      "analyzed": 985,
+      "reality": 985,
+      "accuracy": 100,
+      "status": "excellent"
+    },
+    {
+      "metric": "Общий балл",
+      "analyzed": 88,
+      "reality": 74,
+      "accuracy": 81,
+      "status": "good"
+    },
+    {
+      "metric": "Архитектура",
+      "analyzed": 90,
+      "reality": 100,
+      "accuracy": 90,
+      "status": "excellent"
+    },
+    {
+      "metric": "Модульность",
+      "analyzed": 80,
+      "reality": 90,
+      "accuracy": 89,
+      "status": "good"
+    },
+    {
+      "metric": "Поддерживаемость",
+      "analyzed": 95,
+      "reality": 48,
+      "accuracy": 2,
+      "status": "poor"
+    },
+    {
+      "metric": "Сложность",
+      "analyzed": 90,
+      "reality": 88,
+      "accuracy": 98,
+      "status": "excellent"
+    },
+    {
+      "metric": "Технический долг",
+      "analyzed": 54,
+      "reality": 43,
+      "accuracy": 74,
+      "status": "good"
+    },
+    {
+      "metric": "Количество модулей",
+      "analyzed": 237,
+      "reality": 237,
+      "accuracy": 100,
+      "status": "excellent"
+    },
+    {
+      "metric": "Архитектурные паттерны",
+      "analyzed": 3,
+      "reality": 4,
+      "accuracy": 75,
+      "status": "good"
+    },
+    {
+      "metric": "Глубина вложенности",
+      "analyzed": 8,
+      "reality": 8,
+      "accuracy": 100,
+      "status": "excellent"
+    },
+    {
+      "metric": "Приоритетные проблемы",
+      "analyzed": 16,
+      "reality": 15,
+      "accuracy": 93,
+      "status": "excellent"
+    }
+  ],
+  "improvements": [
+    "1. КРИТИЧНО: Исправить алгоритм оценки поддерживаемости",
+    "   • Увеличить штрафы за backup файлы и дубли",
+    "   • Учесть пустые директории (28 найдено)",
+    "   • Добавить анализ качества именования файлов",
+    "",
+    "2. ВАЖНО: Скорректировать оценку технического долга",
+    "   • Пересмотреть весовые коэффициенты",
+    "   • Добавить анализ размера файлов",
+    "   • Учесть наличие устаревших технологий",
+    "",
+    "3. ЖЕЛАТЕЛЬНО: Улучшить детекцию архитектурных паттернов",
+    "   • Лучше распознавать конфигурационные файлы",
+    "   • Анализировать структуру package.json",
+    "   • Добавить проверку соглашений именования",
+    "",
+    "4. ОПТИМИЗАЦИЯ: Настроить общую оценку",
+    "   • Сделать оценку более консервативной",
+    "   • Добавить больше проверок качества",
+    "   • Учесть специфику JavaScript/TypeScript проектов"
+  ],
+  "recommendation": "needs-improvements",
+  "readyForPhase2": true
+}

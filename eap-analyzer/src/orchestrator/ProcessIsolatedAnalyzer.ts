@@ -9,7 +9,7 @@
 import * as child_process from 'child_process';
 import * as path from 'path';
 import * as fs from 'fs/promises';
-import { CheckContext } from '../types/index.js';
+import type { CheckContext } from '../types/index.js';
 
 /**
  * Конфигурация изолированного процесса
