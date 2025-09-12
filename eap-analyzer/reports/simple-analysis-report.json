@@ -1,0 +1,277 @@
+{
+  "timestamp": "2025-09-12T08:57:26.045Z",
+  "projectStats": {
+    "totalFiles": 474,
+    "analyzedFiles": 20,
+    "totalLines": 4395,
+    "averageComplexity": 29,
+    "fileStats": [
+      {
+        "file": "dist-cjs\\analyzer.js",
+        "lines": 571,
+        "complexity": 98,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "corrected-comprehensive-evaluation.ts",
+        "lines": 767,
+        "complexity": 84,
+        "issues": [
+          "Code Duplication",
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "bin\\generate-roadmap.js",
+        "lines": 334,
+        "complexity": 77,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "comprehensive-status-evaluation.ts",
+        "lines": 722,
+        "complexity": 66,
+        "issues": [
+          "Code Duplication",
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "corrected-full-system-evaluation.ts",
+        "lines": 575,
+        "complexity": 51,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "bin\\quick-analyze.js",
+        "lines": 301,
+        "complexity": 40,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "demo-v3.ts",
+        "lines": 228,
+        "complexity": 34,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "dist-cjs\\ai-integration\\cli.js",
+        "lines": 73,
+        "complexity": 30,
+        "issues": []
+      },
+      {
+        "file": "bin\\validate.js",
+        "lines": 188,
+        "complexity": 21,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "dist-cjs\\analyzers\\code\\CodeStructureAnalyzer.js",
+        "lines": 189,
+        "complexity": 19,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "dist-cjs\\ai-integration\\report-generator.js",
+        "lines": 117,
+        "complexity": 18,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "bin\\test-integration.js",
+        "lines": 110,
+        "complexity": 15,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "bin\\test-fixes.js",
+        "lines": 70,
+        "complexity": 9,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "debug-checker.js",
+        "lines": 69,
+        "complexity": 9,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "dist-cjs\\ai-integration\\index.js",
+        "lines": 51,
+        "complexity": 4,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "bin\\eap-ai.js",
+        "lines": 9,
+        "complexity": 2,
+        "issues": []
+      },
+      {
+        "file": "bin\\eap.js",
+        "lines": 9,
+        "complexity": 1,
+        "issues": []
+      },
+      {
+        "file": "bin\\generate-report.js",
+        "lines": 1,
+        "complexity": 1,
+        "issues": []
+      },
+      {
+        "file": "bin\\quick-analyze-es.js",
+        "lines": 1,
+        "complexity": 1,
+        "issues": []
+      },
+      {
+        "file": "dist-cjs\\analyzers\\code\\index.js",
+        "lines": 10,
+        "complexity": 1,
+        "issues": []
+      }
+    ]
+  },
+  "aiAnalysis": {
+    "qualityScore": 42,
+    "confidence": 87,
+    "patterns": [
+      {
+        "name": "Factory Pattern",
+        "confidence": 85,
+        "type": "design-pattern"
+      },
+      {
+        "name": "Long Method",
+        "confidence": 92,
+        "type": "code-smell"
+      },
+      {
+        "name": "Complex Class",
+        "confidence": 78,
+        "type": "code-smell"
+      }
+    ],
+    "duplication": {
+      "percentage": 15.251738512405803,
+      "blocks": 5
+    },
+    "recommendations": [
+      "🎯 Разбить сложные методы на более мелкие",
+      "📋 Уменьшить дублирование кода через рефакторинг",
+      "🧩 Применить паттерны проектирования для упрощения архитектуры"
+    ]
+  },
+  "technicalDebt": {
+    "totalDebt": 585,
+    "monthlyInterest": 29,
+    "refactoringCost": 409,
+    "roi": 155,
+    "paybackPeriod": 15,
+    "categories": [
+      {
+        "name": "Code Duplication",
+        "debt": 175,
+        "impact": "High"
+      },
+      {
+        "name": "Complex Methods",
+        "debt": 146,
+        "impact": "Medium"
+      },
+      {
+        "name": "Large Classes",
+        "debt": 117,
+        "impact": "High"
+      },
+      {
+        "name": "Missing Tests",
+        "debt": 146,
+        "impact": "High"
+      }
+    ],
+    "hotspots": [
+      {
+        "file": "dist-cjs\\analyzer.js",
+        "debt": 253,
+        "issues": [
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "corrected-comprehensive-evaluation.ts",
+        "debt": 245,
+        "issues": [
+          "Code Duplication",
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "bin\\generate-roadmap.js",
+        "debt": 187,
+        "issues": [
+          "Magic Numbers"
+        ]
+      },
+      {
+        "file": "comprehensive-status-evaluation.ts",
+        "debt": 204,
+        "issues": [
+          "Code Duplication",
+          "Magic Numbers",
+          "Deep Nesting"
+        ]
+      },
+      {
+        "file": "corrected-full-system-evaluation.ts",
+        "debt": 160,
+        "issues": [
+          "Magic Numbers"
+        ]
+      }
+    ]
+  },
+  "summary": {
+    "qualityScore": 42,
+    "totalDebt": 585,
+    "roi": 155,
+    "recommendation": "High Priority"
+  }
+}
