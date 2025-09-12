@@ -27,7 +27,7 @@ const testCases = [
     }`,
     expectedType: 'SERVICE',
     expectedLogicMin: 65,
-    expectedFunctionalityMin: 70,
+    expectedFunctionalityMin: 70
   },
 
   {
@@ -47,7 +47,7 @@ const testCases = [
     }`,
     expectedType: 'VALIDATOR',
     expectDuplication: true,
-    expectedLogicMax: 65, // Должно быть снижено из-за дублирования
+    expectedLogicMax: 65 // Должно быть снижено из-за дублирования
   },
 
   {
@@ -71,7 +71,7 @@ const testCases = [
     }`,
     expectedType: 'PERFORMANCE_UTILS',
     expectedLogicMin: 70,
-    expectedFunctionalityMin: 65,
+    expectedFunctionalityMin: 65
   },
 
   {
@@ -96,7 +96,7 @@ const testCases = [
     });`,
     expectedType: 'TEST_CONFIG',
     expectedLogicMin: 50,
-    expectedFunctionalityMin: 40,
+    expectedFunctionalityMin: 40
   },
 
   {
@@ -112,8 +112,8 @@ const testCases = [
     }`,
     expectedType: 'UTILITY',
     expectedLogicMin: 55,
-    expectedFunctionalityMin: 60,
-  },
+    expectedFunctionalityMin: 60
+  }
 ];
 
 // === ФУНКЦИИ ТЕСТИРОВАНИЯ ===
@@ -145,42 +145,31 @@ function runAdequacyTest() {
         functionalityScore: result.functionalityScore,
         improvements: result.improvements,
         passed: true,
-        issues: [],
+        issues: []
       };
 
       // Проверка типа
       if (result.type !== testCase.expectedType) {
         analysis.passed = false;
-        analysis.issues.push(
-          `Type mismatch: expected ${testCase.expectedType}, got ${result.type}`
-        );
+        analysis.issues.push(`Type mismatch: expected ${testCase.expectedType}, got ${result.type}`);
       }
 
       // Проверка минимальных оценок логики
       if (testCase.expectedLogicMin && result.logicScore < testCase.expectedLogicMin) {
         analysis.passed = false;
-        analysis.issues.push(
-          `Logic score too low: expected >=${testCase.expectedLogicMin}, got ${result.logicScore}`
-        );
+        analysis.issues.push(`Logic score too low: expected >=${testCase.expectedLogicMin}, got ${result.logicScore}`);
       }
 
       // Проверка максимальных оценок логики (для случаев с проблемами)
       if (testCase.expectedLogicMax && result.logicScore > testCase.expectedLogicMax) {
         analysis.passed = false;
-        analysis.issues.push(
-          `Logic score too high: expected <=${testCase.expectedLogicMax}, got ${result.logicScore}`
-        );
+        analysis.issues.push(`Logic score too high: expected <=${testCase.expectedLogicMax}, got ${result.logicScore}`);
       }
 
       // Проверка функциональности
-      if (
-        testCase.expectedFunctionalityMin &&
-        result.functionalityScore < testCase.expectedFunctionalityMin
-      ) {
+      if (testCase.expectedFunctionalityMin && result.functionalityScore < testCase.expectedFunctionalityMin) {
         analysis.passed = false;
-        analysis.issues.push(
-          `Functionality score too low: expected >=${testCase.expectedFunctionalityMin}, got ${result.functionalityScore}`
-        );
+        analysis.issues.push(`Functionality score too low: expected >=${testCase.expectedFunctionalityMin}, got ${result.functionalityScore}`);
       }
 
       // Проверка детекции дублирования
@@ -195,27 +184,24 @@ function runAdequacyTest() {
 
       if (analysis.passed) {
         console.log(`   ✅ PASSED`);
-        console.log(
-          `      Type: ${result.type} | Logic: ${result.logicScore}% | Functionality: ${result.functionalityScore}%`
-        );
+        console.log(`      Type: ${result.type} | Logic: ${result.logicScore}% | Functionality: ${result.functionalityScore}%`);
         passed++;
       } else {
         console.log(`   ❌ FAILED`);
-        console.log(
-          `      Type: ${result.type} | Logic: ${result.logicScore}% | Functionality: ${result.functionalityScore}%`
-        );
+        console.log(`      Type: ${result.type} | Logic: ${result.logicScore}% | Functionality: ${result.functionalityScore}%`);
         for (const issue of analysis.issues) {
           console.log(`      📋 ${issue}`);
         }
         failed++;
       }
+
     } catch (error) {
       console.log(`   💥 ERROR: ${error.message}`);
       failed++;
       results.push({
         name: testCase.name,
         passed: false,
-        error: error.message,
+        error: error.message
       });
     }
 
