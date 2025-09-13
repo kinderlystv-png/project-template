@@ -1,8 +1,6 @@
 /**
  * 🚀 EAP Analyzer - основной скрипт анализа проекта kinderly-events
- * Выполняет реальный анал      console.log('📂 Не удалось автоматически открыть браузер');
-      console.log('🔗 Откройте вручную: eap-enhanced-analysis-kinderly-compact.html');
-      console.log(`🌐 Или перейдите по URL: ${url}`);и генерирует детализированный HTML отчет
+ * Выполняет реальный анализ и генерирует детализированный HTML отчет
  */
 /* eslint-disable no-console */
 import fs from 'fs';
@@ -33,6 +31,128 @@ function _getScoreClass(score: string): string {
   } else {
     return 'score-poor';
   }
+}
+
+// Функция для генерации конкретных рекомендаций на основе критериев
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function generateSpecificRecommendations(component: any): string[] {
+  const recommendations: string[] = [];
+
+  // Анализируем критерии и генерируем конкретные рекомендации
+  if (component.criteria && component.criteria.length > 0) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    component.criteria.forEach((criterion: any) => {
+      const score = extractScoreNumber(criterion.score);
+
+      // Рекомендации для разных критериев в зависимости от оценки
+      if (score <= 85) {
+        switch (true) {
+          case criterion.name.toLowerCase().includes('архитектур'):
+            recommendations.push(`🏗️ Улучшить архитектуру: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('безопас'):
+            recommendations.push(`🛡️ Устранить уязвимости безопасности: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('тест'):
+            recommendations.push(`🧪 Увеличить покрытие тестами: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('производитель'):
+            recommendations.push(`⚡ Оптимизировать производительность: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('документац'):
+            recommendations.push(`📚 Улучшить документацию: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('структур'):
+            recommendations.push(`📁 Реорганизовать структуру проекта: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('код'):
+            recommendations.push(`🔧 Рефакторинг кода: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('зависимост'):
+            recommendations.push(`📦 Обновить зависимости: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('cors'):
+            recommendations.push(`🌐 Настроить CORS правильно: ${criterion.details}`);
+            break;
+          case criterion.name.toLowerCase().includes('api'):
+            recommendations.push(`🔗 Улучшить API: ${criterion.details}`);
+            break;
+          default:
+            recommendations.push(`⚠️ Улучшить "${criterion.name}": ${criterion.details}`);
+        }
+      }
+    });
+  }
+
+  // Добавляем общие рекомендации для компонента
+  switch (component.name) {
+    case 'StructureChecker':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Структура проекта в хорошем состоянии',
+          '🔍 Проводить регулярные ревизии архитектуры'
+        );
+      }
+      break;
+    case 'SecurityChecker':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Безопасность на высоком уровне',
+          '🔐 Продолжать мониторинг уязвимостей'
+        );
+      }
+      break;
+    case 'TestingChecker':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Качество тестирования отличное',
+          '🎯 Поддерживать высокое покрытие'
+        );
+      }
+      break;
+    case 'PerformanceChecker':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Производительность оптимальна',
+          '📊 Мониторить метрики производительности'
+        );
+      }
+      break;
+    case 'DocumentationChecker':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Документация актуальна',
+          '📖 Обновлять документацию при изменениях'
+        );
+      }
+      break;
+    case 'AiInsightsModule':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ AI-анализ работает эффективно',
+          '🤖 Настраивать алгоритмы под проект'
+        );
+      }
+      break;
+    case 'SimpleTechnicalDebtModule':
+      if (recommendations.length === 0) {
+        recommendations.push(
+          '✅ Технический долг под контролем',
+          '🔧 Планировать рефакторинг по приоритету'
+        );
+      }
+      break;
+  }
+
+  return recommendations.length > 0
+    ? recommendations
+    : ['📋 Компонент работает стабильно', '🔍 Проводить регулярные проверки'];
+}
+
+// Функция для извлечения числового значения из оценки
+function extractScoreNumber(scoreString: string): number {
+  const match = scoreString.match(/(\d+)%/);
+  return match ? parseInt(match[1]) : 100;
 }
 
 async function runAdvancedEapDebugger() {
@@ -93,8 +213,8 @@ async function runAdvancedEapDebugger() {
   try {
     // Пробуем несколько способов открытия браузера
     try {
-      await execAsync(`start chrome --incognito "${url}"`);
-      console.log('✅ Страница открыта в Chrome (режим инкогнито)');
+      await execAsync(`start chrome "${url}"`);
+      console.log('✅ Страница открыта в Chrome');
     } catch {
       // Если Chrome недоступен, используем системный браузер по умолчанию
       await execAsync(
@@ -104,7 +224,7 @@ async function runAdvancedEapDebugger() {
     }
   } catch {
     console.log('📂 Не удалось автоматически открыть браузер');
-    console.log('🔗 Откройте вручную: eap-enhanced-analysis-kinderly.html');
+    console.log('🔗 Откройте вручную: eap-enhanced-analysis-kinderly-compact.html');
     console.log(`🌐 Или перейдите по URL: ${url}`);
   }
 
@@ -177,10 +297,7 @@ async function updateHtmlWithResults(components: any[], mode: string) {
     criteria: component.criteria || [],
     filePath: component.path,
     functionality: component.description || 'Анализ компонента',
-    recommendations: component.recommendations || [
-      'Проверить устаревшие зависимости',
-      'Оптимизировать производительность',
-    ],
+    recommendations: generateSpecificRecommendations(component),
     readyStatus: 'Готов',
     orchestratorStatus: 'Зарегистрирован',
     timestamp: new Date(),

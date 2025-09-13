@@ -973,7 +973,7 @@ class EAPDashboard {
     if (sortedComponents.length === 0) {
       container.innerHTML = `
                 <tr>
-                    <td colspan="6" class="text-center py-5">
+                    <td colspan="7" class="text-center py-5">
                         <h5 class="text-muted">Компоненты не найдены</h5>
                     </td>
                 </tr>
@@ -1004,6 +1004,15 @@ class EAPDashboard {
       if (component.functionality >= 90) funcClass = 'bg-success';
       else if (component.functionality >= 80) funcClass = 'bg-info';
       else if (component.functionality >= 70) funcClass = 'bg-warning';
+
+      // Определяем статус регистрации в оркестраторе
+      const isRegistered = component.isRegisteredInOrchestrator;
+      const orchestratorStatus = component.orchestratorStatus || 'Неизвестно';
+      const orchestratorIcon = isRegistered ? '✅' : '❌';
+      const orchestratorClass = isRegistered ? 'text-success' : 'text-danger';
+      const orchestratorTitle = isRegistered
+        ? 'Компонент зарегистрирован в оркестраторе и участвует в анализе'
+        : 'Компонент НЕ зарегистрирован в оркестраторе';
 
       html += `
                 <tr data-component-name="${component.name}" data-component-classification="${component.classification || 'auxiliary'}" style="cursor: pointer;" title="Нажмите для детального анализа">
@@ -1044,6 +1053,13 @@ class EAPDashboard {
                     </td>
                     <td class="text-center">
                         <span class="badge bg-secondary">${component.tests || '0'}</span>
+                    </td>
+                    <td class="text-center">
+                        <span class="${orchestratorClass} fw-bold" title="${orchestratorTitle}">
+                            ${orchestratorIcon}
+                        </span>
+                        <br>
+                        <small class="text-muted">${orchestratorStatus}</small>
                     </td>
                 </tr>
             `;

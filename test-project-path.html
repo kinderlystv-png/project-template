@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест отображения пути проекта</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+      }
+      .project-path {
+        margin: 15px 0;
+        padding: 10px 15px;
+        background: linear-gradient(135deg, #e3f2fd 0%, #f0f8ff 100%);
+        border-left: 4px solid #2196f3;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🚀 EAP Compact Analysis Dashboard</h1>
+    <p>📊 Анализ качества проекта | 🔴 РЕАЛЬНЫЕ ДАННЫЕ</p>
+
+    <script>
+      // Имитация данных как в настоящем анализаторе
+      window.REAL_ANALYSIS_DATA = {
+        projectPath: 'C:\\alphacore\\project-template\\kinderly-events',
+        timestamp: '2025-09-13T08:04:06.661Z',
+        mode: 'real',
+      };
+
+      // Функция обновления пути проекта (как в настоящем файле)
+      function updateProjectPath() {
+        if (window.REAL_ANALYSIS_DATA && window.REAL_ANALYSIS_DATA.projectPath) {
+          const projectPath = window.REAL_ANALYSIS_DATA.projectPath;
+          const pathParts = projectPath.split(/[\\\/]/);
+          const projectName = pathParts[pathParts.length - 1];
+
+          // Обновляем заголовок страницы
+          const titleEl = document.querySelector('h1');
+          if (titleEl && titleEl.textContent.includes('EAP Compact Analysis Dashboard')) {
+            titleEl.textContent = `🚀 EAP Analysis Dashboard | 📁 ${projectName}`;
+          }
+
+          // Обновляем или создаем элемент с путем проекта
+          let pathEl = document.getElementById('project-path-display');
+          if (!pathEl) {
+            pathEl = document.createElement('div');
+            pathEl.id = 'project-path-display';
+            pathEl.className = 'project-path';
+
+            // Вставляем после заголовка
+            const header = document.querySelector('h1');
+            if (header && header.parentNode) {
+              const nextElement = header.nextElementSibling;
+              if (nextElement) {
+                header.parentNode.insertBefore(pathEl, nextElement);
+              } else {
+                header.parentNode.appendChild(pathEl);
+              }
+            }
+          }
+
+          pathEl.innerHTML = `📂 <strong>Анализируемый проект:</strong> <code style="background: #fff; padding: 2px 6px; border-radius: 3px; border: 1px solid #ddd;">${projectPath}</code>`;
+
+          console.log(`✅ Обновлен путь проекта: ${projectPath}`);
+        }
+      }
+
+      // Запуск при загрузке страницы
+      document.addEventListener('DOMContentLoaded', function () {
+        updateProjectPath();
+      });
+    </script>
+  </body>
+</html>

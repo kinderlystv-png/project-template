@@ -10,8 +10,70 @@ const fs = require('fs');
 const path = require('path');
 const { smartComponentAnalyzer } = require('./smart-analyzer.cjs');
 
+// Функция для получения списка РЕАЛЬНО РАБОТАЮЩИХ анализаторов через запуск оркестратора
+async function getRegisteredAnalyzers() {
+  try {
+    console.log(
+      '🚀 Запускаем RealAnalysisOrchestrator для определения реально работающих анализаторов...'
+    );
+
+    // Импортируем RealAnalysisOrchестrator через dynamic import
+    const orchestratorModule = await import('../src/analyzers/real-analysis-orchestrator.js');
+    const { RealAnalysisOrchestrator } = orchestratorModule;
+
+    // Создаем экземпляр оркестратора
+    const orchestrator = new RealAnalysisOrchestrator();
+
+    // Получаем список зарегистрированных анализаторов БЕЗ запуска анализа
+    const registeredAnalyzers = orchestrator.getRegisteredAnalyzers();
+
+    // Извлекаем имена анализаторов
+    const analyzerNames = registeredAnalyzers.map(analyzer => analyzer.name);
+
+    console.log(`✅ Получен список из оркестратора: ${analyzerNames.join(', ')}`);
+    return analyzerNames;
+  } catch (error) {
+    console.log(`⚠️  Ошибка при запуске оркестратора: ${error.message}`);
+    console.log('📋 Используем базовый список анализаторов...');
+    return getDefaultRegisteredAnalyzers();
+  }
+}
+
+// Базовый список зарегистрированных анализаторов (fallback)
+function getDefaultRegisteredAnalyzers() {
+  return [
+    'RealStructureAnalyzer',
+    'MockSecurityAnalyzer',
+    'MockTestingAnalyzer',
+    'MockPerformanceAnalyzer',
+    'MockDocumentationAnalyzer',
+    'MockAiInsightsModule',
+    'MockTechnicalDebtModule',
+  ];
+}
+
+// Функция для проверки, зарегистрирован ли компонент в оркестраторе
+function isComponentRegistered(componentName, registeredAnalyzers) {
+  // Нормализуем имя компонента для сравнения
+  const normalizedName = componentName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+  return registeredAnalyzers.some(registeredName => {
+    const normalizedRegistered = registeredName.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();
+
+    // Проверяем точное совпадение или частичное совпадение
+    return (
+      normalizedRegistered === normalizedName ||
+      normalizedRegistered.includes(normalizedName) ||
+      normalizedName.includes(normalizedRegistered.replace('mock', '').replace('real', ''))
+    );
+  });
+}
+
 // Функция для анализа файлов проекта
-function analyzeProjectFiles(projectPath = '..') {
+async function analyzeProjectFiles(projectPath = '..') {
+  // Получаем список зарегистрированных анализаторов
+  const registeredAnalyzers = await getRegisteredAnalyzers();
+
   // ИЗМЕНЕНО: анализируем весь проект
   const components = {};
   const categories = {
@@ -76,6 +138,7 @@ function analyzeProjectFiles(projectPath = '..') {
                 'emt-v3-stable-clean',
                 'testing-integration-package',
                 'eap-analyzer-dashboard', // НЕ анализируем саму dashboard
+                'kinderly-events', // НЕ анализируем внешний проект kinderly-events
               ].includes(file) || file.startsWith('dist');
 
             if (!shouldSkipDir) {
@@ -109,7 +172,13 @@ function analyzeProjectFiles(projectPath = '..') {
             file === 'Dockerfile'
           ) {
             const content = fs.readFileSync(fullPath, 'utf8');
-            const componentData = analyzeFile(file, relativeFilePath, content, stat);
+            const componentData = analyzeFile(
+              file,
+              relativeFilePath,
+              content,
+              stat,
+              registeredAnalyzers
+            );
 
             if (componentData) {
               const key = componentData.name.replace(/[^a-zA-Z0-9]/g, '');
@@ -181,7 +250,7 @@ function analyzeProjectFiles(projectPath = '..') {
   }
 
   // Анализ одного файла
-  function analyzeFile(filename, filepath, content, stat) {
+  function analyzeFile(filename, filepath, content, stat, registeredAnalyzers) {
     try {
       // Фильтрация по размеру и содержимому
       // Исключаем файлы меньше 100 байт или менее 5 строк
@@ -297,6 +366,10 @@ function analyzeProjectFiles(projectPath = '..') {
       // Извлекаем имя компонента
       const componentName = extractComponentName(filename, content);
 
+      // Определяем, зарегистрирован ли компонент в оркестраторе
+      const isRegistered = isComponentRegistered(componentName, registeredAnalyzers);
+      const orchestratorStatus = isRegistered ? 'Зарегистрирован' : 'Не зарегистрирован';
+
       // Используем результаты умного анализатора
       const logicIssues = smartAnalysis.logicIssues;
       const functionalityIssues = smartAnalysis.functionalityIssues;
@@ -317,6 +390,9 @@ function analyzeProjectFiles(projectPath = '..') {
         // Сохраняем старые поля для совместимости
         logicIssue: logicIssues[0] || 'Нет критических проблем',
         functionalityIssue: functionalityIssues[0] || 'Нет критических проблем',
+        // Добавляем статус регистрации в оркестраторе
+        orchestratorStatus,
+        isRegisteredInOrchestrator: isRegistered,
       };
     } catch (error) {
       console.log(`⚠️  Ошибка анализа файла ${filename}: ${error.message}`);
@@ -1375,11 +1451,11 @@ function classifyComponents(components) {
 }
 
 // Главная функция
-function main() {
+async function main() {
   console.log('🚀 EAP ANALYZER - Генерация Live-отчета');
   console.log('='.repeat(50));
 
-  const data = analyzeProjectFiles();
+  const data = await analyzeProjectFiles();
 
   // Классификация компонентов
   const classification = classifyComponents(data.components);
@@ -1435,7 +1511,10 @@ function main() {
 
 // Запуск
 if (require.main === module) {
-  main();
+  main().catch(error => {
+    console.error('❌ Ошибка при выполнении анализа:', error);
+    process.exit(1);
+  });
 }
 
 module.exports = { analyzeProjectFiles, generateMarkdownReport };
