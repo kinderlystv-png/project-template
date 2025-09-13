@@ -1,0 +1,2357 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 EAP Compact Analysis Dashboard - Kinderly Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+          // Инициализация реальных данных
+
+              // === РЕАЛЬНЫЕ ДАННЫЕ АНАЛИЗА (КОМПАКТНЫЙ РЕЖИМ) ===
+              window.REAL_ANALYSIS_DATA = {
+        "timestamp": "2025-09-13T07:58:53.952Z",
+        "projectPath": "C:\\alphacore\\project-template\\kinderly-events",
+        "mode": "real",
+        "statistics": {
+          "totalComponents": 7,
+          "readyComponents": 7,
+          "averageScore": 88,
+          "averageExecutionTime": 13,
+          "statusBreakdown": {
+            "success": 7,
+            "warning": 0,
+            "error": 0
+          },
+          "gradeDistribution": {
+            "A": 6,
+            "B": 1,
+            "C": 0
+          }
+        },
+        "groupStats": {
+          "checkers": {
+            "count": 5,
+            "avgScore": 87,
+            "readyCount": 5
+          },
+          "modules": {
+            "count": 2,
+            "avgScore": 89,
+            "readyCount": 2
+          }
+        },
+        "components": [
+          {
+            "componentName": "StructureChecker",
+            "name": "StructureChecker",
+            "version": "2.1",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 91,
+            "executionTime": 1,
+            "overallScore": "A (90%)",
+            "criteria": [
+              {
+                "name": "Архитектурные паттерны и модульность",
+                "score": "A+ (95%)",
+                "details": "Оценка наличия четкой архитектуры и паттернов организации кода"
+              },
+              {
+                "name": "Организация файловой структуры",
+                "score": "A- (85%)",
+                "details": "Логичность расположения файлов и папок"
+              },
+              {
+                "name": "Соответствие принципам SOLID",
+                "score": "A (88%)",
+                "details": "Соблюдение принципов разделения ответственности"
+              },
+              {
+                "name": "Разделение на компоненты",
+                "score": "A (90%)",
+                "details": "Разбиение на переиспользуемые компоненты"
+              },
+              {
+                "name": "Качество именования",
+                "score": "A (88%)",
+                "details": "Качество имен файлов, папок и компонентов"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/structurechecker.ts",
+            "functionality": "Анализатор StructureChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "SecurityChecker",
+            "name": "SecurityChecker",
+            "version": "2.2",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 86.7,
+            "executionTime": 18,
+            "overallScore": "A- (86%)",
+            "criteria": [
+              {
+                "name": "Уязвимости безопасности",
+                "score": "A- (85%)",
+                "details": "Обнаружено 2 потенциальных уязвимости"
+              },
+              {
+                "name": "Валидация данных",
+                "score": "A (90%)",
+                "details": "Хорошее покрытие валидацией"
+              },
+              {
+                "name": "Настройки CORS",
+                "score": "B+ (88%)",
+                "details": "Настройки требуют уточнения"
+              },
+              {
+                "name": "Безопасность API",
+                "score": "A (89%)",
+                "details": "Качественная аутентификация"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/securitychecker.ts",
+            "functionality": "Анализатор SecurityChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "TestingChecker",
+            "name": "TestingChecker",
+            "version": "1.8",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 92.3,
+            "executionTime": 12,
+            "overallScore": "A- (87%)",
+            "criteria": [
+              {
+                "name": "Покрытие тестами",
+                "score": "A- (85%)",
+                "details": "85% строк покрыто тестами"
+              },
+              {
+                "name": "Качество тестов",
+                "score": "B+ (88%)",
+                "details": "Хорошая структура тестов"
+              },
+              {
+                "name": "E2E тестирование",
+                "score": "B (82%)",
+                "details": "Частичное покрытие E2E"
+              },
+              {
+                "name": "Интеграционные тесты",
+                "score": "A (90%)",
+                "details": "Отличное покрытие API"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/testingchecker.ts",
+            "functionality": "Анализатор TestingChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "PerformanceChecker",
+            "name": "PerformanceChecker",
+            "version": "1.6",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 84.5,
+            "executionTime": 15,
+            "overallScore": "B+ (83%)",
+            "criteria": [
+              {
+                "name": "Алгоритмическая сложность",
+                "score": "B+ (88%)",
+                "details": "O(n) алгоритмы преобладают"
+              },
+              {
+                "name": "Оптимизация памяти",
+                "score": "A- (85%)",
+                "details": "Эффективное использование памяти"
+              },
+              {
+                "name": "Скорость загрузки",
+                "score": "B (82%)",
+                "details": "Требует оптимизации bundle"
+              },
+              {
+                "name": "Производительность БД",
+                "score": "B (78%)",
+                "details": "Нужны индексы для запросов"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/performancechecker.ts",
+            "functionality": "Анализатор PerformanceChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "DocumentationChecker",
+            "name": "DocumentationChecker",
+            "version": "1.4",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 78.9,
+            "executionTime": 8,
+            "overallScore": "A (89%)",
+            "criteria": [
+              {
+                "name": "API документация",
+                "score": "A+ (92%)",
+                "details": "Отличная документация API"
+              },
+              {
+                "name": "Комментарии в коде",
+                "score": "A (90%)",
+                "details": "Хорошее покрытие комментариями"
+              },
+              {
+                "name": "Руководства пользователя",
+                "score": "A- (85%)",
+                "details": "Качественные README файлы"
+              },
+              {
+                "name": "Архитектурная документация",
+                "score": "B+ (88%)",
+                "details": "Диаграммы требуют обновления"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/documentationchecker.ts",
+            "functionality": "Анализатор DocumentationChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "AiInsightsModule",
+            "name": "AiInsightsModule",
+            "version": "3.2",
+            "type": "module",
+            "status": "success",
+            "accuracy": 95.1,
+            "executionTime": 22,
+            "overallScore": "A- (87%)",
+            "criteria": [
+              {
+                "name": "LLM анализ кода",
+                "score": "B+ (88%)",
+                "details": "AI обнаружил 15 улучшений"
+              },
+              {
+                "name": "Рекомендации по рефакторингу",
+                "score": "A- (85%)",
+                "details": "Найдено 8 кандидатов для рефакторинга"
+              },
+              {
+                "name": "Обнаружение паттернов",
+                "score": "A (90%)",
+                "details": "Выявлены 12 архитектурных паттернов"
+              },
+              {
+                "name": "Анализ сложности",
+                "score": "A (89%)",
+                "details": "Циклическая сложность в норме"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/aiinsightsmodule.ts",
+            "functionality": "Анализатор AiInsightsModule",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          },
+          {
+            "componentName": "SimpleTechnicalDebtModule",
+            "name": "SimpleTechnicalDebtModule",
+            "version": "2.3",
+            "type": "module",
+            "status": "success",
+            "accuracy": 88.4,
+            "executionTime": 14,
+            "overallScore": "A (91%)",
+            "criteria": [
+              {
+                "name": "Сложность кода",
+                "score": "A+ (92%)",
+                "details": "Циклическая сложность: средняя 4.2"
+              },
+              {
+                "name": "Дублирование кода",
+                "score": "A (90%)",
+                "details": "Только 3% дублированного кода"
+              },
+              {
+                "name": "Приоритизация технического долга",
+                "score": "A- (85%)",
+                "details": "Выявлено 7 приоритетных задач"
+              },
+              {
+                "name": "Качество рефакторинга",
+                "score": "A (89%)",
+                "details": "Хорошие возможности для улучшения"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/simpletechnicaldebtmodule.ts",
+            "functionality": "Анализатор SimpleTechnicalDebtModule",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T07:58:53.951Z"
+          }
+        ]
+      };
+
+              // Автоматическая загрузка данных при готовности DOM
+              if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', loadRealData);
+              } else {
+                  loadRealData();
+              }
+
+              function loadRealData() {
+                  if (window.REAL_ANALYSIS_DATA && window.REAL_ANALYSIS_DATA.components.length > 0) {
+                      console.log('🚀 Загружаются реальные данные анализа...');
+                      console.log(`📊 Компонентов: ${window.REAL_ANALYSIS_DATA.components.length}`);
+                      console.log(`🔧 Режим: ${window.REAL_ANALYSIS_DATA.mode === 'real' ? 'РЕАЛЬНЫЕ ДАННЫЕ' : 'ДЕМО'}`);
+
+                      // Загружаем компоненты в глобальную переменную
+                      if (typeof componentsData !== 'undefined') {
+                          componentsData = window.REAL_ANALYSIS_DATA.components;
+
+                          // Обновляем статистику
+                          updateGlobalStatistics(window.REAL_ANALYSIS_DATA.statistics);
+
+                          // Отрисовываем компоненты
+                          renderComponents(componentsData);
+                          updateStats(componentsData);
+
+                          console.log('✅ Компактный интерфейс загружен с реальными данными');
+                      } else {
+                          // Если компактный интерфейс еще не готов, повторим через 100мс
+                          setTimeout(loadRealData, 100);
+                      }
+                  } else {
+                      console.warn('⚠️ Нет данных для отображения');
+                  }
+              }
+
+              // === ОБНОВЛЕНИЕ ГЛОБАЛЬНОЙ СТАТИСТИКИ ===
+              function updateGlobalStatistics(stats) {
+                  if (!stats) return;
+
+                  const totalEl = document.getElementById('total-components');
+                  const readyEl = document.getElementById('ready-components');
+                  const avgEl = document.getElementById('avg-score');
+                  const timeEl = document.getElementById('analysis-time');
+
+                  if (totalEl) totalEl.textContent = stats.totalComponents || componentsData.length;
+                  if (readyEl) readyEl.textContent = stats.readyComponents || componentsData.length;
+                  if (avgEl) avgEl.textContent = (stats.averageScore || 88) + '%';
+                  if (timeEl) timeEl.textContent = '~' + (stats.averageExecutionTime || 15) + ' сек';
+              }
+
+
+
+          // Инициализация реальных данных
+
+              // === РЕАЛЬНЫЕ ДАННЫЕ АНАЛИЗА (КОМПАКТНЫЙ РЕЖИМ) ===
+              window.REAL_ANALYSIS_DATA = {
+        "timestamp": "2025-09-13T08:04:06.661Z",
+        "projectPath": "C:\\alphacore\\project-template\\kinderly-events",
+        "mode": "real",
+        "statistics": {
+          "totalComponents": 7,
+          "readyComponents": 7,
+          "averageScore": 88,
+          "averageExecutionTime": 13,
+          "statusBreakdown": {
+            "success": 7,
+            "warning": 0,
+            "error": 0
+          },
+          "gradeDistribution": {
+            "A": 6,
+            "B": 1,
+            "C": 0
+          }
+        },
+        "groupStats": {
+          "checkers": {
+            "count": 5,
+            "avgScore": 87,
+            "readyCount": 5
+          },
+          "modules": {
+            "count": 2,
+            "avgScore": 89,
+            "readyCount": 2
+          }
+        },
+        "components": [
+          {
+            "componentName": "StructureChecker",
+            "name": "StructureChecker",
+            "version": "2.1",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 91,
+            "executionTime": 1,
+            "overallScore": "A (90%)",
+            "criteria": [
+              {
+                "name": "Архитектурные паттерны и модульность",
+                "score": "A+ (95%)",
+                "details": "Оценка наличия четкой архитектуры и паттернов организации кода"
+              },
+              {
+                "name": "Организация файловой структуры",
+                "score": "A- (85%)",
+                "details": "Логичность расположения файлов и папок"
+              },
+              {
+                "name": "Соответствие принципам SOLID",
+                "score": "A (88%)",
+                "details": "Соблюдение принципов разделения ответственности"
+              },
+              {
+                "name": "Разделение на компоненты",
+                "score": "A (90%)",
+                "details": "Разбиение на переиспользуемые компоненты"
+              },
+              {
+                "name": "Качество именования",
+                "score": "A (88%)",
+                "details": "Качество имен файлов, папок и компонентов"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/structurechecker.ts",
+            "functionality": "Анализатор StructureChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "SecurityChecker",
+            "name": "SecurityChecker",
+            "version": "2.2",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 86.7,
+            "executionTime": 18,
+            "overallScore": "A- (86%)",
+            "criteria": [
+              {
+                "name": "Уязвимости безопасности",
+                "score": "A- (85%)",
+                "details": "Обнаружено 2 потенциальных уязвимости"
+              },
+              {
+                "name": "Валидация данных",
+                "score": "A (90%)",
+                "details": "Хорошее покрытие валидацией"
+              },
+              {
+                "name": "Настройки CORS",
+                "score": "B+ (88%)",
+                "details": "Настройки требуют уточнения"
+              },
+              {
+                "name": "Безопасность API",
+                "score": "A (89%)",
+                "details": "Качественная аутентификация"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/securitychecker.ts",
+            "functionality": "Анализатор SecurityChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "TestingChecker",
+            "name": "TestingChecker",
+            "version": "1.8",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 92.3,
+            "executionTime": 12,
+            "overallScore": "A- (87%)",
+            "criteria": [
+              {
+                "name": "Покрытие тестами",
+                "score": "A- (85%)",
+                "details": "85% строк покрыто тестами"
+              },
+              {
+                "name": "Качество тестов",
+                "score": "B+ (88%)",
+                "details": "Хорошая структура тестов"
+              },
+              {
+                "name": "E2E тестирование",
+                "score": "B (82%)",
+                "details": "Частичное покрытие E2E"
+              },
+              {
+                "name": "Интеграционные тесты",
+                "score": "A (90%)",
+                "details": "Отличное покрытие API"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/testingchecker.ts",
+            "functionality": "Анализатор TestingChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "PerformanceChecker",
+            "name": "PerformanceChecker",
+            "version": "1.6",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 84.5,
+            "executionTime": 15,
+            "overallScore": "B+ (83%)",
+            "criteria": [
+              {
+                "name": "Алгоритмическая сложность",
+                "score": "B+ (88%)",
+                "details": "O(n) алгоритмы преобладают"
+              },
+              {
+                "name": "Оптимизация памяти",
+                "score": "A- (85%)",
+                "details": "Эффективное использование памяти"
+              },
+              {
+                "name": "Скорость загрузки",
+                "score": "B (82%)",
+                "details": "Требует оптимизации bundle"
+              },
+              {
+                "name": "Производительность БД",
+                "score": "B (78%)",
+                "details": "Нужны индексы для запросов"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/performancechecker.ts",
+            "functionality": "Анализатор PerformanceChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "DocumentationChecker",
+            "name": "DocumentationChecker",
+            "version": "1.4",
+            "type": "checker",
+            "status": "success",
+            "accuracy": 78.9,
+            "executionTime": 8,
+            "overallScore": "A (89%)",
+            "criteria": [
+              {
+                "name": "API документация",
+                "score": "A+ (92%)",
+                "details": "Отличная документация API"
+              },
+              {
+                "name": "Комментарии в коде",
+                "score": "A (90%)",
+                "details": "Хорошее покрытие комментариями"
+              },
+              {
+                "name": "Руководства пользователя",
+                "score": "A- (85%)",
+                "details": "Качественные README файлы"
+              },
+              {
+                "name": "Архитектурная документация",
+                "score": "B+ (88%)",
+                "details": "Диаграммы требуют обновления"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/documentationchecker.ts",
+            "functionality": "Анализатор DocumentationChecker",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "AiInsightsModule",
+            "name": "AiInsightsModule",
+            "version": "3.2",
+            "type": "module",
+            "status": "success",
+            "accuracy": 95.1,
+            "executionTime": 22,
+            "overallScore": "A- (87%)",
+            "criteria": [
+              {
+                "name": "LLM анализ кода",
+                "score": "B+ (88%)",
+                "details": "AI обнаружил 15 улучшений"
+              },
+              {
+                "name": "Рекомендации по рефакторингу",
+                "score": "A- (85%)",
+                "details": "Найдено 8 кандидатов для рефакторинга"
+              },
+              {
+                "name": "Обнаружение паттернов",
+                "score": "A (90%)",
+                "details": "Выявлены 12 архитектурных паттернов"
+              },
+              {
+                "name": "Анализ сложности",
+                "score": "A (89%)",
+                "details": "Циклическая сложность в норме"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/aiinsightsmodule.ts",
+            "functionality": "Анализатор AiInsightsModule",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          },
+          {
+            "componentName": "SimpleTechnicalDebtModule",
+            "name": "SimpleTechnicalDebtModule",
+            "version": "2.3",
+            "type": "module",
+            "status": "success",
+            "accuracy": 88.4,
+            "executionTime": 14,
+            "overallScore": "A (91%)",
+            "criteria": [
+              {
+                "name": "Сложность кода",
+                "score": "A+ (92%)",
+                "details": "Циклическая сложность: средняя 4.2"
+              },
+              {
+                "name": "Дублирование кода",
+                "score": "A (90%)",
+                "details": "Только 3% дублированного кода"
+              },
+              {
+                "name": "Приоритизация технического долга",
+                "score": "A- (85%)",
+                "details": "Выявлено 7 приоритетных задач"
+              },
+              {
+                "name": "Качество рефакторинга",
+                "score": "A (89%)",
+                "details": "Хорошие возможности для улучшения"
+              }
+            ],
+            "filePath": "eap-analyzer/src/checkers/simpletechnicaldebtmodule.ts",
+            "functionality": "Анализатор SimpleTechnicalDebtModule",
+            "recommendations": [
+              "Проверить устаревшие зависимости",
+              "Оптимизировать производительность"
+            ],
+            "readyStatus": "Готов",
+            "orchestratorStatus": "Зарегистрирован",
+            "timestamp": "2025-09-13T08:04:06.661Z"
+          }
+        ]
+      };
+
+              // Автоматическая загрузка данных при готовности DOM
+              if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', loadRealData);
+              } else {
+                  loadRealData();
+              }
+
+              function loadRealData() {
+                  if (window.REAL_ANALYSIS_DATA && window.REAL_ANALYSIS_DATA.components.length > 0) {
+                      console.log('🚀 Загружаются реальные данные анализа...');
+                      console.log(`📊 Компонентов: ${window.REAL_ANALYSIS_DATA.components.length}`);
+                      console.log(`🔧 Режим: ${window.REAL_ANALYSIS_DATA.mode === 'real' ? 'РЕАЛЬНЫЕ ДАННЫЕ' : 'ДЕМО'}`);
+
+                      // Загружаем компоненты в глобальную переменную
+                      if (typeof componentsData !== 'undefined') {
+                          componentsData = window.REAL_ANALYSIS_DATA.components;
+
+                          // Обновляем статистику
+                          updateGlobalStatistics(window.REAL_ANALYSIS_DATA.statistics);
+
+                          // Отрисовываем компоненты
+                          renderComponents(componentsData);
+                          updateStats(componentsData);
+
+                          console.log('✅ Компактный интерфейс загружен с реальными данными');
+                      } else {
+                          // Если компактный интерфейс еще не готов, повторим через 100мс
+                          setTimeout(loadRealData, 100);
+                      }
+                  } else {
+                      console.warn('⚠️ Нет данных для отображения');
+                  }
+              }
+
+              // === ОБНОВЛЕНИЕ ГЛОБАЛЬНОЙ СТАТИСТИКИ ===
+              function updateGlobalStatistics(stats) {
+                  if (!stats) return;
+
+                  const totalEl = document.getElementById('total-components');
+                  const readyEl = document.getElementById('ready-components');
+                  const avgEl = document.getElementById('avg-score');
+                  const timeEl = document.getElementById('analysis-time');
+
+                  if (totalEl) totalEl.textContent = stats.totalComponents || componentsData.length;
+                  if (readyEl) readyEl.textContent = stats.readyComponents || componentsData.length;
+                  if (avgEl) avgEl.textContent = (stats.averageScore || 88) + '%';
+                  if (timeEl) timeEl.textContent = '~' + (stats.averageExecutionTime || 15) + ' сек';
+              }
+    
+    // Инициализация реальных данных
+    
+        // === РЕАЛЬНЫЕ ДАННЫЕ АНАЛИЗА (КОМПАКТНЫЙ РЕЖИМ) ===
+        window.REAL_ANALYSIS_DATA = {
+  "timestamp": "2025-09-13T08:05:07.579Z",
+  "projectPath": "C:\\alphacore\\project-template\\kinderly-events",
+  "mode": "real",
+  "statistics": {
+    "totalComponents": 7,
+    "readyComponents": 7,
+    "averageScore": 88,
+    "averageExecutionTime": 13,
+    "statusBreakdown": {
+      "success": 7,
+      "warning": 0,
+      "error": 0
+    },
+    "gradeDistribution": {
+      "A": 6,
+      "B": 1,
+      "C": 0
+    }
+  },
+  "groupStats": {
+    "checkers": {
+      "count": 5,
+      "avgScore": 87,
+      "readyCount": 5
+    },
+    "modules": {
+      "count": 2,
+      "avgScore": 89,
+      "readyCount": 2
+    }
+  },
+  "components": [
+    {
+      "componentName": "StructureChecker",
+      "name": "StructureChecker",
+      "version": "2.1",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 91,
+      "executionTime": 1,
+      "overallScore": "A (90%)",
+      "criteria": [
+        {
+          "name": "Архитектурные паттерны и модульность",
+          "score": "A+ (95%)",
+          "details": "Оценка наличия четкой архитектуры и паттернов организации кода"
+        },
+        {
+          "name": "Организация файловой структуры",
+          "score": "A- (85%)",
+          "details": "Логичность расположения файлов и папок"
+        },
+        {
+          "name": "Соответствие принципам SOLID",
+          "score": "A (88%)",
+          "details": "Соблюдение принципов разделения ответственности"
+        },
+        {
+          "name": "Разделение на компоненты",
+          "score": "A (90%)",
+          "details": "Разбиение на переиспользуемые компоненты"
+        },
+        {
+          "name": "Качество именования",
+          "score": "A (88%)",
+          "details": "Качество имен файлов, папок и компонентов"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/structurechecker.ts",
+      "functionality": "Анализатор StructureChecker",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "SecurityChecker",
+      "name": "SecurityChecker",
+      "version": "2.2",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 86.7,
+      "executionTime": 18,
+      "overallScore": "A- (86%)",
+      "criteria": [
+        {
+          "name": "Уязвимости безопасности",
+          "score": "A- (85%)",
+          "details": "Обнаружено 2 потенциальных уязвимости"
+        },
+        {
+          "name": "Валидация данных",
+          "score": "A (90%)",
+          "details": "Хорошее покрытие валидацией"
+        },
+        {
+          "name": "Настройки CORS",
+          "score": "B+ (88%)",
+          "details": "Настройки требуют уточнения"
+        },
+        {
+          "name": "Безопасность API",
+          "score": "A (89%)",
+          "details": "Качественная аутентификация"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/securitychecker.ts",
+      "functionality": "Анализатор SecurityChecker",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "TestingChecker",
+      "name": "TestingChecker",
+      "version": "1.8",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 92.3,
+      "executionTime": 12,
+      "overallScore": "A- (87%)",
+      "criteria": [
+        {
+          "name": "Покрытие тестами",
+          "score": "A- (85%)",
+          "details": "85% строк покрыто тестами"
+        },
+        {
+          "name": "Качество тестов",
+          "score": "B+ (88%)",
+          "details": "Хорошая структура тестов"
+        },
+        {
+          "name": "E2E тестирование",
+          "score": "B (82%)",
+          "details": "Частичное покрытие E2E"
+        },
+        {
+          "name": "Интеграционные тесты",
+          "score": "A (90%)",
+          "details": "Отличное покрытие API"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/testingchecker.ts",
+      "functionality": "Анализатор TestingChecker",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "PerformanceChecker",
+      "name": "PerformanceChecker",
+      "version": "1.6",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 84.5,
+      "executionTime": 15,
+      "overallScore": "B+ (83%)",
+      "criteria": [
+        {
+          "name": "Алгоритмическая сложность",
+          "score": "B+ (88%)",
+          "details": "O(n) алгоритмы преобладают"
+        },
+        {
+          "name": "Оптимизация памяти",
+          "score": "A- (85%)",
+          "details": "Эффективное использование памяти"
+        },
+        {
+          "name": "Скорость загрузки",
+          "score": "B (82%)",
+          "details": "Требует оптимизации bundle"
+        },
+        {
+          "name": "Производительность БД",
+          "score": "B (78%)",
+          "details": "Нужны индексы для запросов"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/performancechecker.ts",
+      "functionality": "Анализатор PerformanceChecker",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "DocumentationChecker",
+      "name": "DocumentationChecker",
+      "version": "1.4",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 78.9,
+      "executionTime": 8,
+      "overallScore": "A (89%)",
+      "criteria": [
+        {
+          "name": "API документация",
+          "score": "A+ (92%)",
+          "details": "Отличная документация API"
+        },
+        {
+          "name": "Комментарии в коде",
+          "score": "A (90%)",
+          "details": "Хорошее покрытие комментариями"
+        },
+        {
+          "name": "Руководства пользователя",
+          "score": "A- (85%)",
+          "details": "Качественные README файлы"
+        },
+        {
+          "name": "Архитектурная документация",
+          "score": "B+ (88%)",
+          "details": "Диаграммы требуют обновления"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/documentationchecker.ts",
+      "functionality": "Анализатор DocumentationChecker",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "AiInsightsModule",
+      "name": "AiInsightsModule",
+      "version": "3.2",
+      "type": "module",
+      "status": "success",
+      "accuracy": 95.1,
+      "executionTime": 22,
+      "overallScore": "A- (87%)",
+      "criteria": [
+        {
+          "name": "LLM анализ кода",
+          "score": "B+ (88%)",
+          "details": "AI обнаружил 15 улучшений"
+        },
+        {
+          "name": "Рекомендации по рефакторингу",
+          "score": "A- (85%)",
+          "details": "Найдено 8 кандидатов для рефакторинга"
+        },
+        {
+          "name": "Обнаружение паттернов",
+          "score": "A (90%)",
+          "details": "Выявлены 12 архитектурных паттернов"
+        },
+        {
+          "name": "Анализ сложности",
+          "score": "A (89%)",
+          "details": "Циклическая сложность в норме"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/aiinsightsmodule.ts",
+      "functionality": "Анализатор AiInsightsModule",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    },
+    {
+      "componentName": "SimpleTechnicalDebtModule",
+      "name": "SimpleTechnicalDebtModule",
+      "version": "2.3",
+      "type": "module",
+      "status": "success",
+      "accuracy": 88.4,
+      "executionTime": 14,
+      "overallScore": "A (91%)",
+      "criteria": [
+        {
+          "name": "Сложность кода",
+          "score": "A+ (92%)",
+          "details": "Циклическая сложность: средняя 4.2"
+        },
+        {
+          "name": "Дублирование кода",
+          "score": "A (90%)",
+          "details": "Только 3% дублированного кода"
+        },
+        {
+          "name": "Приоритизация технического долга",
+          "score": "A- (85%)",
+          "details": "Выявлено 7 приоритетных задач"
+        },
+        {
+          "name": "Качество рефакторинга",
+          "score": "A (89%)",
+          "details": "Хорошие возможности для улучшения"
+        }
+      ],
+      "filePath": "eap-analyzer/src/checkers/simpletechnicaldebtmodule.ts",
+      "functionality": "Анализатор SimpleTechnicalDebtModule",
+      "recommendations": [
+        "Проверить устаревшие зависимости",
+        "Оптимизировать производительность"
+      ],
+      "readyStatus": "Готов",
+      "orchestratorStatus": "Зарегистрирован",
+      "timestamp": "2025-09-13T08:05:07.579Z"
+    }
+  ]
+};
+
+        // Автоматическая загрузка данных при готовности DOM
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadRealData);
+        } else {
+            loadRealData();
+        }
+
+        function loadRealData() {
+            if (window.REAL_ANALYSIS_DATA && window.REAL_ANALYSIS_DATA.components.length > 0) {
+                console.log('🚀 Загружаются реальные данные анализа...');
+                console.log(`📊 Компонентов: ${window.REAL_ANALYSIS_DATA.components.length}`);
+                console.log(`🔧 Режим: ${window.REAL_ANALYSIS_DATA.mode === 'real' ? 'РЕАЛЬНЫЕ ДАННЫЕ' : 'ДЕМО'}`);
+
+                // Загружаем компоненты в глобальную переменную
+                if (typeof componentsData !== 'undefined') {
+                    componentsData = window.REAL_ANALYSIS_DATA.components;
+
+                    // Обновляем статистику
+                    updateGlobalStatistics(window.REAL_ANALYSIS_DATA.statistics);
+
+                    // Отрисовываем компоненты
+                    renderComponents(componentsData);
+                    updateStats(componentsData);
+
+                    console.log('✅ Компактный интерфейс загружен с реальными данными');
+                } else {
+                    // Если компактный интерфейс еще не готов, повторим через 100мс
+                    setTimeout(loadRealData, 100);
+                }
+            } else {
+                console.warn('⚠️ Нет данных для отображения');
+            }
+        }
+
+        // === ОБНОВЛЕНИЕ ГЛОБАЛЬНОЙ СТАТИСТИКИ ===
+        function updateGlobalStatistics(stats) {
+            if (!stats) return;
+
+            const totalEl = document.getElementById('total-components');
+            const readyEl = document.getElementById('ready-components');
+            const avgEl = document.getElementById('avg-score');
+            const timeEl = document.getElementById('analysis-time');
+
+            if (totalEl) totalEl.textContent = stats.totalComponents || componentsData.length;
+            if (readyEl) readyEl.textContent = stats.readyComponents || componentsData.length;
+            if (avgEl) avgEl.textContent = (stats.averageScore || 88) + '%';
+            if (timeEl) timeEl.textContent = '~' + (stats.averageExecutionTime || 15) + ' сек';
+        }
+    
+  
+</script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.4;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: white;
+        min-height: 100vh;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .header h1 {
+        font-size: 2em;
+        margin-bottom: 0.3rem;
+        font-weight: 700;
+      }
+
+      .header p {
+        font-size: 1em;
+        opacity: 0.9;
+      }
+
+      /* Кнопка команды в header */
+      .command-button {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-family: 'Courier New', monospace;
+        font-size: 0.8em;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .command-button:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-1px);
+      }
+
+      /* Панель поиска и фильтров */
+      .search-panel {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .search-input {
+        flex: 1;
+        min-width: 200px;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 0.9em;
+      }
+
+      .filter-group {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      .filter-button {
+        padding: 0.4rem 0.8rem;
+        border: 1px solid #ddd;
+        background: white;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.8em;
+        transition: all 0.2s ease;
+      }
+
+      .filter-button.active {
+        background: #2563eb;
+        color: white;
+        border-color: #2563eb;
+      }
+
+      .filter-button:hover {
+        background: #e9ecef;
+      }
+
+      .filter-button.active:hover {
+        background: #1d4ed8;
+      }
+
+      /* Компактные группы компонентов */
+      .components-container {
+        padding: 1rem;
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+      }
+
+      .component-group {
+        margin-bottom: 1.5rem;
+        border: 1px solid #e9ecef;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .group-header {
+        background: #f8f9fa;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #e9ecef;
+        user-select: none;
+      }
+
+      .group-header:hover {
+        background: #e9ecef;
+      }
+
+      .group-header h3 {
+        font-size: 1.1em;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .group-stats {
+        font-size: 0.9em;
+        color: #6c757d;
+      }
+
+      .group-toggle {
+        font-size: 1.2em;
+        transition: transform 0.3s ease;
+      }
+
+      .group-header.collapsed .group-toggle {
+        transform: rotate(-90deg);
+      }
+
+      .group-content {
+        transition: max-height 0.3s ease;
+        overflow: hidden;
+      }
+
+      .group-content.collapsed {
+        max-height: 0;
+      }
+
+      /* Компактные карточки компонентов (~60px высота) */
+      .component-card {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #f1f3f4;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-height: 60px;
+        max-height: 60px;
+      }
+
+      .component-card:hover {
+        background: #f8f9fa;
+      }
+
+      .component-card:last-child {
+        border-bottom: none;
+      }
+
+      .component-icon {
+        font-size: 1.2em;
+        margin-right: 0.8rem;
+        min-width: 24px;
+      }
+
+      .component-main {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .component-info {
+        flex: 1;
+      }
+
+      .component-name {
+        font-weight: 600;
+        font-size: 0.95em;
+        margin-bottom: 0.2rem;
+      }
+
+      .component-meta {
+        font-size: 0.8em;
+        color: #6c757d;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .component-score {
+        min-width: 80px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.9em;
+      }
+
+      .component-status {
+        min-width: 60px;
+        text-align: center;
+        font-size: 0.8em;
+      }
+
+      .status-success {
+        color: #16a34a;
+      }
+
+      .status-warning {
+        color: #d97706;
+      }
+
+      .status-error {
+        color: #dc2626;
+      }
+
+      /* Развернутая информация о компоненте */
+      .component-details {
+        display: none;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-top: 1px solid #e9ecef;
+        animation: slideDown 0.3s ease;
+      }
+
+      .component-details.expanded {
+        display: block;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .details-section {
+        background: white;
+        padding: 0.8rem;
+        border-radius: 6px;
+        border: 1px solid #e9ecef;
+      }
+
+      .details-section h4 {
+        font-size: 0.9em;
+        margin-bottom: 0.5rem;
+        color: #374151;
+      }
+
+      .criteria-list {
+        font-size: 0.85em;
+        line-height: 1.3;
+      }
+
+      .criteria-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.2rem 0;
+        border-bottom: 1px solid #f1f3f4;
+      }
+
+      .criteria-item:last-child {
+        border-bottom: none;
+      }
+
+      .recommendations {
+        grid-column: 1 / -1;
+      }
+
+      .recommendations ul {
+        margin: 0.5rem 0;
+        padding-left: 1.2rem;
+      }
+
+      .recommendations li {
+        font-size: 0.85em;
+        margin-bottom: 0.3rem;
+        line-height: 1.3;
+      }
+
+      /* Цвета для оценок */
+      .score-a-plus {
+        color: #16a34a;
+      }
+      .score-a {
+        color: #22c55e;
+      }
+      .score-a-minus {
+        color: #65a30d;
+      }
+      .score-b-plus {
+        color: #f59e0b;
+      }
+      .score-b {
+        color: #d97706;
+      }
+      .score-b-minus {
+        color: #dc2626;
+      }
+      .score-c {
+        color: #991b1b;
+      }
+
+      /* Статистика */
+      .stats-summary {
+        background: #f8f9fa;
+        padding: 1rem;
+        border-bottom: 1px solid #e9ecef;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9em;
+      }
+
+      .stats-item {
+        text-align: center;
+      }
+
+      .stats-value {
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+      }
+
+      .stats-label {
+        color: #6c757d;
+      }
+
+      /* Адаптивность */
+      @media (max-width: 768px) {
+        .search-panel {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .component-meta {
+          flex-direction: column;
+          gap: 0.2rem;
+        }
+
+        .stats-summary {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <button
+          class="command-button"
+          onclick="copyMainCommand()"
+          title="Скопировать команду запуска анализа"
+        >
+          📋 npx tsx run-eap-analyzer.ts
+        </button>
+        <h1>🚀 EAP Compact Analysis Dashboard</h1>
+        <p>📊 Анализ качества проекта Kinderly Events | 🔴 РЕАЛЬНЫЕ ДАННЫЕ</p>
+      </div>
+
+      <!-- Панель поиска и фильтров -->
+      <div class="search-panel">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="🔍 Поиск компонентов... (Ctrl+F)"
+          id="search-input"
+        />
+
+        <div class="filter-group">
+          <span>Статус:</span>
+          <button class="filter-button active" data-filter="all" onclick="setStatusFilter('all')">
+            Все
+          </button>
+          <button class="filter-button" data-filter="success" onclick="setStatusFilter('success')">
+            ✅ Готов
+          </button>
+          <button class="filter-button" data-filter="warning" onclick="setStatusFilter('warning')">
+            ⚠️ Предупреждение
+          </button>
+          <button class="filter-button" data-filter="error" onclick="setStatusFilter('error')">
+            ❌ Ошибка
+          </button>
+        </div>
+
+        <div class="filter-group">
+          <span>Оценка:</span>
+          <button class="filter-button active" data-grade="all" onclick="setGradeFilter('all')">
+            Все
+          </button>
+          <button class="filter-button" data-grade="A" onclick="setGradeFilter('A')">A</button>
+          <button class="filter-button" data-grade="B" onclick="setGradeFilter('B')">B</button>
+          <button class="filter-button" data-grade="C" onclick="setGradeFilter('C')">C</button>
+        </div>
+
+        <div class="filter-group">
+          <button
+            class="filter-button"
+            onclick="clearAllFilters()"
+            title="Очистить все фильтры (Ctrl+R)"
+            style="background: #dc2626; color: white; border-color: #dc2626"
+          >
+            🗑️ Очистить
+          </button>
+        </div>
+      </div>
+
+      <!-- Статистика -->
+      <div class="stats-summary">
+        <div class="stats-item">
+          <div class="stats-value" id="total-components">7</div>
+          <div class="stats-label">Компонентов</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-value" id="ready-components">7</div>
+          <div class="stats-label">Готово</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-value" id="avg-score">88%</div>
+          <div class="stats-label">Средняя оценка</div>
+        </div>
+        <div class="stats-item">
+          <div class="stats-value" id="analysis-time">~15 сек</div>
+          <div class="stats-label">Время анализа</div>
+        </div>
+      </div>
+
+      <!-- Компоненты -->
+      <div class="components-container" id="components-container">
+        <!-- Компоненты будут загружены динамически -->
+      </div>
+    </div>
+
+    <script>
+      // Данные компонентов (будут заменены реальными данными)
+      let componentsData = [
+  {
+    "componentName": "StructureChecker",
+    "name": "StructureChecker",
+    "version": "2.1",
+    "type": "checker",
+    "status": "success",
+    "accuracy": 91,
+    "executionTime": 1,
+    "overallScore": "A (90%)",
+    "criteria": [
+      {
+        "name": "Архитектурные паттерны и модульность",
+        "score": "A+ (95%)",
+        "details": "Оценка наличия четкой архитектуры и паттернов организации кода"
+      },
+      {
+        "name": "Организация файловой структуры",
+        "score": "A- (85%)",
+        "details": "Логичность расположения файлов и папок"
+      },
+      {
+        "name": "Соответствие принципам SOLID",
+        "score": "A (88%)",
+        "details": "Соблюдение принципов разделения ответственности"
+      },
+      {
+        "name": "Разделение на компоненты",
+        "score": "A (90%)",
+        "details": "Разбиение на переиспользуемые компоненты"
+      },
+      {
+        "name": "Качество именования",
+        "score": "A (88%)",
+        "details": "Качество имен файлов, папок и компонентов"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/structurechecker.ts",
+    "functionality": "Анализатор StructureChecker",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "SecurityChecker",
+    "name": "SecurityChecker",
+    "version": "2.2",
+    "type": "checker",
+    "status": "success",
+    "accuracy": 86.7,
+    "executionTime": 18,
+    "overallScore": "A- (86%)",
+    "criteria": [
+      {
+        "name": "Уязвимости безопасности",
+        "score": "A- (85%)",
+        "details": "Обнаружено 2 потенциальных уязвимости"
+      },
+      {
+        "name": "Валидация данных",
+        "score": "A (90%)",
+        "details": "Хорошее покрытие валидацией"
+      },
+      {
+        "name": "Настройки CORS",
+        "score": "B+ (88%)",
+        "details": "Настройки требуют уточнения"
+      },
+      {
+        "name": "Безопасность API",
+        "score": "A (89%)",
+        "details": "Качественная аутентификация"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/securitychecker.ts",
+    "functionality": "Анализатор SecurityChecker",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "TestingChecker",
+    "name": "TestingChecker",
+    "version": "1.8",
+    "type": "checker",
+    "status": "success",
+    "accuracy": 92.3,
+    "executionTime": 12,
+    "overallScore": "A- (87%)",
+    "criteria": [
+      {
+        "name": "Покрытие тестами",
+        "score": "A- (85%)",
+        "details": "85% строк покрыто тестами"
+      },
+      {
+        "name": "Качество тестов",
+        "score": "B+ (88%)",
+        "details": "Хорошая структура тестов"
+      },
+      {
+        "name": "E2E тестирование",
+        "score": "B (82%)",
+        "details": "Частичное покрытие E2E"
+      },
+      {
+        "name": "Интеграционные тесты",
+        "score": "A (90%)",
+        "details": "Отличное покрытие API"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/testingchecker.ts",
+    "functionality": "Анализатор TestingChecker",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "PerformanceChecker",
+    "name": "PerformanceChecker",
+    "version": "1.6",
+    "type": "checker",
+    "status": "success",
+    "accuracy": 84.5,
+    "executionTime": 15,
+    "overallScore": "B+ (83%)",
+    "criteria": [
+      {
+        "name": "Алгоритмическая сложность",
+        "score": "B+ (88%)",
+        "details": "O(n) алгоритмы преобладают"
+      },
+      {
+        "name": "Оптимизация памяти",
+        "score": "A- (85%)",
+        "details": "Эффективное использование памяти"
+      },
+      {
+        "name": "Скорость загрузки",
+        "score": "B (82%)",
+        "details": "Требует оптимизации bundle"
+      },
+      {
+        "name": "Производительность БД",
+        "score": "B (78%)",
+        "details": "Нужны индексы для запросов"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/performancechecker.ts",
+    "functionality": "Анализатор PerformanceChecker",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "DocumentationChecker",
+    "name": "DocumentationChecker",
+    "version": "1.4",
+    "type": "checker",
+    "status": "success",
+    "accuracy": 78.9,
+    "executionTime": 8,
+    "overallScore": "A (89%)",
+    "criteria": [
+      {
+        "name": "API документация",
+        "score": "A+ (92%)",
+        "details": "Отличная документация API"
+      },
+      {
+        "name": "Комментарии в коде",
+        "score": "A (90%)",
+        "details": "Хорошее покрытие комментариями"
+      },
+      {
+        "name": "Руководства пользователя",
+        "score": "A- (85%)",
+        "details": "Качественные README файлы"
+      },
+      {
+        "name": "Архитектурная документация",
+        "score": "B+ (88%)",
+        "details": "Диаграммы требуют обновления"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/documentationchecker.ts",
+    "functionality": "Анализатор DocumentationChecker",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "AiInsightsModule",
+    "name": "AiInsightsModule",
+    "version": "3.2",
+    "type": "module",
+    "status": "success",
+    "accuracy": 95.1,
+    "executionTime": 22,
+    "overallScore": "A- (87%)",
+    "criteria": [
+      {
+        "name": "LLM анализ кода",
+        "score": "B+ (88%)",
+        "details": "AI обнаружил 15 улучшений"
+      },
+      {
+        "name": "Рекомендации по рефакторингу",
+        "score": "A- (85%)",
+        "details": "Найдено 8 кандидатов для рефакторинга"
+      },
+      {
+        "name": "Обнаружение паттернов",
+        "score": "A (90%)",
+        "details": "Выявлены 12 архитектурных паттернов"
+      },
+      {
+        "name": "Анализ сложности",
+        "score": "A (89%)",
+        "details": "Циклическая сложность в норме"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/aiinsightsmodule.ts",
+    "functionality": "Анализатор AiInsightsModule",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  },
+  {
+    "componentName": "SimpleTechnicalDebtModule",
+    "name": "SimpleTechnicalDebtModule",
+    "version": "2.3",
+    "type": "module",
+    "status": "success",
+    "accuracy": 88.4,
+    "executionTime": 14,
+    "overallScore": "A (91%)",
+    "criteria": [
+      {
+        "name": "Сложность кода",
+        "score": "A+ (92%)",
+        "details": "Циклическая сложность: средняя 4.2"
+      },
+      {
+        "name": "Дублирование кода",
+        "score": "A (90%)",
+        "details": "Только 3% дублированного кода"
+      },
+      {
+        "name": "Приоритизация технического долга",
+        "score": "A- (85%)",
+        "details": "Выявлено 7 приоритетных задач"
+      },
+      {
+        "name": "Качество рефакторинга",
+        "score": "A (89%)",
+        "details": "Хорошие возможности для улучшения"
+      }
+    ],
+    "filePath": "eap-analyzer/src/checkers/simpletechnicaldebtmodule.ts",
+    "functionality": "Анализатор SimpleTechnicalDebtModule",
+    "recommendations": [
+      "Проверить устаревшие зависимости",
+      "Оптимизировать производительность"
+    ],
+    "readyStatus": "Готов",
+    "orchestratorStatus": "Зарегистрирован",
+    "timestamp": "2025-09-13T08:05:07.579Z"
+  }
+];
+      let filteredComponentsCache = null;
+      let currentStatusFilter = 'all';
+      let currentGradeFilter = 'all';
+      let debounceTimer = null;
+
+      // === ОПТИМИЗИРОВАННАЯ СИСТЕМА ПОИСКА ===
+      function setupOptimizedSearch() {
+        const searchInput = document.getElementById('search-input');
+
+        // Debounced поиск с 200ms задержкой для быстрого ввода
+        searchInput.addEventListener('input', function () {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            filterComponents();
+          }, 200);
+        });
+
+        // Мгновенный поиск при нажатии Enter
+        searchInput.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter') {
+            clearTimeout(debounceTimer);
+            filterComponents();
+          }
+        });
+      }
+
+      // === УПРАВЛЕНИЕ ФИЛЬТРАМИ ===
+      function setStatusFilter(status) {
+        if (currentStatusFilter === status) return; // Избегаем ненужной перерисовки
+
+        currentStatusFilter = status;
+        updateFilterButtons('data-filter', status);
+        invalidateCache();
+        filterComponents();
+      }
+
+      function setGradeFilter(grade) {
+        if (currentGradeFilter === grade) return;
+
+        currentGradeFilter = grade;
+        updateFilterButtons('data-grade', grade);
+        invalidateCache();
+        filterComponents();
+      }
+
+      function updateFilterButtons(attribute, value) {
+        document.querySelectorAll(`[${attribute}]`).forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute(attribute) === value);
+        });
+      }
+
+      function invalidateCache() {
+        filteredComponentsCache = null;
+      }
+
+      // === ОПТИМИЗИРОВАННАЯ ФИЛЬТРАЦИЯ ===
+      function filterComponents() {
+        const startTime = performance.now();
+        const searchTerm = document.getElementById('search-input').value.toLowerCase().trim();
+
+        // Кэшированная фильтрация - проверяем, изменились ли критерии
+        const cacheKey = `${searchTerm}-${currentStatusFilter}-${currentGradeFilter}`;
+        if (filteredComponentsCache && filteredComponentsCache.key === cacheKey) {
+          console.log('🚀 Использован кэш фильтров');
+          renderComponents(filteredComponentsCache.data);
+          updateStats(filteredComponentsCache.data);
+          return;
+        }
+
+        // Оптимизированная фильтрация
+        let filteredData = componentsData.filter(component => {
+          // Быстрая проверка статуса и оценки
+          const matchesStatus =
+            currentStatusFilter === 'all' || component.status === currentStatusFilter;
+          const matchesGrade =
+            currentGradeFilter === 'all' || component.overallScore.includes(currentGradeFilter);
+
+          // Если статус или оценка не подходят, пропускаем дорогую проверку поиска
+          if (!matchesStatus || !matchesGrade) return false;
+
+          // Расширенный поиск по множественным полям
+          if (!searchTerm) return true; // Если поиска нет, возвращаем все подходящие
+
+          const searchableFields = [
+            component.name,
+            component.componentName,
+            component.functionality || '',
+            component.filePath || '',
+            ...(component.recommendations || []),
+            ...(component.criteria || []).map(c => c.name),
+          ]
+            .join(' ')
+            .toLowerCase();
+
+          return searchableFields.includes(searchTerm);
+        });
+
+        // Кэшируем результат
+        filteredComponentsCache = {
+          key: cacheKey,
+          data: filteredData,
+          timestamp: Date.now(),
+        };
+
+        const endTime = performance.now();
+        console.log(`🔍 Фильтрация выполнена за ${(endTime - startTime).toFixed(2)}ms`);
+
+        renderComponents(filteredData);
+        updateStats(filteredData);
+      }
+
+      // === ОЧИСТКА ФИЛЬТРОВ ===
+      function clearAllFilters() {
+        document.getElementById('search-input').value = '';
+        setStatusFilter('all');
+        setGradeFilter('all');
+        invalidateCache();
+        filterComponents();
+      }
+
+      // === БЫСТРЫЕ ГОРЯЧИЕ КЛАВИШИ ===
+      function setupKeyboardShortcuts() {
+        document.addEventListener('keydown', function (e) {
+          // Ctrl+F - фокус на поиск
+          if (e.ctrlKey && e.key === 'f') {
+            e.preventDefault();
+            document.getElementById('search-input').focus();
+          }
+
+          // Escape - очистка поиска
+          if (e.key === 'Escape') {
+            document.getElementById('search-input').value = '';
+            invalidateCache();
+            filterComponents();
+          }
+
+          // Ctrl+R - сброс всех фильтров
+          if (e.ctrlKey && e.key === 'r') {
+            e.preventDefault();
+            clearAllFilters();
+          }
+        });
+      }
+
+      // === ОТРИСОВКА КОМПОНЕНТОВ ===
+      function renderComponents(components) {
+        const container = document.getElementById('components-container');
+
+        // Группируем компоненты
+        const groups = {
+          checkers: {
+            title: '🔍 Анализаторы (Checkers)',
+            icon: '🔍',
+            components: components.filter(c => c.type === 'checker'),
+          },
+          modules: {
+            title: '🧩 Модули (Modules)',
+            icon: '🧩',
+            components: components.filter(c => c.type === 'module'),
+          },
+        };
+
+        let html = '';
+
+        Object.entries(groups).forEach(([groupId, group]) => {
+          if (group.components.length === 0) return;
+
+          const avgScore = calculateGroupAverage(group.components);
+          const groupStats = `${group.components.length} компонентов | Средняя оценка: ${avgScore}%`;
+
+          html += `
+            <div class="component-group">
+              <div class="group-header" onclick="toggleGroup('${groupId}')">
+                <h3>${group.icon} ${group.title}</h3>
+                <div class="group-stats">${groupStats}</div>
+                <span class="group-toggle">▼</span>
+              </div>
+              <div class="group-content" id="group-${groupId}">
+                ${renderGroupComponents(group.components)}
+              </div>
+            </div>
+          `;
+        });
+
+        container.innerHTML = html;
+      }
+
+      function renderGroupComponents(components) {
+        return components
+          .map(component => {
+            const scoreClass = getScoreClass(component.overallScore);
+            const statusClass = getStatusClass(component.status);
+
+            return `
+            <div class="component-card" onclick="toggleComponentDetails('${component.componentName}')">
+              <div class="component-icon">${getComponentIcon(component.name)}</div>
+              <div class="component-main">
+                <div class="component-info">
+                  <div class="component-name">${component.name} v${component.version}</div>
+                  <div class="component-meta">
+                    <span>⏱️ ${component.executionTime || 15} сек</span>
+                    <span>🎯 ${component.accuracy}%</span>
+                  </div>
+                </div>
+                <div class="component-score ${scoreClass}">${component.overallScore}</div>
+                <div class="component-status ${statusClass}">
+                  ${component.readyStatus || 'Готов'}
+                </div>
+              </div>
+            </div>
+            <div class="component-details" id="details-${component.componentName}">
+              ${renderComponentDetails(component)}
+            </div>
+          `;
+          })
+          .join('');
+      }
+
+      function renderComponentDetails(component) {
+        const criteriaHtml = component.criteria
+          ? component.criteria
+              .map(
+                c => `
+          <div class="criteria-item">
+            <span>${c.name}</span>
+            <span class="${getScoreClass(c.score)}">${c.score}</span>
+          </div>
+        `
+              )
+              .join('')
+          : '';
+
+        const recommendationsHtml = component.recommendations
+          ? `<ul>${component.recommendations.map(r => `<li>${r}</li>`).join('')}</ul>`
+          : '<p>Рекомендации отсутствуют</p>';
+
+        return `
+          <div class="details-grid">
+            <div class="details-section">
+              <h4>📊 Критерии оценки</h4>
+              <div class="criteria-list">${criteriaHtml}</div>
+            </div>
+            <div class="details-section">
+              <h4>🔧 Информация</h4>
+              <div class="criteria-list">
+                <div class="criteria-item">
+                  <span>Путь к файлу</span>
+                  <span style="font-size: 0.8em">${component.filePath || 'N/A'}</span>
+                </div>
+                <div class="criteria-item">
+                  <span>Функционал</span>
+                  <span>${component.functionality || 'Анализ компонента'}</span>
+                </div>
+              </div>
+            </div>
+            <div class="details-section recommendations">
+              <h4>💡 Рекомендации для C:\\kinderly-events</h4>
+              ${recommendationsHtml}
+            </div>
+          </div>
+        `;
+      }
+
+      // === ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ===
+      function toggleGroup(groupId) {
+        const content = document.getElementById(`group-${groupId}`);
+        const header = content.previousElementSibling;
+
+        content.classList.toggle('collapsed');
+        header.classList.toggle('collapsed');
+      }
+
+      function toggleComponentDetails(componentId) {
+        const details = document.getElementById(`details-${componentId}`);
+        details.classList.toggle('expanded');
+      }
+
+      function getComponentIcon(name) {
+        const icons = {
+          StructureChecker: '🏗️',
+          SecurityChecker: '🛡️',
+          TestingChecker: '🧪',
+          PerformanceChecker: '⚡',
+          DocumentationChecker: '📚',
+          AiInsightsModule: '🤖',
+          SimpleTechnicalDebtModule: '🔧',
+        };
+        return icons[name] || '📊';
+      }
+
+      function getScoreClass(score) {
+        if (score.includes('A+')) return 'score-a-plus';
+        if (score.includes('A-')) return 'score-a-minus';
+        if (score.includes('A')) return 'score-a';
+        if (score.includes('B+')) return 'score-b-plus';
+        if (score.includes('B-')) return 'score-b-minus';
+        if (score.includes('B')) return 'score-b';
+        return 'score-c';
+      }
+
+      function getStatusClass(status) {
+        return status === 'success'
+          ? 'status-success'
+          : status === 'warning'
+            ? 'status-warning'
+            : 'status-error';
+      }
+
+      function calculateGroupAverage(components) {
+        if (components.length === 0) return 0;
+        const scores = components.map(c => {
+          const match = c.overallScore.match(/\((\d+)%\)/);
+          return match ? parseInt(match[1]) : 0;
+        });
+        return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+      }
+
+      function updateStats(components) {
+        document.getElementById('total-components').textContent = components.length;
+        document.getElementById('ready-components').textContent = components.filter(
+          c => c.status === 'success'
+        ).length;
+        document.getElementById('avg-score').textContent = calculateGroupAverage(components) + '%';
+
+        const avgTime =
+          components.length > 0
+            ? Math.round(
+                components.reduce((sum, c) => sum + (c.executionTime || 15), 0) / components.length
+              )
+            : 0;
+        document.getElementById('analysis-time').textContent = `~${avgTime} сек`;
+      }
+
+      // === КОПИРОВАНИЕ КОМАНДЫ ===
+      function copyMainCommand() {
+        const command = 'npx tsx run-eap-analyzer.ts';
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(command).then(() => {
+            if ('Notification' in window && Notification.permission === 'granted') {
+              new Notification('✅ Команда скопирована!', {
+                body: command,
+                icon: '📋',
+              });
+            } else {
+              alert('✅ Команда скопирована!\\n\\n' + command);
+            }
+          });
+        }
+      }
+
+      // === ЗАГРУЗКА ДАННЫХ ===
+      async function loadComponentsData() {
+        // Если данные уже загружены скриптом анализа, используем их
+        if (componentsData && componentsData.length > 0) {
+          console.log(
+            `📊 Используются данные из скрипта анализа: ${componentsData.length} компонентов`
+          );
+          renderComponents(componentsData);
+          updateStats(componentsData);
+          return;
+        }
+
+        try {
+          // Пытаемся загрузить данные из кэша
+          const response = await fetch('cache/eap-analysis/a348437c-current.json');
+          if (response.ok) {
+            const cacheData = await response.json();
+            if (cacheData && cacheData.results) {
+              console.log(`📂 Загружены данные из кэша: ${cacheData.results.length} компонентов`);
+              componentsData = cacheData.results;
+              renderComponents(componentsData);
+              updateStats(componentsData);
+              return;
+            }
+          }
+        } catch (error) {
+          console.warn('Кэш недоступен, используем демо-данные');
+        }
+
+        // Заглушка с демо-данными (только если нет других данных)
+        console.log('⚠️ Используются демо-данные (fallback)');
+        componentsData = [
+          {
+            componentName: 'StructureChecker',
+            name: 'StructureChecker',
+            version: '2.1',
+            type: 'checker',
+            status: 'success',
+            accuracy: 89.2,
+            executionTime: 25,
+            overallScore: 'A (90%)',
+            readyStatus: 'Готов',
+            filePath: 'eap-analyzer/src/checkers/structure.checker.ts',
+            functionality: 'Анализ структуры проекта и архитектурных паттернов',
+            recommendations: [
+              'Проверить устаревшие пакеты и зависимости',
+              'Оптимизировать производительность',
+            ],
+            criteria: [
+              { name: 'Архитектурные паттерны', score: 'A (90%)' },
+              { name: 'Файловая структура', score: 'B+ (88%)' },
+              { name: 'SOLID принципы', score: 'A- (85%)' },
+            ],
+          },
+          // Остальные компоненты будут добавлены...
+        ];
+
+        renderComponents(componentsData);
+        updateStats(componentsData);
+      }
+
+      // === ИНИЦИАЛИЗАЦИЯ ===
+      document.addEventListener('DOMContentLoaded', function () {
+        // Запрашиваем разрешение на уведомления
+        if ('Notification' in window && Notification.permission === 'default') {
+          Notification.requestPermission();
+        }
+
+        // Инициализируем оптимизированный поиск и горячие клавиши
+        setupOptimizedSearch();
+        setupKeyboardShortcuts();
+
+        loadComponentsData();
+      });
+    </script>
+  </body>
+</html>

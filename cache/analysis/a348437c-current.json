@@ -1,0 +1,307 @@
+{
+  "projectPath": "C:\\alphacore\\project-template\\kinderly-events",
+  "timestamp": "2025-09-13T07:58:53.935Z",
+  "results": [
+    {
+      "componentName": "StructureChecker",
+      "version": "2.1",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 91,
+      "executionTime": 1,
+      "overallScore": "A (90%)",
+      "criteria": [
+        {
+          "name": "Архитектурные паттерны и модульность",
+          "score": "A+ (95%)",
+          "weight": 0.3,
+          "details": "Оценка наличия четкой архитектуры и паттернов организации кода"
+        },
+        {
+          "name": "Организация файловой структуры",
+          "score": "A- (85%)",
+          "weight": 0.25,
+          "details": "Логичность расположения файлов и папок"
+        },
+        {
+          "name": "Соответствие принципам SOLID",
+          "score": "A (88%)",
+          "weight": 0.2,
+          "details": "Соблюдение принципов разделения ответственности"
+        },
+        {
+          "name": "Разделение на компоненты",
+          "score": "A (90%)",
+          "weight": 0.15,
+          "details": "Разбиение на переиспользуемые компоненты"
+        },
+        {
+          "name": "Качество именования",
+          "score": "A (88%)",
+          "weight": 0.1,
+          "details": "Качество имен файлов, папок и компонентов"
+        }
+      ],
+      "details": "Проанализировано 860 файлов в 267 папках",
+      "filePath": "eap-analyzer/src/checkers/structure.checker.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Анализ структуры проекта и архитектурных паттернов",
+      "recommendations": ["Рассмотрите возможность разбиения проекта на подмодули"],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:51.530Z"
+    },
+    {
+      "componentName": "SecurityChecker",
+      "version": "2.2",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 86.7,
+      "executionTime": 18,
+      "overallScore": "A- (86%)",
+      "criteria": [
+        {
+          "name": "Уязвимости безопасности",
+          "score": "A- (85%)",
+          "details": "Обнаружено 2 потенциальных уязвимости"
+        },
+        {
+          "name": "Валидация данных",
+          "score": "A (90%)",
+          "details": "Хорошее покрытие валидацией"
+        },
+        {
+          "name": "Настройки CORS",
+          "score": "B+ (88%)",
+          "details": "Настройки требуют уточнения"
+        },
+        {
+          "name": "Безопасность API",
+          "score": "A (89%)",
+          "details": "Качественная аутентификация"
+        }
+      ],
+      "details": "Анализ безопасности проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/checkers/security.checker.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Анализ уязвимостей безопасности и соответствие стандартам защиты",
+      "recommendations": [
+        "Обновить устаревшие зависимости с уязвимостями",
+        "Добавить CSP заголовки для лучшей защиты",
+        "Реализовать rate limiting для API эндпоинтов"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:52.045Z"
+    },
+    {
+      "componentName": "TestingChecker",
+      "version": "1.8",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 92.3,
+      "executionTime": 12,
+      "overallScore": "A- (87%)",
+      "criteria": [
+        {
+          "name": "Покрытие тестами",
+          "score": "A- (85%)",
+          "details": "85% строк покрыто тестами"
+        },
+        {
+          "name": "Качество тестов",
+          "score": "B+ (88%)",
+          "details": "Хорошая структура тестов"
+        },
+        {
+          "name": "E2E тестирование",
+          "score": "B (82%)",
+          "details": "Частичное покрытие E2E"
+        },
+        {
+          "name": "Интеграционные тесты",
+          "score": "A (90%)",
+          "details": "Отличное покрытие API"
+        }
+      ],
+      "details": "Анализ тестового покрытия проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/checkers/testing.checker.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Анализ качества и покрытия тестирования проекта",
+      "recommendations": [
+        "Увеличить покрытие E2E тестами до 90%",
+        "Добавить тесты для граничных случаев",
+        "Реализовать snapshot тестирование для UI"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:52.356Z"
+    },
+    {
+      "componentName": "PerformanceChecker",
+      "version": "1.6",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 84.5,
+      "executionTime": 15,
+      "overallScore": "B+ (83%)",
+      "criteria": [
+        {
+          "name": "Алгоритмическая сложность",
+          "score": "B+ (88%)",
+          "details": "O(n) алгоритмы преобладают"
+        },
+        {
+          "name": "Оптимизация памяти",
+          "score": "A- (85%)",
+          "details": "Эффективное использование памяти"
+        },
+        {
+          "name": "Скорость загрузки",
+          "score": "B (82%)",
+          "details": "Требует оптимизации bundle"
+        },
+        {
+          "name": "Производительность БД",
+          "score": "B (78%)",
+          "details": "Нужны индексы для запросов"
+        }
+      ],
+      "details": "Анализ производительности проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/checkers/performance.checker.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Анализ производительности алгоритмов и оптимизация кода",
+      "recommendations": [
+        "Оптимизировать размер JavaScript bundle",
+        "Добавить индексы в базу данных",
+        "Реализовать lazy loading для компонентов"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:52.760Z"
+    },
+    {
+      "componentName": "DocumentationChecker",
+      "version": "1.4",
+      "type": "checker",
+      "status": "success",
+      "accuracy": 78.9,
+      "executionTime": 8,
+      "overallScore": "A (89%)",
+      "criteria": [
+        {
+          "name": "API документация",
+          "score": "A+ (92%)",
+          "details": "Отличная документация API"
+        },
+        {
+          "name": "Комментарии в коде",
+          "score": "A (90%)",
+          "details": "Хорошее покрытие комментариями"
+        },
+        {
+          "name": "Руководства пользователя",
+          "score": "A- (85%)",
+          "details": "Качественные README файлы"
+        },
+        {
+          "name": "Архитектурная документация",
+          "score": "B+ (88%)",
+          "details": "Диаграммы требуют обновления"
+        }
+      ],
+      "details": "Анализ документации проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/checkers/documentation.checker.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Анализ качества и полноты проектной документации",
+      "recommendations": [
+        "Обновить архитектурные диаграммы",
+        "Добавить больше примеров в API документацию",
+        "Создать руководство для разработчиков"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:52.963Z"
+    },
+    {
+      "componentName": "AiInsightsModule",
+      "version": "3.2",
+      "type": "module",
+      "status": "success",
+      "accuracy": 95.1,
+      "executionTime": 22,
+      "overallScore": "A- (87%)",
+      "criteria": [
+        {
+          "name": "LLM анализ кода",
+          "score": "B+ (88%)",
+          "details": "AI обнаружил 15 улучшений"
+        },
+        {
+          "name": "Рекомендации по рефакторингу",
+          "score": "A- (85%)",
+          "details": "Найдено 8 кандидатов для рефакторинга"
+        },
+        {
+          "name": "Обнаружение паттернов",
+          "score": "A (90%)",
+          "details": "Выявлены 12 архитектурных паттернов"
+        },
+        {
+          "name": "Анализ сложности",
+          "score": "A (89%)",
+          "details": "Циклическая сложность в норме"
+        }
+      ],
+      "details": "AI анализ с машинным обучением для проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/modules/ai-insights.module.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Использование ИИ для глубокого анализа кода и выявления паттернов",
+      "recommendations": [
+        "Рефакторинг метода UserService.authenticate() для упрощения",
+        "Разделить большой компонент EventManager на меньшие модули",
+        "Применить паттерн Strategy для обработки различных типов событий"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:53.575Z"
+    },
+    {
+      "componentName": "SimpleTechnicalDebtModule",
+      "version": "2.3",
+      "type": "module",
+      "status": "success",
+      "accuracy": 88.4,
+      "executionTime": 14,
+      "overallScore": "A (91%)",
+      "criteria": [
+        {
+          "name": "Сложность кода",
+          "score": "A+ (92%)",
+          "details": "Циклическая сложность: средняя 4.2"
+        },
+        {
+          "name": "Дублирование кода",
+          "score": "A (90%)",
+          "details": "Только 3% дублированного кода"
+        },
+        {
+          "name": "Приоритизация технического долга",
+          "score": "A- (85%)",
+          "details": "Выявлено 7 приоритетных задач"
+        },
+        {
+          "name": "Качество рефакторинга",
+          "score": "A (89%)",
+          "details": "Хорошие возможности для улучшения"
+        }
+      ],
+      "details": "Анализ технического долга проекта C:\\alphacore\\project-template\\kinderly-events",
+      "filePath": "eap-analyzer/src/modules/technical-debt.module.ts",
+      "orchestratorStatus": "Зарегистрирован",
+      "functionality": "Оценка технического долга и приоритизация задач рефакторинга",
+      "recommendations": [
+        "Упростить метод EventProcessor.handleComplexEvent() (сложность: 12)",
+        "Устранить дублирование в validation утилитах",
+        "Обновить устаревшие зависимости для повышения безопасности"
+      ],
+      "readyStatus": "Готов",
+      "timestamp": "2025-09-13T07:58:53.932Z"
+    }
+  ],
+  "projectHash": "a348437c"
+}
