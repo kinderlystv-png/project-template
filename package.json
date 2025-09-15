@@ -140,7 +140,7 @@
     "eslint-config-prettier": "^9.1.2",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-svelte": "^2.46.1",
-    "globals": "^16.3.0",
+    "globals": "^16.4.0",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "lint-staged": "^15.5.2",
