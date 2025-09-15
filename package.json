@@ -109,7 +109,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
-    "@sentry/sveltekit": "^10.10.0",
+    "@sentry/sveltekit": "^10.11.0",
     "framer-motion": "^10.16.4",
     "glob": "^11.0.3",
     "gsap": "^3.12.2",
